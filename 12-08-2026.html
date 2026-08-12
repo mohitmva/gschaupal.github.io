@@ -54,7 +54,6 @@
             border-top: 5px solid #3498db;
         }
         
-        /* अलग-अलग सेक्शन के लिए अलग रंग की बॉर्डर */
         .sec-1 { border-top-color: #8e44ad; }
         .sec-2 { border-top-color: #27ae60; }
         .sec-3 { border-top-color: #e67e22; }
@@ -71,13 +70,13 @@
         }
 
         .news-item {
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ccc;
             font-family: 'Kalam', cursive;
             font-size: 1.2rem;
         }
-        .news-item:last-child { border-bottom: none; }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         
         .news-title {
             color: #d35400;
@@ -90,7 +89,7 @@
         .content-list { padding-left: 20px; }
         .content-list li { margin-bottom: 8px; }
 
-        /* अभ्यास प्रश्नों की स्टाइलिंग */
+        /* Practice Questions Box */
         .practice-box {
             background-color: #f8f9fa;
             border-left: 4px solid #f39c12;
@@ -98,17 +97,19 @@
             margin-top: 15px;
             border-radius: 0 5px 5px 0;
             font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
         }
-        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 10px; }
-        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 10px; margin-bottom: 5px; }
 
-        /* इंटरैक्टिव उत्तर (Details/Summary) */
+        /* Interactive Details */
         details {
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            padding: 10px;
-            margin-top: 10px;
+            padding: 8px 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
             cursor: pointer;
         }
         summary {
@@ -123,7 +124,12 @@
             color: #333;
         }
 
-        /* Scroll to Top */
+        footer {
+            text-align: center; padding: 20px; background: #1a252f; color: white; margin-top: 40px;
+        }
+        .social-links a { color: white; margin: 0 10px; font-size: 1.5rem; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
         #scrollTopBtn {
             display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99;
             font-size: 1.5rem; border: none; background-color: #e74c3c; color: white;
@@ -131,7 +137,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s;
         }
         #scrollTopBtn:hover { background-color: #c0392b; }
-
     </style>
 </head>
 <body>
@@ -159,6 +164,15 @@
                     <li><strong>ग्रामीण क्षेत्र की बाध्यता समाप्त:</strong> कुटीर/ग्रामोद्योग को 'ग्रामीण क्षेत्र में स्थित होने' की शर्त को हटा दिया गया है।</li>
                     <li><strong>निवेश:</strong> निगम अब केंद्र सरकार की मंजूरी से राज्य के भीतर काम करने वाली समितियों के शेयर कैपिटल में भी निवेश कर सकेगा।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'राष्ट्रीय सहकारी विकास निगम (संशोधन) विधेयक, 2026' के आलोक में, भारत में सहकारी समितियों के विकास में इस निगम की भूमिका और नए बदलावों के संभावित प्रभावों की विवेचना करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: राष्ट्रीय सहकारी विकास निगम (NCDC) के संदर्भ में सही कथन चुनें: <br>1. यह सहकारिता मंत्रालय के अंतर्गत आता है। <br>2. हालिया संशोधन के बाद यह केवल ग्रामीण क्षेत्रों में ही वित्तपोषण कर सकता है।</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: केवल 1।</strong> कथन 2 गलत है क्योंकि नए संशोधन में 'ग्रामीण क्षेत्र में स्थित होने' की बाध्यता समाप्त कर दी गई है।</div></details>
+                    
+                    <div class="pre-q">Prelims Q2: भारत के संविधान के किस भाग में सहकारी समितियों (Co-operative Societies) का प्रावधान किया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: भाग IX-B</strong> (97वें संविधान संशोधन, 2011 द्वारा जोड़ा गया)।</div></details>
+                </div>
             </div>
 
             <div class="news-item">
@@ -169,8 +183,16 @@
                     <li><strong>खनिज युक्त भूमि का विनियमन:</strong> केंद्र सरकार को 'खनिज युक्त भूमि' (Mineral bearing lands) को विनियमित करने का अधिकार।</li>
                     <li><strong>राज्यों के करों पर प्रतिबंध:</strong> राज्य अब केंद्र सरकार द्वारा निर्धारित शर्तों के बिना खनिज अधिकारों या भूमि पर कोई कर या उपकर नहीं लगा सकेंगे।</li>
                     <li><strong>पूर्वव्यापी प्रभाव (Retrospective effect):</strong> संशोधन लागू होने से पहले के बकाया राज्य कर अमान्य माने जाएंगे, लेकिन जो जमा हो चुके हैं उनकी वापसी नहीं होगी।</li>
-                    <li><strong>UPSC मुद्दे:</strong> सुप्रीम कोर्ट के फैसले से टकराव, अनुच्छेद 14 (समानता के अधिकार) का उल्लंघन, और अत्यधिक प्रत्यायोजन (Excessive Delegation)।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: भारत में 'खनिज युक्त भूमि' पर कर लगाने के राज्यों के अधिकार और केंद्र-राज्य वित्तीय संबंधों पर 'खान और खनिज (संशोधन) विधेयक, 2026' के प्रभावों का आलोचनात्मक मूल्यांकन करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: सुप्रीम कोर्ट के 2024 के हालिया फैसले के अनुसार: <br>1. रॉयल्टी एक कर (Tax) है। <br>2. राज्यों को 'खनिज युक्त भूमि' पर कर लगाने का अधिकार है।</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: केवल 2।</strong> सुप्रीम कोर्ट ने स्पष्ट किया था कि रॉयल्टी कोई 'कर' नहीं है, बल्कि खनिज अधिकारों के लिए एक संविदात्मक भुगतान है।</div></details>
+                    
+                    <div class="pre-q">Prelims Q2: संविधान की किस सूची में 'भूमि' (Land) को एक विषय के रूप में शामिल किया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: राज्य सूची</strong> (प्रविष्टि 18)।</div></details>
+                </div>
             </div>
 
             <div class="news-item">
@@ -179,10 +201,18 @@
                     <li><strong>मंत्रालय:</strong> कानून और न्याय मंत्रालय।</li>
                     <li><strong>वर्तमान स्थिति:</strong> लोकसभा और राज्यसभा दोनों से पारित (10-11 अगस्त 2026)।</li>
                     <li><strong>उद्देश्य:</strong> 'अधिकरण सुधार अधिनियम, 2021' को निरस्त करना, जिसके कुछ प्रावधानों को सुप्रीम कोर्ट ने रद्द कर दिया था।</li>
-                    <li><strong>राष्ट्रीय अधिकरण आयोग:</strong> इस बिल से NTC (National Tribunals Commission) की स्थापना होगी।</li>
-                    <li><strong>कार्यकाल:</strong> अध्यक्ष और सदस्यों का कार्यकाल 5 वर्ष या 70 वर्ष (अध्यक्ष) / 67 वर्ष (सदस्य) की आयु तक होगा।</li>
-                    <li><strong>नियुक्ति:</strong> चयन 'सर्च-कम-सिलेक्शन कमेटी' द्वारा होगा। अध्यक्ष/न्यायिक सदस्यों की नियुक्ति CJI के परामर्श से होगी।</li>
+                    <li><strong>राष्ट्रीय अधिकरण आयोग (NTC):</strong> इस बिल से NTC की स्थापना होगी जो रिक्तियों को भरने और प्रदर्शन की समीक्षा करेगा।</li>
+                    <li><strong>कार्यकाल:</strong> अध्यक्ष का कार्यकाल 5 वर्ष या 70 वर्ष की आयु तक और सदस्यों का 5 वर्ष या 67 वर्ष की आयु तक होगा।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'अधिकरण सुधार विधेयक, 2026' शक्तियों के पृथक्करण (Separation of Powers) और 'न्यायपालिका की स्वतंत्रता' के सिद्धांतों को कहाँ तक संरक्षित करता है? चर्चा करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'राष्ट्रीय अधिकरण आयोग' (NTC) की संरचना के बारे में सही कथन है: <br>1. इसका अध्यक्ष CJI ही होता है। <br>2. तकनीकी सदस्यों के पास कम से कम 25 वर्ष का अनुभव होना चाहिए।</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: केवल 2।</strong> अध्यक्ष सुप्रीम कोर्ट का वर्तमान/सेवानिवृत्त न्यायाधीश या हाईकोर्ट का मुख्य न्यायाधीश हो सकता है, ज़रूरी नहीं कि CJI ही हो।</div></details>
+
+                    <div class="pre-q">Prelims Q2: भारतीय संविधान में अधिकरणों (Tribunals) का प्रावधान किस संशोधन द्वारा जोड़ा गया था?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: 42वें संविधान संशोधन, 1976</strong> (इसके तहत भाग XIV-A जोड़ा गया)।</div></details>
+                </div>
             </div>
         </div>
 
@@ -193,21 +223,38 @@
             <div class="news-item">
                 <div class="news-title">अंतरिक्ष विभाग: स्पेस विजन 2047 (Space Vision 2047)</div>
                 <ul class="content-list">
-                    <li>इसरो और अंतरिक्ष विभाग द्वारा 'स्पेस विजन 2047' के तहत राष्ट्रीय विकास लक्ष्यों को पूरा करने के लिए स्वदेशी अंतरिक्ष तकनीकों का विस्तार किया जा रहा है।</li>
+                    <li>इसरो और अंतरिक्ष विभाग द्वारा 'स्पेस विजन 2047' के तहत स्वदेशी अंतरिक्ष तकनीकों का विस्तार किया जा रहा है।</li>
                     <li><strong>कृषि:</strong> PMFBY के तहत फसल उत्पादन का सटीक अनुमान लगाने के लिए 'वेदास' (VEDAS) पोर्टल पर 'जियोक्रेस्ट' टूल का इस्तेमाल।</li>
-                    <li><strong>आपदा:</strong> GLOF (ग्लेशियल लेक आउटबर्स्ट फ्लड्स), बाढ़ और सूखे का डेटा 'भुवन' और 'NDEM' पोर्टल पर अपलोड किया जा रहा है।</li>
+                    <li><strong>आपदा:</strong> GLOF, बाढ़ और सूखे का डेटा 'भुवन' और 'NDEM' पोर्टल पर अपलोड किया जा रहा है।</li>
                     <li><strong>डेटा नीति:</strong> भारतीय अंतरिक्ष नीति-2023 के तहत 5 मीटर से अधिक रिज़ॉल्यूशन (GSD) वाले पृथ्वी अवलोकन डेटा को पूर्णतः 'मुफ्त' कर दिया गया है।</li>
-                    <li><strong>NavIC:</strong> स्वदेशी नेविगेशन प्रणाली को 5G/6G तकनीकों के साथ जोड़ा जा रहा है।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'स्पेस विजन 2047' के प्रमुख स्तंभ क्या हैं? भारत के सामाजिक-आर्थिक विकास (कृषि और आपदा प्रबंधन) में अंतरिक्ष प्रौद्योगिकी की भूमिका का मूल्यांकन करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'वेदास' (VEDAS) पोर्टल, जिसका उपयोग कृषि निगरानी में होता है, किस संस्था की पहल है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: इसरो (ISRO)</strong> - अंतरिक्ष विभाग।</div></details>
+                    
+                    <div class="pre-q">Prelims Q2: भारतीय अंतरिक्ष नीति-2023 के तहत कितने रिज़ॉल्यूशन तक के पृथ्वी अवलोकन डेटा को मुफ्त कर दिया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: 5 मीटर से अधिक ग्राउंड सैंपलिंग डिस्टेंस (GSD) वाले डेटा को।</strong></div></details>
+                </div>
             </div>
 
             <div class="news-item">
                 <div class="news-title">मिशन कर्मयोगी और iGOT पोर्टल का विस्तार</div>
                 <ul class="content-list">
-                    <li>सितंबर 2020 में स्वीकृत राष्ट्रीय सिविल सेवा क्षमता विकास कार्यक्रम (NPCSCB) का लक्ष्य सिविल सेवा को 'नियम-आधारित' से 'भूमिका-आधारित' (Role-based) कार्यप्रणाली में बदलना है।</li>
+                    <li>सितंबर 2020 में स्वीकृत राष्ट्रीय सिविल सेवा क्षमता विकास कार्यक्रम का लक्ष्य सिविल सेवा को 'नियम-आधारित' से 'भूमिका-आधारित' (Role-based) कार्यप्रणाली में बदलना है।</li>
                     <li>'iGOT कर्मयोगी' पोर्टल पर 1.7 करोड़ उपयोगकर्ता और 23 भाषाओं में 5,600+ पाठ्यक्रम उपलब्ध हैं।</li>
                     <li>निरंतर सीखने की भावना के लिए 'कर्मयोगी सप्ताह' (अक्टूबर 2024) और 'साधना सप्ताह' (अप्रैल 2026) जैसी पहलें।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'मिशन कर्मयोगी' भारतीय नौकरशाही को 'नियम-आधारित' से 'भूमिका-आधारित' बनाने में किस प्रकार सहायक है? इसके समक्ष प्रमुख चुनौतियां क्या हैं?</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'iGOT कर्मयोगी' क्या है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: सिविल सेवकों के क्षमता विकास के लिए एक व्यापक डिजिटल लर्निंग (Online Training) पोर्टल।</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: क्षमता विकास आयोग (Capacity Building Commission - CBC) का गठन किस मिशन के तहत किया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: मिशन कर्मयोगी।</strong></div></details>
+                </div>
             </div>
 
             <div class="news-item">
@@ -217,15 +264,33 @@
                     <li>यह पुराने टूल 'ऑन्कोमार्क' पर आधारित है और कैंसर कोशिकाओं की तीन अवस्थाओं (प्लुरिपोटेंट, मल्टीपोटेंट, यूनिपोटेंट) की सटीक पहचान करता है।</li>
                     <li>इससे 'सटीक व्यक्ति-आधारित चिकित्सा' (Precision Medicine) में क्रांति आएगी।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: स्वास्थ्य सेवा क्षेत्र में कृत्रिम बुद्धिमत्ता (AI) के अनुप्रयोगों पर चर्चा करें। 'सटीक व्यक्ति-आधारित चिकित्सा' (Precision Medicine) में ACSCeND जैसे टूल कैसे क्रांतिकारी साबित हो सकते हैं?</div>
+                    
+                    <div class="pre-q">Prelims Q1: हाल ही में विकसित 'ACSCeND' ढांचा किससे संबंधित है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: कैंसर स्टेम-जैसी कोशिकाओं (CSC) की पहचान और ट्यूमर विश्लेषण से।</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: ट्यूमर में 'प्लुरिपोटेंट-जैसी' कोशिकाओं की अधिकता का मरीजों पर क्या प्रभाव देखा गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: जीवित रहने की संभावना कम होती है और बीमारी के दोबारा होने (Recurrence) का जोखिम बढ़ जाता है।</strong></div></details>
+                </div>
             </div>
 
             <div class="news-item">
                 <div class="news-title">राष्ट्रीय क्वांटम मिशन (NQM) की प्रगति</div>
                 <ul class="content-list">
-                    <li>भारत को क्वांटम तकनीक में ग्लोबल लीडर बनाने के लिए 4 थीमैटिक हब (T-Hubs) बनाए गए हैं:</li>
+                    <li>भारत को क्वांटम तकनीक में ग्लोबल लीडर बनाने के लिए 4 थीमैटिक हब (T-Hubs) बनाए गए हैं।</li>
                     <li>क्वांटम कंप्यूटिंग (IISc), क्वांटम कम्युनिकेशन (IIT मद्रास), क्वांटम सेंसिंग (IIT बॉम्बे), और क्वांटम मटीरियल (IIT दिल्ली)।</li>
                     <li>MeitY ने छात्रों व स्टार्टअप्स के लिए <strong>'Qniverse'</strong> नामक यूनिफाइड क्वांटम कंप्यूटिंग प्लेटफॉर्म बनाया है।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'राष्ट्रीय क्वांटम मिशन' (NQM) भारत को तकनीकी महाशक्ति बनाने में कैसे मदद कर सकता है? इसके रणनीतिक और रक्षा अनुप्रयोगों की विवेचना करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: MeitY द्वारा क्वांटम कंप्यूटिंग के लिए कौन सा यूनिफाइड प्लेटफॉर्म लॉन्च किया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: Qniverse (क्यू-यूनिवर्स)।</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: 'क्वांटम कम्युनिकेशन' के लिए NQM के तहत किस संस्थान में थीमैटिक हब (T-Hub) स्थापित किया गया है?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: IIT मद्रास (C-DOT के सहयोग से)।</strong></div></details>
+                </div>
             </div>
 
             <div class="news-item">
@@ -234,119 +299,19 @@
                     <li>भारत दुनिया के लगभग 60% जंगली एशियाई हाथियों का घर है (SAIEE 2021-25 के अनुसार अनुमानित 22,446 हाथी)।</li>
                     <li>गणना में पहली बार <strong>DNA-आधारित नमूनाकरण</strong> (लीद से आनुवंशिक प्रोफाइलिंग) का इस्तेमाल किया गया।</li>
                     <li>भारत में 33 हाथी रिजर्व और 150 गलियारे हैं (सर्वाधिक 26 पश्चिम बंगाल में)।</li>
-                    <li>ट्रेन हादसों को रोकने के लिए AI-सक्षम ध्वनिक सेंसर लगाए गए हैं, और पालतू हाथियों की तस्करी रोकने को 'गज सूचना' ऐप पर डीएनए डेटाबेस बना है।</li>
                 </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: मानव-वन्यजीव संघर्ष (विशेषकर हाथियों के संदर्भ में) के प्रमुख कारण क्या हैं? इसके शमन के लिए भारत सरकार द्वारा उठाए गए तकनीकी और नीतिगत कदमों का विश्लेषण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: SAIEE 2021-25 के अनुसार, हाथियों की गणना में पहली बार किस वैज्ञानिक विधि का उपयोग किया गया?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: DNA-आधारित नमूनाकरण (DNA-based sampling from dung)।</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: भारत में सर्वाधिक हाथी गलियारे (Elephant Corridors) किस राज्य में हैं?</div>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: पश्चिम बंगाल (कुल 26 गलियारे)।</strong></div></details>
+                </div>
             </div>
 
             <div class="news-item">
                 <div class="news-title">पूर्व राष्ट्रपति श्री राम नाथ कोविंद की आत्मकथा का विमोचन</div>
                 <ul class="content-list">
-                    <li>पीएम मोदी ने पूर्व राष्ट्रपति की आत्मकथा <strong>'ट्रायम्फ ऑफ द इंडियन रिपब्लिकः माय लाइफ, माय स्ट्रगल्स'</strong> का विमोचन किया।</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ================= SECTION 3: The Hindu News ================= -->
-        <div class="section-box sec-3">
-            <h2 class="section-title">3. The Hindu से अति महत्वपूर्ण खबरें</h2>
-
-            <!-- News 1 -->
-            <div class="news-item">
-                <div class="news-title">FCRA संशोधन विधेयक JPC को भेजा जाएगा</div>
-                <ul class="content-list">
-                    <li>विपक्ष और राज्यों (विशेषकर तमिलनाडु और मिजोरम) के भारी विरोध के बाद केंद्र सरकार 'विदेशी अंशदान (विनियमन) संशोधन विधेयक, 2026' को JPC (संयुक्त संसदीय समिति) को सौंपेगी।</li>
-                    <li>यह विधेयक FCRA पंजीकरण रद्द होने पर NGO या चैरिटेबल ट्रस्ट की संपत्तियों के प्रबंधन का अधिकार सरकार के 'निर्दिष्ट प्राधिकरण' को देता है।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: भारत में गैर-सरकारी संगठनों (NGOs) के नियमन में FCRA की भूमिका का आलोचनात्मक मूल्यांकन करें। क्या हालिया संशोधन नागरिक समाज की स्वायत्तता को सीमित करते हैं?</div>
-                    <div class="pre-q">Prelims Q1: FCRA के संदर्भ में कौन-सा कथन सही है? 1. इसका प्रशासन गृह मंत्रालय (MHA) करता है। 2. हालिया संशोधन रद्द होने पर NGO की संपत्ति पर सरकारी नियंत्रण की अनुमति देते हैं।</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: 1 और 2 दोनों।</strong> भारत में FCRA का विनियमन गृह मंत्रालय द्वारा किया जाता है।</div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- News 2 -->
-            <div class="news-item">
-                <div class="news-title">कावेरी जल विवाद: कर्नाटक को पानी छोड़ने का निर्देश</div>
-                <ul class="content-list">
-                    <li>CWMA ने कर्नाटक को निर्देश दिया है कि वह तमिलनाडु को अगले 15 दिनों तक 12,000 क्यूसेक पानी प्रतिदिन दे।</li>
-                    <li>कर्नाटक ने अपने 4 जलाशयों में औसत से 47% कम पानी होने का हवाला देते हुए इसे 10,000 क्यूसेक करने की मांग की थी।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: भारत में अंतर-राज्यीय जल विवादों के समाधान में नदी बोर्ड और ट्रिब्यूनल कितने प्रभावी रहे हैं? कावेरी जल विवाद के संदर्भ में विश्लेषण करें।</div>
-                    <div class="pre-q">Prelims Q1: कावेरी बेसिन में कौन-से राज्य/UT शामिल हैं? 1. कर्नाटक 2. तमिलनाडु 3. केरल 4. पुडुचेरी</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: चारों (1, 2, 3 और 4)।</strong></div>
-                    </details>
-                    <div class="pre-q">Prelims Q2: संविधान का कौन सा अनुच्छेद अंतर-राज्यीय जल विवादों के न्यायनिर्णयन (Adjudication) से संबंधित है?</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: अनुच्छेद 262.</strong></div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- News 3 -->
-            <div class="news-item">
-                <div class="news-title">ऊर्जा सुरक्षा: अमेरिका से LPG आयात पर भारत की बढ़ती निर्भरता</div>
-                <ul class="content-list">
-                    <li>भारत अब अपनी LPG आवश्यकता का 67% अमेरिका से आयात कर रहा है।</li>
-                    <li>होर्मुज जलडमरूमध्य में भू-राजनीतिक अस्थिरता के कारण भारत ने खाड़ी देशों से आयात कम किया है। यद्यपि इससे आपूर्ति जोखिम कम हुआ है, पर भारत अब डॉलर और मालभाड़े के जोखिमों के प्रति अधिक संवेदनशील है।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: भारत की ऊर्जा सुरक्षा रणनीति में 'आपूर्ति के विविधीकरण' की क्या भूमिका है? अमेरिका से बढ़ते LPG आयात के लाभ और भू-राजनीतिक जोखिमों का विश्लेषण करें।</div>
-                    <div class="pre-q">Prelims Q1: LPG के संदर्भ में सही कथन चुनें: 1. यह प्रोपेन और ब्यूटेन का मिश्रण है। 2. यह गंधहीन होती है, रिसाव का पता लगाने के लिए इथाइल मर्कैप्टन मिलाया जाता है।</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: 1 और 2 दोनों।</strong></div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- News 4 -->
-            <div class="news-item">
-                <div class="news-title">गंगा के बाढ़ क्षेत्र (Floodplains) में निर्माण नियमों में ढील</div>
-                <ul class="content-list">
-                    <li>राष्ट्रीय स्वच्छ गंगा मिशन (NMCG) ने गंगा के बाढ़ क्षेत्र में निर्माण पर लगी पूर्ण रोक हटा दी है।</li>
-                    <li>अब बाढ़ क्षेत्र को 3 हिस्सों में बांटा गया है: 'एक्टिव बाढ़ क्षेत्र' (हर 5 साल में बाढ़), 'रेगुलेटरी जोन' (5-25 साल), और 'वार्निंग जोन' (25-100 साल)। सख्त प्रतिबंध अब सिर्फ एक्टिव जोन तक सीमित है।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: बाढ़ क्षेत्रों का अतिक्रमण शहरी बाढ़ के प्रमुख कारणों में से एक है। गंगा बेसिन के निर्माण नियमों में हालिया ढील के पारिस्थितिक प्रभावों पर चर्चा करें।</div>
-                    <div class="pre-q">Prelims Q1: राष्ट्रीय स्वच्छ गंगा मिशन (NMCG) किस मंत्रालय की पहल है?</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: जल शक्ति मंत्रालय।</strong></div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- News 5 -->
-            <div class="news-item">
-                <div class="news-title">लद्दाख के ग्लेशियर (Rivers of Ice) अपनी गति खो रहे हैं</div>
-                <ul class="content-list">
-                    <li>अध्ययन से पता चला है कि लद्दाख के जांस्कर (Zanskar) क्षेत्र में ग्लेशियर 2.4 मीटर/वर्ष प्रति दशक की दर से धीमे हो रहे हैं।</li>
-                    <li>मुख्य कारण: ग्लोबल वार्मिंग से ग्लेशियर पतले हो रहे हैं, जिससे बर्फ का ड्राइविंग दबाव कम हो गया है। इससे सिंधु बेसिन की जल सुरक्षा को खतरा है।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: हिमालयी ग्लेशियरों के पतले होने की भौतिक प्रक्रिया क्या है? इसका सिंधु बेसिन की जल और खाद्य सुरक्षा पर क्या प्रभाव पड़ेगा?</div>
-                    <div class="pre-q">Prelims Q1: 'द क्रायोस्फीयर' (Cryosphere) का क्या अर्थ है?</div>
-                    <details>
-                        <summary>Show Answer</summary>
-                        <div class="ans-text"><strong>उत्तर: पृथ्वी की सतह का वह हिस्सा जहाँ पानी ठोस (बर्फ) रूप में होता है।</strong></div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- News 6 -->
-            <div class="news-item">
-                <div class="news-title">'वंदे मातरम' विधेयक को राष्ट्रपति की मंजूरी</div>
-                <ul class="content-list">
-                    <li>'राष्ट्रीय सम्मान के अपमान की रोकथाम (संशोधन) विधेयक, 2026' के तहत 'वंदे मातरम' के गायन में बाधा डालना अब आपराधिक कृत्य है। इसे राष्ट्रगान के समान कानूनी संरक्षण मिला है।</li>
-                </ul>
-                <div class="practice-box">
-                    <div class="mains-q">Mains: राष्ट्रीय प्रतीकों के प्रति नागरिकों के मौलिक कर्तव्यों का महत्व स्पष्ट करें।</div>
-                    <div class="pre-q">Prelims Q1: संविधान का कौन सा अनुच्छेद 'संविधान, राष्ट्रध्वज और राष्ट्रगान का आदर करने' का मौलिक कर्तव्य निर्धारित करता है?</div>
-     
+                    <li>पीएम मोदी ने पूर्व राष्ट्रपति की आत्मकथा <st
