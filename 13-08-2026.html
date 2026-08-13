@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 25px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        header h1 { margin: 0; font-size: 2rem; font-family: 'Kalam', cursive; }
+        header p { margin: 5px 0 0; color: #1abc9c; }
+
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .quick-nav a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-bills { border-left-color: #8e44ad !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #8e44ad; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #e67e22; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 8px; }
+
+        /* Infographics & Flowcharts */
+        .infographic-box {
+            background: #eef2f5;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .flow-step {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .flow-arrow {
+            color: #7f8c8d;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        .options { margin-left: 15px; margin-bottom: 10px; list-style-type: none; padding-left: 0; }
+        .options li { margin-bottom: 4px; }
+
+        /* Interactive Details */
+        details {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: bold;
+            color: #e74c3c;
+            outline: none;
+        }
+        .ans-text {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            color: #333;
+        }
+
+        /* Temporary Placeholder Box */
+        .placeholder-box {
+            background: #fdfae6;
+            border: 2px dashed #f1c40f;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: #7f8c8d;
+        }
+
+        footer { text-align: center; padding: 20px; background: #1a252f; color: white; margin-top: 40px; }
+        .social-links a { color: white; margin: 0 10px; font-size: 1.5rem; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn {
+            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99;
+            font-size: 1.5rem; border: none; background-color: #e74c3c; color: white;
+            cursor: pointer; padding: 15px; border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s;
+        }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="current-affairs.html" class="back-btn"><i class="fas fa-arrow-left"></i> Calendar</a>
+        <h1>13 अगस्त 2026</h1>
+        <p>डेली करेंट अफेयर्स एवं स्थैतिक (Static) विश्लेषण - GS चौपाल</p>
+    </header>
+
+    <div class="container">
+
+        <!-- ================= Quick Navigation Menu ================= -->
+        <div class="quick-nav">
+            <a href="#sec-bills" class="nav-bills"><i class="fas fa-landmark"></i> Recent Bill / Act</a>
+            <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+            <a href="#sec-pib" class="nav-pib"><i class="fas fa-file-alt"></i> PIB News (Evening Update)</a>
+            <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Other Coaching Data</a>
+            <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> दैनिक GS चौपाल प्रश्नोत्तरी</a>
+        </div>
+
+        <!-- ================= SECTION 1: Bills ================= -->
+        <div class="section-box sec-1" id="sec-bills">
+            <h2 class="section-title">1. विगत दिनों में मानसून सत्र में पारित / लंबित बिल</h2>
+            
+            <div class="news-item">
+                <div class="news-title">केरल (नाम परिवर्तन) विधेयक, 2026</div>
+                <ul class="content-list">
+                    <li><strong>मंत्रालय:</strong> गृह मंत्रालय (Ministry of Home Affairs)।</li>
+                    <li><strong>उद्देश्य:</strong> यह विधेयक भारतीय संविधान की <strong>प्रथम अनुसूची (First Schedule)</strong> में संशोधन करके 'केरल' (Kerala) राज्य का नाम बदलकर <strong>'केरलम' (Keralam)</strong> करता है।</li>
+                    <li><strong>संवैधानिक प्रक्रिया (GS 2):</strong> संविधान के <strong>अनुच्छेद 3</strong> के तहत संसद को किसी भी राज्य का नाम, सीमा या क्षेत्र बदलने का अधिकार है। इसके लिए राज्य विधानसभा की सहमति संसद पर <strong>बाध्यकारी नहीं</strong> होती।</li>
+                    <li><strong>अनुच्छेद 4:</strong> इस बदलाव को अनुच्छेद 368 के तहत 'संविधान संशोधन' नहीं माना जाता है (अर्थात इसे साधारण बहुमत से पारित किया जाता है)।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: भारतीय संविधान के अनुच्छेद 3 के तहत राज्यों के नाम और सीमाओं में परिवर्तन की प्रक्रिया का वर्णन करें। क्या राज्यों के नाम परिवर्तन के संदर्भ में राज्य विधानसभाओं की सहमति संसद पर बाध्यकारी है? 'केरलम' के हालिया संदर्भ में विश्लेषण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: भारतीय संविधान की कौन सी अनुसूची राज्यों और केंद्र शासित प्रदेशों के नामों और उनके क्षेत्रीय विस्तार से संबंधित है?</div>
+                    <ul class="options">
+                        <li>(a) पहली अनुसूची</li>
+                        <li>(b) दूसरी अनुसूची</li>
+                        <li>(c) तीसरी अनुसूची</li>
+                        <li>(d) चौथी अनुसूची</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (a) पहली अनुसूची</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: संविधान के किस अनुच्छेद के तहत राज्यों के नाम परिवर्तन को अनुच्छेद 368 के तहत संविधान संशोधन नहीं माना जाता है?</div>
+                    <ul class="options">
+                        <li>(a) अनुच्छेद 2</li>
+                        <li>(b) अनुच्छेद 3</li>
+                        <li>(c) अनुच्छेद 4</li>
+                        <li>(d) अनुच्छेद 5</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 4</strong></div></details>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">कराधान और अन्य कानून (संशोधन) विधेयक, 2026</div>
+                <ul class="content-list">
+                    <li><strong>मंत्रालय:</strong> वित्त मंत्रालय (Ministry of Finance)।</li>
+                    <li><strong>FIIs को G-Secs पर छूट:</strong> विदेशी संस्थागत निवेशकों (FIIs) को सरकारी प्रतिभूतियों में निवेश से अर्जित ब्याज और उनके ट्रांसफर पर होने वाले पूंजीगत लाभ (Capital Gains) पर आयकर से छूट दी गई है।</li>
+                    <li><strong>इलेक्ट्रॉनिक्स विनिर्माण:</strong> कॉन्ट्रैक्ट मैन्युफैक्चरर्स को विदेशी कंपनियों द्वारा 'कस्टम बॉन्डेड एरिया' में कलपुर्जे (Components) स्टोर करने पर होने वाली आय कर मुक्त होगी (2041 तक)।</li>
+                    <li><strong>विदेशी निवेश फंड:</strong> भारत से प्रबंधित होने वाले लेकिन विदेशों में पंजीकृत निवेश फंडों पर लागू होने वाली कड़ी शर्तों (जैसे- न्यूनतम 25 सदस्य) को हटा दिया गया है।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'कराधान और अन्य कानून (संशोधन) विधेयक, 2026' भारत में विदेशी निवेश (FIIs) को आकर्षित करने और 'ईज ऑफ डूइंग बिजनेस' को बढ़ावा देने की दिशा में एक महत्वपूर्ण कदम है। मूल्यांकन करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'कराधान और अन्य कानून (संशोधन) विधेयक, 2026' के संदर्भ में व्यापारिक ट्रस्टों (REITs / InvITs) के 'स्पेशल पर्पज व्हीकल' (SPV) पर सरचार्ज की दर को 10% से बढ़ाकर कितना कर दिया गया है?</div>
+                    <ul class="options">
+                        <li>(a) 15%</li>
+                        <li>(b) 20%</li>
+                        <li>(c) 25%</li>
+                        <li>(d) 30%</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 25%</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: अर्थव्यवस्था के संदर्भ में 'InvITs' (Infrastructure Investment Trusts) का मुख्य उद्देश्य क्या होता है?</div>
+                    <ul class="options">
+                        <li>(a) केवल विदेशी पोर्टफोलियो निवेशकों को कर छूट प्रदान करना।</li>
+                        <li>(b) निवेशकों से धन जुटाकर बुनियादी ढांचा (Infrastructure) संपत्तियों को खरीदना और उनका प्रबंधन करना।</li>
+                        <li>(c) भारत के विदेशी मुद्रा भंडार का प्रबंधन करना।</li>
+                        <li>(d) कृषि क्षेत्र में प्रत्यक्ष विदेशी निवेश को नियंत्रित करना।</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) निवेशकों से धन जुटाकर बुनियादी ढांचा संपत्तियों को खरीदना और प्रबंधन करना।</strong></div></details>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTION 3: The Hindu News ================= -->
+        <div class="section-box sec-3" id="sec-hindu">
+            <h2 class="section-title">3. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+            <!-- News 1 -->
+            <div class="news-item">
+                <div class="news-title">मुल्लापेरियार बांध विवाद: ऐतिहासिक पट्टा और वर्तमान संकट (GS-2/GS-1)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> तमिलनाडु सरकार ने सुप्रीम कोर्ट में शिकायत की है कि केरल 131 साल पुराने मुल्लापेरियार बांध के 'सुदृढ़ीकरण' (Strengthening) कार्यों में जानबूझकर बाधा डाल रहा है।</li>
+                    <li><strong>भौगोलिक स्थिति:</strong> यह बांध भौगोलिक रूप से केरल के इडुक्की जिले में 'पेरियार नदी' पर स्थित है। लेकिन, इसका संचालन तमिलनाडु सरकार करती है। इस बांध के पानी को पश्चिमी घाट के आर-पार सुरंगों के ज़रिए पूर्व की ओर बहने वाली 'वैगई नदी' में मोड़ा जाता है।</li>
+                    <li><strong>1886 का पट्टा:</strong> 1886 में त्रावणकोर के महाराजा और ब्रिटिश मद्रास प्रेसीडेंसी के बीच एक संधि हुई थी, जिसके तहत यह क्षेत्र 999 वर्षों के पट्टे (Lease) पर मद्रास (अब तमिलनाडु) को दे दिया गया था।</li>
+                </ul>
+                
+                <!-- Graphics for Mullaperiyar -->
+                <div class="infographic-box">
+                    <strong>🏞️ मुल्लापेरियार जल प्रवाह (Water Diversion):</strong><br>
+                    <div style="margin-top:10px;">
+                        <span class="flow-step" style="background:#27ae60;">पेरियार नदी (केरल)</span> 
+                        <span class="flow-arrow">&#10132;</span> 
+                        <span class="flow-step" style="background:#e67e22;">सुरंग (पश्चिमी घाट पार)</span> 
+                        <span class="flow-arrow">&#10132;</span> 
+                        <span class="flow-step" style="background:#3498db;">वैगई बेसिन (तमिलनाडु)</span>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <div class="mains-q">Mains: "मुल्लापेरियार बांध विवाद केवल दो राज्यों के बीच पानी का झगड़ा नहीं है, बल्कि यह ऐतिहासिक संधियों और वर्तमान पारिस्थितिक व सुरक्षा चिंताओं के बीच का द्वंद्व है।" इस कथन के आलोक में भारत में अंतर्राज्यीय जल विवादों के संस्थागत समाधान का परीक्षण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: मुल्लापेरियार बांध के भौगोलिक संदर्भ में सही कथन चुनें: <br>1. यह पूर्णतः तमिलनाडु राज्य की सीमा के भीतर स्थित है। <br>2. इसके पानी को वैगई नदी बेसिन की ओर मोड़ा जाता है।</div>
+                    <ul class="options">
+                        <li>(a) केवल 1</li>
+                        <li>(b) केवल 2</li>
+                        <li>(c) 1 और 2 दोनों</li>
+                        <li>(d) न तो 1 न ही 2</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2।</strong> बांध भौगोलिक रूप से केरल में स्थित है।</div></details>
+                    
+                    <div class="pre-q">Prelims Q2: संविधान का कौन सा अनुच्छेद संसद को अंतर्राज्यीय नदी जल विवादों के न्यायनिर्णयन (Adjudication) की शक्ति देता है?</div>
+                    <ul class="options">
+                        <li>(a) अनुच्छेद 260</li>
+                        <li>(b) अनुच्छेद 261</li>
+                        <li>(c) अनुच्छेद 262</li>
+                        <li>(d) अनुच्छेद 263</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 262</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 2 -->
+            <div class="news-item">
+                <div class="news-title">जजों पर महाभियोग: जस्टिस वर्मा के खिलाफ आरोप 'साबित' (GS-2)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> लोकसभा अध्यक्ष द्वारा गठित 3-सदस्यीय जांच समिति ने दिल्ली उच्च न्यायालय के पूर्व न्यायाधीश जस्टिस यशवंत वर्मा के खिलाफ आरोपों को 'साबित' (Proved) पाया है।</li>
+                    <li><strong>संवैधानिक प्रावधान:</strong> अनुच्छेद 124(4) और अनुच्छेद 217 के तहत जजों को केवल 'साबित कदाचार' (Proved Misbehaviour) या 'अक्षमता' (Incapacity) के आधार पर हटाया जा सकता है।</li>
+                </ul>
+
+                <!-- Flowchart for Impeachment -->
+                <div class="infographic-box">
+                    <strong>⚖️ महाभियोग प्रक्रिया (Judges Inquiry Act, 1968):</strong><br>
+                    <div style="margin-top:10px; font-size:0.9rem;">
+                        <span class="flow-step" style="background:#e74c3c;">प्रस्ताव (100 LS / 50 RS सदस्य)</span> <br><span class="flow-arrow">&#8595;</span><br>
+                        <span class="flow-step" style="background:#f39c12;">पीठासीन अधिकारी द्वारा 3-सदस्यीय समिति का गठन</span> <br><span class="flow-arrow">&#8595;</span><br>
+                        <span class="flow-step" style="background:#27ae60;">दोनों सदनों में 'विशेष बहुमत' से पारित</span> <br><span class="flow-arrow">&#8595;</span><br>
+                        <span class="flow-step" style="background:#8e44ad;">राष्ट्रपति का आदेश</span>
+                    </div>
+                </div>
+
+                <div class="practice-box">
+                    <div class="mains-q">Mains: भारत में उच्च न्यायालय और सर्वोच्च न्यायालय के न्यायाधीशों को हटाने की प्रक्रिया का वर्णन करें। क्या यह प्रक्रिया न्यायिक जवाबदेही और न्यायिक स्वतंत्रता के बीच सही संतुलन बनाती है?</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'न्यायाधीश (जांच) अधिनियम, 1968' के तहत जज के खिलाफ जांच करने वाली 3-सदस्यीय समिति में निम्नलिखित में से कौन शामिल नहीं होता है?</div>
+                    <ul class="options">
+                        <li>(a) सर्वोच्च न्यायालय का एक आसीन न्यायाधीश</li>
+                        <li>(b) किसी उच्च न्यायालय का मुख्य न्यायाधीश</li>
+                        <li>(c) भारत का महान्यायवादी (Attorney General)</li>
+                        <li>(d) एक प्रख्यात न्यायविद (Distinguished Jurist)</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) भारत का महान्यायवादी</strong></div></details>
+                    
+                    <div class="pre-q">Prelims Q2: भारत के संविधान के तहत सुप्रीम कोर्ट के जज को हटाने के लिए किन आधारों (Grounds) का उल्लेख किया गया है?</div>
+                    <ul class="options">
+    <li>(a) संविधान का उल्लंघन</li>
+                        <li>(b) साबित कदाचार और अक्षमता</li>
+                        <li>(c) भ्रष्टाचार</li>
+                        <li>(d) आपराधिक आरोप</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) साबित कदाचार (Proved Misbehaviour) और अक्षमता (Incapacity)</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 3 -->
+            <div class="news-item">
+                <div class="news-title">UPI को आत्मनिर्भर बनाने के लिए 'MDR शुल्क' पर पुनर्विचार (GS-3)</div>
+                <ul class="content-list">
+                    <li><strong>MDR क्या है:</strong> यह वह शुल्क (Fee) है जो दुकानदार डिजिटल माध्यम (क्रेडिट/डेबिट कार्ड या UPI) से भुगतान स्वीकार करने पर अपने बैंक को चुकाता है।</li>
+                    <li><strong>Zero-MDR पॉलिसी:</strong> 1 जनवरी 2020 से भारत सरकार ने UPI और RuPay डेबिट कार्ड के लिए 'जीरो-MDR' नियम लागू किया था।</li>
+                    <li><strong>समस्या:</strong> शून्य शुल्क के कारण बैंकों और थर्ड-पार्टी ऐप्स को सर्वर और साइबर सुरक्षा बुनियादी ढांचा बनाए रखने में भारी नुकसान हो रहा है। संसदीय समिति ने इस पर पुनर्विचार को कहा है।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'जीरो-MDR नीति' ने भारत में डिजिटल भुगतान क्रांति का मार्ग प्रशस्त किया है। इस नीति को वापस लेकर MDR लगाने के संभावित आर्थिक और व्यावहारिक प्रभावों का आलोचनात्मक विश्लेषण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'मर्चेंट डिस्काउंट रेट' (MDR) शब्द भारतीय अर्थव्यवस्था के संदर्भ में क्या है?</div>
+                    <ul class="options">
+                        <li>(a) थोक विक्रेताओं द्वारा खुदरा विक्रेताओं को दी जाने वाली छूट</li>
+                        <li>(b) वह शुल्क जो व्यापारी द्वारा डिजिटल भुगतान स्वीकार करने के लिए बैंकों को चुकाया जाता है</li>
+                        <li>(c) RBI द्वारा वाणिज्यिक बैंकों को दिया जाने वाला रियायती ऋण</li>
+                        <li>(d) निर्यात संवर्धन के लिए सरकार द्वारा दी जाने वाली कर छूट</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: भारत में खुदरा भुगतान प्रणालियों (Retail Payment Systems) का संचालन करने वाली संस्था 'NPCI' का गठन किन दो संस्थाओं की पहल है?</div>
+                    <ul class="options">
+                        <li>(a) RBI और SEBI</li>
+                        <li>(b) भारतीय रिज़र्व बैंक (RBI) और भारतीय बैंक संघ (IBA)</li>
+                        <li>(c) वित्त मंत्रालय और NITI Aayog</li>
+                        <li>(d) NITI Aayog और IBA</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) RBI और IBA</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 4 -->
+            <div class="news-item">
+                <div class="news-title">ग्रेट निकोबार प्रोजेक्ट: 'शोम्पेन' (Shompen) जनजाति पर संकट (GS-1/GS-3)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> निकोबार की 'जनजातीय परिषद' ने आरोप लगाया है कि ₹72,000 करोड़ के मेगा 'ग्रेट निकोबार आइलैंड (GNI) प्रोजेक्ट' में उनकी चिंताओं को नजरअंदाज किया गया है।</li>
+                    <li><strong>शोम्पेन जनजाति:</strong> यह एक 'विशेष रूप से कमजोर जनजातीय समूह' (PVTG) है। इनकी आबादी 300 से भी कम है। ये शिकारी-संग्राहक (Hunter-gatherer) हैं जो बाहरी दुनिया से संपर्क नहीं रखते।</li>
+                    <li><strong>PVTG (Criteria):</strong> ढेबर आयोग की रिपोर्ट के आधार पर आदिम जनजातियों को PVTG का दर्जा दिया जाता है। भारत में कुल 75 PVTG हैं।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: भारत के सामरिक/आर्थिक विकास तथा स्वदेशी जनजातियों (विशेषकर PVTGs) के संरक्षण के बीच एक गहरा द्वंद्व है। 'ग्रेट निकोबार आइलैंड (GNI) प्रोजेक्ट' के पर्यावरणीय और मानवशास्त्रीय प्रभावों का मूल्यांकन करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'शोम्पेन', 'सेंटीनलीज' और 'जारवा' जनजातियाँ मुख्य रूप से भारत के किस क्षेत्र की मूल निवासी हैं?</div>
+                    <ul class="options">
+                        <li>(a) लक्षद्वीप</li>
+                        <li>(b) अंडमान और निकोबार द्वीप समूह</li>
+                        <li>(c) पूर्वोत्तर भारत (असम/नागालैंड)</li>
+                        <li>(d) नीलगिरि पहाड़ियाँ</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) अंडमान और निकोबार द्वीप समूह</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: 'विशेष रूप से कमजोर जनजातीय समूहों' (PVTGs) की अवधारणा किस आयोग की सिफारिश पर शुरू की गई थी?</div>
+                    <ul class="options">
+                        <li>(a) काका कालेलकर आयोग</li>
+                        <li>(b) ढेबर आयोग</li>
+                        <li>(c) भूरिया आयोग</li>
+                        <li>(d) सचर समिति</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) ढेबर आयोग</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 5 -->
+            <div class="news-item">
+                <div class="news-title">BNSS की धारा 187(2): पुलिस हिरासत का नया दायरा (GS-2)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> सुप्रीम कोर्ट ने स्पष्ट किया है कि नए कानून 'भारतीय नागरिक सुरक्षा संहिता' (BNSS) की धारा 187(2) पुलिस हिरासत के कुल दिनों को नहीं बढ़ाती है, बल्कि इसे मांगने की समय-सीमा (Window) को विस्तृत करती है।</li>
+                    <li><strong>पुराना कानून (CrPC):</strong> पुलिस अधिकतम 15 दिनों तक ही हिरासत मांग सकती थी, और यह 15 दिन गिरफ्तारी के शुरुआती 15 दिनों के भीतर ही होने चाहिए थे।</li>
+                    <li><strong>नया कानून (BNSS):</strong> कुल पुलिस हिरासत अभी भी 15 दिन ही होगी, लेकिन अब पुलिस इसे 40 या 60 दिनों की कुल अवधि (अपराध की गंभीरता के अनुसार) के दौरान टुकड़ों में मांग सकती है।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'भारतीय नागरिक सुरक्षा संहिता' (BNSS) की धारा 187(2) के तहत पुलिस हिरासत के नियमों में किए गए बदलावों को स्पष्ट करें। क्या यह नागरिक स्वतंत्रता के लिए संभावित खतरा है?</div>
+                    
+                    <div class="pre-q">Prelims Q1: BNSS की धारा 187(2) के तहत किसी आरोपी की कुल अधिकतम 'पुलिस हिरासत' (Police Custody) कितने दिनों की हो सकती है?</div>
+                    <ul class="options">
+                        <li>(a) अधिकतम 15 दिन (जिसे टुकड़ों में लिया जा सकता है)</li>
+                        <li>(b) अधिकतम 30 दिन</li>
+                        <li>(c) अधिकतम 60 दिन</li>
+                        <li>(d) अधिकतम 90 दिन</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (a) अधिकतम 15 दिन</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: संविधान के किस अनुच्छेद के तहत "गिरफ्तारी के 24 घंटे के भीतर मजिस्ट्रेट के समक्ष पेश किए जाने का अधिकार" एक मौलिक अधिकार है?</div>
+                    <ul class="options">
+                        <li>(a) अनुच्छेद 20</li>
+                        <li>(b) अनुच्छेद 21</li>
+                        <li>(c) अनुच्छेद 22</li>
+                        <li>(d) अनुच्छेद 23</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 22</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 6 -->
+            <div class="news-item">
+                <div class="news-title">भारत का E20 लक्ष्य: खाद्य बनाम ईंधन की बहस (GS-3)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> सरकार ने बताया कि E20 (इथेनॉल सम्मिश्रण) से ₹2 लाख करोड़ की विदेशी मुद्रा बची है। विपक्ष का आरोप है कि इससे पुराने वाहनों के इंजन खराब हो रहे हैं।</li>
+                    <li><strong>E20 क्या है:</strong> पेट्रोल में 20% इथेनॉल और 80% पेट्रोल का मिश्रण। लक्ष्य 2025-26 तक 20% सम्मिश्रण प्राप्त करना है।</li>
+                    <li><strong>खाद्य सुरक्षा का मुद्दा:</strong> अधिकांश इथेनॉल गन्ने और खाद्यान्न (1G बायोफ्यूल) से आ रहा है। 2G बायोफ्यूल (पराली आदि) का उत्पादन कम है। इससे 'खाद्य बनाम ईंधन' (Food vs Fuel) का संकट पैदा हो सकता है।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: "भारत का E20 लक्ष्य विदेशी मुद्रा भंडार बचाने के लिए महत्वपूर्ण है, लेकिन यह 'खाद्य बनाम ईंधन' की गंभीर बहस को जन्म देता है।" इस कथन का आलोचनात्मक विश्लेषण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'राष्ट्रीय जैव ईंधन नीति, 2018' के तहत 2G (Second Generation) बायोफ्यूल के उत्पादन के लिए किस कच्चे माल का उपयोग किया जाता है?</div>
+                    <ul class="options">
+                        <li>(a) गन्ने का रस (Molasses)</li>
+                        <li>(b) लिग्नोसेल्युलोसिक बायोमास (कृषि अपशिष्ट/पराली)</li>
+                        <li>(c) मक्का और टूटे हुए चावल</li>
+                        <li>(d) प्रयुक्त खाद्य तेल (UCO)</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) लिग्नोसेल्युलोसिक बायोमास</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: इथेनॉल को पेट्रोल में मिलाने का मुख्य पर्यावरणीय लाभ क्या है?</div>
+                    <ul class="options">
+                        <li>(a) यह वाहन की गति (Speed) को बढ़ाता है।</li>
+                        <li>(b) यह ईंधन के पूर्ण दहन में मदद करता है, जिससे कार्बन मोनोऑक्साइड (CO) का उत्सर्जन कम होता है।</li>
+                        <li>(c) यह पेट्रोल की मात्रा को दोगुना कर देता है।</li>
+                        <li>(d) यह इंजन को ठंडा रखता है।</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) पूर्ण दहन में मदद करता है</strong></div></details>
+                </div>
+  </div>
+  <!-- News 7 -->
+            <div class="news-item">
+                <div class="news-title">NFSA में 'पोषण' सुधार की आवश्यकता: प्रच्छन्न भुखमरी (GS-2)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> विशेषज्ञों का तर्क है कि भारत की खाद्य सुरक्षा नीति को अब केवल अनाज बांटने से आगे बढ़कर 'आहारीय विविधता' (Dietary Diversity) पर ध्यान देना चाहिए।</li>
+                    <li><strong>प्रच्छन्न भुखमरी (Hidden Hunger):</strong> PDS में मुख्य रूप से कार्बोहाइड्रेट-प्रधान आहार (गेहूं/चावल) दिया जाता है। पेट तो भर रहा है, लेकिन सूक्ष्म पोषक तत्वों की कमी से कुपोषण और मधुमेह (Diabetes) बढ़ रहा है।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: सार्वजनिक वितरण प्रणाली (PDS) 'प्रच्छन्न भुखमरी' और गैर-संचारी रोगों (NCDs) से निपटने में विफल रही है। NFSA में सुधार के लिए क्या नीतिगत कदम उठाए जाने चाहिए?</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'अंत्योदय अन्न योजना' (AAY) के तहत एक परिवार को प्रतिमाह कितना खाद्यान्न प्रदान किया जाता है?</div>
+                    <ul class="options">
+                        <li>(a) 5 किलोग्राम प्रति व्यक्ति</li>
+                        <li>(b) 25 किलोग्राम प्रति परिवार</li>
+                        <li>(c) 35 किलोग्राम प्रति परिवार</li>
+                        <li>(d) 10 किलोग्राम प्रति व्यक्ति</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 35 किलोग्राम प्रति परिवार</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: 'प्रच्छन्न भुखमरी' (Hidden Hunger) का क्या अर्थ है?</div>
+                    <ul class="options">
+                        <li>(a) भोजन की पूर्ण अनुपलब्धता</li>
+                        <li>(b) केवल एक समय का भोजन मिलना</li>
+                        <li>(c) आहार में सूक्ष्म पोषक तत्वों (विटामिन और खनिज) की गंभीर कमी</li>
+                        <li>(d) ग्रामीण क्षेत्रों में राशन की चोरी</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) सूक्ष्म पोषक तत्वों की कमी</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 8 -->
+            <div class="news-item">
+                <div class="news-title">खुदरा मुद्रास्फीति (Retail Inflation) जुलाई में 4.45% पर (GS-3)</div>
+                <ul class="content-list">
+                    <li><strong>CPI (Consumer Price Index):</strong> खुदरा महंगाई को CPI द्वारा मापा जाता है। इसे NSO द्वारा जारी किया जाता है।</li>
+                    <li><strong>बास्केट:</strong> CPI में 'खाद्य पदार्थों और पेय पदार्थों' का वेटेज सबसे अधिक (लगभग 45.8%) होता है।</li>
+                    <li><strong>कोर इन्फ्लेशन:</strong> जब हेडलाइन महंगाई में से अत्यधिक अस्थिर खाद्य और ईंधन (Food & Fuel) को हटा देते हैं, तो उसे 'कोर इन्फ्लेशन' कहते हैं।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: भारत में खुदरा मुद्रास्फीति के मापन में उपभोक्ता मूल्य सूचकांक (CPI) की संरचना को स्पष्ट करें। 'खाद्य मुद्रास्फीति' को नियंत्रित करने में मौद्रिक नीति की सीमाओं पर चर्चा करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: भारत में मुद्रास्फीति लक्ष्यीकरण (Inflation Targeting) के लिए आधिकारिक तौर पर किस सूचकांक का उपयोग किया जाता है?</div>
+                    <ul class="options">
+                        <li>(a) WPI (Wholesale Price Index)</li>
+                        <li>(b) GDP Deflator</li>
+                        <li>(c) CPI (Consumer Price Index)</li>
+                        <li>(d) IIP (Index of Industrial Production)</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) CPI</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: 'कोर इन्फ्लेशन' की गणना करते समय हेडलाइन इन्फ्लेशन में से किन दो घटकों को बाहर कर दिया जाता है?</div>
+                    <ul class="options">
+                        <li>(a) आवास और शिक्षा</li>
+                        <li>(b) खाद्य पदार्थ (Food) और ऊर्जा (Fuel)</li>
+                        <li>(c) स्वास्थ्य और परिवहन</li>
+                        <li>(d) कपड़े और जूते</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) खाद्य पदार्थ और ऊर्जा</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 9 -->
+            <div class="news-item">
+                <div class="news-title">संसदीय पैनल और 'डी-डॉलरीकरण' (De-dollarisation) का मुद्दा (GS-2/GS-3)</div>
+                <ul class="content-list">
+                    <li><strong>डी-डॉलरीकरण:</strong> वैश्विक व्यापार और विदेशी मुद्रा भंडार में अमेरिकी डॉलर के वर्चस्व को कम करने की प्रक्रिया।</li>
+                    <li><strong>वोस्ट्रो खाते:</strong> भारत ने रुपये में व्यापार को बढ़ावा देने के लिए कई देशों (जैसे रूस) के साथ 'वोस्ट्रो खाते' खोले हैं।</li>
+                    <li><strong>BRICS का प्रयास:</strong> BRICS देश डॉलर को चुनौती देने के लिए एक नई 'ब्रिक्स रिज़र्व करेंसी' पर काम कर रहे हैं।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: 'डी-डॉलरीकरण' से आप क्या समझते हैं? वैश्विक व्यापार में अमेरिकी डॉलर के प्रभुत्व को कम करने के लिए BRICS देशों द्वारा उठाए जा रहे कदमों का विश्लेषण करें।</div>
+                    
+                    <div class="pre-q">Prelims Q1: बैंकिंग के संदर्भ में 'वोस्ट्रो खाता' (Vostro Account) का क्या अर्थ है?</div>
+                    <ul class="options">
+                        <li>(a) RBI का IMF में खाता</li>
+                        <li>(b) एक ऐसा खाता जो एक विदेशी बैंक, किसी घरेलू बैंक में घरेलू मुद्रा (रुपये) में रखता है</li>
+                        <li>(c) स्विस बैंक में अघोषित खाता</li>
+                        <li>(d) आयातकों का डॉलर खाता</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) विदेशी बैंक का घरेलू बैंक में खाता</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: 'SWIFT' प्रणाली मुख्य रूप से किस लिए उपयोग की जाती है?</div>
+                    <ul class="options">
+                        <li>(a) व्यापार शुल्क (Tariffs) लगाने के लिए</li>
+                        <li>(b) सुरक्षित अंतर्राष्ट्रीय बैंक धन हस्तांतरण और वित्तीय संदेशों के लिए</li>
+                        <li>(c) क्रिप्टोकरेंसी के व्यापार के लिए</li>
+                        <li>(d) विदेशी मुद्रा भंडार मापने के लिए</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) सुरक्षित अंतर्राष्ट्रीय बैंक धन हस्तांतरण</strong></div></details>
+                </div>
+            </div>
+
+            <!-- News 10 -->
+            <div class="news-item">
+                <div class="news-title">असम में 'आर्थिक नाकेबंदी' और अंतर्राज्यीय सीमा विवाद (GS-2)</div>
+                <ul class="content-list">
+                    <li><strong>करेंट न्यूज़:</strong> असम और अरुणाचल प्रदेश की विवादित सीमा पर गोलीबारी के बाद, TMPK संगठन ने अरुणाचल के खिलाफ "आर्थिक नाकेबंदी" (Economic Blockade) की घोषणा कर दी है।</li>
+                    <li><strong>नमसाई घोषणा (Namsai Declaration 2022):</strong> असम और अरुणाचल के मुख्यमंत्रियों ने 123 विवादित गांवों के मुद्दे को सुलझाने के लिए इस ऐतिहासिक समझौते पर हस्ताक्षर किए थे।</li>
+                </ul>
+                <div class="practice-box">
+                    <div class="mains-q">Mains: उत्तर-पूर्व भारत में लगातार हो रहे अंतर्राज्यीय सीमा विवादों के ऐतिहासिक कारणों का विश्लेषण करें। आंतरिक सुरक्षा बनाए रखने के लिए इनके स्थायी समाधान के क्या उपाय हो सकते हैं?</div>
+                    
+                    <div class="pre-q">Prelims Q1: 'नमसाई घोषणा' किन दो राज्यों के बीच सीमा विवाद को सुलझाने से संबंधित है?</div>
+                    <ul class="options">
+                        <li>(a) असम और मिजोरम</li>
+                        <li>(b) असम और मेघालय</li>
+                        <li>(c) असम और अरुणाचल प्रदेश</li>
+                        <li>(d) असम और नागालैंड</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) असम और अरुणाचल प्रदेश</strong></div></details>
+
+                    <div class="pre-q">Prelims Q2: भारतीय संविधान का कौन सा अनुच्छेद संसद को मौजूदा राज्यों के क्षेत्रों, सीमाओं या नामों में परिवर्तन करने का अधिकार देता है?</div>
+                    <ul class="options">
+                        <li>(a) अनुच्छेद 1</li>
+                        <li>(b) अनुच्छेद 2</li>
+                        <li>(c) अनुच्छेद 3</li>
+                        <li>(d) अनुच्छेद 4</li>
+                    </ul>
+                    <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 3</strong></div></details>
+                </div>
+            </div>
+        </div>
+        <!-- ================= SECTION 4: PIB News ================= -->
+        <div class="section-box sec-2" id="sec-pib">
+            <h2 class="section-title">4. PIB News (Press Information Bureau)</h2>
+            <div class="placeholder-box">
+                <i class="fas fa-clock" style="font-size: 2rem; margin-bottom:10px;"></i>
+                <p><strong>यह सेक्शन शाम को अपडेट किया जाएगा।</strong><br>
+                PIB की आधिकारिक खबरें शाम तक रिलीज़ होती हैं, इसलिए हम रात में यहाँ फ्रेश डेटा डालेंगे।</p>
+            </div>
+            <!-- 
+                INSTRUCTIONS TO UPDATE IN EVENING:
+                1. Remove the entire <div class="placeholder-box">...</div> above.
+                2. Paste the new PIB News content formatted just like the "news-item" divs in Section 3.
+                3. Save the HTML file.
+            -->
+        </div>
+
+        <!-- ================= SECTION 5: Coaching Data ================= -->
+        <div class="section-box sec-4" id="sec-other">
+            <h2 class="section-title">5. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+            <div class="placeholder-box">
+                <i class="fas fa-chalkboard-teacher" style="font-size: 2rem; margin-bottom:10px;"></i>
+                <p><strong>कोचिंग मटेरियल अभी प्रतीक्षित है।</strong><br>
+                जैसे ही मटेरियल प्राप्त होगा, उसे यहाँ अपडेट कर दिया जाएगा।</p>
+            </div>
+        </div>
+
+        <!-- ================= SECTION 6: Quiz ================= -->
+        <div class="section-box sec-5" id="sec-quiz">
+            <h2 class="section-title">6. दैनिक 'GS चौपाल' प्रश्नोत्तरी (20 MCQs)</h2>
+            <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 10 हड़प्पा सभ्यता (PYQ) का महा-अभ्यास!</p>
+
+            <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+            <!-- Quiz Q1 -->
+            <div class="practice-box">
+                <div class="pre-q">Q1. मुल्लापेरियार बांध के भौगोलिक और ऐतिहासिक संदर्भ में निम्नलिखित कथनों पर विचार करें: <br>1. यह बांध पूर्णतः तमिलनाडु राज्य की सीमा के भीतर स्थित है। <br>2. इस बांध का संचालन और रखरखाव तमिलनाडु सरकार द्वारा किया जाता है।</div>
+                <ul class="options">
+                    <li>(a) केवल 1</li>
+                    <li>(b) केवल 2</li>
+                    <li>(c) 1 और 2 दोनों</li>
+                    <li>(d) न तो 1 न ही 2</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong><br>कथन 1 गलत है क्योंकि मुल्लापेरियार बांध भौगोलिक रूप से केरल के इडुक्की जिले में स्थित है। 1886 के पट्टा (Lease) समझौते के तहत इसका संचालन तमिलनाडु द्वारा किया जाता है।</div></details>
+            </div>
+
+            <!-- Quiz Q2 -->
+            <div class="practice-box">
+                <div class="pre-q">Q2. 'मर्चेंट डिस्काउंट रेट' (MDR), जो हाल ही में 'जीरो-MDR' नीति के कारण चर्चा में रहा, का अर्थव्यवस्था में क्या अर्थ है?</div>
+                <ul class="options">
+                    <li>(a) वह छूट जो थोक विक्रेता खुदरा व्यापारियों को देते हैं।</li>
+                    <li>(b) वह शुल्क जो व्यापारी (Merchant) द्वारा डिजिटल माध्यम से भुगतान स्वीकार करने पर अपने बैंक को चुकाया जाता है।</li>
+                    <li>(c) वह ब्याज दर जिस पर RBI वाणिज्यिक बैंकों को लंबी अवधि के लिए ऋण देता है।</li>
+                    <li>(d) निर्यातकों को सरकार द्वारा दी जाने वाली कर छूट।</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>MDR वह शुल्क है जो व्यापारी कार्ड या UPI से पेमेंट लेने पर बैंकों को देते हैं। भारत में 2020 से UPI पर यह शून्य है।</div></details>
+            </div>
+
+            <!-- Quiz Q3 -->
+            <div class="practice-box">
+                <div class="pre-q">Q3. 'ग्रेट निकोबार आइलैंड (GNI) प्रोजेक्ट' के संदर्भ में चर्चा में आई 'शोम्पेन' (Shompen) जनजाति के संबंध में सही कथन चुनें:</div>
+                <ul class="options">
+                    <li>(a) यह लक्षद्वीप की एक प्रमुख जनजाति है।</li>
+                    <li>(b) यह 'विशेष रूप से कमजोर जनजातीय समूह' (PVTG) की श्रेणी में नहीं आती है।</li>
+                    <li>(c) ये मुख्य रूप से शिकारी-संग्राहक (Hunter-gatherer) हैं जो बाहरी दुनिया से संपर्क नहीं रखते।</li>
+                    <li>(d) इनकी मातृभाषा इंडो-आर्यन भाषा परिवार का हिस्सा है।</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c)</strong><br>शोम्पेन ग्रेट निकोबार में रहने वाला एक अत्यंत सुभेद्य (PVTG) शिकारी-संग्राहक जनजातीय समूह है।</div></details>
+            </div>
+
+            <!-- Quiz Q4 -->
+            <div class="practice-box">
+                <div class="pre-q">Q4. 'भारतीय नागरिक सुरक्षा संहिता' (BNSS) की धारा 187(2) के तहत पुलिस हिरासत (Police Custody) के नए नियमों के संबंध में क्या सही है?</div>
+                <ul class="options">
+                    <li>(a) पुलिस हिरासत की कुल अवधि 15 दिन से बढ़ाकर 60 दिन कर दी गई है।</li>
+                    <li>(b) पुलिस हिरासत अधिकतम 15 दिन ही होगी, लेकिन इसे 40 या 60 दिन की कुल अवधि के दौरान टुकड़ों में मांगा जा सकता है।</li>
+                    <li>(c) अब पुलिस हिरासत की अनुमति केवल आतंकवाद से जुड़े मामलों में ही दी जा सकती है।</li>
+                    <li>(d) गिरफ्तारी के शुरुआती 15 दिनों के बाद किसी भी परिस्थिति में पुलिस हिरासत नहीं ली जा सकती।</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>सुप्रीम कोर्ट ने स्पष्ट किया है कि BNSS के तहत कुल रिमांड 15 दिन ही है, लेकिन पुलिस के पास इसे मांगने की समय-सीमा (Window) अब अधिक हो गई है।</div></details>
+            </div>
+
+            <!-- Quiz Q5 -->
+            <div class="practice-box">
+                <div class="pre-q">Q5. भारत के E20 ईंधन लक्ष्य के संदर्भ में निम्नलिखित कथनों पर विचार करें: <br>1. E20 का अर्थ पेट्रोल में 80% इथेनॉल और 20% गैसोलीन का सम्मिश्रण है। <br>2. भारत ने 2025-26 तक 20% इथेनॉल सम्मिश्रण का लक्ष्य रखा है।</div>
+                <ul class="options">
+                    <li>(a) केवल 1</li>
+                    <li>(b) केवल 2</li>
+                    <li>(c) 1 और 2 दोनों</li>
+                    <li>(d) न तो 1 न ही 2</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong><br>कथन 1 गलत है क्योंकि E20 का अर्थ है 20% इथेनॉल और 80% पेट्रोल।</div></details>
+            </div>
+
+            <!-- Quiz Q6 -->
+            <div class="practice-box">
+                <div class="pre-q">Q6. कुपोषण के संदर्भ में 'प्रच्छन्न भुखमरी' (Hidden Hunger) शब्द का क्या अर्थ है?</div>
+                <ul class="options">
+                    <li>(a) भोजन की पूर्ण अनुपलब्धता के कारण होने वाली भुखमरी।</li>
+                    <li>(b) महिलाओं और बच्चों में भोजन के असमान वितरण की समस्या।</li>
+                    <li>(c) आहार में सूक्ष्म पोषक तत्वों (विटामिन और खनिज) की गंभीर कमी होना, भले ही कैलोरी पर्याप्त मिल रही हो।</li>
+                    <li>(d) ग्रामीण क्षेत्रों में राशन का न पहुंच पाना।</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c)</strong><br>PDS के तहत लोगों को अनाज (कैलोरी) तो मिल रहा है, लेकिन आहारीय विविधता न होने के कारण विटामिन/खनिजों की जो कमी रह जाती है, उसे ही 'प्रच्छन्न भुखमरी' कहते हैं।</div></details>
+            </div>
+
+            <!-- Quiz Q7 -->
+            <div class="practice-box">
+                <div class="pre-q">Q7. 'उपभोक्ता मूल्य सूचकांक' (CPI) के संदर्भ में 'कोर इन्फ्लेशन' (Core Inflation) की गणना करते समय हेडलाइन इन्फ्लेशन में से किन दो घटकों को बाहर कर दिया जाता है?</div>
+                <ul class="options">
+                    <li>(a) आवास और शिक्षा</li>
+                    <li>(b) स्वास्थ्य और परिवहन</li>
+                    <li>(c) कपड़े और जूते</li>
+                    <li>(d) खाद्य पदार्थ (Food) और ऊर्जा (Fuel)</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) खाद्य पदार्थ (Food) और ऊर्जा (Fuel)</strong><br>खाद्य पदार्थ और ईंधन की कीमतें बहुत तेज़ी से बदलती (Volatile) हैं। इसलिए महंगाई के स्थिर रुझान को मापने के लिए इन्हें हेडलाइन CPI से हटा दिया जाता है।</div></details>
+            </div>
+
+            <!-- Quiz Q8 -->
+            <div class="practice-box">
+                <div class="pre-q">Q8. 'डी-डॉलरीकरण' (De-dollarisation) के प्रयासों के तहत भारत ने अन्य देशों के साथ 'वोस्ट्रो खाते' (Vostro Accounts) खोले हैं। वोस्ट्रो खाते का क्या अर्थ है?</div>
+                <ul class="options">
+                    <li>(a) भारतीय रिज़र्व बैंक (RBI) द्वारा IMF में रखा गया विदेशी मुद्रा खाता।</li>
+                    <li>(b) एक ऐसा खाता जो कोई विदेशी बैंक, किसी घरेलू बैंक (जैसे भारत के बैंक) में घरेलू मुद्रा (रुपये) में रखता है।</li>
+                    <li>(c) भारतीय नागरिकों द्वारा विदेशी बैंकों में खोले गए टैक्स-फ्री खाते।</li>
+                    <li>(d) आयातकों द्वारा डॉलर खरीदने के लिए खोला गया विशेष खाता।</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>वोस्ट्रो (Vostro) का अर्थ है "आपका (खाता) हमारे पास"। इसके ज़रिए विदेशी बैंक भारतीय बैंकों में रुपये में खाता खोलते हैं।</div></details>
+            </div>
+
+            <!-- Quiz Q9 -->
+            <div class="practice-box">
+                <div class="pre-q">Q9. भारत में विदेशी अंशदान (विनियमन) अधिनियम (FCRA) का प्रशासन और विनियमन किस मंत्रालय द्वारा किया जाता है?</div>
+                <ul class="options">
+                    <li>(a) वित्त मंत्रालय</li>
+                    <li>(b) वाणिज्य एवं उद्योग मंत्रालय</li>
+                    <li>(c) गृह मंत्रालय (MHA)</li>
+                    <li>(d) विदेश मंत्रालय</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गृह मंत्रालय (MHA)</strong><br>भारत में NGO और अन्य संस्थाओं को मिलने वाले विदेशी फंड का विनियमन गृह मंत्रालय द्वारा किया जाता है।</div></details>
+            </div>
+
+            <!-- Quiz Q10 -->
+            <div class="practice-box">
+                <div class="pre-q">Q10. 'न्यायाधीश (जांच) अधिनियम, 1968' के तहत उच्च न्यायालय या सर्वोच्च न्यायालय के न्यायाधीश के खिलाफ कदाचार की जांच करने वाली 3-सदस्यीय समिति में निम्नलिखित में से कौन शामिल नहीं होता है?</div>
+                <ul class="options">
+                    <li>(a) सर्वोच्च न्यायालय का एक आसीन न्यायाधीश</li>
+                    <li>(b) किसी उच्च न्यायालय का मुख्य न्यायाधीश</li>
+                    <li>(c) भारत का महान्यायवादी (Attorney General)</li>
+                    <li>(d) एक प्रख्यात न्यायविद (Distinguished Jurist)</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) भारत का महान्यायवादी</strong><br>जांच समिति में SC का एक जज, HC का मुख्य न्यायाधीश और एक प्रख्यात न्यायविद शामिल होता है। महान्यायवादी इसका हिस्सा नहीं होता।</div></details>
+            </div>
+
+
+            <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - हड़प्पा सभ्यता (UPSC/UPPCS PYQ)</h3>
+
+            <!-- Quiz Q11 -->
+            <div class="practice-box">
+                <div class="pre-q">Q11. सिंधु घाटी सभ्यता के प्रमुख नगर का नाम क्या है जिसका पश्चिमी एशिया से व्यापारिक सम्बन्ध था? (BPSC Pre 2024 Re-Exam)</div>
+                <ul class="options">
+                    <li>(a) रोपड़ (Ropar)</li>
+                    <li>(b) लोथल (Lothal)</li>
+                    <li>(c) कालीबंगा (Kalibangan)</li>
+                    <li>(d) उपर्युक्त में से कोई नहीं</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लोथल</strong><br>लोथल सिंधु घाटी सभ्यता का प्रमुख बंदरगाह शहर था जिसका पश्चिमी एशिया से व्यापारिक संबंध था। यह गुजरात में भोगवा नदी के किनारे स्थित है।</div></details>
+            </div>
+
+            <!-- Quiz Q12 -->
+            <div class="practice-box">
+                <div class="pre-q">Q12. 'शिल्प उत्पादन केंद्र' के रूप में पुरातात्विक स्थल को चिह्नित करने के लिए निम्नलिखित में से कौन-सा/से महत्वपूर्ण चिह्नक (मार्कर) है/हैं? (CAPF AC 2023)<br>1. कच्चे माल का प्रमाण 2. भौगोलिक विस्तार 3. अपूर्ण वस्तुएँ व कूड़ा-करकट 4. विविध प्रकार के मृद्भांड</div>
+                <ul class="options">
+                    <li>(a) केवल 1</li>
+                    <li>(b) केवल 1 और 3</li>
+                    <li>(c) केवल 2 और 4</li>
+                    <li>(d) केवल 3</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल 1 और 3</strong><br>पुरातात्विक साक्ष्यों में शिल्प उत्पादन केन्द्रों की पहचान के लिए मुख्य रूप से कच्चे माल (शंख, पत्थर) और अपूर्ण वस्तुएँ/कूड़ा-करकट की खोज की जाती है।</div></details>
+            </div>
+
+            <!-- Quiz Q13 -->
+            <div class="practice-box">
+                <div class="pre-q">Q13. निम्नलिखित में से कौन हड़प्पा संस्कृति के पूर्वी-सीमांत का निर्धारण करता है? (UPPCS Pre 2023)</div>
+                <ul class="options">
+                    <li>(a) माण्डा</li>
+                    <li>(b) राखीगढ़ी</li>
+                    <li>(c) आलमगीरपुर</li>
+                    <li>(d) हड़प्पा</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आलमगीरपुर</strong><br>हड़प्पा सभ्यता का पूर्वी विस्तार उत्तर प्रदेश के मेरठ जिले में हिंडन नदी के तट पर स्थित 'आलमगीरपुर' तक था।</div></details>
+            </div>
+
+            <!-- Quiz Q14 -->
+            <div class="practice-box">
+                <div class="pre-q">Q14. निम्नलिखित में से कौन-सा हड़प्पाकालीन स्थल गुजरात में है? (67th BPSC 2021)</div>
+                <ul class="options">
+                    <li>(a) लोथल</li>
+                    <li>(b) डाबरकोट</li>
+                    <li>(c) कालीबंगा</li>
+                    <li>(d) राखीगढ़ी</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लोथल</strong><br>हड़प्पाकालीन स्थल लोथल गुजरात में साबरमती व उसकी सहायक भोगवा नदी के बीच खम्भात की खाड़ी में स्थित है।</div></details>
+            </div>
+
+            <!-- Quiz Q15 -->
+            <div class="practice-box">
+                <div class="pre-q">Q15. सिंधु घाटी (हड़प्पा) के लिए मेसोपोटामियाई रिकॉर्डों में, निम्नलिखित में से किस शब्द का प्रयोग किया गया था? (NDA II 2017)</div>
+                <ul class="options">
+                    <li>(a) दिलमून</li>
+                    <li>(b) मेलुहा</li>
+                    <li>(c) मेगन</li>
+                    <li>(d) फैलका</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मेलुहा (Meluha)</strong><br>मेसोपोटामिया (सुमेरियन) के अभिलेखों में सिंधु घाटी सभ्यता के लिए 'मेलुहा' शब्द का प्रयोग किया गया है।</div></details>
+            </div>
+
+            <!-- Quiz Q16 -->
+            <div class="practice-box">
+                <div class="pre-q">Q16. हड़प्पा के लोगों की राजव्यवस्था, जैसा कि वस्तुपरक साक्ष्य से प्रमाणित होता है, कैसी थी? (CDS II 2012)</div>
+                <ul class="options">
+                    <li>(a) पंथनिरपेक्ष-संघवादी</li>
+                    <li>(b) धर्मतंत्रीय-संघवादी</li>
+                    <li>(c) कुलीनतंत्रीय</li>
+                    <li>(d) धर्मतंत्रीय एकात्मक (Theocratic-unitary)</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) धर्मतंत्रीय एकात्मक</strong><br>हड़प्पा की दस्तकारी और मानकीकरण (Standardization) को देखते हुए केनॉयर जैसे विद्वानों का मानना है कि वहाँ की राजव्यवस्था संभवतः 'धर्मतंत्रीय एकात्मक' थी।</div></details>
+            </div>
+
+            <!-- Quiz Q17 -->
+            <div class="practice-box">
+                <div class="pre-q">Q17. "यह बस्ती दो अनुभागों में बटी है, एक अपेक्षाकृत छोटा किंतु उच्चतर और दूसरा काफी बड़ा किन्तु निम्नतर। पुरातत्वविद् इन्हें क्रमशः नगर-दुर्ग और निचले नगर के रूप में अभिहित करते हैं... दोनों ही प्राचीर युक्त थे।" यह निम्नलिखित में से किस स्थल को निर्दिष्ट करता है? (CAPF AC 2011)</div>
+                <ul class="options">
+                    <li>(a) हड़प्पा</li>
+                    <li>(b) मोहनजोदड़ो</li>
+                    <li>(c) लोथल</li>
+                    <li>(d) कालीबंगन</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मोहनजोदड़ो</strong><br>मोहनजोदड़ो का नगर दो अनुभागों (दुर्ग और निचला शहर) में बंटा हुआ था और दोनों ही प्राचीर (चहारदीवारी) से घिरे हुए थे।</div></details>
+            </div>
+
+            <!-- Quiz Q18 -->
+            <div class="practice-box">
+                <div class="pre-q">Q18. एक जुते हुए खेत (Ploughed Field) की खोज की गई थी- (UPPCS Mains 2005 / BPSC Pre 2020)</div>
+                <ul class="options">
+                    <li>(a) मोहनजोदड़ों में</li>
+                    <li>(b) कालीबंगा में</li>
+                    <li>(c) हड़प्पा में</li>
+                    <li>(d) लोथल में</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कालीबंगा में</strong><br>कालीबंगा (राजस्थान के हनुमानगढ़ जिले में) में प्राक्-सैंधव संस्कृति के स्तर से एक जुते हुए खेत का साक्ष्य मिला है।</div></details>
+            </div>
+
+            <!-- Quiz Q19 -->
+            <div class="practice-box">
+                <div class="pre-q">Q19. निम्न में से कौन-सा प्राचीन नगर अपने उन्नत जल संचयन और प्रबंध प्रणाली के लिए सुप्रसिद्ध है, जहाँ बांधो की श्रृंखला का निर्माण किया गया था? (IAS Pre 2021)</div>
+                <ul class="options">
+                    <li>(a) धौलावीरा</li>
+                    <li>(b) कालीबंगा</li>
+                    <li>(c) राखीगढ़ी</li>
+                    <li>(d) रोपड़</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) धौलावीरा</strong><br>गुजरात के कच्छ जिले में स्थित 'धौलावीरा' अपनी उत्कृष्ट जल संचयन प्रणाली (Water Harvesting System), विशाल जलाशयों और बांधों के लिए प्रसिद्ध था।</div></details>
+            </div>
+
+            <!-- Quiz Q20 -->
+            <div class="practice-box">
+                <div class="pre-q">Q20. निम्नलिखित में से किस निर्माणी (शिल्पशाला) स्थल से चूना पत्थर और चर्ट फलक (ब्लेड) उत्पन्न किए जाते थे और सिन्धु में विभिन्न हड़प्पा बस्तियों में भेजे जाते थे? (CDS I 2020)</div>
+                <ul class="options">
+                    <li>(a) सुक्कुर और रोहड़ी पहाड़ियाँ</li>
+                    <li>(b) राजस्थान में खेतड़ी</li>
+                    <li>(c) चगाई पहाड़ियाँ</li>
+                    <li>(d) बलूचिस्तान की पहाड़ियाँ</li>
+                </ul>
+                <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सुक्कुर और रोहड़ी पहाड़ियाँ</strong><br>सुक्कुर और रोहड़ी की पहाड़ियाँ (सिंध प्रांत, पाकिस्तान) हड़प्पा काल में चूना पत्थर और चर्ट के ब्लेड बनाने के प्रमुख केंद्र थे।</div></details>
+            </div>
+
+        </div>
+
+  </div>
+     <footer>
+        <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+        <div class="social-links" style="margin-top: 15px;">
+            <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
