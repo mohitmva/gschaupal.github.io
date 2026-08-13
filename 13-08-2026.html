@@ -43,7 +43,6 @@
         }
         .back-btn:hover { color: #f1c40f; }
         
-        /* GS Chaupal Logo/Header Typography */
         .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
         header p { margin: 5px 0 0; color: #1abc9c; font-size: 1.1rem; }
 
@@ -186,7 +185,6 @@
         summary { font-weight: bold; color: #e74c3c; outline: none; }
         .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
 
-        /* Placeholder Box */
         .placeholder-box {
             background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px;
             text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri;
@@ -214,10 +212,8 @@
 </head>
 <body>
 
-    <!-- Main Content Wrapper for PDF Generation -->
     <div id="pdf-content-area">
 
-        <!-- HEADER (Visible in Web & PDF) -->
         <header>
             <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
             <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
@@ -226,11 +222,10 @@
 
         <div class="container">
 
-            <!-- ================= Quick Navigation Menu (Hidden in PDF) ================= -->
             <div class="quick-nav no-print">
                 <a href="#sec-bills" class="nav-bills"><i class="fas fa-landmark"></i> Recent Bill / Act</a>
                 <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
-                <a href="#sec-pib" class="nav-pib"><i class="fas fa-file-alt"></i> PIB News (Evening)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-file-alt"></i> PIB News</a>
                 <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
                 <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> दैनिक प्रश्नोत्तरी</a>
                 <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
@@ -244,7 +239,6 @@
                     <div class="news-title">केरल (नाम परिवर्तन) विधेयक, 2026</div>
                     <ul class="content-list">
                         <li><strong>मंत्रालय:</strong> गृह मंत्रालय (Ministry of Home Affairs)।</li>
-                        <li><strong>वर्तमान स्थिति:</strong> लोकसभा में पेश (10 अगस्त 2026), लोकसभा से पारित (11 अगस्त) और राज्यसभा से पारित (12 अगस्त)।</li>
                         <li><strong>विधेयक का मुख्य उद्देश्य:</strong> यह विधेयक भारतीय संविधान की <strong>प्रथम अनुसूची (First Schedule)</strong> में संशोधन करके 'केरल' राज्य का नाम बदलकर <strong>'केरलम' (Keralam)</strong> करने का प्रावधान करता है। 'केरलम' शब्द का मलयालम भाषा में गहरा ऐतिहासिक महत्व है।</li>
                         <li><strong>संवैधानिक प्रक्रिया (UPSC POV - GS 2):</strong> संविधान के <strong>अनुच्छेद 3</strong> के तहत संसद को किसी भी नए राज्य का निर्माण करने, या मौजूदा राज्य का नाम, सीमा या क्षेत्र बदलने का विशेष अधिकार प्राप्त है।</li>
                         <li>राष्ट्रपति संबंधित राज्य की विधानसभा के विचार जानने के लिए विधेयक को वहां भेजते हैं, लेकिन विधानसभा के विचार संसद या राष्ट्रपति पर <strong>बाध्यकारी नहीं</strong> होते हैं।</li>
@@ -341,7 +335,7 @@
                             <div class="opt-item">(c) अनुच्छेद 262</div><div class="opt-item">(d) अनुच्छेद 263</div>
                         </div>
                         <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 262</strong></div></details>
-                    </div>
+            </div>
                 </div>
 
                 <!-- Article 2 -->
@@ -387,16 +381,16 @@
                     <div class="news-title">3. UPI को आत्मनिर्भर बनाने के लिए 'MDR शुल्क' पर पुनर्विचार (GS-3)</div>
                     <ul class="content-list">
                         <li><strong>करेंट न्यूज़:</strong> वित्त मामलों की संसदीय समिति ने सरकार से 'मर्चेंट डिस्काउंट रेट' (MDR) को फिर से लागू करने पर विचार करने को कहा है ताकि UPI इकोसिस्टम को आत्मनिर्भर बनाया जा सके। वर्तमान सब्सिडी से लागत का केवल 11% ही मिल पा रहा है।</li>
-                        <li><strong>MDR क्या है:</strong> यह वह शुल्क (Fee) है जो दुकानदार डिजिटल माध्यम (क्रेडिट/डेबिट कार्ड या UPI) से भुगतान स्वीकार करने पर अपने बैंक को चुकाता है।</li>
-                        <li><strong>Zero-MDR पॉलिसी:</strong> 1 जनवरी 2020 से भारत सरकार ने UPI और RuPay डेबिट कार्ड के लिए 'जीरो-MDR' नियम लागू किया था।</li>
-                        <li><strong>समस्या:</strong> शून्य शुल्क के कारण बैंकों और थर्ड-पार्टी ऐप्स को सर्वर और साइबर सुरक्षा बुनियादी ढांचा बनाए रखने में भारी वित्तीय नुकसान हो रहा है।</li>
+                        <li><strong>MDR क्या है:</strong> यह वह शुल्क (Fee) है जो दुकानदार डिजिटल माध्यम (क्रेडिट/डेबिट कार्ड या UPI) से भुगतान स्वीकार करने पर अपने बैंक (Acquiring Bank) को चुकाता है।</li>
+                        <li><strong>Zero-MDR पॉलिसी:</strong> 1 जनवरी 2020 से भारत सरकार ने 'भुगतान और निपटान प्रणाली अधिनियम, 2007' के तहत UPI और RuPay डेबिट कार्ड के लिए 'जीरो-MDR' नियम लागू किया था।</li>
+                        <li><strong>समस्या:</strong> शून्य शुल्क के कारण बैंकों और थर्ड-पार्टी ऐप्स (PhonePe, GooglePay) को सर्वर, साइबर सुरक्षा और बुनियादी ढांचा बनाए रखने में भारी वित्तीय नुकसान हो रहा है।</li>
                     </ul>
                     <div class="practice-box">
                         <div class="mains-q">Mains: 'जीरो-MDR नीति' ने भारत में डिजिटल भुगतान क्रांति का मार्ग प्रशस्त किया है। इस नीति को वापस लेकर MDR लगाने के संभावित आर्थिक, व्यावसायिक और व्यावहारिक प्रभावों का आलोचनात्मक विश्लेषण करें।</div>
                         
                         <div class="pre-q">Prelims Q1: 'मर्चेंट डिस्काउंट रेट' (MDR) शब्द भारतीय अर्थव्यवस्था के संदर्भ में क्या है?</div>
                         <div class="options-grid">
-                            <div class="opt-item">(a) थोक विक्रेताओं द्वारा खुदरा विक्रेताओं को छूट</div><div class="opt-item">(b) वह शुल्क जो व्यापारी द्वारा डिजिटल भुगतान स्वीकारने पर बैंकों को चुकाया जाता है</div>
+                            <div class="opt-item">(a) थोक विक्रेताओं द्वारा खुदरा विक्रेताओं को दी जाने वाली छूट</div><div class="opt-item">(b) वह शुल्क जो व्यापारी द्वारा डिजिटल भुगतान स्वीकारने पर बैंकों को चुकाया जाता है</div>
                             <div class="opt-item">(c) RBI द्वारा बैंकों को दिया जाने वाला रियायती ऋण</div><div class="opt-item">(d) निर्यात संवर्धन के लिए कर छूट</div>
                         </div>
                         <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
@@ -464,7 +458,8 @@
                         <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 22</strong></div></details>
                     </div>
                 </div>
-                  <!-- Article 6 -->
+
+                <!-- Article 6 -->
                 <div class="news-item">
                     <div class="news-title">6. भारत का E20 लक्ष्य: खाद्य बनाम ईंधन की बहस (GS-3)</div>
                     <ul class="content-list">
@@ -517,9 +512,8 @@
                         </div>
                         <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) सूक्ष्म पोषक तत्वों की गंभीर कमी</strong></div></details>
                     </div>
-                </div>
-
-                <!-- Article 8 -->
+    </div>
+     <!-- Article 8 -->
                 <div class="news-item">
                     <div class="news-title">8. खुदरा मुद्रास्फीति (Retail Inflation) जुलाई में 4.45% पर (GS-3)</div>
                     <ul class="content-list">
@@ -604,25 +598,127 @@
                 </div>
 
             </div>
-
-            <!-- ================= SECTION 4: PIB News ================= -->
-            <div class="section-box sec-4" id="sec-pib">
-                <h2 class="section-title">4. PIB News (Press Information Bureau)</h2>
-                <div class="placeholder-box">
-                    <i class="fas fa-clock" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
-                    <h3 style="margin-top:0; color:#e67e22;">यह सेक्शन शाम को अपडेट किया जाएगा</h3>
-                    <p>PIB की आधिकारिक खबरें शाम तक रिलीज़ होती हैं, इसलिए हम रात में यहाँ फ्रेश और ऑथेंटिक डेटा डालेंगे।</p>
+                        <!-- ================= SECTION 3: PIB News ================= -->
+            <div class="section-box sec-3" id="sec-pib">
+                <h2 class="section-title">3. PIB से अति महत्वपूर्ण खबरें (Press Information Bureau)</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">संसद का मानसून सत्र संपन्न (Monsoon Session Concluded)</div>
+                    <ul class="content-list">
+                        <li>संसद का मानसून सत्र गुरुवार, 13 अगस्त, 2026 को अनिश्चित काल के लिए स्थगित कर दिया गया है[span_0](start_span)[span_0](end_span)।</li>
+                        <li>सत्र के दौरान 25 दिनों की अवधि में कुल 19 बैठकें हुईं और संसद के दोनों सदनों द्वारा कुल 12 विधेयक पारित किए गए[span_1](start_span)[span_1](end_span)।</li>
+                        <li>पारित प्रमुख विधेयकों में 'लोक परीक्षा (अनुचित साधन निवारण) संशोधन विधेयक 2026', 'राष्ट्रीय गौरव अपमान निवारण (संशोधन) विधेयक 2026', 'जन्म और मृत्यु रजिस्ट्रीकरण (संशोधन) 2026', 'MSME विकास (संशोधन) 2026', 'केरल (नाम परिवर्तन) विधेयक 2026' और 'अधिकरण सुधार विधेयक 2026' शामिल हैं[span_2](start_span)[span_2](end_span)।</li>
+                        <li>विदेशी अभिदाय (विनियमन) संशोधन विधेयक, 2026 (FCRA) को जांच और रिपोर्ट हेतु सदनों की संयुक्त समिति (JPC) को भेजा गया है[span_3](start_span)[span_3](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: मानसून सत्र 2026 में पारित प्रमुख विधेयकों (जैसे लोक परीक्षा निवारण विधेयक और MSME संशोधन) के सामाजिक-आर्थिक प्रभावों का मूल्यांकन करें।</div>
+                        <div class="pre-q">Prelims Q1: विदेशी अभिदाय (विनियमन) संशोधन विधेयक, 2026 (FCRA) को हाल ही में किस समिति के पास भेजा गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) प्राक्कलन समिति</div><div class="opt-item">(b) लोक लेखा समिति</div>
+                            <div class="opt-item">(c) संयुक्त संसदीय समिति (JPC)</div><div class="opt-item">(d) विशेषाधिकार समिति</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) संयुक्त संसदीय समिति (JPC)</strong></div></details>
+                    </div>
                 </div>
-                <!-- 
-                    [GS CHAUPAL ADMIN INSTRUCTIONS TO UPDATE IN EVENING]
-                    1. Remove the entire <div class="placeholder-box">...</div> above.
-                    2. Paste the new PIB News content formatted exactly like the "news-item" divs in Section 2.
-                    3. Save the HTML file.
-                -->
+
+                <div class="news-item">
+                    <div class="news-title">पृथ्वी विज्ञान मंत्रालय: 'मिशन मौसम' (Mission Mausam)</div>
+                    <ul class="content-list">
+                        <li>भारत सरकार पृथ्वी विज्ञान मंत्रालय की केंद्रीय क्षेत्र की व्यापक योजना 'मिशन मौसम' को लागू कर रही है, जिसका उद्देश्य भारत को "मौसम के लिए तैयार और जलवायु के प्रति जागरूक राष्ट्र" बनाना है[span_4](start_span)[span_4](end_span)।</li>
+                        <li>इस मिशन का शुभारंभ 14 जनवरी 2025 को किया गया था[span_5](start_span)[span_5](end_span)। केंद्रीय मंत्रिमंडल ने 2024-25 और 2025-26 के लिए ₹2,000 करोड़ का बजट आवंटित किया था[span_6](start_span)[span_6](end_span)।</li>
+                        <li>यह 6 क्षेत्रों के माध्यम से कार्यान्वित होगा: ऑब्जर्व ऑल, डेवलप (पृथ्वी प्रणाली मॉडल विकास), वैदर एमओडी, एटकॉम्प, फ्रंटियर और नीट[span_7](start_span)[span_7](end_span)।</li>
+                        <li>इसमें AI/ML (कृत्रिम बुद्धिमत्ता) और उच्च प्रदर्शन कंप्यूटिंग (HPC) का उपयोग कर चक्रवात, लू और शहरी बाढ़ जैसी घटनाओं के लिए पूर्वानुमान को सटीक बनाया जाएगा[span_8](start_span)[span_8](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत को "मौसम के लिए तैयार राष्ट्र" बनाने में 'मिशन मौसम' के प्रमुख स्तंभों और इसके कृषि एवं आपदा प्रबंधन में संभावित लाभों पर चर्चा करें।</div>
+                        <div class="pre-q">Prelims Q1: 'मिशन मौसम' किस मंत्रालय की एक प्रमुख पहल है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) पर्यावरण, वन और जलवायु परिवर्तन मंत्रालय</div><div class="opt-item">(b) पृथ्वी विज्ञान मंत्रालय</div>
+                            <div class="opt-item">(c) विज्ञान और प्रौद्योगिकी मंत्रालय</div><div class="opt-item">(d) गृह मंत्रालय</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) पृथ्वी विज्ञान मंत्रालय</strong></div></details>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">सेमीकंडक्टर और एआई क्रांति (Semicon & IndiaAI Mission)</div>
+                    <ul class="content-list">
+                        <li>सेमीकॉन 1.0 (₹76,000 करोड़) ने भारत के सेमीकंडक्टर इकोसिस्टम की नींव रखी, और अब सेमीकॉन 2.0 (जुलाई 2026 में ₹1,27,500 करोड़ मंजूर) इसे वैश्विक नेतृत्व में बदल रहा है[span_9](start_span)[span_9](end_span)।</li>
+                        <li>छह राज्यों में 12 सेमीकंडक्टर परियोजनाओं को मंजूरी दी गई है (कुल निवेश ₹1.64 लाख करोड़)[span_10](start_span)[span_10](end_span)।</li>
+                        <li>IndiaAI मिशन (₹10,372 करोड़ बजट) के तहत 45,000 से अधिक ग्राफिक्स प्रोसेसिंग यूनिट्स (GPUs) की कंप्यूटिंग क्षमता स्थापित की जा रही है[span_11](start_span)[span_11](end_span)। 20 स्वदेशी फाउंडेशन एआई मॉडल चुने गए हैं[span_12](start_span)[span_12](end_span)।</li>
+                        <li>स्टैनफोर्ड ग्लोबल एआई वाइब्रेंसी रिपोर्ट 2025 में भारत को एआई इकोसिस्टम में दुनिया भर में तीसरा स्थान मिला है[span_13](start_span)[span_13](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत की 'तकनीकी आत्मनिर्भरता' (Tech Sovereignty) में सेमीकॉन 2.0 और IndiaAI मिशन के रणनीतिक महत्व का विश्लेषण करें।</div>
+                        <div class="pre-q">Prelims Q1: स्टैनफोर्ड ग्लोबल एआई वाइब्रेंसी रिपोर्ट 2025 के अनुसार, AI प्रतिस्पर्द्धात्मकता में भारत का विश्व में कौन सा स्थान है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) पहला</div><div class="opt-item">(b) दूसरा</div>
+                            <div class="opt-item">(c) तीसरा</div><div class="opt-item">(d) चौथा</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) तीसरा</strong></div></details>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">अंतरिक्ष क्षेत्र में भारत की प्रगति और निजी भागीदारी</div>
+                    <ul class="content-list">
+                        <li>हालिया प्रमुख मिशन: SPADEX (स्पेस डॉकिंग एक्सपेरिमेंट) दिसंबर 2024 में लॉन्च हुआ, जिससे भारत स्पेस डॉकिंग तकनीक का प्रदर्शन करने वाला चौथा देश बन गया[span_14](start_span)[span_14](end_span)।</li>
+                        <li>NISAR (जुलाई 2025) पहला ड्यूल-फ्रीक्वेंसी (L और S बैंड) रडार पृथ्वी अवलोकन उपग्रह है, जिसे NASA और ISRO द्वारा संयुक्त रूप से विकसित किया गया है[span_15](start_span)[span_15](end_span)।</li>
+                        <li>आगामी मिशनों में गगनयान, वीनस ऑर्बिटर मिशन, चंद्रयान-4 (चंद्र नमूने वापस लाना) और चंद्रयान-5/LUPEX (JAXA के साथ) शामिल हैं[span_16](start_span)[span_16](end_span)।</li>
+                        <li>भारत में लगभग 440 अंतरिक्ष प्रौद्योगिकी स्टार्टअप पंजीकृत हैं। इन-स्पेस (IN-SPACe) ने 52 गैर-सरकारी संस्थाओं (NGEs) को अंतरिक्ष गतिविधियों के लिए प्राधिकरण प्रदान किया है[span_17](start_span)[span_17](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारतीय अंतरिक्ष क्षेत्र में निजी कंपनियों (NGEs) की बढ़ती भागीदारी (IN-SPACe के माध्यम से) भारत के अंतरिक्ष अर्थव्यवस्था के लक्ष्यों को प्राप्त करने में कैसे सहायक होगी?</div>
+                        <div class="pre-q">Prelims Q1: 'SPADEX' (स्पेस डॉकिंग एक्सपेरिमेंट) के सफल प्रक्षेपण के साथ भारत स्पेस डॉकिंग तकनीक हासिल करने वाला विश्व का कौन सा देश बन गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) दूसरा</div><div class="opt-item">(b) तीसरा</div>
+                            <div class="opt-item">(c) चौथा</div><div class="opt-item">(d) पाँचवाँ</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) चौथा</strong></div></details>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">विश्व हाथी दिवस 2026: 'संघर्ष से सह-अस्तित्व'</div>
+                    <ul class="content-list">
+                        <li>विश्व हाथी दिवस 2026 के राष्ट्रीय समारोह की अध्यक्षता विशाखापत्तनम (आंध्र प्रदेश) में की गई[span_18](start_span)[span_18](end_span)। यहाँ हाथी संरक्षण के लिए 'गज गौरव पुरस्कार 2026' प्रदान किए गए[span_19](start_span)[span_19](end_span)।</li>
+                        <li>प्रोजेक्ट एलिफेंट (1992-2026) की 30 प्रमुख उपलब्धियों को उजागर करते हुए '30 जायंट स्टेप्स' का विमोचन किया गया[span_20](start_span)[span_20](end_span)।</li>
+                        <li>दक्षिण भारत (कर्नाटक, केरलम, आंध्र प्रदेश, तमिलनाडु) में मानव-हाथी संघर्ष (HEC) के प्रबंधन के लिए ₹500 करोड़ के सहयोग से एक 'क्षेत्रीय कार्य योजना' जारी की गई है[span_21](start_span)[span_21](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: मानव-हाथी संघर्ष (HEC) के प्रबंधन में 'भू-दृश्य स्तर के दृष्टिकोण' (Landscape-level approach) और क्षेत्रीय कार्य योजनाओं के महत्व की विवेचना करें।</div>
+                        <div class="pre-q">Prelims Q1: वर्ष 2026 के विश्व हाथी दिवस के अवसर पर जारी की गई 'दक्षिण भारत के लिए क्षेत्रीय कार्य योजना' में निम्नलिखित में से कौन सा राज्य शामिल नहीं है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) कर्नाटक</div><div class="opt-item">(b) केरलम</div>
+                            <div class="opt-item">(c) आंध्र प्रदेश</div><div class="opt-item">(d) तेलंगाना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (d) तेलंगाना (इसमें कर्नाटक, केरलम, आंध्र प्रदेश, और तमिलनाडु शामिल हैं)।</strong></div></details>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">जैव-ई3 (Bio-E3) नीति और 'सुजीविका' पोर्टल</div>
+                    <ul class="content-list">
+                        <li>जैव-ई3 (अर्थव्यवस्था, पर्यावरण और रोजगार के लिए जैव प्रौद्योगिकी) नीति के तहत जीवाश्म-आधारित कच्चे माल के स्थान पर जैव-आधारित विकल्पों के जैव-विनिर्माण को बढ़ावा दिया जा रहा है[span_22](start_span)[span_22](end_span)।</li>
+                        <li>जैव प्रौद्योगिकी विभाग (DBT) द्वारा 'सुजीविका' (Sujivika) डिजिटल पोर्टल शुरू किया गया है, जो आयात संबंधी आंकड़ों के आधार पर स्वदेशी जैव-आधारित उत्पादों की पहचान करने में सहायता करता है[span_23](start_span)[span_23](end_span)।</li>
+                        <li>इसका उद्देश्य कम कार्बन अर्थव्यवस्था, स्मार्ट प्रोटीन्स, लिग्नोसेल्यूलोसिक अपशिष्ट से टिकाऊ विमानन ईंधन (SAF) और सिंगल-यूज़ प्लास्टिक के विकल्प विकसित करना है[span_24](start_span)[span_24](end_span)।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: 'जैव-ई3 (Bio-E3) नीति' भारत की 'नेट-जीरो' उत्सर्जन प्रतिबद्धताओं और चक्रीय अर्थव्यवस्था (Circular Economy) के लक्ष्यों को प्राप्त करने में कैसे योगदान दे सकती है?</div>
+                        <div class="pre-q">Prelims Q1: हाल ही में जैव प्रौद्योगिकी विभाग (DBT) द्वारा लॉन्च किया गया 'सुजीविका' पोर्टल मुख्य रूप से किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) कृषि ऋण वितरण</div><div class="opt-item">(b) अंतरिक्ष तकनीक स्टार्टअप्स</div>
+                            <div class="opt-item">(c) स्वदेशी जैव-आधारित उत्पादों की पहचान और आयात निर्भरता कम करना</div><div class="opt-item">(d) मौसम पूर्वानुमान</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) स्वदेशी जैव-आधारित उत्पादों की पहचान और आयात निर्भरता कम करना</strong></div></details>
+                    </div>
+                </div>
+
             </div>
-            <!-- ================= SECTION 5: Coaching Data ================= -->
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
             <div class="section-box sec-4" id="sec-other">
-                <h2 class="section-title">5. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
                 <div class="placeholder-box">
                     <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
                     <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
@@ -630,9 +726,9 @@
                 </div>
             </div>
 
-            <!-- ================= SECTION 6: Quiz ================= -->
+            <!-- ================= SECTION 5: Quiz ================= -->
             <div class="section-box sec-5" id="sec-quiz">
-                <h2 class="section-title">6. दैनिक 'GS चौपाल' प्रश्नोत्तरी (20 MCQs)</h2>
+                <h2 class="section-title">5. दैनिक 'GS चौपाल' प्रश्नोत्तरी (20 MCQs)</h2>
                 <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 10 हड़प्पा सभ्यता (PYQ) का महा-अभ्यास!</p>
 
                 <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
@@ -713,24 +809,24 @@
 
                 <!-- Quiz Q8 -->
                 <div class="practice-box">
-                    <div class="pre-q">Q8. 'डी-डॉलरीकरण' (De-dollarisation) के प्रयासों के तहत भारत ने अन्य देशों के साथ 'वोस्ट्रो खाते' (Vostro Accounts) खोले हैं। वोस्ट्रो खाते का क्या अर्थ है?</div>
+                    <div class="pre-q">Q8. पृथ्वी विज्ञान मंत्रालय द्वारा शुरू किए गए 'मिशन मौसम' का मुख्य उद्देश्य क्या है?</div>
                     <div class="options-grid" style="grid-template-columns: 1fr;">
-                        <div class="opt-item">(a) RBI द्वारा IMF में रखा गया विदेशी मुद्रा खाता।</div>
-                        <div class="opt-item">(b) एक ऐसा खाता जो कोई विदेशी बैंक, किसी घरेलू बैंक में घरेलू मुद्रा (रुपये) में रखता है।</div>
-                        <div class="opt-item">(c) भारतीय नागरिकों द्वारा विदेशी बैंकों में खोले गए टैक्स-फ्री खाते।</div>
-                        <div class="opt-item">(d) आयातकों द्वारा डॉलर खरीदने के लिए खोला गया विशेष खाता।</div>
+                        <div class="opt-item">(a) केवल किसानों को ऋण सुविधा प्रदान करना।</div>
+                        <div class="opt-item">(b) भारत को "मौसम के लिए तैयार और जलवायु के प्रति जागरूक राष्ट्र" बनाना।</div>
+                        <div class="opt-item">(c) केवल सौर ऊर्जा उत्पादन को बढ़ाना।</div>
+                        <div class="opt-item">(d) ग्रामीण क्षेत्रों में पीने का पानी उपलब्ध कराना।</div>
                     </div>
-                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>वोस्ट्रो (Vostro) का अर्थ है "आपका (खाता) हमारे पास"। इसके ज़रिए विदेशी बैंक भारतीय बैंकों में रुपये में खाता खोलते हैं।</div></details>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>इस मिशन में AI/ML और उच्च प्रदर्शन कंप्यूटिंग (HPC) का उपयोग कर चक्रवात, लू और शहरी बाढ़ जैसी घटनाओं के लिए पूर्वानुमान को सटीक बनाया जाएगा।</div></details>
                 </div>
 
                 <!-- Quiz Q9 -->
                 <div class="practice-box">
-                    <div class="pre-q">Q9. भारत में विदेशी अंशदान (विनियमन) अधिनियम (FCRA) का प्रशासन और विनियमन किस मंत्रालय द्वारा किया जाता है?</div>
+                    <div class="pre-q">Q9. 'जैव-ई3 (Bio-E3) नीति' के तहत लॉन्च किया गया 'सुजीविका' पोर्टल मुख्य रूप से किससे संबंधित है?</div>
                     <div class="options-grid">
-                        <div class="opt-item">(a) वित्त मंत्रालय</div><div class="opt-item">(b) वाणिज्य एवं उद्योग मंत्रालय</div>
-                        <div class="opt-item">(c) गृह मंत्रालय (MHA)</div><div class="opt-item">(d) विदेश मंत्रालय</div>
+                        <div class="opt-item">(a) कृषि ऋण वितरण</div><div class="opt-item">(b) स्वदेशी जैव-आधारित उत्पादों की पहचान और आयात निर्भरता कम करना</div>
+                        <div class="opt-item">(c) अंतरिक्ष तकनीक स्टार्टअप्स</div><div class="opt-item">(d) वन्यजीव संरक्षण</div>
                     </div>
-                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गृह मंत्रालय (MHA)</strong><br>भारत में NGO और अन्य संस्थाओं को मिलने वाले विदेशी फंड का विनियमन गृह मंत्रालय द्वारा किया जाता है।</div></details>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>यह पोर्टल आयात संबंधी आंकड़ों के आधार पर स्वदेशी जैव-आधारित उत्पादों की पहचान करने में सहायता करता है।</div></details>
                 </div>
 
                 <!-- Quiz Q10 -->
@@ -742,11 +838,13 @@
                     </div>
                     <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) भारत का महान्यायवादी</strong><br>जांच समिति में SC का एक जज, HC का मुख्य न्यायाधीश और एक प्रख्यात न्यायविद शामिल होता है। महान्यायवादी इसका हिस्सा नहीं होता।</div></details>
                 </div>
+
+
                 <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - हड़प्पा सभ्यता (UPSC/UPPCS PYQ)</h3>
 
                 <!-- Quiz Q11 -->
                 <div class="practice-box">
-                    <div class="pre-q">Q11. सिंधु घाटी सभ्यता के प्रमुख नगर का नाम क्या है जिसका पश्चिमी एशिया से व्यापारिक सम्बन्ध था? (70th BPSC Pre 2024 Re-Exam)</div>
+                    <div class="pre-q">Q11. सिंधु घाटी सभ्यता के प्रमुख नगर का नाम क्या है जिसका पश्चिमी एशिया से व्यापारिक सम्बन्ध था? (70th BPSC Pre 2024)</div>
                     <div class="options-grid">
                         <div class="opt-item">(a) रोपड़ (Ropar)</div><div class="opt-item">(b) लोथल (Lothal)</div>
                         <div class="opt-item">(c) कालीबंगा (Kalibangan)</div><div class="opt-item">(d) उपर्युक्त में से कोई नहीं</div>
@@ -813,7 +911,6 @@
                     </div>
                     <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मोहनजोदड़ो</strong><br>मोहनजोदड़ो का नगर दो अनुभागों (दुर्ग और निचला शहर) में बंटा हुआ था और दोनों ही प्राचीर (चहारदीवारी) से घिरे हुए थे।</div></details>
                 </div>
-
                 <!-- Quiz Q18 -->
                 <div class="practice-box">
                     <div class="pre-q">Q18. एक जुते हुए खेत (Ploughed Field) की खोज की गई थी- (UPPCS Mains 2005 / BPSC Pre 2020)</div>
@@ -848,7 +945,7 @@
 
         </div> <!-- End of Container -->
 
-        <!-- FOOTER (Visible in Web & PDF) -->
+        <!-- FOOTER -->
         <footer>
             <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
             <div class="social-links">
@@ -860,13 +957,13 @@
         </footer>
 
     </div> <!-- End of pdf-content-area -->
-     <!-- Scroll to Top Button (Hidden in PDF) -->
+
+    <!-- Scroll to Top Button -->
     <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // Scroll to Top Logic
         let mybutton = document.getElementById("scrollTopBtn");
         window.onscroll = function() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -879,42 +976,33 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // PDF Generation Logic
         function downloadPDF() {
-            // Open all details so answers show up in the PDF
             const detailsElements = document.querySelectorAll('details');
             detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
 
-            // Hide the "no-print" items (like quick-nav, buttons)
             const noPrintElements = document.querySelectorAll('.no-print');
             noPrintElements.forEach(el => el.style.display = 'none');
 
-            // Select the area to print
             const element = document.getElementById('pdf-content-area');
 
-            // Configure html2pdf
             const opt = {
-              margin:       [10, 10, 10, 10], // top, left, bottom, right
+              margin:       [10, 10, 10, 10], 
               filename:     '13-August-2026-GS-Chaupal.pdf',
               image:        { type: 'jpeg', quality: 0.98 },
               html2canvas:  { scale: 2, useCORS: true },
               jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
-            // Generate and Save PDF
             html2pdf().set(opt).from(element).save().then(() => {
-                // Restore the UI back to normal after downloading
                 noPrintElements.forEach(el => {
-                    // Check if it was flex (like quick-nav) or block
                     if(el.classList.contains('quick-nav')) {
                         el.style.display = 'flex';
                     } else if (el.id === 'scrollTopBtn') {
-                        el.style.display = 'none'; // let scroll event handle it
+                        el.style.display = 'none'; 
                     } else {
-                        el.style.display = 'block'; // fallback for back button
+                        el.style.display = 'block'; 
                     }
                 });
-                // Close the answers again
                 detailsElements.forEach(detail => detail.removeAttribute('open'));
             });
         }
