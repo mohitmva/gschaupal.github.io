@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body { 
             font-family: Calibri, 'Segoe UI', sans-serif; 
             margin: 0; 
@@ -45,13 +50,49 @@
             padding: 0 20px; 
         }
 
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .quick-nav a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        /* Menu Colors */
+        .nav-bills { border-left-color: #8e44ad !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+
         .section-box {
             background: white;
             border-radius: 10px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; /* Offset for smooth scrolling */
         }
         
         .sec-1 { border-top-color: #8e44ad; }
@@ -137,6 +178,12 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s;
         }
         #scrollTopBtn:hover { background-color: #c0392b; }
+
+        /* Mobile adjustments for Quick Nav */
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a { width: 100%; justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -149,8 +196,17 @@
 
     <div class="container">
 
+        <!-- ================= Quick Navigation Menu ================= -->
+        <div class="quick-nav">
+            <a href="#sec-bills" class="nav-bills"><i class="fas fa-landmark"></i> Recent Bill / Act</a>
+            <a href="#sec-pib" class="nav-pib"><i class="fas fa-file-alt"></i> PIB News</a>
+            <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu</a>
+            <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Other Coaching Data</a>
+            <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> दैनिक GS चौपाल प्रश्नोत्तरी</a>
+        </div>
+
         <!-- ================= SECTION 1: Bills ================= -->
-        <div class="section-box sec-1">
+        <div class="section-box sec-1" id="sec-bills">
             <h2 class="section-title">1. विगत दिनों में मानसून सत्र में पारित / लंबित बिल</h2>
             
             <div class="news-item">
@@ -217,7 +273,7 @@
         </div>
 
         <!-- ================= SECTION 2: PIB News ================= -->
-        <div class="section-box sec-2">
+        <div class="section-box sec-2" id="sec-pib">
             <h2 class="section-title">2. PIB से अति महत्वपूर्ण खबरें और उनका विश्लेषणात्मक विवरण</h2>
 
             <div class="news-item">
@@ -314,8 +370,6 @@
             <div class="news-item">
                 <div class="news-title">पूर्व राष्ट्रपति श्री राम नाथ कोविंद की आत्मकथा का विमोचन</div>
                 <ul class="content-list">
-                    <li>पीएम मोदी ने पूर्व राष्ट्रपति की आत्मकथा <st
-                                                                 <ul class="content-list">
                     <li>पीएम मोदी ने पूर्व राष्ट्रपति की आत्मकथा <strong>'ट्रायम्फ ऑफ द इंडियन रिपब्लिकः माय लाइफ, माय स्ट्रगल्स'</strong> का विमोचन किया।</li>
                 </ul>
                 <div class="practice-box">
@@ -331,7 +385,7 @@
         </div>
 
         <!-- ================= SECTION 3: The Hindu News ================= -->
-        <div class="section-box sec-3">
+        <div class="section-box sec-3" id="sec-hindu">
             <h2 class="section-title">3. The Hindu से अति महत्वपूर्ण खबरें</h2>
 
             <div class="news-item">
@@ -453,7 +507,7 @@
         </div>
 
         <!-- ================= SECTION 4: Other Data ================= -->
-        <div class="section-box sec-4">
+        <div class="section-box sec-4" id="sec-other">
             <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
             <div class="news-item">
                 <p style="text-align:center; color:#7f8c8d; font-family: Calibri, sans-serif;"><i>(आज का कोचिंग का विशेष डाटा जल्द ही इस खंड में अपडेट किया जाएगा...)</i></p>
@@ -461,8 +515,8 @@
         </div>
 
         <!-- ================= SECTION 5: Quiz ================= -->
-        <div class="section-box sec-5">
-            <h2 class="section-title">5. डेली 'GS चौपाल' प्रश्नोत्तरी (15 MCQs)</h2>
+        <div class="section-box sec-5" id="sec-quiz">
+            <h2 class="section-title">5. दैनिक 'GS चौपाल' प्रश्नोत्तरी (15 MCQs)</h2>
             <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">करेंट अफेयर्स और इतिहास (हड़प्पा सभ्यता - PYQ) का महा-अभ्यास!</p>
 
             <!-- Quiz Q1 -->
@@ -551,7 +605,8 @@
             <!-- Quiz Q7 -->
             <div class="practice-box">
                 <div class="pre-q">Q7. अंतर-राज्यीय जल विवादों के समाधान के लिए संविधान का कौन-सा अनुच्छेद संसद को कानून बनाने की शक्ति प्रदान करता है?</div>
-                <div style="font-family: Calibri;">(a) अनुच्छेद 260 &nbsp;&nbsp; (b) अनुच्छेद 262 &nbsp;&nbsp; (c) अनुच्छेद 263 &nbsp;&nbsp; (d) अनुच्छेद 268</div>
+                <div style="font-family: Calibri;">(a) अनुच्छेद 260 &nbsp;&nbsp; (b) 
+     अनुच्छेद 262 &nbsp;&nbsp; (c) अनुच्छेद 263 &nbsp;&nbsp; (d) अनुच्छेद 268</div>
                 <details>
                     <summary>Show Answer & Explanation</summary>
                     <div class="ans-text"><strong>उत्तर: (b) अनुच्छेद 262</strong><br>संसद कानून द्वारा किसी अंतर-राज्यीय नदी जल विवादों के न्यायनिर्णयन का प्रावधान कर सकती है।</div>
