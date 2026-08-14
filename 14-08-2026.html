@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: Calibri, 'Segoe UI', sans-serif; margin: 0; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+        
+        header { background-color: #1a252f; color: white; padding: 20px; text-align: center; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-bottom: 4px solid #e74c3c; }
+        .back-btn { position: absolute; left: 20px; top: 25px; color: white; text-decoration: none; font-size: 1.2rem; transition: 0.3s; }
+        .back-btn:hover { color: #f1c40f; }
+        .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
+        header p { margin: 5px 0 0; color: #ecf0f1; font-size: 1.1rem; }
+
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+
+        .quick-nav { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; justify-content: center; }
+        .quick-nav a, .pdf-btn { text-decoration: none; padding: 12px 20px; background: #fff; color: #2c3e50; border-radius: 8px; font-size: 1.1rem; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease; border-left: 5px solid #3498db; display: flex; align-items: center; gap: 8px; cursor: pointer; border-top:none; border-right:none; border-bottom:none; }
+        .quick-nav a:hover, .pdf-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); background: #f8f9fa; }
+        
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #8e44ad !important; color: #8e44ad !important; }
+
+        .section-box { background: white; border-radius: 10px; padding: 25px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 5px solid #3498db; scroll-margin-top: 20px; }
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #95a5a6; }
+        .sec-4 { border-top-color: #c0392b; }
+
+        .section-title { font-size: 1.8rem; color: #2c3e50; margin-top: 0; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; margin-bottom: 20px; }
+        .news-item { margin-bottom: 40px; padding-bottom: 25px; border-bottom: 1px dashed #ccc; font-size: 1.15rem; }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .news-title { color: #d35400; font-size: 1.5rem; margin-bottom: 12px; font-family: Calibri, sans-serif; font-weight: bold; }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 10px; }
+
+        .infographic-box { background: #f8fcfd; border: 1px solid #bdc3c7; border-radius: 8px; padding: 15px; margin: 15px 0; text-align: center; }
+        .flow-step { display: inline-block; background: #3498db; color: white; padding: 8px 15px; border-radius: 5px; margin: 5px; font-weight: bold; font-size: 1rem; }
+        .flow-arrow { color: #7f8c8d; font-size: 1.5rem; vertical-align: middle; }
+
+        .practice-box { background-color: #fcfdfd; border: 1px solid #e1e8ed; border-left: 4px solid #f39c12; padding: 15px; margin-top: 20px; border-radius: 0 5px 5px 0; font-family: Calibri, sans-serif; font-size: 1.05rem; }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .opt-item { background: #fff; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+
+        details { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; margin-top: 5px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; }
+        .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; }
+
+        footer { text-align: center; padding: 25px; background: #1a252f; color: white; margin-top: 20px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) { .quick-nav { flex-direction: column; gap: 10px; } .quick-nav a, .pdf-btn { width: 100%; justify-content: center; } .options-grid { grid-template-columns: 1fr; gap: 5px; } }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>14 अगस्त 2026 | डेली करेंट अफेयर्स एवं इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-file-alt"></i> PIB & NHRC News</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> दैनिक प्रश्नोत्तरी</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title">1. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. संसदीय विशेषाधिकार बनाम अभिव्यक्ति की स्वतंत्रता (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सर्वोच्च न्यायालय की 7-न्यायाधीशों की संविधान पीठ 6 अक्टूबर से इस विषय पर अंतिम सुनवाई करेगी कि क्या विधायी विशेषाधिकार (Legislative Privileges) नागरिकों के अभिव्यक्ति की स्वतंत्रता (अनुच्छेद 19(1)(a)) के मौलिक अधिकार पर हावी हो सकते हैं[cite: 9]।</li>
+                        <li><strong>पृष्ठभूमि:</strong> वर्ष 2003 में 'द हिंदू' के एक संपादकीय की आलोचना करने पर तमिलनाडु विधानसभा द्वारा विशेषाधिकार हनन के तहत पत्रकारों की गिरफ्तारी का प्रस्ताव पारित किया गया था, जिस पर SC ने रोक लगा दी थी[cite: 9]।</li>
+                        <li><strong>स्टैटिक (संविधान):</strong> संविधान के <strong>अनुच्छेद 105</strong> (संसद) और <strong>अनुच्छेद 194</strong> (राज्य विधानमंडल) के तहत सदनों और उनके सदस्यों को विशेषाधिकार और उन्मुक्तियां प्राप्त हैं।</li>
+                        <li><strong>विवाद (M.S.M. Sharma vs Keshav Singh):</strong> ऐतिहासिक 'सर्चलाइट केस (1959)' में SC ने कहा था कि अनुच्छेद 194, अनुच्छेद 19(1)(a) पर हावी है[cite: 9]। हालांकि, 1964 के 'केशव सिंह' मामले में कोर्ट ने माना कि विशेषाधिकार पूर्णतः मौलिक अधिकारों को खत्म नहीं कर सकते[cite: 9]। इसी टकराव को सुलझाने के लिए 7 जजों की बेंच बनाई गई है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "संसदीय विशेषाधिकारों का उद्देश्य विधायी कार्यों का निर्बाध संचालन सुनिश्चित करना है, न कि नागरिकों की विचार एवं अभिव्यक्ति की स्वतंत्रता को संकुचित करना।" अनुच्छेद 105/194 और अनुच्छेद 19(1)(a) के मध्य अंतर्संबंधों के आलोक में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: राज्य विधानमंडलों और उनके सदस्यों की शक्तियों तथा विशेषाधिकारों का वर्णन भारतीय संविधान के किस अनुच्छेद में किया गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) अनुच्छेद 105</div><div class="opt-item">(b) अनुच्छेद 194</div>
+                            <div class="opt-item">(c) अनुच्छेद 212</div><div class="opt-item">(d) अनुच्छेद 226</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) अनुच्छेद 194</strong> (अनुच्छेद 105 संसद के विशेषाधिकारों से संबंधित है)</div></details>
+                        
+                        <div class="pre-q">Prelims Q2: हाल ही में चर्चा में रहा ऐतिहासिक 'सर्चलाइट वाद' (M.S.M. Sharma Case) मुख्य रूप से किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) निजता का अधिकार</div><div class="opt-item">(b) आरक्षण सीमा</div>
+                            <div class="opt-item">(c) विधायी विशेषाधिकार बनाम प्रेस की स्वतंत्रता</div><div class="opt-item">(d) राज्यपाल की क्षमादान शक्ति</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) विधायी विशेषाधिकार बनाम प्रेस की स्वतंत्रता</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. राजस्थान कैबिनेट ने UCC (समान नागरिक संहिता) विधेयक को दी मंजूरी (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> राजस्थान कैबिनेट ने समान नागरिक संहिता (UCC) विधेयक को मंजूरी दे दी है, जिसे आगामी मानसून सत्र में पेश किया जाएगा[cite: 9]। राजस्थान ऐसा करने वाला पांचवां भाजपा शासित राज्य बन गया है[cite: 9]।</li>
+                        <li><strong>प्रमुख प्रावधान:</strong> यह विवाह, तलाक, विरासत, भरण-पोषण और लिव-इन रिलेशनशिप के लिए समान कानूनी ढांचा प्रदान करेगा[cite: 9]। इसके लागू होने से बहुविवाह (Polygamy) पर रोक लगेगी और विवाह/तलाक का 60 दिनों के भीतर पंजीकरण अनिवार्य होगा[cite: 9]।</li>
+                        <li><strong>छूट (Exceptions):</strong> यह कानून अनुसूचित जनजातियों (STs) और उन वर्गों पर लागू नहीं होगा जिनके प्रथागत अधिकार संविधान के तहत संरक्षित हैं[cite: 9]।</li>
+                        <li><strong>स्टैटिक लिंक:</strong> संविधान के 'भाग IV (DPSP)' के <strong>अनुच्छेद 44</strong> के तहत राज्य को पूरे भारत में नागरिकों के लिए एक समान नागरिक संहिता सुनिश्चित करने का निर्देश दिया गया है। गोवा भारत का एकमात्र राज्य है जहाँ पुर्तगाली समय से UCC लागू है। हाल ही में उत्तराखंड ने भी UCC पारित किया है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: समान नागरिक संहिता (UCC) को लागू करने के मार्ग में प्रमुख संवैधानिक और सामाजिक चुनौतियां क्या हैं? राजस्थान के प्रस्तावित UCC विधेयक के संदर्भ में मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारत के संविधान के किस अनुच्छेद में राज्य को नागरिकों के लिए 'समान नागरिक संहिता' (UCC) सुनिश्चित करने का निर्देश दिया गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) अनुच्छेद 40</div><div class="opt-item">(b) अनुच्छेद 44</div>
+                            <div class="opt-item">(c) अनुच्छेद 48</div><div class="opt-item">(d) अनुच्छेद 50</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) अनुच्छेद 44</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: हाल ही में राजस्थान कैबिनेट द्वारा स्वीकृत UCC विधेयक के संदर्भ में कौन-सा कथन असत्य है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) यह विवाह और तलाक का पंजीकरण 60 दिनों में अनिवार्य करता है।</div><div class="opt-item">(b) यह बहुविवाह को पूर्णतः प्रतिबंधित करता है।</div>
+                            <div class="opt-item">(c) यह राज्य के सभी नागरिकों, जिनमें अनुसूचित जनजातियां (STs) भी शामिल हैं, पर समान रूप से लागू होगा।</div><div class="opt-item">(d) यह लिव-इन रिलेशनशिप को कानूनी दायरे में लाता है।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c)</strong> (विधेयक STs और प्रथागत अधिकार वाले वर्गों पर लागू नहीं होगा)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. परिसीमन और लोकसभा सीटों को 543 पर फ्रीज करने की मांग (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> तमिलनाडु विधानसभा ने एक प्रस्ताव पारित कर केंद्र सरकार से संविधान में संशोधन करके लोकसभा सीटों की संख्या को 543 पर स्थायी रूप से फ्रीज करने का आग्रह किया है[cite: 9]। साथ ही महिला आरक्षण को भी 543 सीटों के आधार पर ही लागू करने की मांग की है[cite: 9]।</li>
+                        <li><strong>कारण:</strong> दक्षिणी राज्यों को डर है कि जनसंख्या के आधार पर परिसीमन (Delimitation) होने से उन राज्यों को लोकसभा में सीटों का नुकसान होगा जिन्होंने जनसंख्या नियंत्रण में बेहतर प्रदर्शन किया है[cite: 9]। 1967 में भी तमिलनाडु की सीटें 41 से घटकर 39 हो गई थीं[cite: 9]।</li>
+                        <li><strong>स्टैटिक (संविधान):</strong> <strong>अनुच्छेद 81</strong> लोकसभा की संरचना और <strong>अनुच्छेद 82</strong> प्रत्येक जनगणना के बाद सीटों के पुनर्समायोजन से संबंधित है। 42वें संशोधन (1976) ने 1971 की जनगणना के आधार पर सीटों को 2000 तक फ्रीज किया था, जिसे 84वें संशोधन (2001) ने 2026 के बाद होने वाली पहली जनगणना तक बढ़ा दिया था।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: 2026 के बाद प्रस्तावित परिसीमन (Delimitation) भारत के संघीय ढांचे के समक्ष क्या चुनौतियां प्रस्तुत करता है? दक्षिणी राज्यों की चिंताओं के समाधान के लिए क्या वैकल्पिक नीतियां अपनाई जा सकती हैं?</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारतीय संविधान के किस संशोधन द्वारा लोकसभा की सीटों की कुल संख्या को वर्ष 2026 के बाद होने वाली पहली जनगणना के आंकड़े प्रकाशित होने तक 'फ्रीज' कर दिया गया था?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) 42वां संशोधन</div><div class="opt-item">(b) 84वां संशोधन</div>
+                            <div class="opt-item">(c) 86वां संशोधन</div><div class="opt-item">(d) 91वां संशोधन</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) 84वां संविधान संशोधन (2001)</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: परिसीमन आयोग (Delimitation Commission) के संबंध में निम्नलिखित में से कौन-सा कथन सही है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) इसके आदेशों को सर्वोच्च न्यायालय में चुनौती दी जा सकती है।</div><div class="opt-item">(b) इसका गठन चुनाव आयोग द्वारा किया जाता है।</div>
+                            <div class="opt-item">(c) इसके आदेश कानून के समान शक्ति रखते हैं और किसी भी न्यायालय में प्रश्नगत नहीं किए जा सकते।</div><div class="opt-item">(d) इसमें केवल संसद सदस्य शामिल होते हैं।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) इसके आदेश न्यायालय में प्रश्नगत नहीं किए जा सकते।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. 'यूरोपीय संघ AI अधिनियम' (EU AI Act) और भारत के लिए अवसर (GS-3/GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> यूरोपीय संघ (EU) का 'AI अधिनियम' अगस्त 2026 से प्रभावी हो गया है[cite: 9]। यह जोखिम-आधारित दृष्टिकोण (Risk-based approach) अपनाता है—अस्वीकार्य जोखिम वाले AI पर प्रतिबंध, और 'उच्च-जोखिम' (High-risk) वाले AI पर कड़े नियम[cite: 9]।</li>
+                        <li><strong>भारत पर प्रभाव:</strong> भारतीय IT कंपनियों को यूरोप में अपने AI सिस्टम बेचने के लिए 'कन्फर्मिटी असेसमेंट' (Conformity Assessment - Article 43) से गुजरना होगा, जिसमें डेटा गवर्नेंस और मानवीय निगरानी के कड़े मापदंड शामिल हैं[cite: 9]।</li>
+                        <li><strong>भारत के लिए अवसर:</strong> उच्च-जोखिम अनुपालन (Compliance) के लिए भारी कागजी कार्रवाई और तकनीकी दस्तावेजीकरण की आवश्यकता होगी[cite: 9]। भारतीय IT फर्म, जो पहले से ही वैश्विक अनुपालन सेवाएं दे रही हैं, यूरोप के लिए 'AI Compliance Hub' बन सकती हैं[cite: 9]। भारत-ईयू मुक्त व्यापार समझौते (FTA) के तहत भारत खुद को EU के कन्फर्मिटी असेसमेंट इकोसिस्टम का हिस्सा बना सकता है[cite: 9]।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "यूरोपीय संघ का AI अधिनियम भारतीय तकनीकी उद्योग के लिए केवल एक अनुपालन चुनौती (Compliance hurdle) नहीं है, बल्कि एक बड़ा रणनीतिक अवसर भी है।" इस कथन का आलोचनात्मक विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में चर्चा में रहा 'कन्फर्मिटी असेसमेंट' (Conformity Assessment - Article 43) का संबंध निम्नलिखित में से किस अंतरराष्ट्रीय कानून से है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) पेरिस जलवायु समझौता</div><div class="opt-item">(b) यूरोपीय संघ AI अधिनियम (EU AI Act)</div>
+                            <div class="opt-item">(c) विश्व व्यापार संगठन (WTO) ट्रिप्स समझौता</div><div class="opt-item">(d) संयुक्त राष्ट्र समुद्री कानून (UNCLOS)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) यूरोपीय संघ AI अधिनियम</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: यूरोपीय संघ (EU) के AI अधिनियम का मुख्य दृष्टिकोण (Approach) क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) सभी AI प्रणालियों पर पूर्ण प्रतिबंध</div><div class="opt-item">(b) स्वैच्छिक अनुपालन (Voluntary compliance)</div>
+                            <div class="opt-item">(c) जोखिम-आधारित दृष्टिकोण (Risk-based approach)</div><div class="opt-item">(d) केवल वित्तीय AI का विनियमन</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) जोखिम-आधारित दृष्टिकोण</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. भारत का माल निर्यात 20% बढ़ा, व्यापार घाटा 15 अरब डॉलर (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> पश्चिम एशिया में तनाव के बावजूद जुलाई में भारत का माल निर्यात (Merchandise Exports) 19.6% बढ़कर $44.2 बिलियन हो गया[cite: 9]। वहीं आयात 17.5% बढ़कर $76.2 बिलियन रहा[cite: 9]।</li>
+                        <li><strong>निर्यात वृद्धि के कारण:</strong> यह वृद्धि निर्यात गंतव्यों के विविधीकरण (Diversification) के कारण हुई है। भारत ने चीन (+65%), संयुक्त अरब अमीरात (UAE), तंजानिया (+130%), केन्या और दक्षिण अफ्रीकी सीमा शुल्क संघ (SACU) जैसे बाजारों में अच्छा प्रदर्शन किया है[cite: 9]।</li>
+                        <li><strong>लॉजिस्टिक्स रणनीति:</strong> होर्मुज जलडमरूमध्य (Strait of Hormuz) के तनाव से बचने के लिए ओमान के बंदरगाहों और यूएई के फुजैराह व खोर फक्कन (Khor Fakkan) बंदरगाहों के माध्यम से माल भेजा जा रहा है[cite: 9]।</li>
+                        <li><strong>व्यापार घाटा:</strong> सेवा आयात के सेवा निर्यात से अधिक तेज़ी से बढ़ने के कारण भारत का कुल व्यापार घाटा (Trade Deficit) पिछले साल के $11.4 बिलियन से बढ़कर $15 बिलियन हो गया है[cite: 9]।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भू-राजनीतिक तनावों (जैसे पश्चिम एशिया संकट) के बीच भारत द्वारा अपने निर्यात गंतव्यों और आपूर्ति श्रृंखला मार्गों में विविधीकरण की रणनीति कितनी कारगर सिद्ध हुई है? चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में समाचारों में रहे 'फुजैराह' (Fujairah) और 'खोर फक्कन' (Khor Fakkan) बंदरगाह किस देश में स्थित हैं?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ओमान</div><div class="opt-item">(b) यमन</div>
+                            <div class="opt-item">(c) संयुक्त अरब अमीरात (UAE)</div><div class="opt-item">(d) सऊदी अरब</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) संयुक्त अरब अमीरात (UAE)</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: 'व्यापार घाटा' (Trade Deficit) के संदर्भ में निम्नलिखित में से कौन-सा कथन सही है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) जब किसी देश का निर्यात उसके आयात से अधिक हो जाता है।</div><div class="opt-item">(b) जब किसी देश का आयात उसके निर्यात से अधिक हो जाता है।</div>
+                            <div class="opt-item">(c) जब विदेशी प्रत्यक्ष निवेश (FDI) घट जाता है।</div><div class="opt-item">(d) जब सरकारी खर्च राजस्व से अधिक हो जाता है।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) जब आयात, निर्यात से अधिक हो जाता है।</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title">2. PIB एवं राष्ट्रीय महत्वपूर्ण खबरें (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1: NHRC -->
+                <div class="news-item">
+                    <div class="news-title">1. राष्ट्रीय मानवाधिकार आयोग (NHRC) और 'स्वतः संज्ञान' (Suo Motu) शक्ति (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> NHRC ने हाल ही में हरियाणा के फरीदाबाद में सीवर (मैनहोल) की सफाई के दौरान जहरीली गैस से हुई मौत, महाराष्ट्र के गढ़चिरौली में सांप काटने से छात्राओं की मौत, और CRPF कर्मियों की कथित मौतों का **स्वतः संज्ञान (Suo motu cognizance)** लिया है।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड (NHRC):</strong> NHRC की स्थापना 12 अक्टूबर 1993 को 'मानवाधिकार संरक्षण अधिनियम (PHRA), 1993' के तहत एक वैधानिक (Statutory) निकाय के रूप में की गई थी।</li>
+                        <li><strong>संरचना:</strong> इसमें एक अध्यक्ष (भारत का पूर्व मुख्य न्यायाधीश या सुप्रीम कोर्ट का पूर्व न्यायाधीश) और 5 अन्य सदस्य होते हैं।</li>
+                        <li><strong>शक्तियां (Section 12):</strong> अधिनियम की धारा 12 NHRC को मानवाधिकार उल्लंघन के मामलों में 'स्वतः संज्ञान' (बिना किसी की शिकायत के स्वयं मामले की जांच करना) लेने का अधिकार देती है। इसके पास सिविल कोर्ट के समान समन जारी करने की शक्ति है, लेकिन इसकी सिफारिशें प्रकृति में केवल 'सलाहकारी' (Recommendatory) होती हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "राष्ट्रीय मानवाधिकार आयोग (NHRC) के पास जांच करने की पर्याप्त शक्तियां हैं, लेकिन दंडात्मक अधिकारों के अभाव में यह प्रायः 'बिना दांतों वाला बाघ' (Toothless Tiger) प्रतीत होता है।" इस कथन का आलोचनात्मक परीक्षण करें।</div>
+                        <div class="pre-q">Prelims Q1: राष्ट्रीय मानवाधिकार आयोग (NHRC) के अध्यक्ष के रूप में किसे नियुक्त किया जा सकता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल भारत के पूर्व मुख्य न्यायाधीश को</div><div class="opt-item">(b) भारत के पूर्व मुख्य न्यायाधीश या सर्वोच्च न्यायालय के पूर्व न्यायाधीश को</div>
+                            <div class="opt-item">(c) उच्च न्यायालय के किसी भी सेवानिवृत्त मुख्य न्यायाधीश को</div><div class="opt-item">(d) किसी भी प्रख्यात न्यायविद को</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) भारत के पूर्व मुख्य न्यायाधीश या सर्वोच्च न्यायालय के पूर्व न्यायाधीश को (PHRA संशोधन 2019 के अनुसार)।</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: मानवाधिकार संरक्षण अधिनियम, 1993 के तहत NHRC को निम्नलिखित में से कौन-सी शक्ति प्राप्त नहीं है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) स्वतः संज्ञान (Suo motu) लेकर जांच करना</div><div class="opt-item">(b) सिविल न्यायालय की शक्तियां (समन जारी करना)</div>
+                            <div class="opt-item">(c) मानवाधिकार उल्लंघनकर्ताओं को सीधे सजा या जुर्माना देना</div><div class="opt-item">(d) जेलों और बंदीगृहों का निरीक्षण करना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) सजा या जुर्माना देना</strong> (इसकी शक्तियां केवल सलाहकारी हैं)।</div></details>
+                    </div>
+                </div>
+
+                <!-- PIB Article 2: WPI -->
+                <div class="news-item">
+                    <div class="news-title">2. थोक मूल्य सूचकांक (WPI) आधारित मुद्रास्फीति के रुझान (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सरकार द्वारा जारी नवीनतम चार्ट्स के अनुसार[cite: 11], जुलाई 2026 तक थोक मूल्य सूचकांक (WPI) आधारित मुद्रास्फीति में प्राथमिक वस्तुओं (Primary Articles) और विनिर्मित उत्पादों (Manufactured Products) का योगदान प्रमुख रहा है। चार्ट दर्शाता है कि अप्रैल 2026 के बाद से ईंधन और ऊर्जा (Fuel and Power) सूचकांक में गिरावट आई है[cite: 11]।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड (WPI क्या है?):</strong> WPI थोक स्तर पर व्यापार की जाने वाली वस्तुओं की कीमतों में बदलाव को मापता है।</li>
+                        <li><strong>प्रकाशन:</strong> इसे वाणिज्य और उद्योग मंत्रालय (Ministry of Commerce and Industry) के 'आर्थिक सलाहकार कार्यालय' (OEA) द्वारा मासिक रूप से जारी किया जाता है। इसका वर्तमान <strong>आधार वर्ष (Base Year) 2011-12</strong> है।</li>
+                        <li><strong>संरचना और वेटेज (Weightage):</strong> WPI में केवल वस्तुओं (Goods) को शामिल किया जाता है, सेवाओं (Services) को नहीं। इसके तीन प्रमुख घटक हैं:
+                            <br>1. विनिर्मित उत्पाद (Manufactured Products) - सर्वाधिक भार (लगभग 64.2%)
+                            <br>2. प्राथमिक वस्तुएं (Primary Articles) - (लगभग 22.6%)
+                            <br>3. ईंधन और ऊर्जा (Fuel & Power) - (लगभग 13.1%)</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत में मुद्रास्फीति को मापने के लिए 'थोक मूल्य सूचकांक' (WPI) और 'उपभोक्ता मूल्य सूचकांक' (CPI) के बीच पद्धतिगत और संरचनात्मक अंतर को स्पष्ट करें। RBI मौद्रिक नीति के लिए CPI को प्राथमिकता क्यों देता है?</div>
+                        <div class="pre-q">Prelims Q1: भारत में 'थोक मूल्य सूचकांक' (WPI) किसके द्वारा जारी किया जाता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) राष्ट्रीय सांख्यिकी कार्यालय (NSO)</div><div class="opt-item">(b) भारतीय रिज़र्व बैंक (RBI)</div>
+                            <div class="opt-item">(c) आर्थिक सलाहकार कार्यालय, वाणिज्य एवं उद्योग मंत्रालय</div><div class="opt-item">(d) श्रम ब्यूरो</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) आर्थिक सलाहकार कार्यालय, वाणिज्य एवं उद्योग मंत्रालय</strong></div></details>
+
+                        <div class="pre-q">Prelims Q2: थोक मूल्य सूचकांक (WPI) की संरचना के संबंध में निम्नलिखित में से किस घटक का भारांक (Weightage) सबसे अधिक है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) प्राथमिक वस्तुएं (Primary Articles)</div><div class="opt-item">(b) ईंधन और ऊर्जा (Fuel & Power)</div>
+                            <div class="opt-item">(c) विनिर्मित उत्पाद (Manufactured Products)</div><div class="opt-item">(d) सेवाएं (Services)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) विनिर्मित उत्पाद (Manufactured Products - 64.23%)</strong> (नोट: WPI में सेवाएं शामिल नहीं होती हैं)।</div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Coaching Data ================= -->
+            <div class="section-box sec-3" id="sec-other">
+                <h2 class="section-title">3. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Quiz ================= -->
+            <div class="section-box sec-4" id="sec-quiz">
+                <h2 class="section-title">4. दैनिक 'GS चौपाल' प्रश्नोत्तरी (20 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 10 हड़प्पा सभ्यता (नये PYQ) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. राज्य विधानमंडलों और उनके सदस्यों की शक्तियों तथा विशेषाधिकारों का वर्णन भारतीय संविधान के किस अनुच्छेद में किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनुच्छेद 105</div><div class="opt-item">(b) अनुच्छेद 194</div><div class="opt-item">(c) अनुच्छेद 212</div><div class="opt-item">(d) अनुच्छेद 226</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अनुच्छेद 194</strong><br>सुप्रीम कोर्ट इस बात पर सुनवाई करने वाला है कि क्या अनुच्छेद 194 के विशेषाधिकार नागरिकों की अभिव्यक्ति की स्वतंत्रता पर हावी हो सकते हैं[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. हाल ही में चर्चा में रहा ऐतिहासिक 'सर्चलाइट वाद' (M.S.M. Sharma Case, 1959) मुख्य रूप से किससे संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) निजता का अधिकार</div><div class="opt-item">(b) आरक्षण सीमा</div><div class="opt-item">(c) विधायी विशेषाधिकार बनाम प्रेस की स्वतंत्रता</div><div class="opt-item">(d) राज्यपाल की क्षमादान शक्ति</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) विधायी विशेषाधिकार बनाम प्रेस की स्वतंत्रता</strong>[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. भारत के संविधान के किस अनुच्छेद में राज्य को नागरिकों के लिए 'समान नागरिक संहिता' (UCC) सुनिश्चित करने का निर्देश दिया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनुच्छेद 40</div><div class="opt-item">(b) अनुच्छेद 44</div><div class="opt-item">(c) अनुच्छेद 48</div><div class="opt-item">(d) अनुच्छेद 50</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अनुच्छेद 44</strong><br>हाल ही में राजस्थान कैबिनेट ने UCC को मंजूरी दी है[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. हाल ही में राजस्थान कैबिनेट द्वारा स्वीकृत UCC विधेयक के संदर्भ में कौन-सा कथन असत्य है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) यह विवाह का पंजीकरण 60 दिनों में अनिवार्य करता है।</div><div class="opt-item">(b) यह बहुविवाह को प्रतिबंधित करता है।</div><div class="opt-item">(c) यह STs सहित सभी नागरिकों पर लागू होगा।</div><div class="opt-item">(d) यह लिव-इन रिलेशनशिप को कानूनी दायरे में लाता है।</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c)</strong><br>यह विधेयक अनुसूचित जनजातियों (STs) और प्रथागत अधिकार वाले वर्गों पर लागू नहीं होगा[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. भारतीय संविधान के किस संशोधन द्वारा लोकसभा की सीटों की कुल संख्या को वर्ष 2026 के बाद होने वाली पहली जनगणना तक 'फ्रीज' कर दिया गया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 42वां संशोधन</div><div class="opt-item">(b) 84वां संशोधन</div><div class="opt-item">(c) 86वां संशोधन</div><div class="opt-item">(d) 91वां संशोधन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 84वां संविधान संशोधन (2001)</strong><br>तमिलनाडु विधानसभा ने इसे स्थायी रूप से फ्रीज करने की मांग की है[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में चर्चा में रहा 'कन्फर्मिटी असेसमेंट' (Conformity Assessment - Article 43) का संबंध निम्नलिखित में से किस अंतरराष्ट्रीय कानून से है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पेरिस जलवायु समझौता</div><div class="opt-item">(b) यूरोपीय संघ AI अधिनियम (EU AI Act)</div><div class="opt-item">(c) WTO ट्रिप्स समझौता</div><div class="opt-item">(d) UNCLOS</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) यूरोपीय संघ AI अधिनियम</strong><br>यह नियम उच्च जोखिम वाले AI टूल्स पर लागू होता है[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. 'व्यापार घाटा' (Trade Deficit) के संदर्भ में निम्नलिखित में से कौन-सा कथन सही है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जब निर्यात, आयात से अधिक हो।</div><div class="opt-item">(b) जब आयात, निर्यात से अधिक हो।</div><div class="opt-item">(c) जब FDI घट जाता है।</div><div class="opt-item">(d) जब सरकारी खर्च राजस्व से अधिक हो।</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) जब आयात, निर्यात से अधिक हो जाता है।</strong><br>जुलाई में भारत का माल निर्यात 19.6% बढ़ा, फिर भी सेवा आयात के कारण कुल व्यापार घाटा $15 बिलियन हो गया[cite: 9]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. राष्ट्रीय मानवाधिकार आयोग (NHRC) के अध्यक्ष के रूप में किसे नियुक्त किया जा सकता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल भारत के पूर्व मुख्य न्यायाधीश को</div><div class="opt-item">(b) भारत के पूर्व CJI या सुप्रीम कोर्ट के पूर्व न्यायाधीश को</div><div class="opt-item">(c) किसी भी हाईकोर्ट के पूर्व मुख्य न्यायाधीश को</div><div class="opt-item">(d) प्रख्यात न्यायविद को</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong><br>PHRA 2019 संशोधन के बाद सुप्रीम कोर्ट के सेवानिवृत्त न्यायाधीश भी अध्यक्ष बन सकते हैं। NHRC ने हाल ही में स्वतः संज्ञान लिया है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. भारत में 'थोक मूल्य सूचकांक' (WPI) किसके द्वारा जारी किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) राष्ट्रीय सांख्यिकी कार्यालय (NSO)</div><div class="opt-item">(b) भारतीय रिज़र्व बैंक (RBI)</div><div class="opt-item">(c) आर्थिक सलाहकार कार्यालय (OEA), वाणिज्य एवं उद्योग मंत्रालय</div><div class="opt-item">(d) श्रम ब्यूरो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आर्थिक सलाहकार कार्यालय, वाणिज्य एवं उद्योग मंत्रालय</strong><br>WPI थोक स्तर पर कीमतों में बदलाव को मापता है[cite: 11]।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. थोक मूल्य सूचकांक (WPI) की संरचना के संबंध में निम्नलिखित में से किस घटक का भारांक (Weightage) सबसे अधिक है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्राथमिक वस्तुएं</div><div class="opt-item">(b) ईंधन और ऊर्जा</div><div class="opt-item">(c) विनिर्मित उत्पाद (Manufactured Products)</div><div class="opt-item">(d) सेवाएं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) विनिर्मित उत्पाद (लगभग 64.23%)</strong><br>WPI में सेवाएं शामिल नहीं होती हैं।</div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - हड़प्पा सभ्यता (नए PYQ)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. निम्नलिखित में से कौन-सा हड़प्पाकालीन स्थल और उसके खोजकर्ता का युग्म सही सुमेलित नहीं है? (UPSC PYQ)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा - दयाराम साहनी</div><div class="opt-item">(b) लोथल - एस. आर. राव</div><div class="opt-item">(c) सुरकोटदा - जे. पी. जोशी</div><div class="opt-item">(d) धौलावीरा - बी. के. थापर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) धौलावीरा - बी. के. थापर</strong><br>धौलावीरा की खोज जे.पी. जोशी ने (1967-68) और व्यापक उत्खनन आर.एस. बिष्ट ने किया था। बी.के. थापर कालीबंगा से जुड़े हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. भारत में हड़प्पा संस्कृति के स्थलों का सर्वाधिक संकेंद्रण (Concentration) किस नदी घाटी के किनारे प्राप्त हुआ है? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) सतलज</div><div class="opt-item">(b) सिन्धु</div><div class="opt-item">(c) घग्घर-हाकरा (प्राचीन सरस्वती)</div><div class="opt-item">(d) रावी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) घग्घर-हाकरा</strong><br>भले ही इसे सिंधु घाटी सभ्यता कहा जाता है, लेकिन 80% से अधिक बस्तियां घग्घर-हाकरा (सरस्वती) नदी बेसिन में पाई गई हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. 'दधेरी' (Dadheri) एक परवर्ती (Later) हड़प्पीय पुरास्थल है, यह किस राज्य में स्थित है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) जम्मू में</div><div class="opt-item">(b) पंजाब में</div><div class="opt-item">(c) हरियाणा में</div><div class="opt-item">(d) उत्तर प्रदेश में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पंजाब में</strong><br>दधेरी पंजाब के लुधियाना जिले में स्थित एक परवर्ती हड़प्पाकालीन स्थल है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. भारत में स्थित हड़प्पा सभ्यता का सबसे बड़ा पुरास्थल कौन-सा है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) आलमगीरपुर</div><div class="opt-item">(b) कालीबंगा</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) राखीगढ़ी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) राखीगढ़ी</strong><br>हरियाणा के हिसार जिले में स्थित राखीगढ़ी भारत में हड़प्पा सभ्यता का सबसे बड़ा स्थल है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. किस हड़प्पीय स्थल से चावल (धान) की खेती के साक्ष्य प्राप्त हुए हैं? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) चन्हूदड़ो</div><div class="opt-item">(b) लोथल</div><div class="opt-item">(c) मोहनजोदड़ो</div><div class="opt-item">(d) मुंडीगाक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लोथल</strong><br>गुजरात के लोथल से चावल के दाने (धान की भूसी) के साक्ष्य मिले हैं, जो चावल की खेती को प्रमाणित करते हैं। (रंगपुर से भी धान की भूसी मिली है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. हड़प्पा सभ्यता की अधिकांश मुद्राएं (Seals) किस पदार्थ की बनी हुई थीं? (MPPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) चर्ट (Chert)</div><div class="opt-item">(b) सेलखड़ी (Steatite)</div><div class="opt-item">(c) तांबा</div><div class="opt-item">(d) लोहा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सेलखड़ी (Steatite)</strong><br>हड़प्पा सभ्यता की अधिकांश वर्गाकार मुद्राएं सेलखड़ी (Steatite) से बनाई जाती थीं। लोहा उन्हें ज्ञात ही नहीं था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. हड़प्पन संस्कृति के संदर्भ में 'शैलकृत स्थापत्य' (Rock-cut Architecture) के प्रमाण कहाँ से मिले हैं? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कालीबंगा</div><div class="opt-item">(b) धौलावीरा</div><div class="opt-item">(c) कोटदीजी</div><div class="opt-item">(d) आमरी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) धौलावीरा</strong><br>गुजरात के धौलावीरा से उत्कृष्ट जल-प्रबंधन और शैलकृत (पत्थरों पर पॉलिश वाले) स्थापत्य के प्रमाण मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. हड़प्पा सभ्यता का वह कौन-सा नगर है जो तीन भागों (दुर्ग, मध्यम नगर, निचला नगर) में विभाजित था? (BPSC/UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कालीबंगा</div><div class="opt-item">(b) लोथल</div><div class="opt-item">(c) चन्हूदड़ो</div><div class="opt-item">(d) धौलावीरा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) धौलावीरा</strong><br>सामान्यतः हड़प्पा के नगर दो भागों (दुर्ग और निचला शहर) में बंटे थे, लेकिन धौलावीरा एकमात्र ऐसा शहर है जो तीन भागों में विभाजित था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. निम्नलिखित में से कौन-सा एक हड़प्पा का बंदरगाह (Port City) है? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) सिकंदरिया</div><div class="opt-item">(b) लोथल</div><div class="opt-item">(c) महास्थानगढ़</div><div class="opt-item">(d) नागपट्टनम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लोथल</strong><br>लोथल (गुजरात) में भोगवा नदी के तट पर एक विशाल गोदीवाड़ा (Dockyard) मिला है, जो इसे प्रमुख बंदरगाह सिद्ध करता है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. वस्त्रों के लिए 'कपास की खेती' का आरंभ सबसे पहले कहाँ किया गया था? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) मिस्र में</div><div class="opt-item">(b) मेसोपोटामिया में</div><div class="opt-item">(c) मध्य अमेरिका में</div><div class="opt-item">(d) भारत में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) भारत में</strong><br>कपास की खेती का आरंभ सर्वप्रथम भारत में हड़प्पावासियों द्वारा किया गया था। यूनानी लोग कपास को 'सिंडन' (Sindon) कहते थे।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '14-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
