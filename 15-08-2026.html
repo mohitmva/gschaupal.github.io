@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #f39c12;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 25px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
+        header p { margin: 5px 0 0; color: #1abc9c; font-size: 1.1rem; }
+
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 10px 18px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 10px; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #fdfae6;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .value-addition-box h3 { color: #d35400; margin-top: 0; text-align: center; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .opt-item { background: #fff; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+
+        details { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; margin-top: 5px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; }
+        .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 25px; background: #1a252f; color: white; margin-top: 20px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>15 अगस्त 2026 | डेली करेंट अफेयर्स एवं इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB & NHRC News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (25 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title">1. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. अमेरिकी रिपोर्ट: 'द ग्रेट ट्रांसशिपमेंट स्कैम' और भारत (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> व्हाइट हाउस की नई रिपोर्ट 'द ग्रेट ट्रांसशिपमेंट स्कैम' में भारत को उन शीर्ष देशों (enablers) में नामित किया गया है जो चीन को अमेरिकी टैरिफ से बचने में मदद कर रहे हैं[cite: 16]।</li>
+                        <li><strong>पुणे-गुजरात-चेन्नई बेल्ट:</strong> रिपोर्ट में इस बेल्ट का विशेष उल्लेख है, जहाँ चीन से आयातित सामानों की हल्की रीपैकेजिंग कर उन्हें 'मेड इन इंडिया' के रूप में अमेरिका भेजा जा रहा है[cite: 16]।</li>
+                        <li><strong>टैरिफ आर्बिट्रेज:</strong> अमेरिका ने 'ट्रेड एक्ट 1974' के सेक्शन 301 के तहत चीनी उत्पादों पर भारी टैरिफ लगाए हैं। इससे बचने के लिए चीन तीसरे देशों का मार्ग (Transshipment) चुन रहा है[cite: 16]।</li>
+                        <li><strong>रूल ऑफ ओरिजिन (ROO):</strong> अंतर्राष्ट्रीय व्यापार में ROO यह निर्धारित करता है कि कोई उत्पाद किस देश का है। बिना महत्वपूर्ण मूल्य संवर्धन (Substantial Value Addition) के लेबल बदलना अवैध माना जाता है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "वैश्विक व्यापार युद्ध के दौर में ट्रांसशिपमेंट (Transshipment) और 'रूल ऑफ ओरिजिन' को लेकर विकसित देशों की चिंताएं बढ़ती जा रही हैं।" अमेरिकी रिपोर्ट के संदर्भ में भारत की आपूर्ति श्रृंखला पर पड़ने वाले प्रभावों का मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: अंतर्राष्ट्रीय व्यापार के संदर्भ में 'रूल ऑफ ओरिजिन' (Rules of Origin) का मुख्य उद्देश्य क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) परिवहन के लिए देशों के जहाजों का उपयोग तय करना</div><div class="opt-item">(b) उत्पाद के 'राष्ट्रीय मूल' को निर्धारित कर सही टैरिफ लगाना</div>
+                            <div class="opt-item">(c) IPR का संरक्षण सुनिश्चित करना</div><div class="opt-item">(d) WTO का बजट अंशदान तय करना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. जनगणना 2027: 1931 के बाद पहली बार होगी 'जाति' की गणना (GS-1 / GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> केंद्र सरकार ने जनगणना 2027 के दूसरे चरण के लिए 40 प्रश्नों को अधिसूचित किया है। प्रश्न संख्या 10 के तहत 'SC/ST/जाति' दर्ज की जाएगी[cite: 16]।</li>
+                        <li>स्वतंत्र भारत में यह पहली बार है जब SC/ST के अलावा अन्य जातियों की आधिकारिक जनगणना होगी[cite: 16]।</li>
+                        <li><strong>नए प्रश्न:</strong> 2011 की तुलना में 13 नए डेटा फील्ड जोड़े गए हैं। इनमें आधार (Aadhaar), वोटर आईडी, पासपोर्ट नंबर, बैंक खाते और COVID-19 टीकाकरण की जानकारी शामिल है[cite: 16]।</li>
+                        <li><strong>स्टैटिक (इतिहास):</strong> 1931 तक जाति के आंकड़े एकत्र किए जाते थे। 2011 की 'सामाजिक-आर्थिक जाति जनगणना' (SECC) जनगणना अधिनियम 1948 के दायरे से बाहर थी और इसके जाति के आंकड़े कभी प्रकाशित नहीं किए गए[cite: 16]।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत में लगभग एक सदी बाद जाति आधारित जनगणना (Caste Census) कराने का निर्णय ऐतिहासिक है।" स्वतंत्र भारत में इसके पक्ष-विपक्ष में तर्क देते हुए इसके सामाजिक-राजनीतिक प्रभावों का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारत में दशकीय जनगणना (Decadal Census) का आयोजन निम्नलिखित में से किस मंत्रालय के अधीन किया जाता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) सांख्यिकी और कार्यक्रम कार्यान्वयन मंत्रालय</div><div class="opt-item">(b) गृह मंत्रालय (MHA)</div>
+                            <div class="opt-item">(c) सामाजिक न्याय और अधिकारिता मंत्रालय</div><div class="opt-item">(d) नीति आयोग</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) गृह मंत्रालय (MHA)</strong>[cite: 16]।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. कश्मीर का विलो बैट (Willow Bat) उद्योग संकट में (GS-1 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> कश्मीर का प्रसिद्ध क्रिकेट बैट उद्योग कच्चे माल (Willow Wood) की कमी, जलवायु परिवर्तन और लकड़ी की तस्करी जैसी चुनौतियों का सामना कर रहा है[cite: 16]।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड:</strong> 'इंग्लिश विलो' (Salix alba) के पेड़ 1895 में ब्रिटिश अधिकारी सर वाल्टर आर. लॉरेंस द्वारा कश्मीर लाए गए थे[cite: 16]।</li>
+                        <li><strong>भौगोलिक आवश्यकता:</strong> यह पेड़ ठंडे, नमी वाले दलदली क्षेत्रों (Wetlands) में अच्छी तरह पनपता है। जलस्रोतों के सूखने से विलो उत्पादन पर बुरा असर पड़ा है[cite: 16]।</li>
+                        <li><strong>GI टैग:</strong> कश्मीर विलो बैट को 2025 में 'भौगोलिक संकेतक' (GI Tag) मिला और 2021 में इसे ICC से अंतरराष्ट्रीय मान्यता प्राप्त हुई[cite: 16]।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भौगोलिक संकेतक (GI Tag) स्थानीय उद्योगों को वैश्विक पहचान दिला सकते हैं, लेकिन पर्यावरणीय क्षरण उनके अस्तित्व के लिए खतरा बन सकता है।" कश्मीर के 'विलो बैट' उद्योग के संदर्भ में इस कथन का परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'इंग्लिश विलो' (English Willow) का पेड़ मुख्य रूप से किस प्रकार की भौगोलिक परिस्थितियों में पनपता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) उष्णकटिबंधीय शुष्क क्षेत्र</div><div class="opt-item">(b) हल्के जलभराव वाले ठंडे दलदली क्षेत्र</div>
+                            <div class="opt-item">(c) गर्म मरुस्थलीय क्षेत्र</div><div class="opt-item">(d) लेटेराइट मिट्टी वाले पठारी क्षेत्र</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) हल्के जलभराव वाले ठंडे दलदली क्षेत्र (Wetlands)</strong>[cite: 16]।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. अनुकंपा नियुक्ति (Compassionate Appointment) और अनुच्छेद 162 (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सुप्रीम कोर्ट ने मद्रास उच्च न्यायालय के उस आदेश पर रोक लगा दी है जिसमें 'करूर भगदड़' के पीड़ितों के परिवारों को अनुकंपा के आधार पर नौकरी देने के तमिलनाडु सरकार के फैसले को रद्द कर दिया गया था[cite: 16]।</li>
+                        <li><strong>उच्च न्यायालय का तर्क:</strong> सरकारी नौकरियां केवल योग्यता के आधार पर दी जानी चाहिए, और मुआवजे के रूप में नौकरी बांटना अनुच्छेद 14 (समानता) और अनुच्छेद 16 (सार्वजनिक रोजगार में समान अवसर) का उल्लंघन है[cite: 16]।</li>
+                        <li><strong>संविधान का अनुच्छेद 162:</strong> यह राज्य की 'कार्यकारी शक्ति' (Executive Power) के विस्तार को परिभाषित करता है। राज्य सरकार ने इसी के तहत नीति बनाने का तर्क दिया[cite: 16]।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "अनुकंपा के आधार पर (Compassionate Grounds) सार्वजनिक रोजगार प्रदान करना संविधान के अनुच्छेद 14 और 16 का अपवाद है।" इस प्रावधान के उद्देश्यों और न्यायालयों द्वारा तय की गई सीमाओं का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारतीय संविधान का अनुच्छेद 162, जिसे हाल ही में सुप्रीम कोर्ट की एक सुनवाई के दौरान संदर्भित किया गया, किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) सर्वोच्च न्यायालय का मूल क्षेत्राधिकार</div><div class="opt-item">(b) राज्य की कार्यकारी शक्ति का विस्तार</div>
+                            <div class="opt-item">(c) राष्ट्रपति की अध्यादेश जारी करने की शक्ति</div><div class="opt-item">(d) उच्च न्यायालयों की रिट शक्ति</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) राज्य की कार्यकारी शक्ति (Executive power of State) का विस्तार</strong>[cite: 16]।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. होर्मुज जलडमरूमध्य और तेल की कीमतें: अमेरिका-ईरान तनाव (GS-2 / IR)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> अमेरिका ने स्पष्ट किया है कि ईरान के साथ संघर्ष में अब उसकी शीर्ष प्राथमिकता ईरान का परमाणु कार्यक्रम नहीं, बल्कि वैश्विक बाजार में पेट्रोलियम की कीमतों को कम करना है[cite: 16]।</li>
+                        <li><strong>भू-राजनीतिक संकट:</strong> ईरान ने <strong>होर्मुज जलडमरूमध्य (Strait of Hormuz)</strong> को लगभग बंद कर दिया है, जो वैश्विक तेल आपूर्ति का सबसे महत्वपूर्ण मार्ग है[cite: 16]। इससे कच्चे तेल की कीमतों में भारी उछाल आया है[cite: 16]।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड:</strong> यह जलडमरूमध्य 'फारस की खाड़ी (Persian Gulf)' को 'ओमान की खाड़ी' और अरब सागर से जोड़ता है। यह दुनिया का सबसे महत्वपूर्ण ऑयल चोकपॉइंट (Chokepoint) है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "मध्य पूर्व में भू-राजनीतिक अस्थिरता और होर्मुज जलडमरूमध्य जैसे चोकपॉइंट्स का अवरुद्ध होना वैश्विक ऊर्जा सुरक्षा के लिए गंभीर खतरा है।" भारत की ऊर्जा सुरक्षा पर पड़ने वाले प्रभावों पर चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: अंतरराष्ट्रीय ऊर्जा व्यापार के लिए अत्यंत महत्वपूर्ण 'होर्मुज जलडमरूमध्य' किन दो जल निकायों को जोड़ता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) लाल सागर और अदन की खाड़ी</div><div class="opt-item">(b) फारस की खाड़ी और ओमान की खाड़ी</div>
+                            <div class="opt-item">(c) काला सागर और भूमध्य सागर</div><div class="opt-item">(d) अंडमान सागर और दक्षिण चीन सागर</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) फारस की खाड़ी और ओमान की खाड़ी</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title">2. PIB एवं राष्ट्रीय महत्वपूर्ण खबरें (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. RSVC-AMRIT प्लेटफॉर्म: ग्रामीण नवाचार और प्रौद्योगिकी हस्तांतरण (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> 15 अगस्त 2026 को भारत सरकार के प्रधान वैज्ञानिक सलाहकार ने <strong>नाबार्ड (NABARD)</strong> के सहयोग से 'आरएसवीसी-अमृत' (RSVC-AMRIT) प्लेटफॉर्म का शुभारंभ किया[cite: 13]।</li>
+                        <li><strong>उद्देश्य:</strong> यह प्लेटफॉर्म 'रूटेज स्मार्ट विलेज सेंटर' (RSVC) इकोसिस्टम की डिजिटल रीढ़ के रूप में कार्य करेगा। इसका लक्ष्य ग्रामीण क्षेत्रों में उपयुक्त और किफायती प्रौद्योगिकियों का हस्तांतरण करना है[cite: 13]।</li>
+                        <li>यह नवप्रवर्तकों, स्टार्टअप्स, शैक्षणिक संस्थानों और ग्रामीण समुदायों को एक ही मंच पर लाएगा, जिससे 'विकसित भारत 2047' के विजन को जमीनी स्तर पर साकार किया जा सके[cite: 13]।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. DLI योजना और भारत का सेमीकंडक्टर इकोसिस्टम: 'विहान' चिप (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> 'डिज़ाइन लिंक्ड इंसेंटिव' (DLI) योजना द्वारा समर्थित भारतीय स्टार्टअप ने स्वदेशी 'VEGA' माइक्रोप्रोसेसर का उपयोग करके <strong>'विहान' (Vihaan)</strong> नामक ब्रॉडबैंड चिप का निर्माण सफलतापूर्वक पूरा कर लिया है[cite: 14]।</li>
+                        <li><strong>उपयोग:</strong> यह चिप भारतीय घरों तक फाइबर ब्रॉडबैंड और नेटवर्किंग पहुँचाने के लिए विशेष रूप से डिज़ाइन की गई है[cite: 14]।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड:</strong> भारत ने वैश्विक स्तर पर प्रतिस्पर्धी बनने के लिए जुलाई 2026 में 1,27,500 करोड़ रुपये के परिव्यय के साथ <strong>सेमीकंडक्टर 2.0</strong> को मंजूरी दी है[cite: 14]। DLI योजना घरेलू कंपनियों को चिप डिजाइनिंग के लिए वित्तीय मदद देती है[cite: 14]।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. श्री अरबिंदो: दार्शनिक, राष्ट्रवादी और विचारक (GS-1)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> 15 अगस्त को प्रधानमंत्री ने महान दार्शनिक, राष्ट्रवादी और कवि श्री अरबिंदो (Sri Aurobindo) की जयंती पर उन्हें भावभीनी श्रद्धांजलि अर्पित की[cite: 15]।</li>
+                        <li><strong>इतिहास (Static):</strong> श्री अरबिंदो (1872-1950) उग्र राष्ट्रवादी थे। 1908 के 'अलीपुर बम षड्यंत्र केस' में जेल जाने के बाद उनका जीवन आध्यात्मिक रूपांतरण की ओर मुड़ गया और उन्होंने पुडुचेरी में 'अरबिंदो आश्रम' की स्थापना की।</li>
+                        <li><strong>प्रमुख रचनाएँ:</strong> 'द लाइफ डिवाइन' (The Life Divine), सावित्री (Savitri), और 'सिंथेसिस ऑफ योगा'।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. राष्ट्रीय मानवाधिकार आयोग (NHRC) और 'स्वतः संज्ञान' (Suo Motu) (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> NHRC ने हाल ही में फरीदाबाद में सीवर से हुई मौत, गढ़चिरौली में सांप काटने से मौत, और CRPF कर्मियों की मौतों का <strong>स्वतः संज्ञान (Suo motu)</strong> लिया है[cite: 10]।</li>
+                        <li><strong>स्टैटिक (NHRC):</strong> इसकी स्थापना 12 अक्टूबर 1993 को 'मानवाधिकार संरक्षण अधिनियम (PHRA)' के तहत एक वैधानिक निकाय के रूप में की गई थी।</li>
+                        <li><strong>संरचना:</strong> इसमें एक अध्यक्ष (भारत का पूर्व CJI या सुप्रीम कोर्ट का पूर्व न्यायाधीश) और 5 अन्य सदस्य होते हैं। इसकी सिफारिशें प्रकृति में केवल 'सलाहकारी' होती हैं।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. थोक मूल्य सूचकांक (WPI) आधारित मुद्रास्फीति (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> नवीनतम डेटा के अनुसार जुलाई 2026 तक WPI मुद्रास्फीति में 'प्राथमिक वस्तुओं' और 'विनिर्मित उत्पादों' का योगदान प्रमुख रहा है[cite: 11]।</li>
+                        <li><strong>स्टैटिक (WPI):</strong> इसे वाणिज्य और उद्योग मंत्रालय के 'आर्थिक सलाहकार कार्यालय' (OEA) द्वारा मासिक रूप से जारी किया जाता है। आधार वर्ष 2011-12 है।</li>
+                        <li><strong>वेटेज (Weightage):</strong> 1. विनिर्मित उत्पाद (64.2%), 2. प्राथमिक वस्तुएं (22.6%), 3. ईंधन और ऊर्जा (13.1%)। इसमें सेवाएं शामिल नहीं होतीं।</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title">3. वैल्यू एडिशन (Value Addition) : भारतीय संविधान की अनुसूचियां</h2>
+                <div class="value-addition-box">
+                    <h3>भारतीय संविधान की 1 से 12 अनुसूचियों की सूची (UPSC दृष्टिकोण)</h3>
+                    <ul class="content-list" style="color: #2c3e50;">
+                        <li><strong>प्रथम अनुसूची:</strong> राज्यों (28) और केंद्र शासित प्रदेशों (8) के क्षेत्रों और नामों का विवरण (संबंधित अनुच्छेद 1 और 4)।</li>
+                        <li><strong>द्वितीय अनुसूची:</strong> राष्ट्रपति, राज्यपाल, लोकसभा/विधानसभा अध्यक्ष, सुप्रीम कोर्ट/हाईकोर्ट के न्यायाधीशों के वेतन, भत्ते और पेंशन से जुड़े प्रावधान (अनुच्छेद 59, 65, 97 आदि)।</li>
+                        <li><strong>तृतीय अनुसूची:</strong> मंत्रियों, सांसदों, विधायकों और न्यायाधीशों द्वारा ली जाने वाली शपथ या प्रतिज्ञा के प्रारूप (अनुच्छेद 75, 84, 99 आदि)।</li>
+                        <li><strong>चौथी अनुसूची:</strong> राज्यों और केंद्र शासित प्रदेशों के लिए राज्यसभा में सीटों का आवंटन (अनुच्छेद 4 और 80)।</li>
+                        <li><strong>पांचवीं अनुसूची:</strong> अनुसूचित क्षेत्रों (Scheduled Areas) और अनुसूचित जनजातियों (ST) के प्रशासन व नियंत्रण से संबंधित प्रावधान (अनुच्छेद 244)।</li>
+                        <li><strong>छठी अनुसूची:</strong> असम, मेघालय, त्रिपुरा और मिजोरम (AMTM) के जनजातीय क्षेत्रों के प्रशासन के लिए स्वायत्त जिला परिषदों (ADC) का गठन (अनुच्छेद 244 और 275)।</li>
+                        <li><strong>सातवीं अनुसूची:</strong> केंद्र और राज्यों के बीच शक्तियों का विभाजन—संघ सूची, राज्य सूची और समवर्ती सूची (अनुच्छेद 246)।</li>
+                        <li><strong>आठवीं अनुसूची:</strong> संविधान द्वारा मान्यता प्राप्त 22 आधिकारिक भाषाएं (अनुच्छेद 344 और 351)।</li>
+                        <li><strong>नवीं अनुसूची:</strong> भूमि सुधार और जमींदारी प्रथा उन्मूलन से संबंधित अधिनियम; न्यायिक समीक्षा से सुरक्षा (प्रथम संविधान संशोधन 1951 द्वारा जोड़ी गई, अनुच्छेद 31-B)।</li>
+                        <li><strong>दसवीं अनुसूची:</strong> दल-बदल (Anti-defection) के आधार पर सांसदों और विधायकों की अयोग्यता से जुड़े प्रावधान (52वां संशोधन 1985, अनुच्छेद 102 और 191)।</li>
+                        <li><strong>ग्यारहवीं अनुसूची:</strong> पंचायतों की शक्तियां, प्राधिकार और उत्तरदायित्व (29 विषय) — (73वां संशोधन 1992, अनुच्छेद 243-G)।</li>
+                        <li><strong>बारहवीं अनुसूची:</strong> नगर पालिकाओं की शक्तियां, प्राधिकार और उत्तरदायित्व (18 विषय) — (74वां संशोधन 1992, अनुच्छेद 243-W)।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title">5. महा-प्रश्नोत्तरी (25 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 15 हड़प्पा सभ्यता (नए PYQ) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. अंतर्राष्ट्रीय व्यापार के संदर्भ में 'रूल ऑफ ओरिजिन' (Rules of Origin) का मुख्य उद्देश्य क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जहाजों का उपयोग तय करना</div><div class="opt-item">(b) उत्पाद के 'राष्ट्रीय मूल' को निर्धारित कर सही टैरिफ लगाना</div><div class="opt-item">(c) IPR का संरक्षण करना</div><div class="opt-item">(d) WTO का बजट तय करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong> अमेरिकी रिपोर्ट के अनुसार चीन भारत के रास्ते (Transshipment) टैरिफ से बच रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. भारत में दशकीय जनगणना (Decadal Census) का आयोजन निम्नलिखित में से किस मंत्रालय के अधीन किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) MoSPI</div><div class="opt-item">(b) गृह मंत्रालय (MHA)</div><div class="opt-item">(c) सामाजिक न्याय मंत्रालय</div><div class="opt-item">(d) नीति आयोग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) गृह मंत्रालय (MHA)</strong>। 2027 की जनगणना में 1931 के बाद पहली बार जाति के आंकड़े आधिकारिक रूप से एकत्र किए जाएंगे।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. 'इंग्लिश विलो' (English Willow) का पेड़ मुख्य रूप से किस प्रकार की भौगोलिक परिस्थितियों में पनपता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) उष्णकटिबंधीय शुष्क क्षेत्र</div><div class="opt-item">(b) हल्के जलभराव वाले ठंडे दलदली क्षेत्र (Wetlands)</div><div class="opt-item">(c) गर्म मरुस्थलीय क्षेत्र</div><div class="opt-item">(d) लेटेराइट मिट्टी वाले क्षेत्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong> कश्मीर के विलो बैट उद्योग को दलदली क्षेत्रों के सूखने के कारण कच्चे माल की कमी का सामना करना पड़ रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. भारतीय संविधान का अनुच्छेद 162, जिसे हाल ही में अनुकंपा नियुक्ति के संदर्भ में सुप्रीम कोर्ट में संदर्भित किया गया, किससे संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) SC का मूल क्षेत्राधिकार</div><div class="opt-item">(b) राज्य की कार्यकारी शक्ति (Executive Power) का विस्तार</div><div class="opt-item">(c) अध्यादेश जारी करने की शक्ति</div><div class="opt-item">(d) उच्च न्यायालयों की रिट शक्ति</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) राज्य की कार्यकारी शक्ति का विस्तार</strong>।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. अंतरराष्ट्रीय ऊर्जा व्यापार के लिए अत्यंत महत्वपूर्ण 'होर्मुज जलडमरूमध्य' किन दो जल निकायों को जोड़ता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) लाल सागर और अदन की खाड़ी</div><div class="opt-item">(b) फारस की खाड़ी और ओमान की खाड़ी</div><div class="opt-item">(c) काला सागर और भूमध्य सागर</div><div class="opt-item">(d) अंडमान सागर और दक्षिण चीन सागर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) फारस की खाड़ी और ओमान की खाड़ी</strong>। अमेरिका-ईरान तनाव के कारण यह मार्ग चर्चा में है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में चर्चा में रहा 'RSVC-AMRIT' प्लेटफॉर्म निम्नलिखित में से किसके सहयोग से विकसित किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नीति आयोग</div><div class="opt-item">(b) नाबार्ड और प्रधान वैज्ञानिक सलाहकार कार्यालय</div><div class="opt-item">(c) CSIR</div><div class="opt-item">(d) कृषि मंत्रालय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) नाबार्ड और प्रधान वैज्ञानिक सलाहकार कार्यालय</strong>। यह ग्रामीण प्रौद्योगिकी हस्तांतरण के लिए है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. हाल ही में विकसित 'विहान' (Vihaan) स्वदेशी चिप का प्राथमिक उपयोग किस क्षेत्र में किया जाएगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) रक्षा रडार</div><div class="opt-item">(b) फाइबर ब्रॉडबैंड और नेटवर्किंग</div><div class="opt-item">(c) EV बैटरी प्रबंधन</div><div class="opt-item">(d) अंतरिक्ष प्रक्षेपण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) फाइबर ब्रॉडबैंड और नेटवर्किंग</strong>। इसे DLI योजना के तहत समर्थन प्राप्त है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. प्रसिद्ध 'अलीपुर बम षड्यंत्र मामले' (1908) में श्री अरबिंदो का अदालत में बचाव किस प्रसिद्ध वकील ने किया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोतीलाल नेहरू</div><div class="opt-item">(b) भूलाभाई देसाई</div><div class="opt-item">(c) चित्तरंजन दास (C.R. Das)</div><div class="opt-item">(d) तेज बहादुर सप्रू</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) चित्तरंजन दास (C.R. Das)</strong>। 15 अगस्त को श्री अरबिंदो की जयंती मनाई गई।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. राष्ट्रीय मानवाधिकार आयोग (NHRC) के अध्यक्ष के रूप में किसे नियुक्त किया जा सकता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल भारत के पूर्व मुख्य न्यायाधीश को</div><div class="opt-item">(b) भारत के पूर्व CJI या सुप्रीम कोर्ट के पूर्व न्यायाधीश को</div><div class="opt-item">(c) केवल उच्च न्यायालय के मुख्य न्यायाधीश को</div><div class="opt-item">(d) किसी भी प्रख्यात न्यायविद को</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong> PHRA संशोधन 2019 के अनुसार। NHRC ने हाल ही में स्वतः संज्ञान लिया है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. भारत में 'थोक मूल्य सूचकांक' (WPI) किसके द्वारा जारी किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) राष्ट्रीय सांख्यिकी कार्यालय (NSO)</div><div class="opt-item">(b) भारतीय रिज़र्व बैंक (RBI)</div><div class="opt-item">(c) आर्थिक सलाहकार कार्यालय, वाणिज्य एवं उद्योग मंत्रालय</div><div class="opt-item">(d) श्रम ब्यूरो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आर्थिक सलाहकार कार्यालय, वाणिज्य एवं उद्योग मंत्रालय</strong>। WPI में सर्वाधिक भार विनिर्मित उत्पादों (64.2%) का है।</div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - हड़प्पा सभ्यता (नए PYQ)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. हड़प्पा सभ्यता का कौन सा स्थल भूकंप के आरंभिक साक्ष्य (Early Evidence of Earthquake) दर्शाता है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) धौलावीरा</div><div class="opt-item">(c) कालीबंगा</div><div class="opt-item">(d) सुरकोटदा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कालीबंगा</strong><br>राजस्थान के कालीबंगा से भूकंप के सबसे पुराने साक्ष्य प्राप्त हुए हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. सिंधु सभ्यता के किस स्थल से उन्नत 'जल संरक्षण' (Water Reservoir/Harvesting) के स्पष्ट साक्ष्य मिले हैं? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) लोथल</div><div class="opt-item">(b) धौलावीरा</div><div class="opt-item">(c) बनावली</div><div class="opt-item">(d) चन्हूदड़ो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) धौलावीरा</strong><br>गुजरात के धौलावीरा में पत्थरों से बने विशाल जलाशय और चेक डैम के प्रमाण मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. किस हड़प्पाई स्थल से सूती कपड़े (Cotton Cloth) का टुकड़ा प्राप्त हुआ है? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोहनजोदड़ो</div><div class="opt-item">(b) हड़प्पा</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मोहनजोदड़ो</strong><br>मोहनजोदड़ो से एक चांदी के बर्तन और कुछ तांबे के औजारों पर लिपटे हुए सूती कपड़े के साक्ष्य मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. 'मनके बनाने का कारखाना' (Bead Making Factory) किन स्थलों से प्राप्त हुआ है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोहनजोदड़ो और हड़प्पा</div><div class="opt-item">(b) चन्हूदड़ो और लोथल</div><div class="opt-item">(c) कालीबंगा और बनावली</div><div class="opt-item">(d) धौलावीरा और सुरकोटदा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चन्हूदड़ो और लोथल</strong><br>इन दोनों स्थलों से मनके (Beads) बनाने के कारखाने प्राप्त हुए हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. हड़प्पा स्थल 'सनावली' (Sanauli) हाल ही में क्यों चर्चा में रहा? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) विशाल स्नानागार के लिए</div><div class="opt-item">(b) मानव शवाधान और रथ (Chariot) के साक्ष्यों के लिए</div><div class="opt-item">(c) विदेशी व्यापार के लिए</div><div class="opt-item">(d) घोड़े की हड्डियों के लिए</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मानव शवाधान और रथ (Chariot) के साक्ष्यों के लिए</strong><br>उत्तर प्रदेश के बागपत जिले में स्थित सनावली से 125 से अधिक मानव शवाधान और रथ के साक्ष्य मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. किस स्थल से युग्म शवाधान (Double/Joint Burial) के साक्ष्य मिले हैं? (MPPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) लोथल और कालीबंगा</div><div class="opt-item">(b) हड़प्पा और मोहनजोदड़ो</div><div class="opt-item">(c) चन्हूदड़ो और मांडा</div><div class="opt-item">(d) सुरकोटदा और धौलावीरा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लोथल और कालीबंगा</strong><br>लोथल से 3 और कालीबंगा से 1 युग्म शवाधान (स्त्री-पुरुष एक साथ) मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. पक्की मिट्टी का बना 'हल' (Terracotta Plough) कहाँ से प्राप्त हुआ है? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) बनावली</div><div class="opt-item">(d) रंगपुर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) बनावली</strong><br>हरियाणा के बनावली (फतेहाबाद) से पक्की मिट्टी का बना हल प्राप्त हुआ है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. हड़प्पा सभ्यता के लोग किस धातु से पूर्णतः अपरिचित थे? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) तांबा</div><div class="opt-item">(b) कांस्य</div><div class="opt-item">(c) सोना</div><div class="opt-item">(d) लोहा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) लोहा</strong><br>सिंधु सभ्यता एक कांस्य युगीन सभ्यता थी, लोहे का ज्ञान भारत में 1000 ईसा पूर्व के आसपास उत्तर वैदिक काल में हुआ।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. 'विशाल स्नानागार' (Great Bath) किस पुरातात्विक स्थल से पाया गया है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोहनजोदड़ो</div><div class="opt-item">(b) हड़प्पा</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मोहनजोदड़ो</strong><br>जॉन मार्शल ने इसे 'तत्कालीन विश्व का एक आश्चर्यजनक निर्माण' कहा था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. सिंधु सभ्यता का सबसे उत्तरी स्थल (Northernmost site) कौन-सा है? (RAS/RTS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) आलमगीरपुर</div><div class="opt-item">(b) दायमाबाद</div><div class="opt-item">(c) मांडा</div><div class="opt-item">(d) सुत्कागेंडोर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मांडा</strong><br>मांडा जम्मू-कश्मीर में चिनाब नदी के तट पर स्थित है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. 'पशुपति शिव' की प्रसिद्ध मुहर कहाँ से प्राप्त हुई है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) कालीबंगा</div><div class="opt-item">(d) लोथल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मोहनजोदड़ो</strong><br>इस मुहर पर एक त्रिमुखी देवता (पशुपति) पद्मासन में बैठे हैं, जिनके चारों ओर गैंडा, भैंसा, हाथी और बाघ दर्शाए गए हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. हाथी दांत का पैमाना (Ivory scale) हड़प्पीय संदर्भ में कहाँ से मिला है? (UP RO/ARO)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कालीबंगा</div><div class="opt-item">(b) लोथल</div><div class="opt-item">(c) धौलावीरा</div><div class="opt-item">(d) बनावली</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लोथल</strong><br>गुजरात के लोथल से हाथी दांत का बना पैमाना प्राप्त हुआ है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. सिंधु घाटी सभ्यता की लिपि (Script) कैसी थी? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) ब्राह्मी</div><div class="opt-item">(b) खरोष्ठी</div><div class="opt-item">(c) भावचित्रात्मक (Pictographic)</div><div class="opt-item">(d) अरमाइक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) भावचित्रात्मक (Pictographic)</strong><br>यह लिपि दाईं से बाईं ओर लिखी जाती थी। इसे 'बुस्ट्रोफेडन' (Boustrophedon) शैली कहा जाता है। इसे अब तक पढ़ा नहीं जा सका है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. हड़प्पा सभ्यता के किस नगर में मकानों के दरवाजे मुख्य सड़क की ओर न खुलकर पीछे की ओर (गलियों में) खुलते थे? (अपवाद को छोड़कर) (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) लगभग सभी नगरों में</div><div class="opt-item">(b) केवल लोथल में</div><div class="opt-item">(c) केवल मोहनजोदड़ो में</div><div class="opt-item">(d) केवल कालीबंगा में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लगभग सभी नगरों में</strong><br>हड़प्पा सभ्यता के सभी नगरों में दरवाजे गलियों में खुलते थे। केवल 'लोथल' (Lothal) इसका अपवाद है, जहाँ दरवाजे मुख्य सड़क की ओर खुलते थे।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. 'समाधान R-37' (Burial R-37) नामक कब्रिस्तान किस स्थल से प्राप्त हुआ है? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) कालीबंगा</div><div class="opt-item">(d) लोथल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) हड़प्पा</strong><br>हड़प्पा के नगर-दुर्ग के दक्षिण में एक कब्रिस्तान मिला है जिसे 'कब्रिस्तान R-37' नाम दिया गया है।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '15-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
