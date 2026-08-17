@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #f39c12;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 25px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
+        header p { margin: 5px 0 0; color: #1abc9c; font-size: 1.1rem; }
+
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 10px 18px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 10px; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #fdfae6;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .value-addition-box h3 { color: #d35400; margin-top: 0; text-align: center; font-size: 1.5rem; border-bottom: 1px dashed #f1c40f; padding-bottom:10px; margin-bottom: 15px;}
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .opt-item { background: #fff; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+
+        details { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; margin-top: 5px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; }
+        .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 25px; background: #1a252f; color: white; margin-top: 20px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>17 अगस्त 2026 | डेली करेंट अफेयर्स एवं इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (35 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title">1. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. उत्तर प्रदेश में हेक्सावेलेंट क्रोमियम से भूजल प्रदूषण (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> उत्तर प्रदेश के फतेहपुर, कानपुर देहात और कानपुर नगर में औद्योगिक कचरे के कारण भूजल 'हेक्सावेलेंट क्रोमियम' (Hexavalent Chromium) से गंभीर रूप से प्रदूषित हो गया है, जिससे पानी का रंग पीला-हरा हो गया है।</li>
+                        <li><strong>स्रोत:</strong> कानपुर और आसपास के क्षेत्रों में 19वीं सदी से चमड़ा शोधन (Leather Tanning) उद्योग स्थापित हैं, जिनमें क्रोमियम सल्फेट का उपयोग होता है।</li>
+                        <li><strong>प्रभाव:</strong> यह रसायन अत्यधिक प्रतिक्रियाशील है और इसे 'कार्सिनोजेन' (कैंसर कारक) के रूप में वर्गीकृत किया गया है। लोगों में लीवर संक्रमण और त्वचा रोग बढ़ रहे हैं। NGT ने इसे हटाने के कई आदेश दिए हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "अनियंत्रित औद्योगिक विकास ने भारत में गंभीर भूजल प्रदूषण संकट को जन्म दिया है।" कानपुर क्षेत्र में हेक्सावेलेंट क्रोमियम प्रदूषण के स्वास्थ्य और पर्यावरणीय प्रभावों का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: जल प्रदूषण के संदर्भ में 'हेक्सावेलेंट क्रोमियम' (Chromium-VI) का प्राथमिक औद्योगिक स्रोत क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) उर्वरक निर्माण</div><div class="opt-item">(b) चमड़ा शोधन (Leather Tanning)</div>
+                            <div class="opt-item">(c) ताप विद्युत संयंत्र</div><div class="opt-item">(d) ई-कचरा प्रसंस्करण</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) चमड़ा शोधन (Leather Tanning) और इलेक्ट्रोप्लेटिंग।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. मेघालय में 'रैट-होल' खनन और बी.पी. काटाके समिति (GS-1/GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> मेघालय उच्च न्यायालय द्वारा गठित 'जस्टिस बी.पी. काटाके समिति' ने अपनी रिपोर्ट में खतरनाक 'रैट-होल' खदानों को बंद करने (Mine Closure Policy) में राज्य सरकार की सुस्ती पर गंभीर चिंता जताई है।</li>
+                        <li><strong>रैट-होल खनन (Rat-Hole Mining):</strong> इसमें जमीन के अंदर संकरी (150-300 मीटर गहरी) क्षैतिज सुरंगें खोदी जाती हैं, जिनमें केवल एक व्यक्ति ही रेंगकर जा सकता है।</li>
+                        <li><strong>प्रतिबंध:</strong> राष्ट्रीय हरित अधिकरण (NGT) ने अप्रैल 2014 में इसके खतरनाक स्वरूप और पर्यावरण (नदियों के अम्लीय होने) पर पड़ने वाले प्रभाव के कारण मेघालय में इस पर प्रतिबंध लगा दिया था।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: 'रैट-होल' खनन के कारण उत्पन्न होने वाले पर्यावरणीय और मानवीय संकटों पर चर्चा करें। NGT के प्रतिबंध के बावजूद इसके अनवरत जारी रहने के क्या कारण हैं?</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में समाचारों में रही 'जस्टिस बी.पी. काटाके समिति' का संबंध निम्नलिखित में से किस विषय से है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) पश्चिमी घाट संरक्षण</div><div class="opt-item">(b) मेघालय में 'रैट-होल' कोयला खदानों का विनियमन</div>
+                            <div class="opt-item">(c) मणिपुर जातीय हिंसा</div><div class="opt-item">(d) कृष्णा नदी जल विवाद</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) मेघालय में 'रैट-होल' खदानों को बंद करना।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. बार काउंसिल ऑफ इंडिया (BCI) की सीमाएं और न्यायिक स्वतंत्रता (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> भारत के मुख्य न्यायाधीश (CJI) ने NALSAR विश्वविद्यालय के 2026 बैच के छात्रों के पेशेवर नामांकन (Enrolment) को रोकने के BCI के आदेश पर कड़ी आपत्ति जताई और इसे अभिव्यक्ति की स्वतंत्रता का हनन माना।</li>
+                        <li><strong>कानूनी स्थिति (Advocates Act, 1961):</strong> BCI कानूनी शिक्षा के मानकों को बढ़ावा देता है, लेकिन अधिवक्ताओं का **नामांकन (Enrolment) पूरी तरह से 'राज्य बार काउंसिल' (State Bar Councils)** के अधिकार क्षेत्र में आता है (धारा 6 व 24)।</li>
+                        <li><strong>सुप्रीम कोर्ट:</strong> कोर्ट ने स्पष्ट किया कि BCI अधिनियम से बाहर जाकर कोई अतिरिक्त अयोग्यता नहीं थोप सकता। शांतिपूर्ण विरोध नामांकन रोकने का आधार नहीं हो सकता।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "बार काउंसिल ऑफ इंडिया (BCI) का प्राथमिक कार्य कानूनी शिक्षा के मानकों को बनाए रखना है, न कि असहमति के अधिकार को दबाना।" अधिवक्ता अधिनियम 1961 के तहत BCI और राज्य बार काउंसिलों की शक्तियों का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारत में किसी विधि स्नातक (Law Graduate) को अधिवक्ता के रूप में नामांकित (Enrol) करने का प्राथमिक और वैधानिक अधिकार किसके पास है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) सर्वोच्च न्यायालय</div><div class="opt-item">(b) बार काउंसिल ऑफ इंडिया (BCI)</div>
+                            <div class="opt-item">(c) राज्य बार काउंसिल (SBCs)</div><div class="opt-item">(d) विधि एवं न्याय मंत्रालय</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) राज्य बार काउंसिल (State Bar Councils)।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. वित्तीय समावेशन: PMJDY के 12 वर्ष और JAM ट्रिनिटी (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> 15 अगस्त 2014 को घोषित 'प्रधानमंत्री जन धन योजना' (PMJDY) को 12 वर्ष पूरे हो गए हैं। इस योजना ने 'अंत्योदय' के दर्शन को साकार किया है।</li>
+                        <li><strong>उपलब्धियां:</strong> जुलाई 2026 तक, 58 करोड़ से अधिक खाते खोले गए हैं। इनमें से आधे से अधिक खाते महिलाओं के हैं और 75% ग्रामीण/अर्ध-शहरी क्षेत्रों में हैं।</li>
+                        <li><strong>JAM ट्रिनिटी:</strong> जन धन खाते, आधार (Aadhaar) और मोबाइल ने मिलकर 'JAM ट्रिनिटी' का निर्माण किया। इसने प्रत्यक्ष लाभ हस्तांतरण (DBT) और UPI जैसे डिजिटल इन्फ्रास्ट्रक्चर के लिए एक ठोस आधार प्रदान किया है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "वित्तीय समावेशन (Financial Inclusion) केवल बैंक खाते खोलने तक सीमित नहीं है, बल्कि यह सशक्तिकरण का एक प्रमुख साधन है।" PMJDY की सफलताओं और JAM ट्रिनिटी के प्रभाव का मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'प्रधानमंत्री जन धन योजना' (PMJDY) की विशेषताओं के संबंध में कौन-सा कथन सही नहीं है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) शून्य-शेष (Zero balance) वाले खाते।</div><div class="opt-item">(b) रूपे (RuPay) डेबिट कार्ड सुविधा।</div>
+                            <div class="opt-item">(c) अधिकांश खाते शहरी पुरुषों के हैं।</div><div class="opt-item">(d) यह DBT का मुख्य आधार है।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c)</strong> (आधे से अधिक खाते महिलाओं के हैं और 75% ग्रामीण/अर्ध-शहरी क्षेत्रों में हैं)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. फ्रेडरिक अटैक्सिया (Friedreich’s Ataxia): आनुवंशिक विकार (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> एक नए अध्ययन से पता चला है कि 'फ्रेडरिक अटैक्सिया' (FRDA) नामक आनुवंशिक बीमारी केवल यूरेशियाई और दक्षिण एशियाई मूल के लोगों को ही प्रभावित करती है। भारत में इसके अधिकांश मामले समगोत्रीय विवाहों (Consanguinity) से जुड़े हैं।</li>
+                        <li><strong>कारण:</strong> यह 'FXN' नामक जीन में म्यूटेशन के कारण होता है। यह जीन 'फ्रैटाक्सिन' (Frataxin) प्रोटीन बनाता है, जो कोशिकाओं के 'माइटोकॉन्ड्रिया' (Mitochondria) के सही ढंग से काम करने के लिए आवश्यक है।</li>
+                        <li>यह बीमारी 'प्रोटोम्यूटेशन' नामक प्राचीन उत्परिवर्तन के कारण विकसित हुई, जो केवल यूरोप और पश्चिमी/दक्षिणी एशिया की प्राचीन आबादी में मौजूद था।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत में दुर्लभ आनुवंशिक बीमारियों (Rare Genetic Diseases) का बोझ बढ़ रहा है, जिसका एक कारण कुछ समुदायों में समगोत्रीय विवाह की प्रथा है। ऐसे रोगों के प्रबंधन से जुड़ी चुनौतियों पर प्रकाश डालें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'फ्रेडरिक अटैक्सिया' (Friedreich’s Ataxia) मानव शरीर के किस कोशिकांग (Cell organelle) की कार्यप्रणाली को सीधे तौर पर प्रभावित करता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) लाइसोसोम</div><div class="opt-item">(b) राइबोसोम</div>
+                            <div class="opt-item">(c) माइटोकॉन्ड्रिया</div><div class="opt-item">(d) गॉल्जी काय</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) माइटोकॉन्ड्रिया (Mitochondria)।</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title">2. PIB एवं राष्ट्रीय महत्वपूर्ण खबरें (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. प्रधानमंत्री आवास योजना-ग्रामीण (PMAY-G) में नए संशोधन (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> कृषि एवं ग्रामीण विकास मंत्री ने राजस्थान में PMAY-G के तहत 2.89 लाख पक्के मकानों की स्वीकृति दी है।</li>
+                        <li><strong>नियमों में अहम बदलाव:</strong> अब दोपहिया वाहन रखने वाले, 15,000 रुपये प्रति माह तक आय वाले (पहले 10,000 रुपये सीमा थी), और 5 एकड़ असिंचित या 2.5 एकड़ सिंचित जमीन वाले छोटे किसान भी पक्के आवास के पात्र होंगे।</li>
+                        <li><strong>संबंधित योजनाएं:</strong> 'लखपति दीदी' अभियान (SHG महिलाओं की आय 1 लाख+ करना), 'विकसित भारत- ग्राम जी योजना' (पंचायत-स्तर पर विकास), और नए कीटनाशक/बीज कानून की घोषणा।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: 'प्रधानमंत्री आवास योजना-ग्रामीण' (PMAY-G) के संशोधित पात्रता मानदंडों के अनुसार, अब लाभार्थी परिवार की अधिकतम मासिक आय सीमा क्या कर दी गई है?</div>
+                        <div class="options-grid"><div class="opt-item">(a) 10,000 रुपये</div><div class="opt-item">(b) 12,000 रुपये</div><div class="opt-item">(c) 15,000 रुपये</div><div class="opt-item">(d) 20,000 रुपये</div></div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 15,000 रुपये</strong> (साथ ही दोपहिया वाहन वाले भी अब पात्र होंगे)।</div></details>
+                    </div>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. 'भारत टैक्सी': भारत का पहला सहकारिता-आधारित राइड-हेलिंग प्लेटफॉर्म (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> 'बहु-राज्य सहकारी समिति अधिनियम, 2002' के तहत पंजीकृत 'भारत टैक्सी' देश का पहला सहकारी (Cooperative) राइड-हेलिंग प्लेटफॉर्म बन गया है। इसे NCDC, IFFCO, NABARD, AMUL जैसे संस्थानों का समर्थन प्राप्त है।</li>
+                        <li><strong>विशेषताएं:</strong> यह शून्य-कमीशन और 'नो-सर्ज प्राइसिंग' मॉडल पर काम करता है। ड्राइवर (सारथी) 500 रुपये का शेयर खरीदकर 'सदस्य मालिक' बन सकते हैं।</li>
+                        <li><strong>सामाजिक सुरक्षा:</strong> चालकों को 'ई-श्रम' (e-Shram) पोर्टल (श्रम मंत्रालय) पर पंजीकृत कर 'आयुष्मान भारत' के तहत मुफ्त चिकित्सा उपचार और बीमा दिया जा रहा है। 'सारथी दीदी' पहल से महिला चालकों को प्रोत्साहन दिया जा रहा है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: असंगठित क्षेत्र के कामगारों और गिग वर्कर्स का राष्ट्रीय डेटाबेस तैयार करने के लिए लॉन्च किया गया 'ई-श्रम' (e-Shram) पोर्टल किस मंत्रालय की पहल है?</div>
+                        <div class="options-grid"><div class="opt-item">(a) कौशल विकास मंत्रालय</div><div class="opt-item">(b) MSME मंत्रालय</div><div class="opt-item">(c) श्रम और रोजगार मंत्रालय</div><div class="opt-item">(d) सहकारिता मंत्रालय</div></div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) श्रम और रोजगार मंत्रालय।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- PIB Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. 'मैत्री' युद्धाभ्यास और 'SMILE' योजना (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>मैत्री अभ्यास (Maitree Exercise 2026):</strong> भारतीय सेना और रॉयल थाई सेना (Thailand) के बीच 'मैत्री' अभ्यास का 15वां संस्करण सूरत थानी, थाईलैंड में आयोजित किया जा रहा है। इसका उद्देश्य जंगल और शहरी वातावरण में आतंकवाद से निपटना है।</li>
+                        <li><strong>SMILE योजना:</strong> सामाजिक न्याय और अधिकारिता मंत्रालय द्वारा संचालित यह योजना हाशिए पर रहने वाले व्यक्तियों (विशेषकर भिक्षावृत्ति में संलग्न लोगों और ट्रांसजेंडर व्यक्तियों) के व्यापक पुनर्वास, कौशल विकास और आजीविका सहायता के लिए है। इसके तहत 'गरिमा गृह' और 'राष्ट्रीय ट्रांसजेंडर पोर्टल' जैसी पहलें शामिल हैं।</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title">3. वैल्यू एडिशन (Value Addition) : भारतीय संविधान के सभी भाग</h2>
+                <div class="value-addition-box">
+                    <h3>भारतीय संविधान के भाग (Parts of the Indian Constitution)</h3>
+                    <ul class="content-list" style="color: #2c3e50;">
+                        <li><strong>भाग I:</strong> संघ और उसका राज्य क्षेत्र (अनुच्छेद 1 से 4)</li>
+                        <li><strong>भाग II:</strong> नागरिकता (अनुच्छेद 5 से 11)</li>
+                        <li><strong>भाग III:</strong> मौलिक अधिकार (अनुच्छेद 12 से 35)</li>
+                        <li><strong>भाग IV:</strong> राज्य के नीति निर्देशक तत्व (DPSP) (अनुच्छेद 36 से 51)</li>
+                        <li><strong>भाग IV-A:</strong> मौलिक कर्तव्य (अनुच्छेद 51A)</li>
+                        <li><strong>भाग V:</strong> संघ सरकार (अनुच्छेद 52 से 151)</li>
+                        <li><strong>भाग VI:</strong> राज्य सरकारें (अनुच्छेद 152 से 237)</li>
+                        <li><strong>भाग VII:</strong> (7वें संविधान संशोधन 1956 द्वारा निरस्त)</li>
+                        <li><strong>भाग VIII:</strong> संघ राज्य क्षेत्र (UTs) (अनुच्छेद 239 से 242)</li>
+                        <li><strong>भाग IX:</strong> पंचायतें (अनुच्छेद 243 से 243O)</li>
+                        <li><strong>भाग IX-A:</strong> नगर पालिकाएं (अनुच्छेद 243P से 243ZG)</li>
+                        <li><strong>भाग IX-B:</strong> सहकारी समितियां (अनुच्छेद 243ZH से 243ZT)</li>
+                        <li><strong>भाग X:</strong> अनुसूचित और जनजातीय क्षेत्र (अनुच्छेद 244 से 244A)</li>
+                        <li><strong>भाग XI:</strong> संघ और राज्यों के बीच संबंध (अनुच्छेद 245 से 263)</li>
+                        <li><strong>भाग XII:</strong> वित्त, संपत्ति, संविदाएं और वाद (अनुच्छेद 264 से 300A)</li>
+                        <li><strong>भाग XIII:</strong> भारत के राज्य क्षेत्र के भीतर व्यापार, वाणिज्य और समागम (अनुच्छेद 301 से 307)</li>
+                        <li><strong>भाग XIV:</strong> संघ और राज्यों के अधीन सेवाएं (UPSC/SPSC) (अनुच्छेद 308 से 323)</li>
+                        <li><strong>भाग XIV-A:</strong> अधिकरण (Tribunals) (अनुच्छेद 323A से 323B)</li>
+                        <li><strong>भाग XV:</strong> निर्वाचन (Election) (अनुच्छेद 324 से 329A)</li>
+                        <li><strong>भाग XVI:</strong> कुछ वर्गों के संबंध में विशेष उपबंध (SC/ST/OBC) (अनुच्छेद 330 से 342A)</li>
+                        <li><strong>भाग XVII:</strong> राजभाषा (Official Language) (अनुच्छेद 343 से 351)</li>
+                        <li><strong>भाग XVIII:</strong> आपात उपबंध (Emergency) (अनुच्छेद 352 से 360)</li>
+                        <li><strong>भाग XIX:</strong> प्रकीर्ण (Miscellaneous) (अनुच्छेद 361 से 367)</li>
+                        <li><strong>भाग XX:</strong> संविधान का संशोधन (अनुच्छेद 368)</li>
+                        <li><strong>भाग XXI:</strong> अस्थायी, संक्रमणकालीन और विशेष उपबंध (अनुच्छेद 369 से 392)</li>
+                        <li><strong>भाग XXII:</strong> संक्षिप्त नाम, प्रारंभ, हिंदी में प्राधिकृत पाठ और निरसन (अनुच्छेद 393 से 395)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title">5. महा-प्रश्नोत्तरी (35 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 25 हड़प्पा सभ्यता (सबसे ज्यादा बार पूछे गए PYQ) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. अंतर्राष्ट्रीय व्यापार के संदर्भ में 'रूल ऑफ ओरिजिन' (Rules of Origin) का मुख्य उद्देश्य क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जहाजों का उपयोग तय करना</div><div class="opt-item">(b) उत्पाद के 'राष्ट्रीय मूल' को निर्धारित कर सही टैरिफ लगाना</div><div class="opt-item">(c) IPR का संरक्षण करना</div><div class="opt-item">(d) WTO का बजट तय करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong> अमेरिकी रिपोर्ट के अनुसार चीन भारत के रास्ते (Transshipment) टैरिफ से बच रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. भारत में दशकीय जनगणना (Decadal Census) का आयोजन निम्नलिखित में से किस मंत्रालय के अधीन किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) MoSPI</div><div class="opt-item">(b) गृह मंत्रालय (MHA)</div><div class="opt-item">(c) सामाजिक न्याय मंत्रालय</div><div class="opt-item">(d) नीति आयोग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) गृह मंत्रालय (MHA)</strong>। 2027 की जनगणना में 1931 के बाद पहली बार जाति के आंकड़े आधिकारिक रूप से एकत्र किए जाएंगे।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. 'इंग्लिश विलो' (English Willow) का पेड़ मुख्य रूप से किस प्रकार की भौगोलिक परिस्थितियों में पनपता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) उष्णकटिबंधीय शुष्क क्षेत्र</div><div class="opt-item">(b) हल्के जलभराव वाले ठंडे दलदली क्षेत्र (Wetlands)</div><div class="opt-item">(c) गर्म मरुस्थलीय क्षेत्र</div><div class="opt-item">(d) लेटेराइट मिट्टी वाले क्षेत्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong> कश्मीर के विलो बैट उद्योग को दलदली क्षेत्रों के सूखने के कारण कच्चे माल की कमी का सामना करना पड़ रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. भारतीय संविधान का अनुच्छेद 162, जिसे हाल ही में अनुकंपा नियुक्ति के संदर्भ में सुप्रीम कोर्ट में संदर्भित किया गया, किससे संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) SC का मूल क्षेत्राधिकार</div><div class="opt-item">(b) राज्य की कार्यकारी शक्ति (Executive Power) का विस्तार</div><div class="opt-item">(c) अध्यादेश जारी करने की शक्ति</div><div class="opt-item">(d) उच्च न्यायालयों की रिट शक्ति</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) राज्य की कार्यकारी शक्ति का विस्तार</strong>।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. भारत और किस देश के बीच संयुक्त सैन्य अभ्यास 'मैत्री' (Maitree) का आयोजन किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नेपाल</div><div class="opt-item">(b) श्रीलंका</div><div class="opt-item">(c) थाईलैंड</div><div class="opt-item">(d) बांग्लादेश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) थाईलैंड</strong>। मैत्री का 15वां संस्करण सूरत थानी में हो रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. 'SMILE' योजना, जो हाल ही में चर्चा में रही, किस मंत्रालय की पहल है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) स्वास्थ्य मंत्रालय</div><div class="opt-item">(b) सामाजिक न्याय और अधिकारिता मंत्रालय</div><div class="opt-item">(c) शिक्षा मंत्रालय</div><div class="opt-item">(d) महिला एवं बाल विकास मंत्रालय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सामाजिक न्याय और अधिकारिता मंत्रालय</strong>। यह भिक्षावृत्ति में संलग्न और ट्रांसजेंडर व्यक्तियों के पुनर्वास के लिए है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. 'प्रधानमंत्री आवास योजना-ग्रामीण' (PMAY-G) के संशोधित पात्रता मानदंडों के अनुसार, अब अधिकतम मासिक आय सीमा क्या कर दी गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 10,000 रुपये</div><div class="opt-item">(b) 12,000 रुपये</div><div class="opt-item">(c) 15,000 रुपये</div><div class="opt-item">(d) 20,000 रुपये</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 15,000 रुपये</strong>।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. प्रसिद्ध 'अलीपुर बम षड्यंत्र मामले' (1908) में श्री अरबिंदो का अदालत में बचाव किस प्रसिद्ध वकील ने किया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोतीलाल नेहरू</div><div class="opt-item">(b) भूलाभाई देसाई</div><div class="opt-item">(c) चित्तरंजन दास (C.R. Das)</div><div class="opt-item">(d) तेज बहादुर सप्रू</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) चित्तरंजन दास (C.R. Das)</strong>। 15 अगस्त को श्री अरबिंदो की जयंती मनाई गई।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. असंगठित क्षेत्र के कामगारों का राष्ट्रीय डेटाबेस तैयार करने के लिए लॉन्च किया गया 'ई-श्रम' (e-Shram) पोर्टल किस मंत्रालय की पहल है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कौशल विकास मंत्रालय</div><div class="opt-item">(b) MSME मंत्रालय</div><div class="opt-item">(c) श्रम और रोजगार मंत्रालय</div><div class="opt-item">(d) सहकारिता मंत्रालय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) श्रम और रोजगार मंत्रालय</strong>। 'भारत टैक्सी' के ड्राइवरों को इसी से जोड़ा जा रहा है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. जल प्रदूषण के संदर्भ में 'हेक्सावेलेंट क्रोमियम' (Chromium-VI) का प्राथमिक औद्योगिक स्रोत क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) उर्वरक निर्माण</div><div class="opt-item">(b) चमड़ा शोधन (Leather Tanning)</div><div class="opt-item">(c) ताप विद्युत संयंत्र</div><div class="opt-item">(d) ई-कचरा प्रसंस्करण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चमड़ा शोधन (Leather Tanning)</strong>। कानपुर और फतेहपुर में यह जल प्रदूषण का बड़ा कारण है।</div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - हड़प्पा सभ्यता (सर्वाधिक बार पूछे गए PYQ)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. सिंधु घाटी सभ्यता की सबसे महत्त्वपूर्ण विशेषता क्या थी? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) पक्की ईंट से बनी इमारतें (नगर नियोजन)</div><div class="opt-item">(b) प्रथम असली मेहराब</div><div class="opt-item">(c) पूजा स्थल</div><div class="opt-item">(d) कला और वास्तुकला</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) पक्की ईंट से बनी इमारतें (नगर नियोजन)</strong><br>हड़प्पा सभ्यता अपनी उत्कृष्ट ग्रिड आधारित नगर नियोजन और पक्की ईंटों के उपयोग के लिए जानी जाती है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. हड़प्पा में मिट्टी के बर्तनों पर सामान्यतः किस रंग का उपयोग हुआ था? (BPSC / UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) लाल</div><div class="opt-item">(b) नीला-हरा</div><div class="opt-item">(c) पाण्डु (पीला)</div><div class="opt-item">(d) नीला</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लाल</strong><br>हड़प्पावासी लाल रंग के मिट्टी के बर्तनों का उपयोग करते थे, जिन पर काले रंग से चित्रकारी की जाती थी।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. मूर्ति पूजा का आरंभ कब से माना जाता है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) पूर्व-आर्य (हड़प्पा) काल से</div><div class="opt-item">(b) उत्तर वैदिक काल से</div><div class="opt-item">(c) मौर्य काल से</div><div class="opt-item">(d) कुषाण काल से</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) पूर्व-आर्य (हड़प्पा) काल से</strong><br>मातृदेवी और पशुपति शिव की मुहरें इसका प्रमाण हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. निम्नलिखित पशुओं में से किस एक का हड़प्पा संस्कृति में मिली मुहरों और टेराकोटा कलाकृतियों में निरूपण (Representation) नहीं हुआ था? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) गाय</div><div class="opt-item">(b) हाथी</div><div class="opt-item">(c) गैंडा</div><div class="opt-item">(d) बाघ</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) गाय</strong><br>हड़प्पा की मुहरों पर गाय, घोड़ा और ऊंट का चित्रण नहीं मिलता है, जबकि हाथी, गैंडा, बाघ, भैंसा आदि प्रचुरता से मिलते हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. प्रसिद्ध 'नर्तकी' (Dancing Girl) की कांस्य मूर्ति किस स्थल से प्राप्त हुई है? (MPPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मोहनजोदड़ो</strong><br>यह मूर्ति 'लॉस्ट वैक्स तकनीक' (Lost Wax Technique / मधुच्छिष्ट विधि) से बनाई गई थी।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. सिंधु सभ्यता के संदर्भ में 'पुरोहित राजा' (Priest King) की मूर्ति किस पदार्थ से बनी है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कांस्य</div><div class="opt-item">(b) सेलखड़ी (Steatite)</div><div class="opt-item">(c) तांबा</div><div class="opt-item">(d) टेराकोटा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सेलखड़ी (Steatite)</strong><br>दाढ़ी वाले पुरोहित की यह मूर्ति मोहनजोदड़ो से प्राप्त हुई है और सेलखड़ी (Steatite) से बनी है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. निम्नलिखित में से कौन-सा स्थल सिंधु घाटी की सभ्यता से संबंधित नहीं है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कालीबंगा</div><div class="opt-item">(b) रोपड़</div><div class="opt-item">(c) पाटलिपुत्र</div><div class="opt-item">(d) लोथल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पाटलिपुत्र</strong><br>पाटलिपुत्र महाजनपद और मौर्य काल से संबंधित है, हड़प्पा काल से नहीं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. वह हड़प्पीय नगर जिसका प्रतिनिधित्व 'लोथल' का पुरातत्व स्थल करता है, किस नदी पर स्थित था? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) नर्मदा</div><div class="opt-item">(b) साबरमती</div><div class="opt-item">(c) भोगवा</div><div class="opt-item">(d) माही</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) भोगवा</strong><br>लोथल गुजरात में खंभात की खाड़ी के पास भोगवा नदी के तट पर स्थित एक प्रमुख बंदरगाह था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. सिंधु सभ्यता का कौन-सा स्थान भारत में स्थित है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) इनमें से कोई नहीं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) लोथल</strong><br>हड़प्पा (पंजाब, पाकिस्तान) और मोहनजोदड़ो (सिंध, पाकिस्तान) दोनों पाकिस्तान में हैं, जबकि लोथल गुजरात (भारत) में है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. हड़प्पा सभ्यता का उत्खनन करने वाले प्रथम पुरातत्वविद्, जो इसके महत्व को नहीं समझ पाए थे, वे कौन थे? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) अलेक्जेंडर कनिंघम</div><div class="opt-item">(b) सर जॉन मार्शल</div><div class="opt-item">(c) मार्टिमर व्हीलर</div><div class="opt-item">(d) जॉर्ज एफ. डेल्स</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) अलेक्जेंडर कनिंघम</strong><br>कनिंघम (ASI के पहले महानिदेशक) ने हड़प्पा का दौरा किया था लेकिन वे इसके वास्तविक ऐतिहासिक महत्व को नहीं समझ पाए।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. मोहनजोदड़ो की खोज 1922 ई. में किसने की थी? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) दयाराम साहनी</div><div class="opt-item">(b) राखालदास बनर्जी (R.D. Banerjee)</div><div class="opt-item">(c) सर जॉन मार्शल</div><div class="opt-item">(d) एन. जी. मजूमदार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) राखालदास बनर्जी</strong><br>दयाराम साहनी ने 1921 में हड़प्पा की खोज की थी, जबकि R.D. बनर्जी ने 1922 में मोहनजोदड़ो की।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. हड़प्पा सभ्यता के बाट (Weights) किस अनुपात (गुणक) में होते थे? (UPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) 10 के गुणक में</div><div class="opt-item">(b) 12 के गुणक में</div><div class="opt-item">(c) 16 के गुणक में</div><div class="opt-item">(d) 20 के गुणक में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 16 के गुणक में</strong><br>हड़प्पा की मापतौल प्रणाली में बाट मुख्य रूप से 16 या उसके गुणकों (16, 64, 160, 320) में होते थे।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. अफगानिस्तान में स्थित हड़प्पा सभ्यता के प्रमुख स्थल कौन-से हैं? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) शोर्तुगई और मुंडीगाक</div><div class="opt-item">(b) सुत्कागेंडोर और बालाकोट</div><div class="opt-item">(c) मांडा और रोपर</div><div class="opt-item">(d) कोटदीजी और आमरी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) शोर्तुगई और मुंडीगाक</strong><br>ये दोनों स्थल अफगानिस्तान में स्थित हैं। शोर्तुगई से नहरों (Canals) के साक्ष्य भी मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. हड़प्पा सभ्यता में कौन-सा नगर एक दुर्ग (Citadel) से रहित था? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कालीबंगा</div><div class="opt-item">(b) हड़प्पा</div><div class="opt-item">(c) चन्हूदड़ो</div><div class="opt-item">(d) मोहनजोदड़ो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) चन्हूदड़ो</strong><br>चन्हूदड़ो एकमात्र ऐसा हड़प्पाई नगर है जहाँ कोई दुर्ग (Citadel) नहीं पाया गया है। यह एक औद्योगिक नगर था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. 'तांबे का रथ' (Copper Chariot) किस हड़प्पाकालीन स्थल से प्राप्त हुआ है? (MPPSC / UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कुणाल</div><div class="opt-item">(b) राखीगढ़ी</div><div class="opt-item">(c) दायमाबाद</div><div class="opt-item">(d) बनावली</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) दायमाबाद</strong><br>महाराष्ट्र के दायमाबाद (हड़प्पा का सबसे दक्षिणी स्थल) से तांबे का एक भारी रथ (जिसे नग्न मानव चला रहा है) प्राप्त हुआ है।</div></details>
+                </div>
+                
+                <div class="practice-box">
+                    <div class="pre-q">Q26. हड़प्पा की मुहरों (Seals) पर सर्वाधिक किस पशु का अंकन मिलता है? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) कूबड़ वाला सांड</div><div class="opt-item">(b) एकश्रृंगी पशु (Unicorn)</div><div class="opt-item">(c) हाथी</div><div class="opt-item">(d) गैंडा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) एकश्रृंगी पशु (Unicorn)</strong><br>हड़प्पा की मुहरों पर सबसे अधिक एक सींग वाले काल्पनिक पशु (Unicorn) का चित्रण मिलता है। दूसरे स्थान पर कूबड़ वाला सांड है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. सिंधु सभ्यता में 'अग्निकुंड' (Fire Altars) के साक्ष्य किन स्थलों से प्राप्त हुए हैं? (BPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा और मोहनजोदड़ो</div><div class="opt-item">(b) कालीबंगा और लोथल</div><div class="opt-item">(c) धौलावीरा और सुरकोटदा</div><div class="opt-item">(d) चन्हूदड़ो और आमरी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कालीबंगा और लोथल</strong><br>राजस्थान के कालीबंगा और गुजरात के लोथल से अग्निकुंड/वेदिकाओं के साक्ष्य मिले हैं, जो यज्ञ या कर्मकांड की ओर इशारा करते हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. सिंधु घाटी के लोग किस वृक्ष की पूजा करते थे? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) नीम</div><div class="opt-item">(b) बरगद</div><div class="opt-item">(c) पीपल</div><div class="opt-item">(d) बबूल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पीपल</strong><br>मुहरों पर पीपल के पत्तों और वृक्ष के बीच देवता के चित्रण से पीपल के वृक्ष की पूजा प्रमाणित होती है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. 'विशाल साइनबोर्ड' (दस बड़े अक्षरों वाला सूचना पट्ट) कहाँ से प्राप्त हुआ है? (IAS Pre)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) धौलावीरा</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) धौलावीरा</strong><br>धौलावीरा से एक अनूठा साइनबोर्ड (जिसमें हड़प्पाई लिपि के 10 बड़े अक्षर उकेरे गए हैं) मिला है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. घोड़े के अस्थिपंजर (Bones of Horse) के साक्ष्य कहाँ से मिले हैं? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) लोथल</div><div class="opt-item">(b) सुरकोटदा</div><div class="opt-item">(c) कालीबंगा</div><div class="opt-item">(d) बनावली</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सुरकोटदा</strong><br>गुजरात के सुरकोटदा से घोड़े की हड्डियों के प्रमाण मिले हैं। (हालांकि हड़प्पावासी घोड़े के उपयोग से व्यापक रूप से परिचित नहीं थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q31. हड़प्पा सभ्यता में 'लिपिस्टिक' और प्रसाधन सामग्री (Cosmetics) के प्रमाण कहाँ से मिले हैं? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) चन्हूदड़ो</div><div class="opt-item">(b) मोहनजोदड़ो</div><div class="opt-item">(c) हड़प्पा</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) चन्हूदड़ो</strong><br>यह एक औद्योगिक नगर था जहाँ से मनके, लिपस्टिक और अन्य प्रसाधन सामग्री के साक्ष्य मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q32. किस स्थल से 'लकड़ी के ताबूत' (Wooden Coffin) में शवाधान का साक्ष्य मिला है? (MPPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोहनजोदड़ो</div><div class="opt-item">(b) हड़प्पा</div><div class="opt-item">(c) लोथल</div><div class="opt-item">(d) कालीबंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) हड़प्पा</strong><br>हड़प्पा के 'कब्रिस्तान R-37' से लकड़ी के ताबूत (Coffin) में दफनाए जाने के साक्ष्य प्राप्त हुए हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q33. सिंधु सभ्यता में मेसोपोटामिया के साथ व्यापार के लिए किन मध्यवर्ती बंदरगाहों (Intermediate ports) का उपयोग होता था? (UPSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) दिलमुन और माकन</div><div class="opt-item">(b) मेलुहा और मगन</div><div class="opt-item">(c) सुसा और उर</div><div class="opt-item">(d) इनमें से कोई नहीं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) दिलमुन (बहरीन) और माकन (मकरान तट)</strong><br>मेसोपोटामिया के लेखों में मेलुहा (सिंधु क्षेत्र) के साथ व्यापार में दिलमुन और माकन को मध्यवर्ती व्यापारिक केंद्र बताया गया है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q34. कौन-सा हड़प्पाई नगर 'बाढ़' (Flood) के कारण 7 बार नष्ट होकर फिर से बसा था? (UPPCS)</div>
+                    <div class="options-grid"><div class="opt-item">(a) हड़प्पा</div><div class="opt-item">(b) लोथल</div><div class="opt-item">(c) मोहनजोदड़ो</div><div class="opt-item">(d) चन्हूदड़ो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मोहनजोदड़ो</strong><br>मोहनजोदड़ो में बाढ़ के कारण इसके 7 बार उजड़ने और पुनः बसने के पुरातात्विक साक्ष्य मिले हैं।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q35. चार्ल्स मैसन ने सबसे पहले किस वर्ष हड़प्पा के टीलों की खोज/उल्लेख किया था? (State PSC)</div>
+                    <div class="options-grid"><div class="opt-item">(a) 1826</div><div class="opt-item">(b) 1853</div><div class="opt-item">(c) 1921</div><div class="opt-item">(d) 1922</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) 1826</strong><br>चार्ल्स मैसन ने 1826 में पहली बार हड़प्पा के टीलों पर ध्यान आकर्षित किया था, हालांकि विधिवत खुदाई 1921 में दयाराम साहनी द्वारा शुरू की गई।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '17-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
