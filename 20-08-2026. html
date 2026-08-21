@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #f39c12;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 25px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
+        header p { margin: 5px 0 0; color: #1abc9c; font-size: 1.1rem; }
+
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 10px 18px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 10px; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #f8fcfd;
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.5rem; border-bottom: 1px dashed #8e44ad; padding-bottom:10px; margin-bottom: 15px;}
+        .highlight-box { background-color: #fdfae6; padding: 15px; border-left: 5px solid #f1c40f; margin-top: 20px; font-weight: bold; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .opt-item { background: #fff; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+
+        details { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; margin-top: 5px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; }
+        .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 25px; background: #1a252f; color: white; margin-top: 20px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>20 अगस्त 2026 | डेली करेंट अफेयर्स एवं इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (35 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title">1. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. पंजाब का बेअदबी कानून (Sacrilege Law) और संवैधानिक पेंच (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> पंजाब राज्य ने 'बेअदबी' (धार्मिक ग्रंथों के अपमान) को रोकने के लिए एक सख्त कानून बनाया है, जिसमें गुरु ग्रंथ साहिब के अपमान पर उम्रकैद का प्रावधान है।</li>
+                        <li><strong>समवर्ती सूची (Concurrent List) विवाद:</strong> 'आपराधिक कानून' संविधान की समवर्ती सूची में आता है। अनुच्छेद 254(2) के अनुसार, यदि कोई राज्य कानून किसी केंद्रीय कानून (जैसे BNS) के विपरीत है, तो उसे राष्ट्रपति की मंजूरी की आवश्यकता होती है।</li>
+                        <li><strong>अनुच्छेद 14 और 21:</strong> यह कानून केवल एक ही धर्म के पवित्र ग्रंथ को सुरक्षा प्रदान करता है (समानता के अधिकार का मुद्दा)। इसके अलावा, अनिवार्य उम्रकैद की सजा न्यायाधीशों के विवेक को खत्म करती है, जिसे 'मिठू बनाम पंजाब राज्य' मामले में सुप्रीम कोर्ट असंवैधानिक बता चुका है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: 'बेअदबी' (Sacrilege) को दंडनीय अपराध बनाने के लिए राज्यों द्वारा पारित किए जा रहे कानूनों का संवैधानिक परीक्षण, विशेषकर अनुच्छेद 14, 21 और समवर्ती सूची (अनुच्छेद 254) के संदर्भ में करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: सुप्रीम कोर्ट का ऐतिहासिक निर्णय 'मिठू बनाम पंजाब राज्य' (Mithu vs State of Punjab) निम्नलिखित में से किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) निजता के अधिकार से</div><div class="opt-item">(b) अनिवार्य मृत्युदंड/सजा को असंवैधानिक घोषित करने से</div>
+                            <div class="opt-item">(c) आरक्षण की सीमा तय करने से</div><div class="opt-item">(d) अल्पसंख्यक अधिकारों से</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) अनिवार्य मृत्युदंड/सजा के प्रावधान को असंवैधानिक घोषित करने से।</strong> </div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. PM-KUSUM योजना और भूजल संकट: समाधान या समस्या? (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सौर सिंचाई (Solar Irrigation) को लेकर अक्सर यह चिंता जताई जाती है कि मुफ्त बिजली मिलने से किसान भूजल का अत्यधिक दोहन करेंगे। लेकिन, एक नया विश्लेषण बताता है कि 'ग्रिड-कनेक्टेड मॉडल' इसका समाधान है।</li>
+                        <li><strong>ग्रिड-कनेक्टेड मॉडल:</strong> अगर किसानों को अपनी अतिरिक्त सौर ऊर्जा वापस ग्रिड में बेचकर पैसा कमाने का विकल्प दिया जाए, तो वे पानी और बिजली दोनों बचाने के लिए प्रोत्साहित होते हैं।</li>
+                        <li><strong>SKY योजना:</strong> गुजरात की 'सूर्यशक्ति किसान योजना' (SKY) के तहत किसानों को ऊर्जा निर्यात करने पर टैरिफ दिया गया, जिससे उन्होंने अतिरिक्त कमाई भी की और पानी भी बचाया।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "सौर सिंचाई (Solar Irrigation) भूजल के संकट को बढ़ा सकती है, बशर्ते इसे सही प्रोत्साहन मॉडल के साथ न जोड़ा जाए।" PM-KUSUM योजना के संदर्भ में समालोचनात्मक व्याख्या करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: कृषि में सौर ऊर्जा के उपयोग के संदर्भ में 'ग्रिड-कनेक्टेड' (Grid-connected) सौर पंपों का सबसे प्रमुख पारिस्थितिक (Ecological) लाभ क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) 24 घंटे भूजल निकालना</div><div class="opt-item">(b) फीड-इन-टैरिफ के माध्यम से पानी और बिजली बचाने का प्रोत्साहन</div>
+                            <div class="opt-item">(c) सब्सिडी की आवश्यकता नहीं</div><div class="opt-item">(d) केवल शुष्क क्षेत्रों में काम करना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) फीड-इन-टैरिफ के माध्यम से पानी और बिजली बचाने के लिए आर्थिक प्रोत्साहन।</strong> </div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. ऑपरेशन तूफ़ान (Operation Toofan): केरल का सामाजिक अभियान (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> केरल सरकार ने राज्य में नशीली दवाओं (Drugs) के बढ़ते खतरे से निपटने के लिए 'ऑपरेशन तूफ़ान' शुरू किया है। इसे एक 'सामाजिक आंदोलन' का नाम दिया गया है।</li>
+                        <li><strong>त्रि-आयामी रणनीति:</strong> 1. तूफान स्ट्राइक (तस्करों पर सख्त कानूनी कार्रवाई), 2. तूफ़ान वारियर्स (जनता की भागीदारी), 3. तूफान केयर (नशा करने वालों का पुनर्वास)।</li>
+                        <li><strong>मल्टी-एजेंसी समन्वय:</strong> नशीले पदार्थों की तस्करी समुद्र, डार्क नेट और कूरियर ऐप्स के ज़रिए हो रही है। इसके लिए NCB, DRI और राज्य पुलिस का समन्वय आवश्यक है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत के तटीय राज्यों में नशीले पदार्थों की तस्करी एक गंभीर चुनौती बन गई है। इस समस्या से निपटने के लिए केवल प्रवर्तन (Enforcement) पर्याप्त नहीं है, बल्कि समुदाय आधारित पुनर्वास की आवश्यकता है। केरल के 'ऑपरेशन तूफ़ान' के संदर्भ में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में समाचारों में रहा 'ऑपरेशन तूफान' (Operation Toofan) निम्नलिखित में से किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) चक्रवात राहत कार्य</div><div class="opt-item">(b) वामपंथी उग्रवाद (LWE) के खिलाफ अभियान</div>
+                            <div class="opt-item">(c) केरल सरकार द्वारा शुरू किया गया एंटी-ड्रग अभियान</div><div class="opt-item">(d) नौसेना का समुद्री डकैती विरोधी मिशन</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) केरल सरकार द्वारा शुरू किया गया एंटी-ड्रग (नशा मुक्ति) अभियान।</strong> </div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. मतदाता सूची का शुद्धिकरण: ASDD श्रेणी और चुनाव आयोग (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> चुनाव आयोग (ECI) द्वारा 'स्पेशल इंटेंसिव रिवीजन' (SIR) के तहत दिल्ली और कर्नाटक जैसे राज्यों में मतदाता सूचियों का शुद्धिकरण किया जा रहा है।</li>
+                        <li><strong>ASDD (Absent, Shifted, Dead, Duplicate):</strong> मतदाता सूचियों से अनुपस्थित, स्थानांतरित, मृत और डुप्लीकेट मतदाताओं को हटाने की प्रक्रिया चल रही है।</li>
+                        <li><strong>चिंता का विषय:</strong> बिना उचित भौतिक सत्यापन (Physical verification) के कई जीवित और योग्य मतदाताओं के नाम भी हटाए जाने की शिकायतें आ रही हैं, जो लोकतांत्रिक अधिकारों का हनन है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "लोकतंत्र में एक स्वच्छ और सटीक मतदाता सूची स्वतंत्र व निष्पक्ष चुनाव की पहली शर्त है।" भारत के चुनाव आयोग (ECI) द्वारा मतदाता सूची को अद्यतन करने में आने वाली चुनौतियों का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारतीय चुनाव प्रणाली के संदर्भ में 'ASDD' श्रेणी, जो अक्सर मतदाता सूची पुनरीक्षण के दौरान उपयोग की जाती है, का पूर्ण रूप क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) Assigned, Shifted, Deleted, Duplicate</div><div class="opt-item">(b) Absent, Shifted, Dead, Duplicate</div>
+                            <div class="opt-item">(c) Absent, Suspended, Deleted, Disqualified</div><div class="opt-item">(d) Acknowledged, Shifted, Dead, Duplicate</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) Absent, Shifted, Dead, Duplicate</strong> </div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. NTA और सार्वजनिक परीक्षाओं में संस्थागत सुधार (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> राष्ट्रीय परीक्षा एजेंसी (NTA) द्वारा आयोजित NEET-UG परीक्षाओं में अनियमितताओं के बाद सुप्रीम कोर्ट ने कहा है कि सुधारों को 'संस्थागत' (Institutionalised) किया जाना चाहिए।</li>
+                        <li><strong>नंदन नीलेकणि टास्क फोर्स:</strong> तकनीकी सुधारों के लिए इस नई समिति का गठन किया गया है। कोर्ट ने स्पष्ट किया कि पिछली 'के. राधाकृष्णन समिति' की सिफारिशों को भी लागू किया जा सकता है ।</li>
+                        <li><strong>सार्वजनिक परीक्षा अधिनियम 2024:</strong> केंद्र सरकार ने पेपर लीक से निपटने के लिए हाल ही में यह सख्त कानून पारित किया है, जिसे भविष्य की घटनाओं को रोकने के लिए एक मील का पत्थर माना जा रहा है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: हालिया परीक्षा विवादों के आलोक में, सार्वजनिक परीक्षाओं की विश्वसनीयता बनाए रखने में 'संस्थागत जवाबदेही' (Institutional Accountability) की क्या भूमिका है?</div>
+                        
+                        <div class="pre-q">Prelims Q1: सार्वजनिक परीक्षाओं में सुधार और तकनीकी सुरक्षा उपाय सुझाने के लिए हाल ही में केंद्र सरकार द्वारा गठित 'टास्क फोर्स' की अध्यक्षता किसे सौंपी गई है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) के. राधाकृष्णन</div><div class="opt-item">(b) नंदन नीलेकणि</div>
+                            <div class="opt-item">(c) कस्तूरीरंगन</div><div class="opt-item">(d) टी. एस. आर. सुब्रमण्यम</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) नंदन नीलेकणि</strong> </div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title">2. PIB न्यूज़: प्रधानमंत्री जनजातीय विकास मिशन (PMJVM) (GS-2/GS-3)</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">भारत की जनजातीय वन अर्थव्यवस्था और PMJVM</div>
+                    <ul class="content-list">
+                        <li><strong>चर्चा में क्यों:</strong> हाल ही में PIB रिपोर्ट के अनुसार PMJVM के तहत अब तक 4,172 'वन धन विकास केंद्रों' (VDVKs) को मंजूरी दी गई है, जिससे लगभग 12.48 लाख आदिवासी जुड़े हैं।</li>
+                        <li><strong>कार्यान्वयन एजेंसी:</strong> भारतीय जनजातीय सहकारी विपणन विकास संघ (TRIFED), जो जनजातीय कार्य मंत्रालय के अंतर्गत आता है।</li>
+                        <li><strong>लघु वन उपज (MFP) की परिभाषा:</strong> 'वन अधिकार अधिनियम' (FRA), 2006 के तहत पौधों के मूल के सभी <strong>गैर-लकड़ी (Non-timber)</strong> वन उत्पादों को MFP माना गया है (जैसे- बांस, शहद, तेंदू पत्ते आदि)। <strong>इमारती लकड़ी (Timber) इसमें शामिल नहीं है।</strong></li>
+                        <li><strong>स्वामित्व:</strong> PESA अधिनियम, 1996 जनजातीय ग्राम पंचायतों को MFP पर स्वामित्व का अधिकार प्रदान करता है।</li>
+                        <li><strong>वन धन विकास केंद्र (VDVK):</strong> ये केंद्र आदिवासियों को स्वयं सहायता समूहों (SHGs) में संगठित करते हैं। VDVK से जुड़े SHGs में कम से कम <strong>60 प्रतिशत सदस्य 'ST' समुदाय</strong> से होने अनिवार्य हैं।</li>
+                        <li><strong>आर्थिक व सामाजिक सशक्तिकरण:</strong> मिशन के तहत आदिवासियों को वैज्ञानिक फसल कटाई का प्रशिक्षण और प्राथमिक प्रसंस्करण उपकरण दिए जा रहे हैं। बिचौलियों का उन्मूलन कर उन्हें 'न्यूनतम समर्थन मूल्य' (MSP) की गारंटी दी जाती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "प्रधानमंत्री जनजातीय विकास मिशन (PMJVM) केवल एक आर्थिक पहल नहीं है, बल्कि यह जनजातीय समुदायों, विशेषकर महिलाओं के सामाजिक-आर्थिक सशक्तिकरण का एक शक्तिशाली उपकरण है।" वन धन विकास केंद्रों (VDVKs) की भूमिका के संदर्भ में इस कथन का विश्लेषण कीजिए।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'लघु वन उपज' (MFP) और जनजातीय अधिकारों के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. वन अधिकार अधिनियम, 2006 के अनुसार, बांस और बेंत को लघु वन उपज माना गया है।
+                            <br>2. पेसा (PESA) अधिनियम 1996 ग्राम पंचायत को MFP का स्वामित्व प्रदान करता है।
+                            <br>3. PMJVM के तहत TRIFED केवल इमारती लकड़ी (Timber) की खरीद MSP पर करता है।
+                            <br>उपर्युक्त में से कौन-सा/से सही है/हैं?
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1 और 2</div><div class="opt-item">(b) केवल 2 और 3</div>
+                            <div class="opt-item">(c) केवल 1 और 3</div><div class="opt-item">(d) 1, 2 और 3</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (a) केवल 1 और 2</strong><br>(व्याख्या: कथन 3 गलत है क्योंकि ट्राइफेड इमारती लकड़ी की नहीं, बल्कि गैर-लकड़ी वन उत्पादों की खरीद करता है)।</div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title">3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>भारतीय संविधान के सभी भाग (Parts of the Indian Constitution)</h3>
+                    <ul class="content-list" style="color: #2c3e50;">
+                        <li><strong>भाग I:</strong> संघ और उसका राज्य क्षेत्र (अनुच्छेद 1 से 4)</li>
+                        <li><strong>भाग II:</strong> नागरिकता (अनुच्छेद 5 से 11)</li>
+                        <li><strong>भाग III:</strong> मौलिक अधिकार (अनुच्छेद 12 से 35)</li>
+                        <li><strong>भाग IV:</strong> राज्य के नीति निर्देशक तत्व (DPSP) (अनुच्छेद 36 से 51)</li>
+                        <li><strong>भाग IV-A:</strong> मौलिक कर्तव्य (अनुच्छेद 51A)</li>
+                        <li><strong>भाग V:</strong> संघ सरकार (अनुच्छेद 52 से 151)</li>
+                        <li><strong>भाग VI:</strong> राज्य सरकारें (अनुच्छेद 152 से 237)</li>
+                        <li><strong>भाग VII:</strong> (7वें संविधान संशोधन 1956 द्वारा निरस्त)</li>
+                        <li><strong>भाग VIII:</strong> संघ राज्य क्षेत्र (UTs) (अनुच्छेद 239 से 242)</li>
+                        <li><strong>भाग IX:</strong> पंचायतें (अनुच्छेद 243 से 243O)</li>
+                        <li><strong>भाग IX-A:</strong> नगर पालिकाएं (अनुच्छेद 243P से 243ZG)</li>
+                        <li><strong>भाग IX-B:</strong> सहकारी समितियां (अनुच्छेद 243ZH से 243ZT)</li>
+                        <li><strong>भाग X:</strong> अनुसूचित और जनजातीय क्षेत्र (अनुच्छेद 244 से 244A)</li>
+                        <li><strong>भाग XI:</strong> संघ और राज्यों के बीच संबंध (अनुच्छेद 245 से 263)</li>
+                        <li><strong>भाग XII:</strong> वित्त, संपत्ति, संविदाएं और वाद (अनुच्छेद 264 से 300A)</li>
+                        <li><strong>भाग XIII:</strong> भारत के राज्य क्षेत्र के भीतर व्यापार, वाणिज्य और समागम (अनुच्छेद 301 से 307)</li>
+                        <li><strong>भाग XIV:</strong> संघ और राज्यों के अधीन सेवाएं (UPSC/SPSC) (अनुच्छेद 308 से 323)</li>
+                        <li><strong>भाग XIV-A:</strong> अधिकरण (Tribunals) (अनुच्छेद 323A से 323B)</li>
+                        <li><strong>भाग XV:</strong> निर्वाचन (Election) (अनुच्छेद 324 से 329A)</li>
+                        <li><strong>भाग XVI:</strong> कुछ वर्गों के संबंध में विशेष उपबंध (SC/ST/OBC) (अनुच्छेद 330 से 342A)</li>
+                        <li><strong>भाग XVII:</strong> राजभाषा (Official Language) (अनुच्छेद 343 से 351)</li>
+                        <li><strong>भाग XVIII:</strong> आपात उपबंध (Emergency) (अनुच्छेद 352 से 360)</li>
+                        <li><strong>भाग XIX:</strong> प्रकीर्ण (Miscellaneous) (अनुच्छेद 361 से 367)</li>
+                        <li><strong>भाग XX:</strong> संविधान का संशोधन (अनुच्छेद 368)</li>
+                        <li><strong>भाग XXI:</strong> अस्थायी, संक्रमणकालीन और विशेष उपबंध (अनुच्छेद 369 से 392)</li>
+                        <li><strong>भाग XXII:</strong> संक्षिप्त नाम, प्रारंभ, हिंदी में प्राधिकृत पाठ और निरसन (अनुच्छेद 393 से 395)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title">5. महा-प्रश्नोत्तरी (35 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 25 वैदिक सभ्यता (सबसे ज्यादा बार पूछे गए PYQ) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. 'वन धन विकास केंद्र' (VDVK) के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) यह PMJVM का घटक है</div><div class="opt-item">(b) इसमें 60% सदस्य ST होने चाहिए</div><div class="opt-item">(c) यह वाणिज्य मंत्रालय की योजना है</div><div class="opt-item">(d) आदिवासियों को SHG में जोड़ा जाता है</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) यह वाणिज्य मंत्रालय की योजना है</strong><br>यह योजना जनजातीय कार्य मंत्रालय के तहत TRIFED द्वारा कार्यान्वित की जाती है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. 'सूर्यशक्ति किसान योजना' (SKY), जिसका उद्देश्य किसानों को ऊर्जा उत्पादक बनाना है, किस राज्य से संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) राजस्थान</div><div class="opt-item">(b) महाराष्ट्र</div><div class="opt-item">(c) गुजरात</div><div class="opt-item">(d) कर्नाटक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गुजरात</strong><br>यह ग्रिड-कनेक्टेड सौर पंपों को बढ़ावा देती है।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. हाल ही में समाचारों में रहा 'ऑपरेशन तूफान' (Operation Toofan) किससे संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चक्रवात राहत</div><div class="opt-item">(b) वामपंथी उग्रवाद</div><div class="opt-item">(c) केरल सरकार का एंटी-ड्रग अभियान</div><div class="opt-item">(d) समुद्री डकैती रोकना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) केरल सरकार का एंटी-ड्रग अभियान</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. संविधान का कौन सा अनुच्छेद 'निर्वाचक नामावली' तैयार करने और चुनाव के संचालन का नियंत्रण चुनाव आयोग में निहित करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनुच्छेद 324</div><div class="opt-item">(b) अनुच्छेद 325</div><div class="opt-item">(c) अनुच्छेद 326</div><div class="opt-item">(d) अनुच्छेद 329</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) अनुच्छेद 324</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. 'मिठू बनाम पंजाब राज्य' मामला निम्नलिखित में से किससे संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) निजता का अधिकार</div><div class="opt-item">(b) अनिवार्य मृत्युदंड/सजा को असंवैधानिक घोषित करना</div><div class="opt-item">(c) आरक्षण सीमा</div><div class="opt-item">(d) अल्पसंख्यक अधिकार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अनिवार्य सजा को असंवैधानिक घोषित करना</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. सार्वजनिक परीक्षाओं में तकनीकी सुधार सुझाने के लिए गठित 'टास्क फोर्स' की अध्यक्षता किसे सौंपी गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) के. राधाकृष्णन</div><div class="opt-item">(b) नंदन नीलेकणि</div><div class="opt-item">(c) कस्तूरीरंगन</div><div class="opt-item">(d) टी.एस.आर. सुब्रमण्यम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) नंदन नीलेकणि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. भारतीय संविधान के अनुच्छेद 254 के अनुसार, यदि समवर्ती सूची के किसी विषय पर राज्य का कानून केंद्रीय कानून के असंगत है, तो राज्य कानून को प्रभावी करने के लिए किसकी मंजूरी आवश्यक है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सुप्रीम कोर्ट</div><div class="opt-item">(b) प्रधानमंत्री</div><div class="opt-item">(c) राष्ट्रपति</div><div class="opt-item">(d) राज्यपाल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) राष्ट्रपति (Presidential Assent)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. चुनाव प्रणाली में प्रयुक्त 'ASDD' श्रेणी का पूर्ण रूप क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) Assigned, Shifted, Deleted, Duplicate</div><div class="opt-item">(b) Absent, Shifted, Dead, Duplicate</div><div class="opt-item">(c) Absent, Suspended, Deleted, Disqualified</div><div class="opt-item">(d) Acknowledged, Shifted, Dead, Duplicate</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) Absent, Shifted, Dead, Duplicate</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. कृषि में 'ग्रिड-कनेक्टेड' सौर पंपों का सबसे प्रमुख पारिस्थितिक लाभ क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 24 घंटे भूजल दोहन</div><div class="opt-item">(b) पानी और बिजली बचाने के लिए आर्थिक प्रोत्साहन</div><div class="opt-item">(c) सब्सिडी की आवश्यकता खत्म</div><div class="opt-item">(d) केवल शुष्क क्षेत्र में काम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पानी और बिजली बचाने के लिए आर्थिक प्रोत्साहन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. 'सार्वजनिक परीक्षा अधिनियम, 2024' के तहत पेपर लीक गिरोहों के लिए अधिकतम जुर्माने का क्या प्रावधान है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 10 लाख रुपये</div><div class="opt-item">(b) 50 लाख रुपये</div><div class="opt-item">(c) 1 करोड़ रुपये</div><div class="opt-item">(d) 5 करोड़ रुपये</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 1 करोड़ रुपये</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - वैदिक सभ्यता (सर्वाधिक बार पूछे गए PYQ)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. प्राचीन भारत में निम्नलिखित में से कौन-सा कर चारागाहों पर लगाया जाता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अक्षयनीवि</div><div class="opt-item">(b) भाग</div><div class="opt-item">(c) भग्न-प्रविष्टक</div><div class="opt-item">(d) विवीत</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) विवीत (Viveet)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. निम्नलिखित में से कौन-सा वेद सबसे प्राचीन है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सामवेद</div><div class="opt-item">(b) यजुर्वेद</div><div class="opt-item">(c) ऋग्वेद</div><div class="opt-item">(d) अथर्ववेद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) ऋग्वेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. ऋग्वेद के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                    <br>1. ऋग्वेद में 1028 सूक्त हैं।
+                    <br>2. ऋग्वेद को 'अष्टक' भी कहा जाता है।
+                    <br>सही उत्तर चुनें:</div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल 1 सही है</div><div class="opt-item">(b) केवल 2 सही है</div><div class="opt-item">(c) 1 और 2 दोनों सही हैं</div><div class="opt-item">(d) न तो 1, न ही 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 1 और 2 दोनों सही हैं</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. निम्नलिखित में से किसका संकलन ऋग्वेद पर आधारित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) यजुर्वेद</div><div class="opt-item">(b) सामवेद</div><div class="opt-item">(c) अथर्ववेद</div><div class="opt-item">(d) इनमें से कोई नहीं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सामवेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. 'गायत्री मंत्र' के नाम से प्रसिद्ध मंत्र सर्वप्रथम किस ग्रन्थ में मिलता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भगवद् गीता</div><div class="opt-item">(b) अथर्ववेद</div><div class="opt-item">(c) ऋग्वेद</div><div class="opt-item">(d) मनुस्मृति</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) ऋग्वेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. गायत्री मंत्र की रचना किसने की थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) वशिष्ठ</div><div class="opt-item">(b) विश्वामित्र</div><div class="opt-item">(c) इन्द्र</div><div class="opt-item">(d) परीक्षित</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) विश्वामित्र</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. ऋग्वेद की मूल लिपि क्या थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) देवनागरी</div><div class="opt-item">(b) खरोष्ठी</div><div class="opt-item">(c) पाली</div><div class="opt-item">(d) ब्राह्मी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) ब्राह्मी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. ऋग्वेद में कुल कितनी ऋचाएं (Verses) हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 1028</div><div class="opt-item">(b) 1017</div><div class="opt-item">(c) 10552</div><div class="opt-item">(d) 1128</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 10552</strong> (लगभग)</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. सर्वप्रथम 'स्तूप' (Stupa) शब्द कहाँ मिलता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऋग्वेद</div><div class="opt-item">(b) जातक कथा</div><div class="opt-item">(c) अर्थशास्त्र</div><div class="opt-item">(d) अष्टाध्यायी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) ऋग्वेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. निम्नलिखित में से कौन-सा ब्राह्मण ग्रंथ ऋग्वेद से संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऐतरेय ब्राह्मण</div><div class="opt-item">(b) गोपथ ब्राह्मण</div><div class="opt-item">(c) शतपथ ब्राह्मण</div><div class="opt-item">(d) तैत्तिरीय ब्राह्मण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) ऐतरेय ब्राह्मण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. ऋग्वेद के अनुवाद में कौन टीकाकार सहायक है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मेधातिथि</div><div class="opt-item">(b) सायण</div><div class="opt-item">(c) पाणिनि</div><div class="opt-item">(d) पतंजलि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सायण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. प्रकाशित ऋग्वेद संहिता किस शाखा की है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शौनक</div><div class="opt-item">(b) आश्वलायन</div><div class="opt-item">(c) शाकल</div><div class="opt-item">(d) सांखायन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) शाकल</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. 'वेदत्रयी' के अन्तर्गत कौन-से वेद सम्मिलित हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऋग्वेद, यजुर्वेद, अथर्ववेद</div><div class="opt-item">(b) ऋग्वेद, यजुर्वेद, सामवेद</div><div class="opt-item">(c) ऋग्वेद, सामवेद, अथर्ववेद</div><div class="opt-item">(d) सामवेद, अथर्ववेद, यजुर्वेद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) ऋग्वेद, यजुर्वेद, सामवेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. किस वैदिक ग्रंथ में 'वर्ण' (Varna) शब्द का सर्वप्रथम नामोल्लेख मिलता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऋग्वेद</div><div class="opt-item">(b) अथर्ववेद</div><div class="opt-item">(c) सामवेद</div><div class="opt-item">(d) यजुर्वेद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) ऋग्वेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. वर्ण व्यवस्था से संबंधित 'पुरुष सूक्त' मूलतः किसमें पाया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अथर्ववेद</div><div class="opt-item">(b) सामवेद</div><div class="opt-item">(c) ऋग्वेद</div><div class="opt-item">(d) मनुस्मृति</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) ऋग्वेद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. सर्वाधिक ऋग्वैदिक सूक्त किस देवता को समर्पित हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अग्नि को</div><div class="opt-item">(b) इन्द्र को</div><div class="opt-item">(c) रुद्र को</div><div class="opt-item">(d) विष्णु को</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) इन्द्र को</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. निम्नलिखित में कौन सी वह ब्रह्मवादिनी थी, जिसने कुछ वेद मंत्रों की रचना की थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) लोपामुद्रा</div><div class="opt-item">(b) गार्गी</div><div class="opt-item">(c) लीलावती</div><div class="opt-item">(d) सावित्री</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लोपामुद्रा</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. ऋग्वेद के किन मण्डलों को 'वंश मण्डल' (Dynasty Mandal) के नाम से जाना जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्रथम एवं द्वितीय</div><div class="opt-item">(b) द्वितीय से सप्तम</div><div class="opt-item">(c) नवें एवं दशम</div><div class="opt-item">(d) आठवें एवं नवें</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) द्वितीय से सप्तम मण्डलों को</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. ऋग्वेद का सर्वाधिक लोकप्रिय छन्द कौन सा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गायत्री</div><div class="opt-item">(b) अनुष्टुप</div><div class="opt-item">(c) त्रिष्टुप</div><div class="opt-item">(d) जगती</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) त्रिष्टुप</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. निम्नलिखित में से किस नदी को ऋग्वेद में 'नदीतमा' कहा गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) झेलम</div><div class="opt-item">(b) रावी</div><div class="opt-item">(c) व्यास</div><div class="opt-item">(d) सरस्वती</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) सरस्वती</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q31. रावी नदी का वैदिक नाम क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) परुष्णी</div><div class="opt-item">(b) चन्द्रभागा</div><div class="opt-item">(c) अर्जीकिया</div><div class="opt-item">(d) सुवास्तु</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) परुष्णी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q32. आरम्भिक वैदिक साहित्य में सर्वाधिक वर्णित नदी कौन सी है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सिंधु</div><div class="opt-item">(b) शुतुद्री</div><div class="opt-item">(c) सरस्वती</div><div class="opt-item">(d) गंगा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सिंधु</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q33. प्रारंभिक वैदिक काल में 'दस राजन युद्ध' (Battle of Ten Kings) किस नदी के तट पर हुआ था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सरस्वती</div><div class="opt-item">(b) दृशद्वती</div><div class="opt-item">(c) परुष्णी</div><div class="opt-item">(d) शुतुद्रि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) परुष्णी (रावी)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q34. सुमेलित करें: A. कुभा B. परुष्णी C. सदानीरा D. शुतुद्री</div>
+                    <div class="options-grid">
+                        <div class="opt-item">1. गंडक</div><div class="opt-item">2. काबुल</div>
+                        <div class="opt-item">3. रावी</div><div class="opt-item">4. सतलज</div>
+                    </div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: A-2 (काबुल), B-3 (रावी), C-1 (गंडक), D-4 (सतलज)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q35. यूनान के विद्वान सतलुज नदी को किस नाम से पुकारते थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जंगती</div><div class="opt-item">(b) मुकसांग</div><div class="opt-item">(c) हिसिडरस</div><div class="opt-item">(d) शतुद्रि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) हिसिडरस (Heisidrus)</strong></div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '20-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
