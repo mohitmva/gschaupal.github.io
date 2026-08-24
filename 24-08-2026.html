@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f0f2f5; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #f39c12;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 25px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.5rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 1px 1px 2px #000; }
+        header p { margin: 5px 0 0; color: #1abc9c; font-size: 1.1rem; }
+
+        .container { 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 10px 18px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ccc;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; }
+        .content-list li { margin-bottom: 10px; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #f8fcfd;
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.5rem; border-bottom: 1px dashed #8e44ad; padding-bottom:10px; margin-bottom: 15px;}
+        
+        .mentor-tip { background-color: #e8f6f3; padding: 15px; border-left: 5px solid #1abc9c; margin-top: 15px; font-style: italic; color: #2c3e50; }
+        .mentor-tip strong { color: #16a085; font-style: normal; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+            font-family: Calibri, sans-serif;
+            font-size: 1.05rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 10px; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 8px; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .opt-item { background: #fff; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+
+        details { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 8px 12px; margin-top: 5px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; }
+        .ans-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; color: #333; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 25px; background: #1a252f; color: white; margin-top: 20px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>24 अगस्त 2026 | डेली करेंट अफेयर्स एवं इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (35 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title">1. The Hindu: करेंट + स्टैटिक का महा-विश्लेषण</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत-चीन सीमा विवाद: 'अर्ली हार्वेस्ट' और SR वार्ता (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> राष्ट्रीय सुरक्षा सलाहकार (NSA) अजीत डोभाल 'विशेष प्रतिनिधि' (SR) स्तर की 25वीं दौर की वार्ता के लिए बीजिंग का दौरा कर रहे हैं। यह चीनी राष्ट्रपति शी जिनपिंग की भारत यात्रा की संभावनाओं का संकेत है।</li>
+                        <li><strong>अर्ली हार्वेस्ट (Early Harvest):</strong> भारत और चीन पूर्ण सीमा समाधान से पहले उन छोटे क्षेत्रों (जैसे डेमचोक) में 'अर्ली हार्वेस्ट' समझौते की तलाश कर रहे हैं, जहाँ विवाद सुलझाना अपेक्षाकृत आसान है।</li>
+                        <li><strong>SR तंत्र:</strong> दोनों देशों के बीच 2003 में सीमा विवाद को 3 चरणों में सुलझाने के लिए इस तंत्र की स्थापना की गई थी।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> इसे सिर्फ एक राजनयिक यात्रा तक सीमित न रखें। आगामी 12 सितंबर 2026 को भारत में होने वाले BRICS शिखर सम्मेलन की पृष्ठभूमि में भारत-चीन संबंधों में यह 'पिघलाव' (Thaw) एक महत्वपूर्ण कूटनीतिक मोड़ है।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत-चीन सीमा विवाद का स्थायी समाधान 'विशेष प्रतिनिधि' (SR) तंत्र के तहत 'अर्ली हार्वेस्ट' (Early Harvest) रणनीति में निहित हो सकता है।" इस कथन का समालोचनात्मक मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: कूटनीति और व्यापार वार्ताओं के संदर्भ में अक्सर उपयोग किए जाने वाले शब्द "अर्ली हार्वेस्ट" (Early Harvest) का क्या अर्थ है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) विवादित सीमा पर बंकरों को नष्ट करना</div><div class="opt-item">(b) व्यापक समझौते से पहले आसान मुद्दों पर जल्दी सहमति बनाना</div>
+                            <div class="opt-item">(c) कृषि उत्पादों पर टैरिफ समाप्त करना</div><div class="opt-item">(d) द्विपक्षीय वार्ता रद्द कर देना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) व्यापक समझौते से पहले उन मुद्दों पर जल्दी सहमति बनाना जिन पर दोनों पक्ष आसानी से राजी हों।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. मोबाइल फोन विनिर्माण योजना (MPMS): PLI का अगला चरण (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> इलेक्ट्रॉनिक्स मंत्रालय ने ₹62,500 करोड़ की नई 'मोबाइल फोन मैन्युफैक्चरिंग स्कीम' (MPMS) अधिसूचित की है, जिसका उद्देश्य घरेलू असेंबलिंग को बढ़ावा देना है।</li>
+                        <li><strong>भारतीय ब्रांड्स पर जोर:</strong> यह योजना विशेष रूप से भारतीय ब्रांड्स (जिनका IP और ट्रेडमार्क भारत में है) को बिना किसी न्यूनतम बिक्री सीमा के 5% का फ्लैट प्रोत्साहन प्रदान करती है।</li>
+                        <li><strong>डोमेस्टिक वैल्यू एडिशन (DVA):</strong> यदि कंपनियाँ स्थानीय कलपुर्जों की सोर्सिंग करती हैं, तो उन्हें अतिरिक्त 1.5% प्रोत्साहन मिलेगा। सरकार का लक्ष्य DVA को 18-23% से बढ़ाकर 35-40% करना है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत मोबाइल फोन असेंबलिंग में वैश्विक नेता बन गया है, लेकिन वास्तविक सफलता 'डोमेस्टिक वैल्यू एडिशन' (DVA) को बढ़ाने और स्वदेशी ब्रांड्स विकसित करने में निहित है।" नई MPMS योजना इस दिशा में कैसे एक गेम-चेंजर साबित हो सकती है?</div>
+                        
+                        <div class="pre-q">Prelims Q1: आपूर्ति श्रृंखला के संदर्भ में 'डोमेस्टिक वैल्यू एडिशन' (DVA) का तात्पर्य क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) निर्यात किए जाने वाले उत्पादों पर कर</div><div class="opt-item">(b) किसी उत्पाद के निर्माण में स्थानीय कच्चे माल, श्रम और तकनीक का हिस्सा</div>
+                            <div class="opt-item">(c) आयातित कच्चे माल का कुल मूल्य</div><div class="opt-item">(d) सरकार द्वारा कंपनियों को नकद सब्सिडी</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) उत्पाद के निर्माण में स्थानीय कच्चे माल, श्रम और तकनीक का हिस्सा।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. काजीरंगा के पास अवैध खनन और CEC की फटकार (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सुप्रीम कोर्ट द्वारा गठित 'केंद्रीय अधिकार प्राप्त समिति' (CEC) ने असम सरकार को काजीरंगा नेशनल पार्क की दक्षिणी सीमा (कार्बी आंगलोंग पहाड़ियों) पर चल रहे अवैध खनन पर फटकार लगाई है।</li>
+                        <li><strong>पशु गलियारे (Animal Corridors):</strong> खनन से हाथियों और गैंडों के 9 पहचाने गए 'एनिमल कॉरिडोर' बाधित हो रहे हैं, जिससे मानव-वन्यजीव संघर्ष बढ़ रहा है।</li>
+                        <li>कार्बी आंगलोंग से निकलने वाली नदियां और जलधाराएं काजीरंगा की लाइफलाइन हैं, जो खनन के कारण प्रदूषित हो रही हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "पारिस्थितिक रूप से संवेदनशील क्षेत्रों (Eco-Sensitive Zones) और पशु गलियारों में अंधाधुंध खनन जैव-विविधता के लिए एक बड़ा खतरा है।" काजीरंगा-कार्बी आंगलोंग परिदृश्य के संदर्भ में विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'केंद्रीय अधिकार प्राप्त समिति' (Central Empowered Committee - CEC), जो अक्सर पर्यावरण से जुड़े मामलों में चर्चा में रहती है, का गठन किसके द्वारा किया गया था?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) NGT</div><div class="opt-item">(b) पर्यावरण मंत्रालय</div>
+                            <div class="opt-item">(c) भारत का सर्वोच्च न्यायालय</div><div class="opt-item">(d) भारतीय वन्यजीव संस्थान (WII)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) भारत का सर्वोच्च न्यायालय</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. संसद का सत्रावसान (Prorogation) और राजनीतिक विवाद (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> लोकसभा को 13 अगस्त को अनिश्चित काल के लिए स्थगित (Adjourned sine die) कर दिया गया था, लेकिन 10 दिनों बाद भी इसका 'सत्रावसान' (Prorogation) नहीं किया गया। विपक्ष का आरोप है कि सरकार इसके पीछे कुछ राजनीतिक मंशा रखती है।</li>
+                        <li><strong>स्थगन (Adjournment):</strong> यह पीठासीन अधिकारी (Speaker) द्वारा किया जाता है, जो केवल बैठक को रोकता है।</li>
+                        <li><strong>सत्रावसान (Prorogation):</strong> यह संविधान के <strong>अनुच्छेद 85</strong> के तहत <strong>राष्ट्रपति</strong> (मंत्रिपरिषद की सलाह पर) द्वारा किया जाता है, जो पूरे सत्र को समाप्त कर देता है। सत्रावसान पर लंबित नोटिस समाप्त हो जाते हैं, लेकिन विधेयक (Bills) समाप्त नहीं होते।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: 'अनिश्चित काल के लिए स्थगन' (Adjournment Sine Die) और 'सत्रावसान' (Prorogation) के बीच संवैधानिक अंतर स्पष्ट करें। संसद सत्र बुलाने और समाप्त करने में कार्यपालिका (Executive) के विशेषाधिकारों का परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: निम्नलिखित में से क्या सत्य है जब लोकसभा का सत्रावसान (Prorogued) हो जाता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) लोकसभा भंग (Dissolve) हो जाती है</div><div class="opt-item">(b) सदन के समक्ष लंबित सभी विधेयक (Bills) समाप्त (Lapse) हो जाते हैं</div>
+                            <div class="opt-item">(c) सदन के समक्ष लंबित सभी नोटिस (विधेयकों को छोड़कर) समाप्त हो जाते हैं</div><div class="opt-item">(d) लोकसभा अध्यक्ष का पद स्वतः समाप्त हो जाता है</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) सदन के समक्ष लंबित सभी नोटिस समाप्त हो जाते हैं।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. न्यायिक सेवा (Judicial Service) के लिए अनुभव की शर्त (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> सुप्रीम कोर्ट ने अपने ही 2025 के फैसले में संशोधन करते हुए आदेश दिया है कि 'सिविल जज (जूनियर डिवीजन)' की परीक्षा में बैठने के लिए अब 3 साल के बजाय <strong>केवल 1 साल की कानूनी प्रैक्टिस</strong> अनिवार्य होगी।</li>
+                        <li>इसके साथ ही उम्मीदवारों को 1 साल की ज्यूडिशियल एकेडमी ट्रेनिंग और 1 साल की क्लर्कशिप करनी होगी।</li>
+                        <li>इसका उद्देश्य ताज़ा ग्रेजुएट्स (Freshers) को मौका देना है, लेकिन साथ ही अनुभव की कमी को ट्रेनिंग के माध्यम से दूर करना है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: निचली न्यायपालिका में न्यायाधीशों की गुणवत्ता में सुधार के लिए 'न्यूनतम वकालत अनुभव' की शर्त कितनी महत्वपूर्ण है? सुप्रीम कोर्ट के हालिया निर्णयों के संदर्भ में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में सर्वोच्च न्यायालय के निर्णय के अनुसार, 'सिविल जज (जूनियर डिवीजन)' के पद पर आवेदन करने के लिए कितनी न्यूनतम कानूनी प्रैक्टिस अनिवार्य की गई है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) 5 वर्ष</div><div class="opt-item">(b) 3 वर्ष</div>
+                            <div class="opt-item">(c) 1 वर्ष</div><div class="opt-item">(d) कोई अनुभव नहीं</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 1 वर्ष</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title">2. PIB न्यूज़ (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. देश का पहला 'नॉन-जीएमओ' हाई-एक्सपेंशन पॉपकॉर्न मक्का बीज (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> उपराष्ट्रपति ने आंध्र प्रदेश के मुसुनुरु में देश का पहला <strong>स्वदेशी 'नॉन-जीएमओ' (Non-GMO)</strong> उच्च गुणवत्ता वाला 'पॉपकॉर्न मक्का हाइब्रिड बीज' जारी किया है।</li>
+                        <li>यह बीज 'गॉरमेट पॉपकॉर्निका' द्वारा विकसित किया गया है। यह कृषि में आत्मनिर्भरता लाएगा और भारी आयात से होने वाली विदेशी मुद्रा बचाएगा।</li>
+                        <li><strong>स्टैटिक बैकग्राउंड:</strong> नॉन-जीएमओ का अर्थ है कि बीज के जीन में प्रयोगशाला में कृत्रिम बदलाव नहीं किया गया है, बल्कि इसे प्राकृतिक क्रॉस-ब्रीडिंग के माध्यम से तैयार किया गया है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: भारत में 'आनुवंशिक रूप से संशोधित' (Genetically Modified - GM) फसलों से जुड़ी चिंताओं के बीच, स्वदेशी 'नॉन-जीएमओ' हाइब्रिड बीजों का विकास खाद्य सुरक्षा और कृषि निर्यात को कैसे सशक्त कर सकता है?</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में आंध्र प्रदेश में लॉन्च किए गए भारत के पहले उच्च गुणवत्ता वाले 'पॉपकॉर्न मक्का हाइब्रिड बीज' के संबंध में क्या सत्य है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) इसे आनुवंशिक रूप से संशोधित (Genetically Modified) किया गया है।</div><div class="opt-item">(b) यह भारत का पहला पूरी तरह से स्वदेशी 'नॉन-जीएमओ' (Non-GMO) बीज है।</div>
+                            <div class="opt-item">(c) इसे केवल अमेरिका में निर्यात के लिए बनाया गया है।</div><div class="opt-item">(d) यह पानी के बिना भी उग सकता है।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) यह भारत का पहला स्वदेशी 'नॉन-जीएमओ' (Non-GMO) बीज है।</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. 'ऑपरेशन ब्लैक हॉक' और ड्रग्स तस्करी (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>करेंट न्यूज़:</strong> <strong>केंद्रीय नारकोटिक्स ब्यूरो (CBN)</strong> ने अंतरराज्यीय हेरोइन सिंडिकेट का भंडाफोड़ करते हुए 'ऑपरेशन ब्लैक हॉक' के तहत 18.64 किलो कच्ची हेरोइन जब्त की है।</li>
+                        <li><strong>तरीका:</strong> यह मादक पदार्थ पूर्वोत्तर भारत से लाया जा रहा था और ट्रकों में खुफिया कैविटी (Secret Cavity) बनाकर उत्तर प्रदेश में तस्करी किया जा रहा था।</li>
+                        <li>यह कार्रवाई <strong>NDPS (Narcotic Drugs and Psychotropic Substances) अधिनियम, 1985</strong> के तहत की गई है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "पूर्वोत्तर भारत से आंतरिक राज्यों की ओर मादक पदार्थों की तस्करी (Drug Trafficking) राष्ट्रीय सुरक्षा के लिए एक बढ़ता हुआ खतरा है।" 'नारको-टेररिज्म' से निपटने के लिए संस्थागत ढांचों की प्रभावशीलता पर चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में केंद्रीय नारकोटिक्स ब्यूरो (CBN) द्वारा अंतरराज्यीय हेरोइन सिंडिकेट का भंडाफोड़ करने के लिए कौन-सा ऑपरेशन चलाया गया था?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ऑपरेशन गरुड़</div><div class="opt-item">(b) ऑपरेशन ब्लैक हॉक</div>
+                            <div class="opt-item">(c) ऑपरेशन मेघदूत</div><div class="opt-item">(d) ऑपरेशन नारकोस</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) ऑपरेशन ब्लैक हॉक</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title">3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>वैदिक काल में प्रशासन और राजनीति से जुड़े प्रमुख शब्द</h3>
+                    <p style="text-align:center; color:#555;">(परीक्षा के दृष्टिकोण से अत्यंत महत्वपूर्ण शब्दावली)</p>
+                    
+                    <ul class="content-list" style="color: #2c3e50;">
+                        <li><strong>राजन् (Rajan):</strong> राजा या कबीले का मुख्य नेता।</li>
+                        <li><strong>सभा (Sabha):</strong> वरिष्ठ और संभ्रांत (Elite) लोगों की संस्था (यह न्यायिक कार्य भी करती थी)।</li>
+                        <li><strong>समिति (Samiti):</strong> आम जनता की राजनीतिक सभा (यह राजा का चुनाव करती थी)।</li>
+                        <li><strong>विद्यत (Vidatha):</strong> आर्यों की सबसे पुरानी धार्मिक और सैन्य संस्था।</li>
+                        <li><strong>सेनानी (Senani):</strong> सेना का मुख्य अधिकारी (पुरोहित के बाद सबसे महत्वपूर्ण)।</li>
+                        <li><strong>पुरोहित (Purohit):</strong> राजा का मुख्य सलाहकार और धार्मिक मार्गदर्शक।</li>
+                        <li><strong>ग्रामणी (Gramani):</strong> गांव का प्रमुख अधिकारी/मुखिया।</li>
+                        <li><strong>कुलप (Kulap):</strong> परिवार या कुल (Joint Family) का मुखिया।</li>
+                        <li><strong>विश (Vish):</strong> कई ग्रामों या कुलों का समूह (इसका प्रमुख 'विशपति' होता था)।</li>
+                        <li><strong>जन (Jan):</strong> कबीला या लोगों का सबसे बड़ा समूह (इसका प्रमुख 'राजन' होता था)।</li>
+                        <li><strong>बलि (Bali):</strong> ऋग्वैदिक काल में राजा को दिया जाने वाला स्वैच्छिक कर या भेंट (उत्तर वैदिक काल में यह अनिवार्य हो गया)।</li>
+                        <li><strong>स्पश (Spash):</strong> गुप्तचर या जासूस (जो राजा को गतिविधियों की सूचना देते थे)।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title">4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा。</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title">5. महा-प्रश्नोत्तरी (35 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 25 वैदिक सभ्यता (सर्वाधिक बार पूछे गए PYQ) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. 'विशेष प्रतिनिधि' (SR) तंत्र का उपयोग भारत द्वारा किस देश के साथ सीमा विवाद सुलझाने के लिए किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पाकिस्तान</div><div class="opt-item">(b) चीन</div><div class="opt-item">(c) नेपाल</div><div class="opt-item">(d) बांग्लादेश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चीन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. इलेक्ट्रॉनिक्स मंत्रालय की नई 'मोबाइल फोन विनिर्माण योजना' (MPMS) में 'भारतीय ब्रांड्स' को कितना फ्लैट प्रोत्साहन (Incentive) देने का प्रावधान है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 1.5%</div><div class="opt-item">(b) 3%</div><div class="opt-item">(c) 5%</div><div class="opt-item">(d) 10%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 5%</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. सुप्रीम कोर्ट द्वारा गठित 'केंद्रीय अधिकार प्राप्त समिति' (CEC) ने हाल ही में किस राष्ट्रीय उद्यान के एनिमल कॉरिडोर में अवैध खनन को लेकर राज्य सरकार को फटकार लगाई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मानस नेशनल पार्क</div><div class="opt-item">(b) काजीरंगा नेशनल पार्क</div><div class="opt-item">(c) जिम कॉर्बेट नेशनल पार्क</div><div class="opt-item">(d) पेरियार नेशनल पार्क</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) काजीरंगा नेशनल पार्क</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. भारतीय संविधान के किस अनुच्छेद के तहत राष्ट्रपति को संसद के किसी भी सदन का सत्रावसान (Prorogation) करने का अधिकार है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनुच्छेद 85</div><div class="opt-item">(b) अनुच्छेद 108</div><div class="opt-item">(c) अनुच्छेद 123</div><div class="opt-item">(d) अनुच्छेद 72</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) अनुच्छेद 85</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. हाल ही में सुप्रीम कोर्ट के निर्णय के अनुसार, 'सिविल जज (जूनियर डिवीजन)' के पद पर आवेदन करने के लिए कितनी न्यूनतम कानूनी प्रैक्टिस अनिवार्य की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 3 वर्ष</div><div class="opt-item">(b) 2 वर्ष</div><div class="opt-item">(c) 1 वर्ष</div><div class="opt-item">(d) कोई अनुभव नहीं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 1 वर्ष</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में भारत का पहला स्वदेशी 'नॉन-जीएमओ' (Non-GMO) उच्च-विस्तार वाला 'पॉपकॉर्न मक्का हाइब्रिड बीज' किस राज्य में लॉन्च किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पंजाब</div><div class="opt-item">(b) उत्तर प्रदेश</div><div class="opt-item">(c) आंध्र प्रदेश</div><div class="opt-item">(d) महाराष्ट्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आंध्र प्रदेश (मुसुनुरु)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. मादक पदार्थों की तस्करी रोकने के लिए केंद्रीय नारकोटिक्स ब्यूरो (CBN) द्वारा चलाया गया 'ऑपरेशन ब्लैक हॉक' (Operation Black Hawk) किस ड्रग की जब्ती से जुड़ा था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कोकीन</div><div class="opt-item">(b) हेरोइन</div><div class="opt-item">(c) अफीम</div><div class="opt-item">(d) गांजा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) हेरोइन (18.64 किलोग्राम)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. भारत में मादक पदार्थों (Drugs) की तस्करी और नियंत्रण के लिए मुख्य रूप से कौन-सा अधिनियम लागू है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) UAPA, 1967</div><div class="opt-item">(b) PMLA, 2002</div><div class="opt-item">(c) NDPS Act, 1985</div><div class="opt-item">(d) NSA, 1980</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) NDPS Act, 1985</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. 'डोमेस्टिक वैल्यू एडिशन' (DVA), जिसे MPMS योजना के तहत 18-23% से बढ़ाकर 35-40% करने का लक्ष्य है, का क्या अर्थ है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) आयात पर लगने वाला टैक्स</div><div class="opt-item">(b) भारत में ही उत्पाद के पुर्जे और तकनीक विकसित करना</div><div class="opt-item">(c) विदेशों से असेंबल किए गए फोन मंगाना</div><div class="opt-item">(d) केवल विदेशी ब्रांड्स को भारत में बेचना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) उत्पाद के निर्माण में स्थानीय कच्चे माल, श्रम और तकनीक का हिस्सा।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. संसद की कार्यवाही के संदर्भ में 'स्थगन' (Adjournment) और 'सत्रावसान' (Prorogation) के बीच मुख्य अंतर क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सत्रावसान लोकसभा अध्यक्ष करता है, जबकि स्थगन राष्ट्रपति करता है।</div><div class="opt-item">(b) स्थगन केवल बैठक को रोकता है, जबकि सत्रावसान पूरे सत्र को समाप्त कर देता है।</div><div class="opt-item">(c) सत्रावसान से सभी विधेयक रद्द हो जाते हैं।</div><div class="opt-item">(d) दोनों एक ही प्रक्रिया के अलग-अलग नाम हैं।</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) स्थगन बैठक को रोकता है, सत्रावसान पूरे सत्र को समाप्त करता है।</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - वैदिक सभ्यता</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. वैदिक युग में प्रचलित लोकप्रिय शासन प्रणाली थी-</div>
+                    <div class="options-grid"><div class="opt-item">(a) निरंकुश</div><div class="opt-item">(b) प्रजातंत्र</div><div class="opt-item">(c) गणतंत्र</div><div class="opt-item">(d) वंश परम्परागत राजतंत्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) वंश परम्परागत राजतंत्र</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. "द्विज" किसे कहा जाता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ब्राह्मण, क्षत्रिय, वैश्य</div><div class="opt-item">(b) क्षत्रिय, वैश्य, शूद्र</div><div class="opt-item">(c) ब्राह्मण, वैश्य, शूद्र</div><div class="opt-item">(d) शूद्र, क्षत्रिय, ब्राह्मण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) ब्राह्मण, क्षत्रिय, वैश्य</strong> (इन्हें उपनयन संस्कार का अधिकार था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. ऋग्वैदिक "पणि" किस वर्ग के नागरिक थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पुरोहित</div><div class="opt-item">(b) लोहार</div><div class="opt-item">(c) स्वर्णकार</div><div class="opt-item">(d) व्यापारी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) व्यापारी</strong> (ये लोग पशुओं का व्यापार करते थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. गो-अपहरण के प्रसंग में ऋग्वेद में प्रमुख रूप से नाम आता है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) म्लेच्छों का</div><div class="opt-item">(b) दासी और दस्युओं का</div><div class="opt-item">(c) पणियों का</div><div class="opt-item">(d) निषादों का</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पणियों का</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. प्राचीन भारत में 'निष्क' नाम से जाने जाते थे-</div>
+                    <div class="options-grid"><div class="opt-item">(a) स्वर्ण आभूषण</div><div class="opt-item">(b) गायें</div><div class="opt-item">(c) ताँबे के सिक्के</div><div class="opt-item">(d) चाँदी के सिक्के</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) स्वर्ण आभूषण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. वैदिक काल में निष्क शब्द का प्रयोग एक आभूषण के लिए होता था किन्तु परवर्ती काल में उसका प्रयोग किस अर्थ में हुआ:</div>
+                    <div class="options-grid"><div class="opt-item">(a) शस्त्र</div><div class="opt-item">(b) कृषि औजार</div><div class="opt-item">(c) लिपि</div><div class="opt-item">(d) सिक्का</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) सिक्का</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. निम्नलिखित में से कौन-सी बात ऋग्वैदिक स्त्रियों के संदर्भ में सही नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) वे सभा की कार्यवाही में भाग लेती थी</div><div class="opt-item">(b) वे यज्ञों का अनुष्ठान करती थी</div><div class="opt-item">(c) वे युद्धों में सक्रिय भाग लेती थी</div><div class="opt-item">(d) रजस्वला होने के पहले ही उनका विवाह हो जाता था</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) रजस्वला होने के पहले ही उनका विवाह हो जाता था</strong> (ऋग्वैदिक काल में बाल विवाह नहीं होते थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. वैदिक काल में ग्राम का मुखिया कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) विशपति</div><div class="opt-item">(b) गृहपति</div><div class="opt-item">(c) गणपति</div><div class="opt-item">(d) ग्रामणी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) ग्रामणी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. ऋग्वेद के 10वें मंडल में, निम्नलिखित में से कौन-सा स्त्रोत विवाह-समारोहों पर प्रकाश डालता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सूर्य सूक्त</div><div class="opt-item">(b) पुरुष सूक्त</div><div class="opt-item">(c) दान स्तुति</div><div class="opt-item">(d) उर्ण सूत्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सूर्य सूक्त</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. वैदिकयुगीन 'सभा'-</div>
+                    <div class="options-grid"><div class="opt-item">(a) गांवों के व्यावसायिक लोगों की संस्था थी</div><div class="opt-item">(b) राज दरबार होता था</div><div class="opt-item">(c) मन्त्रिपरिषद की तरह कार्य करती थी / कुलीन लोगों की संस्था थी</div><div class="opt-item">(d) राज्य के समस्त लोगों की एक राष्ट्रीय सभा थी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कुलीन अथवा वृद्ध मनुष्यों की संस्था थी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. ऋग्वैदिक जन सभा जो न्यायिक कार्यों से संबंधित थी:</div>
+                    <div class="options-grid"><div class="opt-item">(a) सभा</div><div class="opt-item">(b) समिति</div><div class="opt-item">(c) विधाता (विद्यत)</div><div class="opt-item">(d) उपर्युक्त में से सभी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सभा</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. उस जनजाति का नाम बतलाइये जो ऋग्वेदिक आर्यों के 'पंचजन' से सम्बन्धित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) यदु</div><div class="opt-item">(b) पुरु</div><div class="opt-item">(c) तुर्वस</div><div class="opt-item">(d) किकट</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) किकट</strong> (पंचजन में पुरू, यदु, अनु, तुर्वस एवं द्रुह्य शामिल थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. ऋग्वेद में वशिष्ठ को किसके पुरोहित के रूप में प्रस्तुत किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पुरुओं के</div><div class="opt-item">(b) भरतों के</div><div class="opt-item">(c) कुरुओं के</div><div class="opt-item">(d) तुर्वसुओ के</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) भरतों के</strong> (सुदास के पुरोहित)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. ऋग्वेद में यदुजन का अधिकतर किसके साथ युग्म बना है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनु</div><div class="opt-item">(b) द्रुह्यु</div><div class="opt-item">(c) तुर्वस</div><div class="opt-item">(d) पुरु</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) तुर्वस</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. सुदास (दशराज्ञ युद्ध के विजेता) किस वंश का था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भरत वंश</div><div class="opt-item">(b) सुदास वंश</div><div class="opt-item">(c) कण्व वंश</div><div class="opt-item">(d) सातवाहन वंश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) भरत वंश</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. ऋग्वेद संहिता के संबंध में निम्नलिखित में से कौन सा एक सत्य नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऋग्वेद में लगभग 300 गैर-भारत यूरोपीय शब्द हैं</div><div class="opt-item">(b) ऋग्वेद में दशराज्ञ युद्ध का संदर्भ है</div><div class="opt-item">(c) भरत प्रमुख सुदास ने दस जनजातियों के राजमंडल के विरुद्ध लड़ाई की</div><div class="opt-item">(d) दस राजाओं के युद्ध में पुरुओं ने भरतों का साथ दिया</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d)</strong> (पुरु दस राजाओं के संघ में शामिल थे, सुदास के खिलाफ)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. निम्नलिखित में से किसने ऋग्वेद में वर्णित 'दशराज्ञ युद्ध' में भाग नहीं लिया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) त्रित्सु</div><div class="opt-item">(b) पक्थ</div><div class="opt-item">(c) विषाणिन्</div><div class="opt-item">(d) गंधारि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) गंधारि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. ऋग्वेद में उल्लिखित 'यव' शब्द किस कृषि उत्पाद हेतु प्रयुक्त किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जौ (Barley)</div><div class="opt-item">(b) चना</div><div class="opt-item">(c) चावल</div><div class="opt-item">(d) गेहूं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) जौ</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. ऋग्वैदिक काल के प्रारंभ में निम्न में से किसे महत्वपूर्ण मूल्यवान सम्पत्ति समझा जाता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भूमि को</div><div class="opt-item">(b) गाय को</div><div class="opt-item">(c) स्त्रियों को</div><div class="opt-item">(d) जल को</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) गाय को</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. ऋग्वेद में अनाज (cereals) के लिए किन शब्दों का प्रयोग किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गोधूम और व्रीहि</div><div class="opt-item">(b) यव और धान्य</div><div class="opt-item">(c) तिल और खल</div><div class="opt-item">(d) प्रियंगु और श्यामाक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) यव और धान्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q31. वैदिक काल में किस जानवर को "अघन्या" माना गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बैल</div><div class="opt-item">(b) भेड़</div><div class="opt-item">(c) गाय</div><div class="opt-item">(d) हाथी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गाय</strong> (अघन्या = न मारे जाने योग्य)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q32. प्राचीन काल में आर्यों के जीविकोपार्जन का मुख्य साधन था-</div>
+                    <div class="options-grid"><div class="opt-item">(a) कृषि</div><div class="opt-item">(b) शिकार</div><div class="opt-item">(c) शिल्पकर्म</div><div class="opt-item">(d) व्यापार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) कृषि</strong> (तथा पशुपालन)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q33. ऋग्वेद में निम्नलिखित पशुओं में से किनका उल्लेख हुआ है? 1. गाय 2. अश्व 3. बकरी 4. भैंस</div>
+                    <div class="options-grid"><div class="opt-item">(a) 1 एवं 4</div><div class="opt-item">(b) 1, 2 एवं 3</div><div class="opt-item">(c) 1 एवं 2</div><div class="opt-item">(d) 1, 2, 3 एवं 4</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) 1, 2, 3 एवं 4</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q34. निम्नलिखित वैदिक शब्दों में कौन-सा शब्द कृषि उपकरण का द्योतक नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चर्षिणी</div><div class="opt-item">(b) लांगल</div><div class="opt-item">(c) वृक</div><div class="opt-item">(d) सीर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) चर्षिणी</strong> (लांगल, वृक और सीर हल के लिए प्रयुक्त होते थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q35. ऋग्वेद में प्रयुक्त 'सीता' शब्द का अर्थ निर्धारण कीजिये-</div>
+                    <div class="options-grid"><div class="opt-item">(a) पृथ्वी की उर्वरा देवी</div><div class="opt-item">(b) राजा जनक की पुत्री</div><div class="opt-item">(c) जोती हुई कूड़ (Ploughed furrow)</div><div class="opt-item">(d) हल रेखा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) जोती हुई कूड़</strong></div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '24-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
