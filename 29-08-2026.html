@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>29 अगस्त 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-Depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. नेपाल में 'ग्लेशियल लेक आउटबर्स्ट फ्लड' (GLOF) और सीमा-पार प्रभाव (GS-1 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> नेपाल की भोटेकोशी नदी (त्रिशूली की सहायक) में अचानक आई भयंकर बाढ़ (Flash Flood) में 579 से अधिक लोगों की मौत हो चुकी है और 2000 से अधिक लापता हैं। </li>
+                        <li><strong>भौगोलिक कारण:</strong> उपग्रह इमेजरी और विशेषज्ञों (ICIMOD) के अनुसार, यह बाढ़ भूकंप से नहीं, बल्कि तिब्बत (चीन) और नेपाल की सीमा पर स्थित 'लेंदे खोला' (Lhende Khola) क्षेत्र में एक विशाल 'आइस-रॉक एवलांच' (हिमनद और चट्टान के खिसकने) के कारण आई है। इसने नदी का मार्ग रोक दिया, जिससे कृत्रिम झील बनी और फिर उसके फटने से भारी जलप्रलय आ गया।</li>
+                        <li><strong>भारत के लिए चेतावनी:</strong> यह नदी तंत्र भारत में गंडक और कोसी के रूप में प्रवेश करता है। भारत ने तुरंत NDRF की टीमें बिहार और यूपी सीमा पर तैनात की हैं और नेपाल को 47.5 टन राहत सामग्री भेजी है। </li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> हिमालयी पारिस्थितिकी तंत्र बेहद नाजुक है। जलवायु परिवर्तन के कारण ग्लेशियर तेजी से पिघल रहे हैं। 'GLOF' (Glacial Lake Outburst Flood) जैसी आपदाएँ अब किसी एक देश तक सीमित नहीं हैं। उत्तर लिखते समय 'सेंडाई फ्रेमवर्क' (Sendai Framework) और भारत-नेपाल के बीच साझा 'पूर्व-चेतावनी प्रणाली' (Early Warning System) का उल्लेख अवश्य करें।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "हिमालयी क्षेत्र में 'ग्लेशियल लेक आउटबर्स्ट फ्लड' (GLOF) की बढ़ती घटनाएं केवल एक देश की भौगोलिक समस्या नहीं, बल्कि एक बहुपक्षीय (Multilateral) आपदा प्रबंधन की चुनौती हैं।" भारत, नेपाल और चीन के संदर्भ में इस कथन का समालोचनात्मक परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में किस नदी क्षेत्र में 'आइस-रॉक एवलांच' के कारण भयंकर फ्लैश फ्लड आया, जिसका प्रभाव भारत के गंडक बेसिन पर भी पड़ा?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) तीस्ता नदी</div><div class="opt-item">(b) लेंदे खोला (भोटेकोशी नदी)</div>
+                            <div class="opt-item">(c) सुबनसिरी नदी</div><div class="opt-item">(d) काली गंडकी</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) लेंदे खोला (भोटेकोशी नदी बेसिन)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. भारत-अमेरिका रक्षा समझौता: 'जेवलिन' एंटी-टैंक मिसाइल की खरीद (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारत ने 'विदेशी सैन्य बिक्री' (Foreign Military Sales - FMS) मार्ग के तहत अमेरिका से <strong>'जेवलिन' (Javelin)</strong> एंटी-टैंक गाइडेड मिसाइल सिस्टम खरीदने के लिए 'लेटर ऑफ ऑफर एंड एक्सेप्टेंस' (LOA) पर हस्ताक्षर किए हैं।</li>
+                        <li><strong>रणनीतिक महत्व:</strong> 'ऑपरेशन सिंदूर' (Operation Sindoor) के बाद अपनी 'क्रिटिकल ऑपरेशनल क्षमताओं' को बढ़ाने के लिए भारतीय सेना को 'आपातकालीन खरीद शक्तियों' (Emergency Procurement Powers) के तहत यह मिसाइल मिल रही है। यह मिसाइल 'दागो और भूल जाओ' (Fire-and-Forget) तकनीक पर आधारित है, जो ऑपरेटर को मिसाइल दागने के तुरंत बाद अपनी जगह बदलने की सुविधा देती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: हाल ही में भारतीय सेना द्वारा अमेरिका से आयात की जा रही 'जेवलिन' (Javelin) मिसाइल प्रणाली की प्रमुख विशेषता क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) यह एक लंबी दूरी की बैलिस्टिक मिसाइल है।</div><div class="opt-item">(b) यह 'दागो और भूल जाओ' (Fire-and-Forget) क्षमता वाली एक एंटी-टैंक गाइडेड मिसाइल है।</div>
+                            <div class="opt-item">(c) यह पनडुब्बी से दागी जाने वाली क्रूज मिसाइल है।</div><div class="opt-item">(d) यह एक एंटी-सैटेलाइट हथियार है।</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) एंटी-टैंक गाइडेड मिसाइल (Fire-and-Forget)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. खाप पंचायतें बनाम 'Gen Z': व्यक्तिगत स्वतंत्रता पर पाबंदी (GS-1 / GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> हरियाणा के जींद और रोहतक जिलों में 'कंडेला', 'नौगामा' और 'चौबीसी' खाप पंचायतों ने कई फरमान जारी किए हैं। इनमें 'समान गोत्र' (Same Gotra) और 'समान गाँव' में विवाह पर पूर्ण प्रतिबंध, 'लिव-इन रिलेशनशिप' (Live-in) और समलैंगिक संबंधों (Same-sex) का विरोध शामिल है।</li>
+                        <li><strong>सामाजिक टकराव (Conflict of Rights):</strong> 'Gen Z' (युवा वर्ग) सोशल मीडिया के माध्यम से इन रूढ़िवादी फरमानों का कड़ा विरोध कर रहा है। युवाओं का तर्क है कि भारत के संविधान के अनुच्छेद 21 (निजता और जीवन का अधिकार) के तहत consenting वयस्कों (वयस्कों की सहमति) को अपने व्यक्तिगत विकल्प चुनने का अधिकार है। यह <strong>'रूढ़िवादी परंपरा बनाम संवैधानिक नैतिकता' (Customs vs Constitutional Morality)</strong> का एक ज्वलंत उदाहरण है।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> UPSC के 'भारतीय समाज' (Indian Society) और 'सामाजिक न्याय' खंड के लिए यह बहुत महत्वपूर्ण है। इसे सुप्रीम कोर्ट के <em>'शक्ति वाहिनी बनाम भारत संघ (2018)'</em> फैसले से जोड़ें, जहाँ कोर्ट ने खाप पंचायतों के हस्तक्षेप को पूरी तरह से अवैध और मौलिक अधिकारों का उल्लंघन माना था।
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. भारत-कनाडा व्यापार समझौता (CEPA) लक्ष्य 2026 (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारत और कनाडा के वित्त मंत्रियों के बीच टोरंटो में हुई 'आर्थिक और वित्तीय वार्ता' में दोनों देशों ने 2026 के अंत तक <strong>CEPA (Comprehensive Economic Partnership Agreement)</strong> को अंतिम रूप देने की प्रतिबद्धता दोहराई है।</li>
+                        <li><strong>निवेश और व्यापार:</strong> दोनों देश 'द्विपक्षीय निवेश संधि' (Bilateral Investment Treaty - BIT) पर भी जल्द वार्ता शुरू करेंगे। इसका उद्देश्य 2030 तक द्विपक्षीय व्यापार को कई गुना बढ़ाना और कनाडाई पेंशन फंड को भारत के इंफ्रास्ट्रक्चर प्रोजेक्ट्स में निवेश करने के लिए आकर्षित करना है।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title"><i class="fas fa-university"></i> 2. PIB न्यूज़ (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. राष्ट्रीय खेल दिवस और 'मेजर ध्यानचंद' को श्रद्धांजलि (GS-1 / GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 29 अगस्त को भारत में 'राष्ट्रीय खेल दिवस' (National Sports Day) मनाया जाता है। प्रधानमंत्री ने इस अवसर पर महान हॉकी खिलाड़ी 'मेजर ध्यानचंद' को श्रद्धांजलि अर्पित की।</li>
+                        <li><strong>स्टैटिक फैक्ट्स:</strong> मेजर ध्यानचंद के नेतृत्व में भारत ने ओलंपिक में तीन लगातार स्वर्ण पदक (1928 एम्स्टर्डम, 1932 लॉस एंजिल्स, 1936 बर्लिन) जीते थे। उन्हीं के सम्मान में भारत के सर्वोच्च खेल सम्मान का नाम 'मेजर ध्यानचंद खेल रत्न पुरस्कार' रखा गया है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: भारत में 'राष्ट्रीय खेल दिवस' (29 अगस्त) किस महान खिलाड़ी की जयंती के उपलक्ष्य में मनाया जाता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) मिल्खा सिंह</div><div class="opt-item">(b) मेजर ध्यानचंद</div>
+                            <div class="opt-item">(c) के.डी. जाधव</div><div class="opt-item">(d) पी.टी. उषा</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) मेजर ध्यानचंद</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. 'ऑपरेशन वज्र 2.0': मनोदैहिक दवाओं की तस्करी पर प्रहार (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 'नार्को-टेररिज्म' और नशीले पदार्थों की तस्करी को रोकने के लिए, केंद्रीय नारकोटिक्स ब्यूरो (CBN) ने <strong>'ऑपरेशन वज्र 2.0' (Operation Vajra 2.0)</strong> चलाया है।</li>
+                        <li><strong>कार्रवाई:</strong> चंडीगढ़-बद्दी (हिमाचल प्रदेश) अंतरराज्यीय मार्ग पर एक बड़े अभियान में, CBN ने 66.80 लाख से अधिक अवैध 'मनोदैहिक गोलियां' (Psychotropic tablets जैसे अल्प्राजोलम, ट्रामाडोल) जब्त की हैं, जो पंजाब और हरियाणा में बेची जानी थीं।</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>बौद्ध धर्म: प्रमुख दार्शनिक, आचार और संस्थागत शब्द</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="va-heading">प्रमुख दार्शनिक शब्द (Philosophical Terms)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>निर्वाण (Nirvana):</strong> जीवन-मरण के चक्र (संसार) से पूर्ण मुक्ति या परम शांति की प्राप्ति। (जीते जी अज्ञानता और तृष्णा का नाश)।</li>
+                        <li><strong>परिनिर्वाण (Parinirvana):</strong> गौतम बुद्ध की मृत्यु (महापरिनिर्वाण) के बाद उनके शरीर का अंतिम रूप से विलीन होना और सांसारिक बंधनों से पूरी तरह (भौतिक रूप से) मुक्त हो जाना।</li>
+                        <li><strong>प्रतीत्यसमुत्पाद (Pratītyasamutpāda):</strong> बौद्ध दर्शन का मूल सिद्धांत, जिसका अर्थ है 'कारण-कार्य सिद्धांत'। यानी "हर वस्तु या घटना किसी न किसी कारण से उत्पन्न होती है।" यह दुःख के मूल कारण (अविद्या) को दर्शाता है।</li>
+                        <li><strong>शून्यता (Shunyata):</strong> नागार्जुन (महायान शाखा) द्वारा प्रतिपादित सिद्धांत, जिसके अनुसार सभी वस्तुएं और धर्म परस्पर निर्भर हैं और उनका कोई 'स्वतंत्र/स्थायी' अस्तित्व नहीं है।</li>
+                        <li><strong>बोधिसत्त्व (Bodhisattva):</strong> (महायान शाखा का आदर्श) वह व्यक्ति जो बुद्धत्व प्राप्त करने के मार्ग पर है, लेकिन दूसरों के उद्धार (कल्याण) के लिए खुद के निर्वाण में देरी करता है।</li>
+                    </ul>
+
+                    <div class="va-heading">बौद्ध आचार और मार्ग (Conduct & Path)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>अष्टांगिक मार्ग (Noble Eightfold Path):</strong> दुख से मुक्ति पाने के आठ साधन—सम्यक दृष्टि, सम्यक संकल्प, सम्यक वाक्, सम्यक कर्म, सम्यक आजीव, सम्यक व्यायाम, सम्यक स्मृति और सम्यक समाधि।</li>
+                        <li><strong>त्रिरत्न (Triratna):</strong> बुद्ध (संस्थापक), धम्म (उनके उपदेश/सिद्धांत) और संघ (भिक्षुओं का समूह)।</li>
+                        <li><strong>मध्यम मार्ग (Middle Path):</strong> अत्यधिक भोग-विलास और अत्यधिक कठोर तपस्या के बीच का संतुलित रास्ता, जिसे बुद्ध ने ज्ञान प्राप्ति के लिए अपनाया था।</li>
+                        <li><strong>पंचशील (Panchasheel):</strong> बौद्ध धर्म के पांच नैतिक नियम (हिंसा न करना, चोरी न करना, असत्य न बोलना, व्यभिचार न करना और मद्यपान न करना)।</li>
+                    </ul>
+
+                    <div class="va-heading">संस्थागत और ऐतिहासिक शब्द (Institutional Terms)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>संघ (Sangha):</strong> बौद्ध भिक्षुओं और भिक्षुणियों का धार्मिक संगठन या समुदाय, जहाँ लोकतांत्रिक तरीके से निर्णय लिए जाते थे।</li>
+                        <li><strong>धर्मचक्रप्रवर्तन (Dharmachakrapravartana):</strong> सारनाथ (ऋषिपत्तन) में गौतम बुद्ध द्वारा दिया गया उनका पहला उपदेश।</li>
+                        <li><strong>महाभिनिष्क्रमण (Mahabhinishkramana):</strong> गौतम बुद्ध द्वारा ज्ञान की खोज में 29 वर्ष की आयु में अपना 'गृहत्याग' करने की घटना।</li>
+                        <li><strong>चैत्य (Chaitya):</strong> बौद्ध भिक्षुओं का पूजा-गृह या प्रार्थना हॉल (जहाँ स्तूप रखा जाता था)।</li>
+                        <li><strong>विहार (Vihara):</strong> बौद्ध भिक्षुओं का निवास स्थान (मठ) जहाँ वे वर्षा ऋतु में ठहरते थे।</li>
+                        <li><strong>स्तूप (Stupa):</strong> बुद्ध या किसी बड़े बौद्ध संत के अवशेषों (हड्डियों/राख) पर बनी अर्धगोलाकार (Dome-shaped) पवित्र संरचना।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Quiz ================= -->
+            <div class="section-box sec-4" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 4. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 बौद्ध/जैन धर्म (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. हाल ही में 'लेंदे खोला' (Lhende Khola) क्षेत्र में 'आइस-रॉक एवलांच' के कारण भयंकर बाढ़ आई है। यह क्षेत्र किन दो देशों की सीमा पर स्थित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भारत-नेपाल</div><div class="opt-item">(b) नेपाल-चीन (तिब्बत)</div><div class="opt-item">(c) भारत-चीन</div><div class="opt-item">(d) भूटान-चीन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) नेपाल-चीन (तिब्बत)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. भारतीय सेना द्वारा आपातकालीन खरीद के तहत अमेरिका से ली जा रही 'जेवलिन' (Javelin) मिसाइल प्रणाली का मुख्य कार्य क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) हवा से हवा में मार करना</div><div class="opt-item">(b) एंटी-टैंक गाइडेड मिसाइल (दागो और भूल जाओ)</div><div class="opt-item">(c) ड्रोन को मार गिराना</div><div class="opt-item">(d) परमाणु पनडुब्बी नष्ट करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) एंटी-टैंक गाइडेड मिसाइल (Fire-and-Forget)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. भारत और कनाडा ने किस वर्ष के अंत तक अपने 'व्यापक आर्थिक भागीदारी समझौते' (CEPA) को अंतिम रूप देने का लक्ष्य रखा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 2025</div><div class="opt-item">(b) 2026</div><div class="opt-item">(c) 2028</div><div class="opt-item">(d) 2030</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 2026</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. हाल ही में 'नौगामा', 'कंडेला' और 'चौबीसी' जैसी 'खाप पंचायतों' द्वारा जारी फरमान चर्चा में रहे। ये पंचायतें मुख्य रूप से किस राज्य में सक्रिय हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) राजस्थान</div><div class="opt-item">(b) पंजाब</div><div class="opt-item">(c) हरियाणा</div><div class="opt-item">(d) उत्तर प्रदेश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) हरियाणा</strong> (इन्होंने लिव-इन और समान गोत्र विवाह का विरोध किया है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. किस भारतीय शतरंज खिलाड़ी ने 'ग्रैंड चेस टूर 2026' के फाइनल में अमेरिका के फैबियानो कारुआना को हराकर इतिहास रच दिया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) डी. गुकेश</div><div class="opt-item">(b) विश्वनाथन आनंद</div><div class="opt-item">(c) आर. प्रज्ञानानंदा</div><div class="opt-item">(d) अर्जुन एरिगैसी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आर. प्रज्ञानानंदा</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. 'ऑपरेशन वज्र 2.0' (Operation Vajra 2.0), जिसके तहत भारी मात्रा में अवैध दवाएं जब्त की गईं, किस एजेंसी द्वारा चलाया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नारकोटिक्स कंट्रोल ब्यूरो (NCB)</div><div class="opt-item">(b) केंद्रीय नारकोटिक्स ब्यूरो (CBN)</div><div class="opt-item">(c) राष्ट्रीय जांच एजेंसी (NIA)</div><div class="opt-item">(d) सीमा सुरक्षा बल (BSF)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केंद्रीय नारकोटिक्स ब्यूरो (CBN)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. जुलाई 2026 में भारत के 'औद्योगिक उत्पादन सूचकांक' (IIP) की वृद्धि दर कितनी दर्ज की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 5.1%</div><div class="opt-item">(b) 6.7%</div><div class="opt-item">(c) 8.8%</div><div class="opt-item">(d) 10.5%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 6.7%</strong> (विनिर्माण और बिजली क्षेत्र के प्रदर्शन के कारण)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. हाल ही में किस देश की लेखिका द्वारा 'Belonging: A Journey of Love' नामक संस्मरण (Memoir) लिखा गया है, जिसे पेंग्विन इंडिया द्वारा प्रकाशित करने से मना कर दिया गया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मलाला यूसुफजई</div><div class="opt-item">(b) सोनिया गांधी</div><div class="opt-item">(c) अरुंधति रॉय</div><div class="opt-item">(d) तस्लीमा नसरीन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सोनिया गांधी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में 'मक्का समझौता' (Mecca Pact) चर्चा में था। यह मूल रूप से किन तीन देशों के बीच एक त्रिपक्षीय रक्षा समझौता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सऊदी अरब, तुर्की और पाकिस्तान</div><div class="opt-item">(b) यूएई, ईरान और इराक</div><div class="opt-item">(c) सऊदी अरब, कतर और बहरीन</div><div class="opt-item">(d) मिस्र, सीरिया और जॉर्डन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सऊदी अरब, तुर्की (Turkiye) और पाकिस्तान</strong> (बांग्लादेश इसके आमंत्रण पर विचार कर रहा है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. भारत में 'राष्ट्रीय खेल दिवस' (29 अगस्त) किस महान खिलाड़ी की जयंती के उपलक्ष्य में मनाया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मिल्खा सिंह</div><div class="opt-item">(b) मेजर ध्यानचंद</div><div class="opt-item">(c) सचिन तेंदुलकर</div><div class="opt-item">(d) पी.टी. उषा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मेजर ध्यानचंद</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - बौद्ध और जैन दर्शन (नये स्टैटिक प्रश्न)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. बौद्ध दर्शन में 'प्रतीत्यसमुत्पाद' (Pratītyasamutpāda) का क्या अर्थ है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शून्यता का सिद्धांत</div><div class="opt-item">(b) कारण-कार्य का सिद्धांत (हर घटना किसी कारण से होती है)</div><div class="opt-item">(c) अहिंसा का मार्ग</div><div class="opt-item">(d) मूर्ति पूजा का नियम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कारण-कार्य का सिद्धांत</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. महायान बौद्ध धर्म में 'बोधिसत्त्व' (Bodhisattva) किसे कहा जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जो कठोर तपस्या करता है</div><div class="opt-item">(b) वह जो दूसरों के कल्याण/उद्धार के लिए अपने निर्वाण को टाल देता है</div><div class="opt-item">(c) जो वेदों का अध्ययन करता है</div><div class="opt-item">(d) जो बौद्ध संघ का प्रमुख होता है</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) वह जो दूसरों के कल्याण के लिए अपना निर्वाण टाल देता है।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. बौद्ध धर्म में भिक्षुओं के निवास स्थान या मठ को क्या कहा जाता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चैत्य</div><div class="opt-item">(b) स्तूप</div><div class="opt-item">(c) विहार (Vihara)</div><div class="opt-item">(d) गोपुरम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) विहार</strong> (जबकि चैत्य पूजा-गृह होता है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. प्राचीन भारत में 'स्थानकवासी' (Sthanakvasi) सम्प्रदाय का संबंध किस धर्म से है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बौद्ध मत</div><div class="opt-item">(b) जैन मत</div><div class="opt-item">(c) वैष्णव मत</div><div class="opt-item">(d) शैव मत</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) जैन मत</strong> (यह श्वेतांबर जैन धर्म का एक उप-संप्रदाय है जो मूर्ति पूजा नहीं करता)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. बौद्ध दर्शन के अनुसार मनुष्य के 'संस्कार' (Impressions / Mental formations) का मुख्य कारण क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) विज्ञान</div><div class="opt-item">(b) वेदना</div><div class="opt-item">(c) अविद्या (Ignorance)</div><div class="opt-item">(d) जन्म</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अविद्या (Ignorance)</strong> (प्रतीत्यसमुत्पाद के अनुसार)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. निम्नलिखित में से कौन प्राचीन भारत में बौद्ध शिक्षा का प्रसिद्ध केन्द्र नहीं था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नागपुर</div><div class="opt-item">(b) वल्लभी</div><div class="opt-item">(c) विक्रमशिला</div><div class="opt-item">(d) नालंदा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) नागपुर</strong> (वल्लभी, विक्रमशिला और नालंदा प्रमुख केंद्र थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. बौद्ध धर्म में गौतम बुद्ध द्वारा 'ज्ञान की खोज में घर छोड़ने' की घटना को क्या कहा जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) धर्मचक्रप्रवर्तन</div><div class="opt-item">(b) महाभिनिष्क्रमण</div><div class="opt-item">(c) परिनिर्वाण</div><div class="opt-item">(d) त्रिरत्न</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) महाभिनिष्क्रमण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. बौद्ध दार्शनिक नागार्जुन (Nagarjuna) द्वारा प्रतिपादित प्रमुख सिद्धांत कौन सा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) स्याद्वाद</div><div class="opt-item">(b) अनेकांतवाद</div><div class="opt-item">(c) शून्यता (Shunyata / शून्यवाद)</div><div class="opt-item">(d) अद्वैतवाद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) शून्यता (शून्यवाद)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. जैन धर्म में 'यापनीय' (Yapaniya) संघ क्या था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) आजीवकों का एक रूप</div><div class="opt-item">(b) श्वेतांबर और दिगंबर के बीच का एक स्वतंत्र सम्प्रदाय</div><div class="opt-item">(c) बौद्ध धर्म की शाखा</div><div class="opt-item">(d) चार्वाकों का समूह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) श्वेतांबर और दिगंबर के बीच का एक सम्प्रदाय</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. 'समराइच्चकहा' (Samaraichchakaha) नामक प्रसिद्ध प्राचीन ग्रन्थ (जिसमें व्यापारियों की समुद्री यात्राओं का वर्णन है) के रचयिता कौन थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भद्रबाहु</div><div class="opt-item">(b) हरिभद्र सूरि</div><div class="opt-item">(c) हेमचंद्र</div><div class="opt-item">(d) नागसेन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) हरिभद्र सूरि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. निम्नलिखित में से कौन कलिंग का एक प्रसिद्ध शासक था जिसने जैन धर्म को महान संरक्षण प्रदान किया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अशोक</div><div class="opt-item">(b) बिन्दुसार</div><div class="opt-item">(c) खारवेल (Kharvel)</div><div class="opt-item">(d) कनिष्क</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) खारवेल</strong> (इनके बारे में जानकारी हाथीगुम्फा अभिलेख से मिलती है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. निम्नलिखित में से किस राजवंश के शासकों (विशेषकर अमोघवर्ष) ने जैन धर्म को अत्यधिक संरक्षण दिया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चोल</div><div class="opt-item">(b) पल्लव</div><div class="opt-item">(c) राष्ट्रकूट (Rashtrakuta)</div><div class="opt-item">(d) सातवाहन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) राष्ट्रकूट</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. दक्षिण भारत में किस हिंदू दार्शनिक के बढ़ते प्रभाव के कारण मैसूर क्षेत्र में जैन धर्म क्षीण होने लगा था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) रामानुजाचार्य</div><div class="opt-item">(b) माधवाचार्य</div><div class="opt-item">(c) आदि शंकराचार्य</div><div class="opt-item">(d) वल्लभाचार्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आदि शंकराचार्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. बौद्ध भिक्षुओं की प्रार्थना और ध्यान के लिए बनाई गई गुफाओं (जैसे कार्ले, नासिक, जुन्नार) को क्या कहा जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चैत्य (Chaitya)</div><div class="opt-item">(b) विहार</div><div class="opt-item">(c) स्तूप</div><div class="opt-item">(d) गर्भगृह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) चैत्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. 'कालिका पुराण' मुख्य रूप से किस धार्मिक सम्प्रदाय से संबंधित है? (हालांकि कुछ लोक सेवा आयोग इसे जैन धर्म से भी जोड़ चुके हैं)</div>
+                    <div class="options-grid"><div class="opt-item">(a) वैष्णव धर्म</div><div class="opt-item">(b) शाक्त धर्म (Shakt)</div><div class="opt-item">(c) बौद्ध धर्म</div><div class="opt-item">(d) आजीवक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) शाक्त धर्म</strong> (यह शक्ति देवी की उपासना से संबंधित है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. जैन धर्म के 14 'पूर्व' (Purva) क्या हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 14 जैन मंदिर</div><div class="opt-item">(b) सबसे प्राचीन धार्मिक ग्रंथ (Ancient epics)</div><div class="opt-item">(c) तीर्थंकरों के जन्म स्थान</div><div class="opt-item">(d) जैन त्योहार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पूर्वकालिक जैन धार्मिक ग्रंथ</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. 'कूर्चक' (Kurchak) प्राचीन भारत में किस धर्म का एक सम्प्रदाय था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बौद्ध</div><div class="opt-item">(b) वैष्णव</div><div class="opt-item">(c) जैन</div><div class="opt-item">(d) आजीवक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) जैन धर्म</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. बौद्ध धर्म के 'पंचशील' सिद्धांतों में से कौन सा आचरण शामिल नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चोरी न करना</div><div class="opt-item">(b) मद्यपान न करना</div><div class="opt-item">(c) हिंसा न करना</div><div class="opt-item">(d) मूर्ति पूजा करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) मूर्ति पूजा करना</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. बुद्ध द्वारा अपनाया गया 'मध्यम मार्ग' (Middle Path) किन दो अतियों से बचने का उपदेश देता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अज्ञानता और ज्ञान</div><div class="opt-item">(b) अत्यधिक भोग-विलास और अत्यधिक कठोर तपस्या</div><div class="opt-item">(c) युद्ध और कायरता</div><div class="opt-item">(d) सत्य और असत्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अत्यधिक भोग-विलास और अत्यधिक कठोर तपस्या</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. गौतम बुद्ध के जीवन की किस घटना का प्रतीक 'चक्र' (पहिया) है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जन्म</div><div class="opt-item">(b) गृहत्याग</div><div class="opt-item">(c) प्रथम उपदेश (धर्मचक्रप्रवर्तन)</div><div class="opt-item">(d) महापरिनिर्वाण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) प्रथम उपदेश (धर्मचक्रप्रवर्तन)</strong></div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '29-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
