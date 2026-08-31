@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आकलन: Test 01 | GS चौपाल</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Calibri, sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #333; }
+        .header { background: #8e44ad; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
+        /* Instructions Styles */
+        .instructions-card { background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; margin-bottom: 25px; border-radius: 5px; }
+        .instructions-card h3 { margin-top: 0; color: #856404; font-size: 1.4rem; }
+        .instructions-card ul { padding-left: 20px; color: #856404; line-height: 1.6; font-size: 1.1rem; }
+        .instructions-card li { margin-bottom: 8px; }
+
+        /* Form Styles */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #2c3e50;}
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; box-sizing: border-box; }
+        .btn-start { background: #27ae60; color: white; padding: 15px; border: none; width: 100%; border-radius: 5px; font-size: 1.2rem; cursor: pointer; font-weight: bold; transition: 0.3s;}
+        .btn-start:hover { background: #219150; }
+        
+        /* Quiz Styles */
+        #quizSection { display: none; }
+        .timer-bar { background: #e74c3c; color: white; padding: 10px 20px; font-weight: bold; font-size: 1.2rem; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between;}
+        .question-card { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .question-text { font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; }
+        .option-label { display: block; padding: 10px 15px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px; cursor: pointer; transition: 0.3s; }
+        .option-label:hover { background: #e9ecef; }
+        input[type="radio"] { margin-right: 10px; }
+        .btn-submit { background: #3498db; color: white; padding: 15px; border: none; width: 100%; border-radius: 5px; font-size: 1.2rem; cursor: pointer; font-weight: bold; margin-top: 20px; }
+        
+        /* Result Styles */
+        #resultSection { display: none; text-align: left; }
+        .score-card { background: #fdfbf7; border-left: 5px solid #f1c40f; padding: 20px; margin-bottom: 30px; border-radius: 5px; text-align: center;}
+        .score-card h2 { margin: 0 0 10px 0; color: #d35400; font-size: 2rem;}
+        .score-details { display: flex; justify-content: space-around; font-weight: bold; margin-top: 15px; font-size: 1.1rem;}
+        .correct-ans { background: #d4edda !important; border-color: #c3e6cb !important; font-weight: bold; }
+        .wrong-ans { background: #f8d7da !important; border-color: #f5c6cb !important; }
+        .explanation { background: #e8f4f8; padding: 15px; border-radius: 5px; margin-top: 15px; font-size: 1rem; border-left: 4px solid #3498db; display: none;}
+        .show-exp { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>आकलन: Test 01</h1>
+        <p>UPPCS Prelims Pattern | 100 प्रश्न | 120 मिनट</p>
+    </div>
+
+    <!-- 1. Landing Page (Instructions + Registration Form) -->
+    <div class="container" id="registrationSection">
+        
+        <!-- Instructions Block -->
+        <div class="instructions-card">
+            <h3><i class="fas fa-list-ol"></i> परीक्षा निर्देश (Instructions)</h3>
+            <ul>
+                <li>कुल <b>100 प्रश्न</b> होंगे (70 Current Affairs + 30 Ancient History)।</li>
+                <li>प्रत्येक सही उत्तर के लिए <b>+1.33 अंक</b> दिए जाएंगे।</li>
+                <li>प्रत्येक गलत उत्तर के लिए <b>1/3 नकारात्मक अंकन (-0.44 अंक)</b> होगा।</li>
+                <li>परीक्षा की कुल अवधि <b>120 मिनट</b> (2 घंटे) है। समय समाप्त होने पर टेस्ट स्वतः Submit हो जाएगा।</li>
+                <li>टेस्ट समाप्त होने के बाद Score, सही/गलत उत्तर एवं <b>Detailed Explanation</b> उपलब्ध होगी।</li>
+            </ul>
+        </div>
+
+        <h2>टेस्ट शुरू करने के लिए अपनी जानकारी भरें</h2>
+        
+        <form id="studentForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" target="hidden_iframe">
+            <div class="form-group">
+                <label>आपका नाम (Full Name)</label>
+                <input type="text" name="name" id="studentName" required placeholder="अपना नाम यहाँ लिखें">
+            </div>
+            <div class="form-group">
+                <label>मोबाइल नंबर (WhatsApp Number)</label>
+                <input type="tel" name="mobile" id="mobileNumber" required pattern="[0-9]{10}" placeholder="10 अंकों का मोबाइल नंबर दर्ज करें">
+            </div>
+            <div class="form-group">
+                <label>ईमेल आईडी (Email ID)</label>
+                <input type="email" name="email" id="studentEmail" required placeholder="अपना सक्रिय ईमेल दर्ज करें">
+            </div>
+            
+            <button type="submit" class="btn-start"><i class="fas fa-play-circle"></i> मैं सहमत हूँ, टेस्ट शुरू करें</button>
+        </form>
+        <!-- Hidden iframe to prevent page redirect on form submission -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+
+    <!-- 2. Quiz Section -->
+    <div id="quizSection">
+        <div class="timer-bar">
+            <span><i class="fas fa-laptop-code"></i> GS चौपाल</span>
+            <span><i class="fas fa-clock"></i> <span id="timeDisplay">120:00</span></span>
+        </div>
+        <div class="container">
+            <div id="questionsContainer"></div>
+            <button class="btn-submit" onclick="submitTest()"><i class="fas fa-check-double"></i> Test Submit करें</button>
+        </div>
+    </div>
+
+    <!-- 3. Result Section -->
+    <div class="container" id="resultSection">
+        <div class="score-card">
+            <h2>आपका स्कोर: <span id="finalScore">0</span> / 133</h2>
+            <div class="score-details">
+                <span style="color: green;"><i class="fas fa-check-circle"></i> सही: <span id="correctCount">0</span></span>
+                <span style="color: red;"><i class="fas fa-times-circle"></i> गलत: <span id="wrongCount">0</span></span>
+                <span style="color: gray;"><i class="fas fa-minus-circle"></i> छोड़े गए: <span id="unattemptedCount">0</span></span>
+            </div>
+        </div>
+        <h3>विस्तृत उत्तर और व्याख्या (Detailed Explanations)</h3>
+        <div id="reviewContainer"></div>
+    </div>
+
+    <!-- Link to the JS file containing questions -->
+    <script src="questions-01.js"></script>
+
+    <script>
+        let userAnswers = [];
+        
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            userAnswers = new Array(quizData.length).fill(null);
+            
+            // Hide registration and show quiz
+            document.getElementById('registrationSection').style.display = 'none';
+            document.getElementById('quizSection').style.display = 'block';
+            
+            loadQuestions();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Start 120 minutes timer
+            startTimer(120 * 60, document.getElementById('timeDisplay')); 
+            
+            // Submit form data in background
+            setTimeout(() => { e.target.submit(); }, 100);
+        });
+
+        function loadQuestions() {
+            const container = document.getElementById('questionsContainer');
+            quizData.forEach((item, index) => {
+                let html = `<div class="question-card"><div class="question-text">Q${index + 1}. ${item.q}</div>`;
+                item.opt.forEach((option, optIndex) => {
+                    html += `<label class="option-label">
+                        <input type="radio" name="q${index}" value="${optIndex}" onchange="saveAnswer(${index}, ${optIndex})"> 
+                        ${String.fromCharCode(65 + optIndex)}. ${option}
+                    </label>`;
+                });
+                container.innerHTML += html + `</div>`;
+            });
+        }
+
+        function saveAnswer(qIndex, optIndex) { userAnswers[qIndex] = optIndex; }
+
+        let timerInterval;
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) { 
+                    clearInterval(timerInterval); 
+                    submitTest(); 
+                }
+            }, 1000);
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+            document.getElementById('quizSection').style.display = 'none';
+            document.getElementById('resultSection').style.display = 'block';
+            
+            let correct = 0, wrong = 0, unattempted = 0;
+            const reviewContainer = document.getElementById('reviewContainer');
+
+            quizData.forEach((item, index) => {
+                let userAns = userAnswers[index];
+                let isCorrect = (userAns === item.ans);
+                
+                if (userAns === null) unattempted++;
+                else if (isCorrect) correct++;
+                else wrong++;
+
+                let reviewHtml = `<div class="question-card"><div class="question-text">Q${index + 1}. ${item.q}</div>`;
+                item.opt.forEach((option, optIndex) => {
+                    let cssClass = "option-label";
+                    if (optIndex === item.ans) cssClass += " correct-ans"; 
+                    else if (optIndex === userAns && !isCorrect) cssClass += " wrong-ans"; 
+                    let checked = (optIndex === userAns) ? "checked disabled" : "disabled";
+                    reviewHtml += `<label class="${cssClass}"><input type="radio" ${checked}> ${String.fromCharCode(65 + optIndex)}. ${option}</label>`;
+                });
+                reviewContainer.innerHTML += reviewHtml + `<div class="explanation show-exp">${item.exp}</div></div>`;
+            });
+
+            // UPPCS Marking Scheme: +1.33 for Correct, -0.44 for Wrong
+            let totalScore = (correct * 1.33) - (wrong * 0.44);
+            
+            // Make sure score doesn't show negative in a weird format, keep 2 decimals
+            document.getElementById('correctCount').innerText = correct;
+            document.getElementById('wrongCount').innerText = wrong;
+            document.getElementById('unattemptedCount').innerText = unattempted;
+            document.getElementById('finalScore').innerText = Math.max(0, totalScore).toFixed(2);
+            
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+      </html>
+      
