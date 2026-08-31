@@ -93,7 +93,7 @@
             z-index: 10;
         }
 
-        /* PYQ कार्ड्स कंटेनर (मार्जिन अलग रखने के लिए) */
+        /* कंटेनर (मार्जिन अलग रखने के लिए) */
         .pyq-container {
             max-width: 1050px;
             margin: 0 auto 40px;
@@ -146,6 +146,13 @@
             background-color: #fbfdfc;
         }
         .card.pyq-card i { color: #27ae60; }
+
+        /* आंकलन कार्ड कलर */
+        .card.aakalan-card {
+            border-top: 4px solid #8e44ad;
+            background-color: #faf4fc;
+        }
+        .card.aakalan-card i { color: #8e44ad; }
 
         /* सेक्शन टाइटल */
         .section-title {
@@ -287,7 +294,7 @@
         </a>
     </div>
 
-    <!-- New PYQ Section -->
+    <!-- Previous Year Questions Section -->
     <div class="section-title">
         <h2>Previous Year Questions (PYQ)</h2>
         <p>अपनी तैयारी को पुराने पेपर्स के साथ धार दें</p>
@@ -319,6 +326,21 @@
         </a>
     </div>
 
+    <!-- NEW आंकलन (Assessment/Quiz) Section -->
+    <div class="section-title">
+        <h2>आंकलन (Assessments)</h2>
+        <p>करंट अफेयर्स और स्टैटिक GK का ऑनलाइन टेस्ट</p>
+    </div>
+
+    <div class="pyq-container" id="aakalan-cards">
+        <a href="aakalan-list.html" class="card aakalan-card">
+            <i class="fas fa-laptop-code"></i>
+            <div class="card-title">मासिक महा-परीक्षा</div>
+            <div class="card-desc">दिनांक-वार ऑनलाइन टेस्ट दें और अपना स्कोर चेक करें।</div>
+        </a>
+    </div>
+
+    <!-- Feedback Section -->
     <div class="feedback-section">
         <h2>तुम्हारे सुझाव (Feedback)</h2>
         <p class="card-desc">वेबसाइट को और बेहतर बनाने के लिए अपने सुझाव दें।</p>
