@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31 August 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>31 अगस्त 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-Depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (20 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत और उज्बेकिस्तान: 'व्यापक रणनीतिक साझेदारी' (Comprehensive Strategic Partnership) की ओर (GS-2: अंतर्राष्ट्रीय संबंध)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> शंघाई सहयोग संगठन (SCO) शिखर सम्मेलन से ठीक पहले, प्रधानमंत्री मोदी ने ताशकंद (उज्बेकिस्तान) का दौरा किया और उज्बेक राष्ट्रपति शवकत मिर्जियोयेव के साथ प्रतिनिधिमंडल स्तर की वार्ता की।</li>
+                        <li><strong>प्रमुख समझौते:</strong> दोनों देशों ने अपने संबंधों को <strong>'व्यापक रणनीतिक साझेदारी'</strong> में अपग्रेड किया है और 2030 तक $5 बिलियन के वार्षिक व्यापार का लक्ष्य रखा है। सबसे महत्वपूर्ण समझौता <strong>'यूरेनियम की दीर्घकालिक आपूर्ति'</strong> को लेकर हुआ है, जो भारत के नागरिक परमाणु ऊर्जा कार्यक्रम के लिए अत्यंत महत्वपूर्ण है।</li>
+                        <li><strong>सांस्कृतिक जुड़ाव:</strong> उज्बेकिस्तान के फयाज टेपा और कारा टेपा में 'बौद्ध स्थलों' के जीर्णोद्धार के लिए 'आशय पत्र' (Letter of Intent) पर हस्ताक्षर किए गए हैं, जो मध्य एशिया में रेशम मार्ग (Silk Road) के किनारे बौद्ध धर्म के प्रसार को दर्शाते हैं।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> मध्य एशिया भारत की ऊर्जा सुरक्षा (यूरेनियम/गैस) के लिए अत्यंत महत्वपूर्ण है। उत्तर लिखते समय भारत की 'कनेक्ट सेंट्रल एशिया' (Connect Central Asia) नीति और UPI जैसी डिजिटल सार्वजनिक अवसंरचना (DPI) के निर्यात का उल्लेख अवश्य करें (NPCI ने उज्बेकिस्तान में UPI भुगतान सक्षम करने के लिए समझौता किया है)।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "मध्य एशिया भारत की विस्तारित पड़ोस (Extended Neighbourhood) नीति का एक महत्वपूर्ण हिस्सा है।" हाल ही में उज्बेकिस्तान के साथ हुए यूरेनियम आपूर्ति समझौते और रणनीतिक साझेदारी के संदर्भ में इस कथन का परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में भारत ने अपने 'नागरिक परमाणु ऊर्जा कार्यक्रम' (Civil Nuclear Energy Program) के लिए किस मध्य एशियाई देश के साथ यूरेनियम की दीर्घकालिक आपूर्ति के लिए एक रूपरेखा स्थापित की है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ताजिकिस्तान</div><div class="opt-item">(b) उज्बेकिस्तान</div>
+                            <div class="opt-item">(c) किर्गिस्तान</div><div class="opt-item">(d) कजाकिस्तान</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) उज्बेकिस्तान</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. अंतरिक्ष का निर्वात (Vacuum of Space) और 'क्वांटम इलेक्ट्रोडायनामिक्स' (QED) (GS-3: विज्ञान एवं प्रौद्योगिकी)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> क्लासिकल फिजिक्स में 'वैक्यूम' का अर्थ है "पूर्ण शून्यता" (Absolute nothingness)। लेकिन <strong>'क्वांटम इलेक्ट्रोडायनामिक्स' (QED)</strong> के अनुसार, अंतरिक्ष का निर्वात खाली नहीं है, बल्कि यह 'वर्चुअल कणों' (Virtual particles) का एक सूप है जो लगातार प्रकट और लुप्त होते रहते हैं।</li>
+                        <li><strong>नई खोज:</strong> 1930 के दशक में हाइजेनबर्ग ने भविष्यवाणी की थी कि यदि निर्वात (Vacuum) में एक अत्यंत शक्तिशाली 'चुंबकीय क्षेत्र' (Magnetic field) हो, तो वह एक क्रिस्टल की तरह व्यवहार करेगा और प्रकाश को ध्रुवीकृत (Polarise) कर देगा। इसे <strong>'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum birefringence)</strong> कहते हैं।</li>
+                        <li><strong>पुष्टि:</strong> हाल ही में, खगोलविदों ने नासा के <strong>IXPE उपग्रह</strong> का उपयोग करके एक <strong>'मैग्नेटर' (Magnetar - अत्यधिक चुंबकीय न्यूट्रॉन तारा)</strong> से आने वाले उच्च ध्रुवीकृत एक्स-रे का निरीक्षण किया है, जो इस 90 साल पुरानी भविष्यवाणी की पुष्टि करता है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: क्वांटम भौतिकी के संदर्भ में, हाल ही में चर्चा में रहे 'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum birefringence) प्रभाव को उत्पन्न करने के लिए ब्रह्मांड में किस खगोलीय पिंड का अध्ययन किया गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ब्लैक होल (Black Hole)</div><div class="opt-item">(b) लाल दानव तारा (Red Supergiant)</div>
+                            <div class="opt-item">(c) मैग्नेटर (Magnetar)</div><div class="opt-item">(d) सफेद बौना तारा (White Dwarf)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) मैग्नेटर (अत्यधिक शक्तिशाली चुंबकीय क्षेत्र वाला न्यूट्रॉन तारा)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. ओबीसी 'क्रीमी लेयर' विवाद: आय परीक्षण और मंत्रालयों के बीच फंसा पेंच (GS-2: सामाजिक न्याय / राजव्यवस्था)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 11 मार्च 2026 को सुप्रीम कोर्ट ने (रोहित नाथन मामले में) फैसला दिया था कि उन OBC उम्मीदवारों के माता-पिता का 'वेतन' (Salary), जो PSU या निजी क्षेत्र में काम करते हैं (जहाँ सरकारी पदों के साथ समानता / Equivalence स्थापित नहीं है), क्रीमी लेयर की आय (8 लाख सीमा) में नहीं गिना जाना चाहिए। इसे जोड़ना 'शत्रुतापूर्ण भेदभाव' (Hostile discrimination) है।</li>
+                        <li><strong>वर्तमान स्थिति:</strong> यह मुद्दा अब 'कार्मिक मंत्रालय' (DoPT) और 'सामाजिक न्याय मंत्रालय' के बीच फंसा हुआ है। संसदीय समिति (गणेश सिंह की अध्यक्षता में) का कहना है कि सामाजिक न्याय मंत्रालय को पदों की 'समानता' (Equivalence of posts) स्थापित करने की नीति जल्द बनानी चाहिए, ताकि सुप्रीम कोर्ट के आदेश को पूर्वव्यापी (Retrospectively) रूप से लागू करने पर जो 'कैस्केडिंग इफेक्ट' (Cascading effect) का डर है, उसे सुलझाया जा सके।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: 'अन्य पिछड़ा वर्ग' (OBC) के संदर्भ में 'क्रीमी लेयर' (Creamy Layer) के मानदंड निर्धारित करने और विभिन्न पदों के बीच 'समानता' (Equivalence) स्थापित करने की नीति बनाने की प्राथमिक जिम्मेदारी भारत सरकार के किस मंत्रालय की है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) गृह मंत्रालय</div><div class="opt-item">(b) सामाजिक न्याय और अधिकारिता मंत्रालय</div>
+                            <div class="opt-item">(c) कार्मिक, लोक शिकायत और पेंशन मंत्रालय (DoPT)</div><div class="opt-item">(d) अल्पसंख्यक कार्य मंत्रालय</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) सामाजिक न्याय और अधिकारिता मंत्रालय</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. FIR की प्रति प्राप्त करना आरोपी का अधिकार (GS-2: न्यायपालिका)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> सुप्रीम कोर्ट ने गाजियाबाद पुलिस को एक पत्रकार (रोडरेज मामले में आरोपी) को FIR की कॉपी और CCTV फुटेज देने का निर्देश दिया है।</li>
+                        <li><strong>कानूनी स्थिति:</strong> 'भारतीय नागरिक सुरक्षा संहिता' (BNSS) में यह नहीं लिखा है कि आरोपी को FIR तुरंत दी जाए (यह चार्जशीट के समय धारा 230 के तहत दी जाती है)। हालांकि, <em>यूथ बार एसोसिएशन ऑफ इंडिया बनाम भारत संघ (2016)</em> मामले में सुप्रीम कोर्ट ने आदेश दिया था कि 'संवेदनशील मामलों' (जैसे यौन अपराध या आतंकवाद) को छोड़कर, पुलिस को 24 घंटे के भीतर अपनी वेबसाइट पर FIR अपलोड करनी होगी, ताकि आरोपी अपने बचाव की तैयारी कर सके।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title"><i class="fas fa-university"></i> 2. PIB न्यूज़ (करेंट + स्टैटिक)</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत की Q1 GDP वृद्धि दर 7.8%: आर्थिक लचीलापन (GS-3: भारतीय अर्थव्यवस्था)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> वित्तीय वर्ष 2026-27 की पहली तिमाही (अप्रैल-जून) में भारत की GDP वृद्धि दर <strong>7.8%</strong> दर्ज की गई है।</li>
+                        <li><strong>महत्व:</strong> प्रधानमंत्री ने इसे एक "असाधारण उपलब्धि" (Herculean feat) बताया है। तेल की कीमतों में उछाल (Oil price shocks), भू-राजनीतिक तनाव और वैश्विक आपूर्ति श्रृंखला में व्यवधानों के बावजूद इस वृद्धि दर को हासिल करना भारतीय अर्थव्यवस्था के मजबूत 'मैक्रोइकॉनॉमिक फंडामेंटल्स' और लचीलेपन (Resilience) को दर्शाता है।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. 'सेमीकॉन 2.0' (Semicon 2.0): भारत का सेमीकंडक्टर मिशन (GS-3: विज्ञान एवं प्रौद्योगिकी)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> केंद्रीय इलेक्ट्रॉनिक्स एवं आईटी मंत्री अश्विनी वैष्णव ने भारत के सेमीकंडक्टर इकोसिस्टम को मजबूत करने के लिए <strong>'सेमीकॉन 2.0'</strong> योजना के सभी 6 स्तंभों के लिए अधिसूचनाएं जारी की हैं।</li>
+                        <li><strong>योजना के 6 स्तंभ:</strong> 1. डिज़ाइन, 2. मशीनें और सामग्री, 3. अधिक फैब (Fabs) की स्थापना, 4. ATMP/OSAT उद्योग को मजबूत करना (पैकेजिंग), 5. अनुसंधान और विकास (R&D), 6. प्रतिभा विकास (Talent Development)।</li>
+                        <li><strong>उपलब्धि:</strong> भारत ने 10 वर्षों में 85,000 सेमीकंडक्टर इंजीनियर तैयार करने का लक्ष्य मात्र 4 वर्षों में पूरा कर लिया है। आने वाले वर्षों में वैश्विक सेमीकंडक्टर बाजार का 10% हिस्सा भारत के पास होने की उम्मीद है। <strong>'इंडिया सेमीकंडक्टर मिशन' (ISM)</strong> इस योजना की नोडल एजेंसी होगी।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> सेमीकंडक्टर आज के युग का 'नया तेल' (New Oil) है। ताइवान और चीन पर निर्भरता कम करने के लिए 'सेमीकॉन 2.0' भारत की रणनीतिक स्वायत्तता (Strategic Autonomy) के लिए अत्यंत महत्वपूर्ण है।
+                    </div>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: भारत सरकार की 'सेमीकॉन 2.0' (Semicon 2.0) योजना, जो हाल ही में शुरू की गई है, के कार्यान्वयन के लिए नोडल एजेंसी कौन सी है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) नीति आयोग</div><div class="opt-item">(b) भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO)</div>
+                            <div class="opt-item">(c) इंडिया सेमीकंडक्टर मिशन (ISM)</div><div class="opt-item">(d) रक्षा अनुसंधान एवं विकास संगठन (DRDO)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) इंडिया सेमीकंडक्टर मिशन (ISM)</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>बौद्ध धर्म: महत्वपूर्ण तथ्य, सिद्धांत और दार्शनिक शब्द</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> प्राचीन भारत के इतिहास में बौद्ध धर्म से लगभग हर साल प्रश्न पूछे जाते हैं। अष्टांगिक मार्ग, त्रिरत्न, और बौद्ध संगीतियों के स्थान व शासक सबसे अधिक पूछे जाने वाले विषय हैं।
+                    </div>
+
+                    <div class="va-heading">1. गौतम बुद्ध का जीवन परिचय</div>
+                    <ul class="content-list va-text">
+                        <li><strong>मूल नाम:</strong> सिद्धार्थ | <strong>जन्म:</strong> 563 ईसा पूर्व (लुम्बिनी, नेपाल) | <strong>कुल:</strong> शाक्य क्षत्रिय कुल।</li>
+                        <li><strong>माता-पिता:</strong> शुद्धोदन (शाक्य गण के मुखिया) और महामाया (कोलीय कुल)। <strong>पालक माता:</strong> प्रजापति गौतमी।</li>
+                        <li><strong>ज्ञान प्राप्ति (निर्वाण):</strong> 35 वर्ष की आयु में बोधगया (बिहार) में <strong>निरंजना (फल्गु)</strong> नदी के तट पर पीपल वृक्ष के नीचे।</li>
+                        <li><strong>प्रथम उपदेश:</strong> सारनाथ (ऋषिपत्तनम) में पाँच भिक्षुओं को ('धर्मचक्रप्रवर्तन')।</li>
+                        <li><strong>महापरिनिर्वाण (मृत्यु):</strong> 483 ईसा पूर्व, 80 वर्ष की आयु में कुशीनगर (उत्तर प्रदेश) में।</li>
+                    </ul>
+
+                    <div class="va-heading">2. बौद्ध धर्म के प्रमुख सिद्धांत और दार्शनिक शब्द</div>
+                    <ul class="content-list va-text">
+                        <li><strong>चार आर्य सत्य (Four Noble Truths):</strong> 1. संसार में दुःख है, 2. दुःख का कारण इच्छा (तृष्णा) है, 3. दुःख का निवारण संभव है, 4. दुःख निवारण के लिए 'अष्टांगिक मार्ग' है।</li>
+                        <li><strong>अष्टांगिक मार्ग:</strong> सम्यक् दृष्टि, सम्यक् संकल्प, सम्यक् वाक्, सम्यक् कर्म, सम्यक् आजीव, सम्यक् व्यायाम, सम्यक् स्मृति, और सम्यक् समाधि।</li>
+                        <li><strong>त्रिरत्न (Three Jewels):</strong> बुद्ध, धम्म (धर्म), और संघ।</li>
+                        <li><strong>प्रतीत्यसमुत्पाद (Pratītyasamutpāda):</strong> बौद्ध दर्शन का मूल 'कारण-कार्य सिद्धांत' (हर घटना किसी कारण से उत्पन्न होती है)।</li>
+                        <li><strong>शून्यता (Shunyata):</strong> नागार्जुन (महायान शाखा) द्वारा प्रतिपादित सिद्धांत (सभी वस्तुएं परस्पर निर्भर हैं, उनका स्वतंत्र अस्तित्व नहीं है)।</li>
+                        <li><strong>बोधिसत्त्व (Bodhisattva):</strong> वह जो बुद्धत्व प्राप्त करने के मार्ग पर है और दूसरों के उद्धार के लिए खुद के निर्वाण में देरी करता है।</li>
+                    </ul>
+
+                    <div class="va-heading">3. प्रमुख बौद्ध संगीतियाँ (Buddhist Councils)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>प्रथम:</strong> 483 ई.पू. - <strong>राजगृह</strong> (अध्यक्ष: महाकस्सप, शासक: अजातशत्रु)।</li>
+                        <li><strong>द्वितीय:</strong> 383 ई.पू. - <strong>वैशाली</strong> (अध्यक्ष: सबाकामी, शासक: कालाशोक)।</li>
+                        <li><strong>तृतीय:</strong> 250 ई.पू. - <strong>पाटलिपुत्र</strong> (अध्यक्ष: मोग्गालिपुत्त तिस्स, शासक: अशोक)।</li>
+                        <li><strong>चतुर्थ:</strong> 72 ईस्वी - <strong>कुण्डलवन (कश्मीर)</strong> (अध्यक्ष: वसुमित्र/अश्वघोष, शासक: कनिष्क)। <em>*यहीं बौद्ध धर्म हीनयान और महायान में बँट गया।</em></li>
+                    </ul>
+
+                    <div class="va-heading">4. प्रमुख बौद्ध साहित्य (त्रिपिटक)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>सुत्त पिटक:</strong> बुद्ध के उपदेशों और संवादों का संग्रह।</li>
+                        <li><strong>विनय पिटक:</strong> बौद्ध संघ और भिक्षुओं के आचरण के नियम।</li>
+                        <li><strong>अभिधम्म पिटक:</strong> बौद्ध दर्शन और आध्यात्मिक विचारों का विश्लेषण।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Quiz ================= -->
+            <div class="section-box sec-4" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 4. महा-प्रश्नोत्तरी (20 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 10 बौद्ध दर्शन (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. हाल ही में भारत ने अपने 'नागरिक परमाणु ऊर्जा कार्यक्रम' के लिए किस मध्य एशियाई देश के साथ यूरेनियम की दीर्घकालिक आपूर्ति के लिए एक समझौता किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ताजिकिस्तान</div><div class="opt-item">(b) उज्बेकिस्तान</div><div class="opt-item">(c) किर्गिस्तान</div><div class="opt-item">(d) कजाकिस्तान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) उज्बेकिस्तान</strong> (प्रधानमंत्री की हालिया यात्रा के दौरान 'व्यापक रणनीतिक साझेदारी' के तहत)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. क्वांटम भौतिकी के अनुसार 'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum birefringence) प्रभाव को उत्पन्न करने के लिए ब्रह्मांड में किस खगोलीय पिंड का अध्ययन किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ब्लैक होल</div><div class="opt-item">(b) लाल दानव तारा</div><div class="opt-item">(c) मैग्नेटर (Magnetar)</div><div class="opt-item">(d) सफेद बौना तारा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मैग्नेटर</strong> (अत्यधिक शक्तिशाली चुंबकीय क्षेत्र वाला न्यूट्रॉन तारा)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. 'अन्य पिछड़ा वर्ग' (OBC) के संदर्भ में 'क्रीमी लेयर' के मानदंड निर्धारित करने और विभिन्न पदों के बीच 'समानता' स्थापित करने की प्राथमिक जिम्मेदारी किस मंत्रालय की है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गृह मंत्रालय</div><div class="opt-item">(b) सामाजिक न्याय और अधिकारिता मंत्रालय</div><div class="opt-item">(c) कार्मिक मंत्रालय (DoPT)</div><div class="opt-item">(d) अल्पसंख्यक कार्य मंत्रालय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सामाजिक न्याय और अधिकारिता मंत्रालय</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. भारतीय न्यायपालिका के किस ऐतिहासिक मामले में सुप्रीम कोर्ट ने पुलिस को निर्देश दिया था कि 'संवेदनशील अपराधों' को छोड़कर सभी FIR 24 घंटे के भीतर ऑनलाइन अपलोड की जानी चाहिए?</div>
+                    <div class="options-grid"><div class="opt-item">(a) के.एस. पुट्टास्वामी मामला</div><div class="opt-item">(b) यूथ बार एसोसिएशन ऑफ इंडिया बनाम भारत संघ (2016)</div><div class="opt-item">(c) विशाखा बनाम राजस्थान राज्य</div><div class="opt-item">(d) प्रकाश सिंह मामला</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) यूथ बार एसोसिएशन ऑफ इंडिया बनाम भारत संघ (2016)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. भारत सरकार की 'सेमीकॉन 2.0' योजना के कार्यान्वयन के लिए नोडल एजेंसी कौन सी है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नीति आयोग</div><div class="opt-item">(b) ISRO</div><div class="opt-item">(c) इंडिया सेमीकंडक्टर मिशन (ISM)</div><div class="opt-item">(d) DRDO</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) इंडिया सेमीकंडक्टर मिशन (ISM)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में चर्चा में रहे 'फयाज टेपा' (Fayaz Tepa) और 'कारा टेपा' (Kara Tepa) के प्राचीन बौद्ध मठ किस देश में स्थित हैं, जिनके जीर्णोद्धार के लिए भारत ने समझौता किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) श्रीलंका</div><div class="opt-item">(b) कंबोडिया</div><div class="opt-item">(c) उज्बेकिस्तान</div><div class="opt-item">(d) थाईलैंड</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) उज्बेकिस्तान</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. मेटा (Meta) द्वारा अमेरिकी राज्यों के साथ किए गए हालिया $17.1 बिलियन के समझौते का मुख्य कारण क्या था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कर चोरी (Tax Evasion)</div><div class="opt-item">(b) प्लेटफ़ॉर्म के 'एडिक्टिव डिज़ाइन' (Addictive design) के कारण बच्चों के मानसिक स्वास्थ्य को नुकसान पहुँचाना</div><div class="opt-item">(c) एकाधिकार (Monopoly) प्रथाएं</div><div class="opt-item">(d) चुनावों में हस्तक्षेप</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) प्लेटफ़ॉर्म के 'एडिक्टिव डिज़ाइन' के कारण बच्चों के मानसिक स्वास्थ्य को नुकसान पहुँचाना।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. भारतीय सेना द्वारा आपातकालीन खरीद के तहत अमेरिका से ली जा रही 'जेवलिन' (Javelin) मिसाइल प्रणाली की मुख्य विशेषता क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) लंबी दूरी की बैलिस्टिक मिसाइल</div><div class="opt-item">(b) दागो और भूल जाओ (Fire-and-forget) एंटी-टैंक गाइडेड मिसाइल</div><div class="opt-item">(c) एंटी-सैटेलाइट हथियार</div><div class="opt-item">(d) पनडुब्बी रोधी टारपीडो</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 'दागो और भूल जाओ' एंटी-टैंक गाइडेड मिसाइल</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में FSSAI द्वारा प्रस्तावित 'फ्रंट-ऑफ-पैक' (FOP) चेतावनी लेबल का आकार कैसा होगा, जो उच्च चीनी, नमक या वसा वाले उत्पादों पर लगाया जाएगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) वृत्ताकार (Circular)</div><div class="opt-item">(b) लाल षट्कोणीय (Red Hexagonal)</div><div class="opt-item">(c) त्रिकोणीय (Triangular)</div><div class="opt-item">(d) वर्गाकार (Square)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लाल षट्कोणीय (Red Hexagonal)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. वित्तीय वर्ष 2026-27 की पहली तिमाही (अप्रैल-जून) में भारत की GDP वृद्धि दर कितनी दर्ज की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 6.5%</div><div class="opt-item">(b) 7.1%</div><div class="opt-item">(c) 7.8%</div><div class="opt-item">(d) 8.2%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 7.8%</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - बौद्ध दर्शन (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. प्राचीन भारत में एक बौद्ध भिक्षु का जीवन कितनी प्रतिज्ञाओं (Pledges/शील) से अनुशासित था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चार</div><div class="opt-item">(b) पाँच</div><div class="opt-item">(c) दस</div><div class="opt-item">(d) बारह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) दस (भिक्षुओं के लिए दस शील अनिवार्य थे, जबकि गृहस्थों के लिए पाँच शील / पंचशील)।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. 'अष्टांगिक मार्ग' (Noble Eightfold Path) की संकल्पना किसका अंग है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) दीपवंश की विषय वस्तु का</div><div class="opt-item">(b) दिव्यावदान की विषय वस्तु का</div><div class="opt-item">(c) महापरिनिर्वाण की विषय वस्तु का</div><div class="opt-item">(d) धर्मचक्र प्रवर्तन सुत्त की विषय वस्तु का</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) धर्मचक्र प्रवर्तन सुत्त की विषय वस्तु का</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. बौद्ध मत में 'निर्वाण' (Nirvana) की अवधारणा की सर्वश्रेष्ठ व्याख्या क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) स्वयं की पूर्णतः अस्तित्वहीनता</div><div class="opt-item">(b) परमानन्द एवं विश्राम की स्थिति</div><div class="opt-item">(c) धारणातीत मानसिक अवस्था</div><div class="opt-item">(d) तृष्णारूपी अग्नि का शमन (दीपक का बुझ जाना)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) तृष्णारूपी अग्नि का शमन (इच्छाओं का नाश)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. बौद्ध दर्शन के अनुसार 'कारण एवं कार्य' (Reason and Action) के सिद्धान्त को किस नाम से जाना जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अष्टांग</div><div class="opt-item">(b) तृष्णा</div><div class="opt-item">(c) अविद्या</div><div class="opt-item">(d) प्रतीत्यसमुत्पाद (Pratityasamutpad)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) प्रतीत्यसमुत्पाद</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. बौद्ध सिद्धान्त के अनुसार 'शील' के अनुपालन और 'समाधि' व 'प्रज्ञा' की प्राप्ति से 'निर्वाण' प्राप्त होता है। यहाँ "शील" (Sheel) से क्या अभिप्राय है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शारीरिक नियंत्रण</div><div class="opt-item">(b) अन्तर्दृष्टि का विकास</div><div class="opt-item">(c) मानसिक नियंत्रण (Mental control)</div><div class="opt-item">(d) गहन तपस्या</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मानसिक नियंत्रण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. महायान बौद्ध धर्म में उस व्यक्ति को क्या कहा जाता है जो ज्ञान प्राप्ति के मार्ग पर है, लेकिन दूसरों के उद्धार के लिए अपना निर्वाण टाल देता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अर्हत्</div><div class="opt-item">(b) बोधिसत्त्व (Bodhisattva)</div><div class="opt-item">(c) भिक्षु</div><div class="opt-item">(d) श्रामणेर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) बोधिसत्त्व</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. नागार्जुन द्वारा प्रतिपादित वह सिद्धांत कौन सा है जो यह मानता है कि सभी वस्तुएं परस्पर निर्भर हैं और उनका कोई स्वतंत्र या स्थायी अस्तित्व नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) स्याद्वाद</div><div class="opt-item">(b) अनेकांतवाद</div><div class="opt-item">(c) अद्वैतवाद</div><div class="opt-item">(d) शून्यता (Shunyata / शून्यवाद)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) शून्यता (शून्यवाद)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. बौद्ध धर्म के 'त्रिरत्न' (Three Jewels) में कौन शामिल है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सम्यक दर्शन, सम्यक ज्ञान, सम्यक चरित्र</div><div class="opt-item">(b) बुद्ध, धम्म (धर्म), और संघ</div><div class="opt-item">(c) शील, समाधि, प्रज्ञा</div><div class="opt-item">(d) सत्य, अहिंसा, अस्तेय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) बुद्ध, धम्म और संघ</strong> (विकल्प 'a' जैन धर्म के त्रिरत्न हैं)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. बौद्ध भिक्षुओं के निवास स्थान (जहाँ वे वर्षा ऋतु में ठहरते थे) को क्या कहा जाता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चैत्य</div><div class="opt-item">(b) विहार (Vihara)</div><div class="opt-item">(c) स्तूप</div><div class="opt-item">(d) गोपुरम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) विहार</strong> (चैत्य पूजा-गृह को कहा जाता था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. बौद्ध दर्शन के अनुसार वस्तु का निरंतर परिवर्तन होता रहता है और कोई भी पदार्थ एक क्षण से अधिक स्थायी नहीं रहता। इस सिद्धांत को क्या कहा जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शाश्वतवाद</div><div class="opt-item">(b) क्षणिकवाद (Ephemeralism)</div><div class="opt-item">(c) अद्वैतवाद</div><div class="opt-item">(d) द्वैतवाद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) क्षणिकवाद</strong> (इसी कारण बौद्ध धर्म आत्मा को भी क्षणिक मानता है)।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '31-August-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
