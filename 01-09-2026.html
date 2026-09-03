@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Sept 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>01 सितंबर 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-Depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu (01 Sept): इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत-उज्बेकिस्तान 'व्यापक रणनीतिक साझेदारी' (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> शंघाई सहयोग संगठन (SCO) शिखर सम्मेलन से ठीक पहले, प्रधानमंत्री मोदी ने ताशकंद (उज्बेकिस्तान) का दौरा किया और उज्बेक राष्ट्रपति शवकत मिर्जियोयेव के साथ प्रतिनिधिमंडल स्तर की वार्ता की।</li>
+                        <li><strong>प्रमुख समझौते:</strong> दोनों देशों ने अपने संबंधों को <strong>'व्यापक रणनीतिक साझेदारी' (Comprehensive Strategic Partnership)</strong> में अपग्रेड किया है और 2030 तक $5 बिलियन के वार्षिक व्यापार का लक्ष्य रखा है। सबसे महत्वपूर्ण समझौता <strong>'यूरेनियम की दीर्घकालिक आपूर्ति'</strong> को लेकर हुआ है, जो भारत के नागरिक परमाणु ऊर्जा कार्यक्रम के लिए अत्यंत महत्वपूर्ण है।</li>
+                        <li><strong>सांस्कृतिक जुड़ाव:</strong> उज्बेकिस्तान के फयाज टेपा और कारा टेपा में 'बौद्ध स्थलों' के जीर्णोद्धार के लिए 'आशय पत्र' (Letter of Intent) पर हस्ताक्षर किए गए हैं, जो मध्य एशिया में रेशम मार्ग (Silk Road) के किनारे बौद्ध धर्म के प्रसार को दर्शाते हैं।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> मध्य एशिया भारत की ऊर्जा सुरक्षा (यूरेनियम/गैस) के लिए अत्यंत महत्वपूर्ण है। उत्तर लिखते समय भारत की 'कनेक्ट सेंट्रल एशिया' (Connect Central Asia) नीति और UPI जैसी डिजिटल सार्वजनिक अवसंरचना (DPI) के निर्यात का उल्लेख अवश्य करें (NPCI ने उज्बेकिस्तान में UPI भुगतान सक्षम करने के लिए समझौता किया है)।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "मध्य एशिया भारत की विस्तारित पड़ोस (Extended Neighbourhood) नीति का एक महत्वपूर्ण हिस्सा है।" हाल ही में उज्बेकिस्तान के साथ हुए यूरेनियम आपूर्ति समझौते और रणनीतिक साझेदारी के संदर्भ में इस कथन का परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में भारत ने अपने 'नागरिक परमाणु ऊर्जा कार्यक्रम' (Civil Nuclear Energy Program) के लिए किस मध्य एशियाई देश के साथ यूरेनियम की दीर्घकालिक आपूर्ति के लिए एक रूपरेखा स्थापित की है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ताजिकिस्तान</div><div class="opt-item">(b) उज्बेकिस्तान</div>
+                            <div class="opt-item">(c) किर्गिस्तान</div><div class="opt-item">(d) कजाकिस्तान</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) उज्बेकिस्तान</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. 'लीगल मेट्रोलॉजी (IST) नियम, 2026' और समय का मानकीकरण (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> केंद्र सरकार ने <strong>भारतीय मानक समय (IST)</strong> को पूरे देश में कानूनी, प्रशासनिक और वाणिज्यिक उद्देश्यों के लिए 'एकल संदर्भ' (Single reference) के रूप में अनिवार्य कर दिया है। यह नियम 180 दिनों के भीतर लागू हो जाएगा।</li>
+                        <li><strong>महत्व:</strong> वर्तमान में हमारे कई क्रिटिकल सिस्टम (जैसे बैंकिंग, टेलीकॉम, पावर ग्रिड) विदेशी उपग्रहों के समय-निर्धारण पर निर्भर हैं। 'स्वदेशी IST' का उपयोग करने से भारत की विदेशी प्रणालियों पर निर्भरता कम होगी और साइबर सुरक्षा मजबूत होगी।</li>
+                    </ul>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. सिंधु जल संधि (IWT) और हेग मध्यस्थता न्यायालय का फैसला (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 'हेग' स्थित स्थायी मध्यस्थता न्यायालय (PCA) ने पाकिस्तान की याचिका पर सुनवाई करते हुए फैसला दिया है कि 'सिंधु जल संधि' पूरी तरह से लागू है और भारत को इसके दायित्वों का पालन करना चाहिए।</li>
+                        <li><strong>भारत का रुख:</strong> भारत ने इस फैसले को सिरे से खारिज कर दिया है। भारत का स्पष्ट तर्क है कि विश्व बैंक द्वारा इस 'तथाकथित मध्यस्थता न्यायालय' का गठन ही संधि के नियमों का घोर उल्लंघन है। ज्ञात हो कि भारत ने 2025 के पहलगाम आतंकी हमले के बाद इस संधि को 'ठंडे बस्ते' (Abeyance) में डाल दिया था।</li>
+                    </ul>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. 'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum Birefringence) की पुष्टि (GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> क्लासिकल फिजिक्स में 'वैक्यूम' का अर्थ है "पूर्ण शून्यता" (Absolute nothingness)। लेकिन <strong>'क्वांटम इलेक्ट्रोडायनामिक्स' (QED)</strong> के अनुसार, अंतरिक्ष का निर्वात खाली नहीं है, बल्कि यह 'वर्चुअल कणों' (Virtual particles) का एक सूप है जो लगातार प्रकट और लुप्त होते रहते हैं।</li>
+                        <li><strong>नई खोज:</strong> 1930 के दशक में हाइजेनबर्ग ने भविष्यवाणी की थी कि यदि निर्वात (Vacuum) में एक अत्यंत शक्तिशाली 'चुंबकीय क्षेत्र' (Magnetic field) हो, तो वह एक क्रिस्टल की तरह व्यवहार करेगा और प्रकाश को ध्रुवीकृत (Polarise) कर देगा। खगोलविदों ने नासा के <strong>IXPE उपग्रह</strong> का उपयोग करके एक <strong>'मैग्नेटर' (Magnetar - अत्यधिक चुंबकीय न्यूट्रॉन तारा)</strong> से आने वाले उच्च ध्रुवीकृत एक्स-रे का निरीक्षण किया है, जो इस 90 साल पुरानी भविष्यवाणी की पुष्टि करता है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="pre-q">Prelims Q1: क्वांटम भौतिकी के संदर्भ में, हाल ही में चर्चा में रहे 'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum birefringence) प्रभाव को उत्पन्न करने के लिए ब्रह्मांड में किस खगोलीय पिंड का अध्ययन किया गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ब्लैक होल</div><div class="opt-item">(b) लाल दानव तारा</div>
+                            <div class="opt-item">(c) मैग्नेटर (Magnetar)</div><div class="opt-item">(d) सफेद बौना तारा</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) मैग्नेटर (अत्यधिक शक्तिशाली चुंबकीय क्षेत्र वाला न्यूट्रॉन तारा)</strong></div></details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title"><i class="fas fa-university"></i> 2. PIB न्यूज़ (01 सितंबर): इन-डेप्थ एनालिसिस</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. 26वां SCO शिखर सम्मेलन और भारत का विज़न (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> शंघाई सहयोग संगठन (SCO) की यह 25वीं वर्षगांठ है। किर्गिस्तान की राजधानी <strong>'बिश्केक'</strong> में आयोजित शिखर सम्मेलन में भारतीय प्रधानमंत्री ने SCO के लिए भारत के तीन स्तंभों को दोहराया: <strong>S - Security (सुरक्षा), C - Connectivity (कनेक्टिविटी), और O - Opportunity (अवसर)</strong>।</li>
+                        <li><strong>आतंकवाद पर प्रहार:</strong> उन्होंने आतंकवाद के वित्तपोषण और पनाहगाहों को नष्ट करने पर जोर दिया और कहा कि "आतंकवाद किसी के लिए रणनीतिक संपत्ति (Strategic Asset) नहीं हो सकता।" 'ड्रग ट्रैफिकिंग' और 'सूचना सुरक्षा' से निपटने के लिए SCO के तहत बन रहे नए केंद्रों की भी सराहना की गई।</li>
+                    </ul>
+                </div>
+
+                <!-- PIB Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. एयर वाइस मार्शल शक्ति शर्मा का कीर्तिमान (GS-3 / GS-1)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> एयर वाइस मार्शल <strong>शक्ति शर्मा</strong> भारतीय रक्षा बलों में 'टू-स्टार ऑफिसर' (एयर वाइस मार्शल या समकक्ष) का पद हासिल करने वाली <strong>पहली महिला (गैर-चिकित्सा) अधिकारी</strong> बन गई हैं।</li>
+                        <li><strong>महत्व:</strong> उन्होंने वायुसेना मुख्यालय में 'असिस्टेंट चीफ ऑफ एयर स्टाफ (शिक्षा)' का पदभार ग्रहण किया है। यह सशस्त्र बलों में महिलाओं की बढ़ती भागीदारी (Women in Armed Forces) का एक ऐतिहासिक मील का पत्थर है।</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>भागवत धर्म (वैष्णव धर्म): एक दृष्टि में</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> भागवत धर्म का उदय और हेलियोडोरस के गरुड़ स्तंभ से UPSC में कई बार प्रश्न पूछे गए हैं। इसे 'भक्ति' आंदोलन की प्राचीन शुरुआत के रूप में पढ़ें।
+                    </div>
+
+                    <ul class="content-list">
+                        <li><strong>उद्भव और विकास:</strong> भागवत धर्म का उदय मौर्योत्तर काल (Post-Mauryan Period) में हुआ। इसका मूल केंद्र मथुरा था।</li>
+                        <li><strong>संस्थापक:</strong> वृष्णि (या सात्वत) वंशीय कृष्ण (वासुदेव)। छांदोग्य उपनिषद में श्रीकृष्ण को 'देवकी पुत्र' और 'घोर अंगिरस' का शिष्य बताया गया है।</li>
+                        <li><strong>प्रमुख सिद्धांत:</strong> 'भक्ति' (ईश्वर के प्रति पूर्ण समर्पण) और 'अहिंसा'। यह धर्म वैदिक कर्मकांडों और पशुबलि का कड़ा विरोध करता है।</li>
+                        <li><strong>अवतारवाद:</strong> विष्णु के 10 अवतारों की संकल्पना इसी धर्म की देन है (मत्स्य, कूर्म, वराह, नृसिंह, वामन, परशुराम, राम, कृष्ण, बुद्ध, कल्कि)।</li>
+                        <li><strong>पंचरात्र व्यूह (चतुर्व्यूह):</strong> भागवत धर्म में वासुदेव (कृष्ण) के साथ उनके परिवार के अन्य सदस्यों की पूजा का भी विधान है— संकर्षण (बलराम), प्रद्युम्न (कृष्ण के पुत्र), और अनिरुद्ध (कृष्ण के पौत्र)।</li>
+                        <li><strong>पुरातात्विक साक्ष्य:</strong> 
+                            <br>• मध्य प्रदेश के विदिशा (बेसनगर) का <strong>'गरुड़ स्तंभ'</strong> भागवत धर्म की लोकप्रियता का सबसे बड़ा और पहला पुरातात्विक प्रमाण है।
+                            <br>• इसे इंडो-ग्रीक (यवन) शासक एंटीआल्किडास के राजदूत <strong>हेलियोडोरस (Heliodorus)</strong> ने स्थापित कराया था और खुद को 'भागवत' घोषित किया था।
+                        </li>
+                        <li><strong>पवित्र ग्रंथ:</strong> श्रीमद्भागवत गीता और पुराण।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 5. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 बौद्ध धर्म (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. 26वें शंघाई सहयोग संगठन (SCO) शिखर सम्मेलन का आयोजन किस शहर में किया गया, जहाँ भारतीय प्रधानमंत्री ने हिस्सा लिया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ताशकंद</div><div class="opt-item">(b) अस्ताना</div><div class="opt-item">(c) बिश्केक</div><div class="opt-item">(d) समरकंद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) बिश्केक (किर्गिस्तान)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. हाल ही में भारतीय वायुसेना में एयर वाइस मार्शल (Two-Star Officer) का पद हासिल करने वाली पहली महिला (गैर-चिकित्सा) अधिकारी कौन बनी हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पुनीता अरोड़ा</div><div class="opt-item">(b) शक्ति शर्मा</div><div class="opt-item">(c) अवनि चतुर्वेदी</div><div class="opt-item">(d) भावना कंठ</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) शक्ति शर्मा</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. 'लीगल मेट्रोलॉजी (IST) नियम, 2026' के अनुसार, देश के सभी कानूनी और आधिकारिक कार्यों के लिए 'भारतीय मानक समय' (IST) को अनिवार्य कर दिया गया है। इसे कितने दिनों में लागू किया जाएगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 90 दिन</div><div class="opt-item">(b) 120 दिन</div><div class="opt-item">(c) 180 दिन</div><div class="opt-item">(d) 365 दिन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 180 दिन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. हाल ही में भारत ने किस मध्य एशियाई देश के साथ अपने 'नागरिक परमाणु ऊर्जा कार्यक्रम' के लिए यूरेनियम की दीर्घकालिक आपूर्ति का समझौता किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ताजिकिस्तान</div><div class="opt-item">(b) कजाकिस्तान</div><div class="opt-item">(c) किर्गिस्तान</div><div class="opt-item">(d) उज्बेकिस्तान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) उज्बेकिस्तान</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. SCO शिखर सम्मेलन में भारत द्वारा प्रस्तुत दृष्टिकोण के तीन मुख्य स्तंभ (S-C-O) कौन से हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) Security, Commerce, Opportunity</div><div class="opt-item">(b) Security, Connectivity, Opportunity</div><div class="opt-item">(c) Sustainability, Connectivity, Optimism</div><div class="opt-item">(d) Science, Commerce, Organization</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) Security, Connectivity, Opportunity</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में 'फयाज टेपा' (Fayaz Tepa) और 'कारा टेपा' (Kara Tepa) के प्राचीन बौद्ध मठ चर्चा में रहे, जिनके जीर्णोद्धार के लिए भारत ने आशय पत्र पर हस्ताक्षर किए हैं। ये किस देश में स्थित हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नेपाल</div><div class="opt-item">(b) श्रीलंका</div><div class="opt-item">(c) उज्बेकिस्तान</div><div class="opt-item">(d) अफगानिस्तान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) उज्बेकिस्तान</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. हाल ही में स्थायी मध्यस्थता न्यायालय (PCA) ने किस जल संधि को लेकर एक फैसला सुनाया है, जिसे भारत ने अधिकार क्षेत्र के अभाव का हवाला देते हुए खारिज कर दिया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) तीस्ता जल संधि</div><div class="opt-item">(b) कोसी समझौता</div><div class="opt-item">(c) सिंधु जल संधि (IWT)</div><div class="opt-item">(d) महाकाली संधि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) सिंधु जल संधि (IWT)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. 'वैक्यूम बाइरेफ्रिंजेंस' (Vacuum Birefringence), जिसे हाल ही में नासा के IXPE उपग्रह द्वारा साबित किया गया है, किस खगोलीय पिंड के इर्द-गिर्द देखा गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ब्लैक होल</div><div class="opt-item">(b) सफेद बौना</div><div class="opt-item">(c) मैग्नेटर (Magnetar)</div><div class="opt-item">(d) क्षुद्रग्रह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मैग्नेटर (Magnetar)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. भारत ने अमेरिका से 'विदेशी सैन्य बिक्री' (FMS) के तहत कौन सी 'दागो और भूल जाओ' (Fire-and-forget) एंटी-टैंक मिसाइल प्रणाली खरीदने का समझौता किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चिनूक</div><div class="opt-item">(b) जेवलिन (Javelin)</div><div class="opt-item">(c) पैट्रियट</div><div class="opt-item">(d) स्टिंगर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) जेवलिन (Javelin)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. वित्तीय वर्ष 2026-27 की पहली तिमाही (अप्रैल-जून) में भारत की GDP वृद्धि दर कितनी दर्ज की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 6.8%</div><div class="opt-item">(b) 7.3%</div><div class="opt-item">(c) 7.8%</div><div class="opt-item">(d) 8.2%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 7.8%</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - बौद्ध धर्म (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. बौद्ध दर्शन में 'कल्याण मित्र' क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्रबन्धन</div><div class="opt-item">(b) धर्मचक्र</div><div class="opt-item">(c) अष्टांगिक मार्ग</div><div class="opt-item">(d) त्रिरत्न</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अष्टांगिक मार्ग</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. अष्टांगिक मार्ग का प्रतिपादन किसने किया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बुद्ध</div><div class="opt-item">(b) महावीर</div><div class="opt-item">(c) शंकराचार्य</div><div class="opt-item">(d) गुरू नानक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) बुद्ध</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. बौद्ध सिद्धान्त के अनुसार 'शील' के अनुपालन और 'समाधि' व 'प्रज्ञा' की प्राप्ति से 'निर्वाण' प्राप्त होता है। यहाँ 'शील' से क्या अभिप्राय है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मानसिक नियंत्रण</div><div class="opt-item">(b) शारीरिक नियंत्रण</div><div class="opt-item">(c) अन्तर्दृष्टि का विकास</div><div class="opt-item">(d) गहन तपस्या</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मानसिक नियंत्रण</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. बौद्ध धर्म में सर्वोच्च लक्ष्य है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) निर्वाण</div><div class="opt-item">(b) मध्यम मार्ग</div><div class="opt-item">(c) विनय</div><div class="opt-item">(d) आत्मवाद</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) निर्वाण</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. 'संघ' निम्न का पवित्र स्थान है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) जैन</div><div class="opt-item">(b) बौद्ध</div><div class="opt-item">(c) हिन्दू</div><div class="opt-item">(d) पारसी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) बौद्ध</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. 'क्षणिकवाद' का प्रतिपादन किसने किया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बौद्ध</div><div class="opt-item">(b) जैन</div><div class="opt-item">(c) चार्वाक</div><div class="opt-item">(d) न्याय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) बौद्ध</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. निम्नलिखित वक्तव्यों पर विचार कीजिए:
+                        <br>कथन (A): सर्वाधिक वर्षा वासों में गौतम बुद्ध श्रावस्ती में रहे।
+                        <br>कारण (R): श्रावस्ती के राजा प्रसेनजित गौतम बुद्ध की आयु के थे।
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) (A) और (R) दोनों सही हैं तथा (A) की सही व्याख्या (R) है।</div><div class="opt-item">(b) (A) और (R) दोनों सही हैं, किन्तु (A) की सही व्याख्या (R) नहीं है।</div><div class="opt-item">(c) (A) सही है, किन्तु (R) गलत है।</div><div class="opt-item">(d) (A) गलत है, किन्तु (R) सही है।</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) (A) और (R) दोनों सही हैं, किन्तु (A) की सही व्याख्या (R) नहीं है।</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. गौतम बुद्ध के समय का प्रसिद्ध वैद्य जीवक किसके दरबार से सम्बन्धित था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार</div><div class="opt-item">(b) चण्ड प्रद्योत</div><div class="opt-item">(c) प्रसेनजित</div><div class="opt-item">(d) उदयन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) बिम्बिसार</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. बुद्ध कौशाम्बी किसके राज्य-काल में आए थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शतानीक</div><div class="opt-item">(b) उदयन</div><div class="opt-item">(c) बोधि</div><div class="opt-item">(d) निचक्षु</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) उदयन</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. निम्नलिखित में से कौन सा प्राचीन नगर गौतम बुद्ध के जीवन से नहीं जुड़ा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चम्पा</div><div class="opt-item">(b) साकेत</div><div class="opt-item">(c) पाटलिपुत्र</div><div class="opt-item">(d) कौशाम्बी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पाटलिपुत्र</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. वह स्तूप-स्थल, जिसका सम्बन्ध भगवान बुद्ध के जीवन की किसी घटना से नहीं रहा है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) सारनाथ</div><div class="opt-item">(b) सांची</div><div class="opt-item">(c) बोधगया</div><div class="opt-item">(d) कुशीनगर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सांची</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. भारतीय कला में 'स्तूप', 'चैत्य' और 'विहार' का निर्माण निम्नलिखित में से किससे सम्बन्धित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) आजीवक सम्प्रदाय</div><div class="opt-item">(b) वैष्णव सम्प्रदाय</div><div class="opt-item">(c) बौद्ध धर्म</div><div class="opt-item">(d) शैव सम्प्रदाय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) बौद्ध धर्म</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. किस उत्खनन ने कपिलवस्तु के समीकरण का साक्ष्य प्रस्तुत किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अयोध्या</div><div class="opt-item">(b) लुम्बिनी</div><div class="opt-item">(c) पिपरहवा</div><div class="opt-item">(d) सोहगौरा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पिपरहवा</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. निम्नलिखित वक्तव्यों पर विचार करें:
+                        <br>कथन (A): कुशीनगर मल्ल गणराज्य की राजधानी थी।
+                        <br>कारण (R): महात्मा बुद्ध का महापरिनिर्वाण कुशीनगर में हुआ था।
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) (A) एवं (R) दोनों सही हैं तथा (R), (A) की सही व्याख्या है।</div><div class="opt-item">(b) (A) एवं (R) दोनों सही हैं परन्तु (R), (A) की सही व्याख्या नहीं है।</div><div class="opt-item">(c) (A) सही है, परन्तु (R) गलत है।</div><div class="opt-item">(d) (A) गलत है, परन्तु (R) सही है।</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) (A) एवं (R) दोनों सही हैं परन्तु (R), (A) की सही व्याख्या नहीं है।</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. बुद्ध की मृत्यु जहाँ हुई थी वह स्थान अब कहाँ है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मध्य प्रदेश</div><div class="opt-item">(b) हिमाचल प्रदेश</div><div class="opt-item">(c) बिहार</div><div class="opt-item">(d) उत्तर प्रदेश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) उत्तर प्रदेश</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. गौतम बुद्ध द्वारा अपने धर्म में दीक्षित किया जाने वाला अंतिम व्यक्ति निम्नलिखित में से कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) आनन्द</div><div class="opt-item">(b) सारिपुत्त</div><div class="opt-item">(c) मोग्गलन</div><div class="opt-item">(d) सुभद्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) सुभद्र</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. बौद्ध धर्म में "त्रिरत्न" क्या इंगित करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सत्य, अहिंसा, दया</div><div class="opt-item">(b) प्रेम, करुणा, क्षमा</div><div class="opt-item">(c) बुद्ध, धम्म, संघ</div><div class="opt-item">(d) विनय पिटक, सुत्त पिटक, अभिधम्म पिटक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) बुद्ध, धम्म, संघ</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. निम्नलिखित में से किस बौद्ध ग्रन्थ में संघ जीवन के नियम प्राप्त होते हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) दीघ निकाय</div><div class="opt-item">(b) विनय पिटक</div><div class="opt-item">(c) अभिधम्म पिटक</div><div class="opt-item">(d) विभाशा शास्त्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) विनय पिटक</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. बौद्धमत में 'पातिमोक्ख' (Pattimokha) से क्या अभिप्राय है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) महायान बौद्धमत का विवरण</div><div class="opt-item">(b) हीनयान बौद्धमत का विवरण</div><div class="opt-item">(c) संघ के नियम</div><div class="opt-item">(d) राजा मेनांडर के प्रश्न</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) संघ के नियम</strong>[cite: 43]</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. बौद्ध संघ में भिक्षुणी के रूप में स्त्रियों के प्रवेश की अनुमति बुद्ध द्वारा दी गयी थी-</div>
+                    <div class="options-grid"><div class="opt-item">(a) श्रावस्ती में</div><div class="opt-item">(b) वैशाली में</div><div class="opt-item">(c) राजगृह में</div><div class="opt-item">(d) कुशीनगर में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) वैशाली में</strong>[cite: 43]</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '31Aug-01Sept-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
