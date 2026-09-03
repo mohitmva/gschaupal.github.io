@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 September 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>02 सितंबर 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu (In-Depth)</a>
+                <a href="#sec-pib" class="nav-pib"><i class="fas fa-university"></i> PIB News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. सुप्रीम कोर्ट द्वारा अनुच्छेद 142 का प्रयोग: Gen Z प्रदर्शनकारियों को राहत (GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> NEET-UG 2026 पेपर लीक को लेकर 'कॉकरोच जनता पार्टी' (CJP) के नेतृत्व में हुए राष्ट्रव्यापी विरोध-प्रदर्शनों के बाद दर्ज की गई FIRs को सुप्रीम कोर्ट ने 'पूर्ण न्याय' (Complete Justice) करते हुए रद्द कर दिया है।</li>
+                        <li><strong>संवैधानिक शक्ति:</strong> मुख्य न्यायाधीश की अध्यक्षता वाली तीन-न्यायाधीशों की पीठ ने <strong>संविधान के अनुच्छेद 142</strong> का प्रयोग करते हुए यह निर्णय लिया। इसके बाद CJP ने अपना 5 सितंबर का प्रस्तावित मार्च वापस ले लिया है।</li>
+                        <li><strong>अपवाद:</strong> अदालत ने दिल्ली पुलिस को उन 2,873 व्यक्तियों के खिलाफ 'नई और विशिष्ट' FIR दर्ज करने की अनुमति दी है, जिनकी 'आपराधिक पृष्ठभूमि' (Criminal antecedents) है और जिन्हें फेशियल रिकग्निशन तकनीक से पहचाना गया था।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> जब भी सुप्रीम कोर्ट 'पूर्ण न्याय' के लिए अपने विशेषाधिकार का उपयोग करता है, तो अनुच्छेद 142 UPSC के लिए सबसे महत्वपूर्ण हो जाता है। इसे न्यायपालिका और कार्यपालिका के बीच 'शक्तियों के पृथक्करण' (Separation of Powers) से जोड़कर पढ़ें।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "संविधान का अनुच्छेद 142 सर्वोच्च न्यायालय को 'पूर्ण न्याय' करने की अद्वितीय शक्ति प्रदान करता है, लेकिन इसके मनमाने उपयोग से शक्तियों के पृथक्करण (Separation of Powers) का सिद्धांत कमजोर हो सकता है।" हालिया दृष्टांतों के आलोक में विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में सुप्रीम कोर्ट ने किस अनुच्छेद के तहत अपनी असाधारण शक्तियों का प्रयोग करते हुए NEET-UG विरोध प्रदर्शनों से संबंधित FIRs को रद्द कर दिया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) अनुच्छेद 32</div><div class="opt-item">(b) अनुच्छेद 136</div>
+                            <div class="opt-item">(c) अनुच्छेद 142</div><div class="opt-item">(d) अनुच्छेद 226</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 142</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. नेपाल में विनाशकारी बाढ़: एक 'स्टर्ज़स्ट्रॉम' (Sturzstrom) घटना (GS-1 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> नेपाल की भोटेकोशी और त्रिशूली नदियों में आई अचानक बाढ़ से मरने वालों की संख्या 1,000 को पार कर गई है, और लगभग 2,500 लोग अभी भी लापता हैं।</li>
+                        <li><strong>भौगोलिक कारण:</strong> वैज्ञानिकों ने इस घटना को एक <strong>'स्टर्ज़स्ट्रॉम' (Sturzstrom)</strong> के रूप में वर्णित किया है। यह एक विशाल 'रॉक-आइस एवलांच' (चट्टान और बर्फ का हिमस्खलन) है, जिसमें भारी मात्रा में मलबा अत्यधिक उच्च गति से लंबी दूरी तय करता है।</li>
+                        <li><strong>लेंदे खोला (Lhende Khola):</strong> यह घटना नेपाल-चीन सीमा पर 'लेंदे खोला' में हुई, जो तिब्बत से निकलकर नेपाल में भोटेकोशी नदी में मिलती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "हिमालयी क्षेत्र में 'ग्लेशियल लेक आउटबर्स्ट फ्लड' (GLOF) और 'स्टर्ज़स्ट्रॉम' (Sturzstrom) जैसी घटनाओं की बढ़ती आवृत्ति, सीमा-पार आपदा प्रबंधन तंत्र की मांग करती है।" भारत, नेपाल और चीन के संदर्भ में इस कथन का समालोचनात्मक परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में किस नदी क्षेत्र में 'आइस-रॉक एवलांच' (Sturzstrom) के कारण भयंकर फ्लैश फ्लड आया, जिसका प्रभाव भारत के गंडक बेसिन पर भी पड़ा?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) तीस्ता नदी</div><div class="opt-item">(b) लेंदे खोला (भोटेकोशी)</div>
+                            <div class="opt-item">(c) सुबनसिरी नदी</div><div class="opt-item">(d) काली गंडकी</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) लेंदे खोला (भोटेकोशी नदी बेसिन)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. मेटा (Meta) का $17.1 बिलियन का समझौता: बच्चों पर सोशल मीडिया का प्रभाव (GS-2 / GS-4)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> मेटा (फेसबुक और इंस्टाग्राम की मूल कंपनी) ने अमेरिका के 47 राज्यों के साथ $17.1 बिलियन का एक ऐतिहासिक समझौता किया है।</li>
+                        <li><strong>आरोप:</strong> मेटा पर आरोप था कि उसने जानबूझकर अपने प्लेटफ़ॉर्म को इस तरह डिज़ाइन किया कि किशोर (Teens) इसके 'आदी' (Addicted) हो जाएं। 'इनफिनिट स्क्रॉल' और लक्षित विज्ञापनों जैसे फीचर्स ने किशोरों में अवसाद (Depression) को बढ़ाया।</li>
+                        <li><strong>बदलाव:</strong> अब मेटा को किशोरों के लिए डिफ़ॉल्ट 2-घंटे की दैनिक सीमा, 'नाइट मोड', और 'लाइक्स' को ब्लॉक करने जैसे सुरक्षा उपाय लागू करने होंगे।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "तकनीकी कंपनियों द्वारा मुनाफे के लिए सोशल मीडिया प्लेटफॉर्म्स का 'एडिक्टिव डिज़ाइन' (Addictive Design) बच्चों के मानसिक स्वास्थ्य के लिए एक गंभीर खतरा बन गया है।" डेटा प्राइवेसी और तकनीकी नैतिकता (Tech Ethics) के संदर्भ में इसे विनियमित करने के उपायों पर चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में किस बहुराष्ट्रीय प्रौद्योगिकी कंपनी ने अपने प्लेटफॉर्म्स के 'एडिक्टिव डिज़ाइन' को लेकर अमेरिकी राज्यों के साथ $17.1 बिलियन का ऐतिहासिक समझौता किया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) गूगल (Alphabet)</div><div class="opt-item">(b) मेटा (Meta)</div>
+                            <div class="opt-item">(c) बाइटडांस (TikTok)</div><div class="opt-item">(d) एक्स (Twitter)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) मेटा (Meta)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. FSSAI के नए चेतावनी लेबल (Warning Labels) और उनकी खामियां (GS-2: स्वास्थ्य)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारतीय खाद्य सुरक्षा और मानक प्राधिकरण (FSSAI) ने पैकेज्ड फूड्स पर लाल, षट्कोणीय (Hexagonal) 'वार्निंग लेबल' लगाने का प्रस्ताव दिया है, जो चीनी, नमक और संतृप्त वसा (Saturated fat) की उच्च मात्रा को दर्शाएगा।</li>
+                        <li><strong>चिंताएं:</strong> पोषण विशेषज्ञों (NAPI) के अनुसार, नए प्रस्ताव में एक उत्पाद चेतावनी लेबल तभी वहन करेगा जब उसमें <strong>"दो या अधिक"</strong> पोषक तत्वों की मात्रा अधिक हो। यदि किसी उत्पाद में केवल चीनी बहुत अधिक है, लेकिन नमक कम है, तो उस पर कोई चेतावनी नहीं होगी। यह 'जंक फूड' को निगरानी से बचने का रास्ता दे सकता है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत में पैकेज्ड फूड्स पर FSSAI द्वारा प्रस्तावित 'फ्रंट-ऑफ-पैक' (FOP) चेतावनी लेबल जन-स्वास्थ्य के दृष्टिकोण से एक सकारात्मक कदम है, लेकिन इसके वर्तमान ढांचे में मौजूद खामियां इसके मूल उद्देश्य को विफल कर सकती हैं।" विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में FSSAI द्वारा उच्च चीनी, नमक या संतृप्त वसा वाले पैकेज्ड खाद्य पदार्थों के लिए प्रस्तावित 'फ्रंट-ऑफ-पैक' (FOP) चेतावनी लेबल का आकार कैसा होगा?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) वृत्ताकार (Circular)</div><div class="opt-item">(b) लाल षट्कोणीय (Red Hexagonal)</div>
+                            <div class="opt-item">(c) त्रिकोणीय (Triangular)</div><div class="opt-item">(d) वर्गाकार (Square)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) लाल षट्कोणीय (Red Hexagonal)</strong></div></details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 2: PIB News ================= -->
+            <div class="section-box sec-2" id="sec-pib">
+                <h2 class="section-title"><i class="fas fa-university"></i> 2. PIB न्यूज़: इन-डेप्थ एनालिसिस</h2>
+                
+                <!-- PIB Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. तेनजिंग नोर्गे राष्ट्रीय साहसिक पुरस्कार 2024 की घोषणा (GS-1: विविध)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> युवा कार्यक्रम और खेल मंत्रालय ने साहसिक खेलों (Adventure Sports) में उत्कृष्ट उपलब्धियों के लिए 'तेनजिंग नोर्गे राष्ट्रीय साहसिक पुरस्कार 2024' की घोषणा कर दी है।</li>
+                        <li><strong>विजेता:</strong> 
+                            <br>• भू साहसिक (Land Adventure): सुश्री बलजीत कौर और श्री स्कालजांग रिगज़िन।
+                            <br>• जल साहसिक (Water Adventure): श्री रिमो साहा।
+                            <br>• आजीवन उपलब्धि (Lifetime Achievement): श्री शिव प्रसाद चमोली।
+                        </li>
+                        <li><strong>सम्मान:</strong> इन विजेताओं को 2025 के राष्ट्रीय खेल पुरस्कारों के साथ राष्ट्रपति द्वारा सम्मानित किया जाएगा। इसमें 15 लाख रुपये की नकद राशि प्रदान की जाती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "साहसिक खेल (Adventure Sports) न केवल युवाओं में नेतृत्व और टीम वर्क की भावना विकसित करते हैं, बल्कि वे भारत में 'सॉफ्ट पावर' और 'साहसिक पर्यटन' (Adventure Tourism) को भी बढ़ावा दे सकते हैं।" टिप्पणी करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'तेनजिंग नोर्गे राष्ट्रीय साहसिक पुरस्कार 2024' में 'जल साहसिक अभियान' (Water Adventure) श्रेणी में किसे पुरस्कृत किया गया है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) सुश्री बलजीत कौर</div><div class="opt-item">(b) श्री शिव प्रसाद चमोली</div>
+                            <div class="opt-item">(c) श्री रिमो साहा</div><div class="opt-item">(d) श्री स्कालजांग रिगज़िन</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) श्री रिमो साहा</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>भागवत धर्म, शैव धर्म और भारतीय दर्शन: एक दृष्टि में</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> प्राचीन भारत के धार्मिक आंदोलनों में 'भागवत' और 'शैव' धर्म का विकास अत्यंत महत्वपूर्ण है। हेलियोडोरस के गरुड़ स्तंभ और विभिन्न संप्रदायों के संस्थापकों से सीधे प्रश्न आते हैं।
+                    </div>
+
+                    <div class="va-heading">1. भागवत धर्म (वैष्णव धर्म)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>संस्थापक:</strong> देवकी पुत्र श्रीकृष्ण। इनका सबसे प्राचीन उल्लेख <strong>छान्दोग्य उपनिषद्</strong> में मिलता है, जहाँ उन्हें घोर अंगिरस का शिष्य बताया गया है।</li>
+                        <li><strong>प्रस्थानत्रयी:</strong> वेदांत दर्शन के तीन मुख्य आधार— उपनिषद्, ब्रह्मसूत्र और भगवद्गीता (इसमें भागवत पुराण शामिल नहीं है)।</li>
+                        <li><strong>अभिलेखीय साक्ष्य:</strong> विदिशा (बेसनगर) का <strong>गरुड़ स्तंभ</strong> भागवत धर्म का सबसे प्राचीन अभिलेखीय प्रमाण है, जिसे यवन राजदूत हेलियोडोरस ने स्थापित कराया था।</li>
+                        <li><strong>अलवार संत:</strong> दक्षिण भारत में वैष्णव संतों को 'अलवार' कहा जाता था। इनकी संख्या 12 थी। <strong>आण्डाल</strong> एकमात्र महिला अलवार संत थीं।</li>
+                        <li><strong>वारकरी संप्रदाय:</strong> यह पंढरपुर (महाराष्ट्र) में केंद्रित वैष्णव संप्रदाय है।</li>
+                    </ul>
+
+                    <div class="va-heading">2. शैव धर्म</div>
+                    <ul class="content-list va-text">
+                        <li><strong>नयनार संत:</strong> दक्षिण भारत के शैव संतों को 'नयनार' कहा जाता था (संख्या 63)। इनमें इसाईग्नानियार, कराइक्कल अम्मइयार प्रमुख महिला संत थीं।</li>
+                        <li><strong>पाशुपत संप्रदाय:</strong> यह शैवों का सबसे प्राचीन संप्रदाय है। इसके संस्थापक <strong>लकुलीश</strong> थे, जिनका जन्म गुजरात के कायावरोहण में हुआ था।</li>
+                        <li><strong>वीरशैव (लिंगायत) संप्रदाय:</strong> 12वीं शताब्दी में कर्नाटक में <strong>बसवन्ना (बसव)</strong> ने इसकी स्थापना की।</li>
+                        <li><strong>मत्तमयूर:</strong> यह प्राचीन भारत में एक शैव संप्रदाय था।</li>
+                    </ul>
+
+                    <div class="va-heading">3. भारतीय दर्शन के प्रमुख बिंदु</div>
+                    <ul class="content-list va-text">
+                        <li><strong>चार्वाक दर्शन:</strong> "चेतन शरीर ही आत्मा है।" यह एक विशुद्ध भौतिकवादी दर्शन है जो पुनर्जन्म, कर्म और परलोक को नहीं मानता।</li>
+                        <li><strong>आजीवक संप्रदाय:</strong> मक्खलि गोशाल इसके प्रमुख नेता थे। इनका केंद्रीय दर्शन <strong>'नियति' (भाग्य)</strong> है, जिसके अनुसार सब कुछ पूर्व-निर्धारित है। इन्होंने कभी जाति और वर्ग के आधार पर भेदभाव नहीं किया।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 5. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 भागवत/शैव धर्म (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. हाल ही में सुप्रीम कोर्ट ने किस अनुच्छेद के तहत अपनी असाधारण शक्तियों का प्रयोग करते हुए NEET-UG विरोध प्रदर्शनों से संबंधित FIRs को रद्द कर दिया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनुच्छेद 32</div><div class="opt-item">(b) अनुच्छेद 136</div><div class="opt-item">(c) अनुच्छेद 142</div><div class="opt-item">(d) अनुच्छेद 226</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अनुच्छेद 142</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. हाल ही में 26वें SCO शिखर सम्मेलन के बाद वर्ष 2026-27 के लिए SCO की अध्यक्षता किस देश ने ग्रहण की है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भारत</div><div class="opt-item">(b) पाकिस्तान</div><div class="opt-item">(c) चीन</div><div class="opt-item">(d) रूस</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पाकिस्तान</strong> (बिश्केक में आयोजित शिखर सम्मेलन में)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. 'तेनजिंग नोर्गे राष्ट्रीय साहसिक पुरस्कार 2024' में 'जल साहसिक अभियान' (Water Adventure) श्रेणी में किसे पुरस्कृत किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सुश्री बलजीत कौर</div><div class="opt-item">(b) श्री शिव प्रसाद चमोली</div><div class="opt-item">(c) श्री रिमो साहा</div><div class="opt-item">(d) श्री स्कालजांग रिगज़िन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) श्री रिमो साहा</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. हाल ही में चर्चा में रहा 'टोटलाइज़र' (Totaliser) उपकरण किस प्रक्रिया से संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मौसम की भविष्यवाणी करने से</div><div class="opt-item">(b) EVM में एक साथ कई बूथों के वोटों की गिनती करने से</div><div class="opt-item">(c) अंतरिक्ष में कचरा इकट्ठा करने से</div><div class="opt-item">(d) प्रदूषण मापने से</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) EVM में एक साथ कई बूथों के वोटों की गिनती करने से (वोटर प्राइवेसी के लिए)।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. 'सेमीकॉन 2.0' (Semicon 2.0) योजना के तहत सिलिकॉन सेमीकंडक्टर वेफर फैब स्थापित करने के लिए केंद्र सरकार द्वारा कितने प्रतिशत तक की पूंजीगत सब्सिडी का प्रावधान किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 25%</div><div class="opt-item">(b) 30%</div><div class="opt-item">(c) 40%</div><div class="opt-item">(d) 50%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 40%</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में किस ट्रिब्यूनल (न्यायाधिकरण) की स्पेशल बेंच ने 'एस्सेल ग्रुप' के संस्थापक सुभाष चंद्रा की व्यक्तिगत दिवाला (Personal Insolvency) पुनर्भुगतान योजना पर रोक लगा दी है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) NGT</div><div class="opt-item">(b) SAT</div><div class="opt-item">(c) NCLAT</div><div class="opt-item">(d) NCLT (नेशनल कंपनी लॉ ट्रिब्यूनल)</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) NCLT (नेशनल कंपनी लॉ ट्रिब्यूनल)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. भारत और कनाडा ने किस वर्ष के अंत तक अपने 'व्यापक आर्थिक भागीदारी समझौते' (CEPA) को अंतिम रूप देने का लक्ष्य रखा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 2025</div><div class="opt-item">(b) 2026</div><div class="opt-item">(c) 2028</div><div class="opt-item">(d) 2030</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 2026</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. फिलिस्तीन के विदेश मंत्री वारसेन अघाबेकियन शाहीन ने हाल ही में भारत से किस मुद्दे पर अधिक मुखर होने का आग्रह किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) आर्थिक सहायता बढ़ाने पर</div><div class="opt-item">(b) ब्रिक्स (BRICS) में शामिल करने पर</div><div class="opt-item">(c) अंतर्राष्ट्रीय कानून के उल्लंघन पर और इज़राइल को हथियारों के हस्तांतरण पर</div><div class="opt-item">(d) संयुक्त राष्ट्र सुरक्षा परिषद में स्थायी सीट के लिए</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अंतर्राष्ट्रीय कानून के उल्लंघन पर और इज़राइल को हथियारों के हस्तांतरण पर।</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में अमेरिकी राष्ट्रपति डोनाल्ड ट्रम्प ने किस खाड़ी देश (Gulf country) के एक शीर्ष अधिकारी द्वारा 'वर्ल्ड लिबर्टी फाइनेंशियल' नामक क्रिप्टो उद्यम में निवेश के बाद संभावित 'हितों के टकराव' (Conflict of Interest) को लेकर विवाद का सामना किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कतर</div><div class="opt-item">(b) सऊदी अरब</div><div class="opt-item">(c) संयुक्त अरब अमीरात (UAE)</div><div class="opt-item">(d) ओमान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) संयुक्त अरब अमीरात (UAE)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. हाल ही में किस यूरोपीय देश के मतदाताओं ने यूरोपीय संघ (EU) में शामिल होने की बातचीत को फिर से शुरू करने के प्रस्ताव को जनमत संग्रह (Referendum) में खारिज कर दिया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नॉर्वे</div><div class="opt-item">(b) स्विट्जरलैंड</div><div class="opt-item">(c) आइसलैंड</div><div class="opt-item">(d) स्वीडन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) आइसलैंड</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - भागवत, शैव धर्म और भारतीय दर्शन (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. नीचे दो कथन दिए गए हैं:
+                        <br>कथन I: भक्ति संत शंकरदेव ने 'वैष्णव धर्म' को 'भगवती धर्म' कहकर संबोधित किया।
+                        <br>कथन II: शंकरदेव की प्रमुख रचना कीर्तनघोष है।
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) दोनों कथन सही हैं</div><div class="opt-item">(b) दोनों कथन गलत हैं</div><div class="opt-item">(c) कथन I सही, कथन II गलत</div><div class="opt-item">(d) कथन I गलत, कथन II सही</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) दोनों कथन सही हैं</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. रामायण के किस कांड में राम और हनुमान की पहली भेंट का वर्णन है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) किष्किन्धा कांड</div><div class="opt-item">(b) सुंदर कांड</div><div class="opt-item">(c) बाल कांड</div><div class="opt-item">(d) अरण्य कांड</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) किष्किन्धा कांड</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. भागवत धर्म के प्रवर्तक थे-</div>
+                    <div class="options-grid"><div class="opt-item">(a) जनक</div><div class="opt-item">(b) कृष्ण (वासुदेव)</div><div class="opt-item">(c) याज्ञवल्क्य</div><div class="opt-item">(d) सूरदास</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कृष्ण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. 'तुम्हारा अधिकार कर्म पर है, फल की प्राप्ति पर नहीं' यह निम्न में से किस ग्रन्थ में कहा गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अष्टाध्यायी</div><div class="opt-item">(b) महाभाष्य</div><div class="opt-item">(c) गीता (भगवद्गीता)</div><div class="opt-item">(d) महाभारत</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गीता</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. देवकी पुत्र कृष्ण का प्राचीनतम उल्लेख कहाँ मिलता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऋग्वेद</div><div class="opt-item">(b) अथर्ववेद</div><div class="opt-item">(c) शतपथ ब्राह्मण</div><div class="opt-item">(d) छान्दोग्य उपनिषद्</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) छान्दोग्य उपनिषद्</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. निम्नांकित में से कौन-सा 'प्रस्थानत्रयी' में सम्मिलित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भागवत</div><div class="opt-item">(b) भगवद्गीता</div><div class="opt-item">(c) ब्रह्मसूत्र</div><div class="opt-item">(d) उपनिषद्</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) भागवत</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. भागवत धर्म का ज्ञात सर्वप्रथम अभिलेखीय साक्ष्य है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) समुद्रगुप्त की प्रयाग प्रशस्ति</div><div class="opt-item">(b) गौतमी बलश्री का नासिक अभिलेख</div><div class="opt-item">(c) बेसनगर का गरुड़ स्तम्भ</div><div class="opt-item">(d) धनदेव का अयोध्या अभिलेख</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) बेसनगर (विदिशा) का गरुड़ स्तम्भ</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. निम्नलिखित में से कौन 'वृष्णि वीर' नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अनिरुद्ध</div><div class="opt-item">(b) साम्ब</div><div class="opt-item">(c) प्रद्युम्न</div><div class="opt-item">(d) संकर्षण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) साम्ब</strong> (इन्हें बाद में वृष्णि-वीरों से अलग कर दिया गया था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. विष्णु के किस अवतार को समुद्र से पृथ्वी का उद्धार करते हुए अंकित किया जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कच्छप</div><div class="opt-item">(b) मत्स्य</div><div class="opt-item">(c) वराह</div><div class="opt-item">(d) नृसिंह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) वराह</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. निम्नलिखित में कौन एक 'अलवार' सन्त थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कल्लट</div><div class="opt-item">(b) कुलशेखर</div><div class="opt-item">(c) रामानुज</div><div class="opt-item">(d) श्रीकण्ठ</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कुलशेखर</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. निम्नलिखित में कौन एक स्त्री 'अलवार' सन्त है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) तिरुपान</div><div class="opt-item">(b) पेरुमाल</div><div class="opt-item">(c) मधुर कवि</div><div class="opt-item">(d) आण्डाल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) आण्डाल</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. वारकरी संप्रदाय की मुख्य पीठ अवस्थित है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) श्रृंगेरी में</div><div class="opt-item">(b) पंढरपुर में</div><div class="opt-item">(c) नादिया में</div><div class="opt-item">(d) वाराणसी में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पंढरपुर में (महाराष्ट्र)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. निम्नलिखित में से कौन एक महिला 'नायनार' संत नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कराइक्कल अम्मइयार</div><div class="opt-item">(b) मंगयार्ककरसियार</div><div class="opt-item">(c) अंडाल</div><div class="opt-item">(d) इसाईग्नानियार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अंडाल</strong> (ये अलवार संत हैं)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. 'पाशुपत' सम्प्रदाय के प्रवर्तक लकुलीश कहाँ पैदा हुए थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) राजस्थान में</div><div class="opt-item">(b) मध्य प्रदेश में</div><div class="opt-item">(c) गुजरात में</div><div class="opt-item">(d) उत्तर प्रदेश में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गुजरात में (कायावरोहण)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. 'पाशुपत' सम्प्रदाय का संस्थापक कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) उदिताचार्य</div><div class="opt-item">(b) लकुलीश</div><div class="opt-item">(c) शंकराचार्य</div><div class="opt-item">(d) भैरवाचार्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) लकुलीश</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. निम्नलिखित में से कौन वीरशैव (लिंगायत) सम्प्रदाय के संस्थापक के रूप में ख्यात है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बसव (Basavanna)</div><div class="opt-item">(b) लकुलीश</div><div class="opt-item">(c) निम्बार्क</div><div class="opt-item">(d) शंकराचार्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) बसव (Basavanna)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. 'मत्तमयूर' कौन थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भागवत धर्म के अनुयायी</div><div class="opt-item">(b) शैव अनुयायी</div><div class="opt-item">(c) जैन अनुयायी</div><div class="opt-item">(d) आजीवक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) शैव अनुयायी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. किस आश्रम में रहते हुए, मनुष्य को 'पंच महायज्ञों' का अनुष्ठान करना पड़ता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ब्रह्मचर्य आश्रम</div><div class="opt-item">(b) गृहस्थ आश्रम</div><div class="opt-item">(c) वानप्रस्थ आश्रम</div><div class="opt-item">(d) संन्यास आश्रम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) गृहस्थ आश्रम</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. किसने कहा है कि 'चेतन शरीर ही आत्मा है'?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नागार्जुन</div><div class="opt-item">(b) चार्वाक</div><div class="opt-item">(c) मीमांसा</div><div class="opt-item">(d) असंग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चार्वाक</strong> (भौतिकवादी दर्शन)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. अजीविका संप्रदाय के बारे में निम्नलिखित पर विचार करें:
+                        <br>A. मक्खलि गोशाल इसके सबसे महत्वपूर्ण नेता थे।
+                        <br>B. दर्शन का केन्द्रीय विचार "नियति" था जो कि भाग्य है।
+                        <br>C. जाति और वर्ग के आधार पर भेदभाव किया जाता है।
+                        <br>D. अजीविकों की बैठकों के लिए नियमित सभाएँ होती थीं।
+                        <br>सही कथन चुनें:
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) b, c एवं d सही है</div><div class="opt-item">(b) a, b एवं d सही है</div><div class="opt-item">(c) a एवं d सही है</div><div class="opt-item">(d) a, c एवं d सही है</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) a, b एवं d सही है</strong> (इन्होंने कभी जाति और वर्ग के आधार पर भेदभाव नहीं किया)।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '02-September-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
