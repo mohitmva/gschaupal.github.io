@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 September 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #8e44ad; }
+        .sec-3 { border-top-color: #95a5a6; }
+        .sec-4 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>05 सितंबर 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu & PIB</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu & PIB ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu & PIB: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. अदालती कार्यवाहियों की लाइव-स्ट्रीमिंग: पारदर्शिता बनाम दुरुपयोग (GS-2: न्यायपालिका)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 2018 के <em>स्वप्निल त्रिपाठी मामले</em> में सुप्रीम कोर्ट ने अनुच्छेद 21 के तहत 'न्याय तक पहुंच' के हिस्से के रूप में अदालती कार्यवाही की लाइव-स्ट्रीमिंग (Live-streaming) को मान्यता दी थी। वर्तमान में 11 उच्च न्यायालय अपनी कार्यवाहियों को यूट्यूब पर लाइव स्ट्रीम करते हैं।</li>
+                        <li><strong>समस्या:</strong> हाल ही में न्यायाधीशों और वकीलों के बीच की मौखिक टिप्पणियों (Oral remarks) की छोटी क्लिप्स काटकर सोशल मीडिया पर 'संदर्भ से बाहर' (Out of context) फैलाई जा रही हैं।</li>
+                        <li><strong>सुप्रीम कोर्ट का आदेश:</strong> न्यायालय ने एक अंतरिम आदेश में 'मान्यता प्राप्त समाचार आउटलेट्स' को छोड़कर, अदालत के रजिस्ट्रार की पूर्व अनुमति के बिना सोशल मीडिया पर वीडियो क्लिप के उपयोग और प्रसार पर रोक लगा दी है।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> अदालती पारदर्शिता (Transparency) और संस्थागत अखंडता (Institutional Integrity) के बीच संतुलन बनाने से जुड़े इस मुद्दे को न्यायपालिका के आधुनिकीकरण के परिप्रेक्ष्य में पढ़ें।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "न्यायपालिका में लाइव-स्ट्रीमिंग ने जहाँ एक ओर पारदर्शिता को बढ़ाया है, वहीं दूसरी ओर 'संदर्भहीन रिपोर्टिंग' (Decontextualized reporting) ने संस्थागत अखंडता के लिए नई चुनौतियाँ खड़ी कर दी हैं।" टिप्पणी करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारतीय न्यायपालिका के किस ऐतिहासिक मामले में सुप्रीम कोर्ट ने अदालती कार्यवाहियों की लाइव-स्ट्रीमिंग को 'अनुच्छेद 21' के तहत न्याय तक पहुंच का हिस्सा माना था?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) के.एस. पुट्टास्वामी मामला</div><div class="opt-item">(b) स्वप्निल त्रिपाठी मामला</div>
+                            <div class="opt-item">(c) विशाखा बनाम राजस्थान राज्य</div><div class="opt-item">(d) नवतेज सिंह जौहर मामला</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) स्वप्निल त्रिपाठी मामला</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. GSLV-F17 द्वारा EOS-05 का सफल प्रक्षेपण (GS-3: अंतरिक्ष प्रौद्योगिकी)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> ISRO ने <strong>GSLV-F17</strong> रॉकेट के माध्यम से <strong>EOS-05 (Earth Observation Satellite-05)</strong> का सफल प्रक्षेपण किया है।</li>
+                        <li><strong>विशेषता:</strong> यह <strong>जियोसिंक्रोनस कक्षा (Geosynchronous Orbit) से भारत का पहला इमेजिंग सैटेलाइट</strong> है। सामान्यतः इमेजिंग सैटेलाइट्स 'लो अर्थ ऑर्बिट' (LEO) में स्थापित किए जाते हैं, लेकिन इसे लगभग 36,000 किमी की ऊंचाई पर स्थापित किया गया है, जहाँ से यह भारतीय उपमहाद्वीप पर निरंतर (24x7) नज़र रख सकेगा।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "पृथ्वी अवलोकन उपग्रहों (Earth Observation Satellites) को 'लो अर्थ ऑर्बिट' (LEO) की बजाय 'जियोसिंक्रोनस ऑर्बिट' (GEO) में स्थापित करने से आपदा प्रबंधन और रियल-टाइम मॉनिटरिंग में क्या रणनीतिक लाभ प्राप्त होते हैं?" EOS-05 के संदर्भ में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में ISRO द्वारा प्रक्षेपित 'EOS-05' के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. इसे PSLV रॉकेट द्वारा प्रक्षेपित किया गया।
+                            <br>2. यह जियोसिंक्रोनस कक्षा (Geosynchronous orbit) से कार्य करने वाला भारत का पहला इमेजिंग सैटेलाइट है।
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div>
+                            <div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (कथन 1 गलत है, इसे GSLV-F17 द्वारा प्रक्षेपित किया गया है)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. भारत में डेटा सेंटर का बढ़ता जाल और जलवायु संकट (GS-3: पर्यावरण)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारत में आर्टिफिशियल इंटेलिजेंस (AI) और डिजिटलीकरण के कारण डेटा सेंटर की क्षमता तेजी से बढ़ रही है (2020 में 520 MW से 2030 तक 6.5 GW होने का अनुमान)।</li>
+                        <li><strong>पर्यावरणीय प्रभाव:</strong> डेटा सेंटर्स में सर्वरों को ठंडा रखने के लिए भारी मात्रा में पानी और बिजली की आवश्यकता होती है। 100 MW का एक डेटा सेंटर प्रतिदिन लगभग 20 लाख लीटर पानी खर्च करता है। चिंता की बात यह है कि अधिकांश डेटा सेंटर राजस्थान, महाराष्ट्र और तेलंगाना जैसे 'जल-तनावग्रस्त' (Water-stressed) राज्यों में बन रहे हैं।</li>
+                        <li><strong>सुझाव:</strong> 'राष्ट्रीय स्थिरता ढांचा' (National Sustainability Framework) लागू किया जाना चाहिए, जिसमें 'नवीकरणीय ऊर्जा सोर्सिंग' और जल खपत प्रकटीकरण अनिवार्य हो।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत का 'डेटा सेंटर बूम' डिजिटल क्रांति के लिए आवश्यक है, लेकिन यह जल और ऊर्जा संसाधनों पर भारी दबाव डाल रहा है।" इस दोहरी चुनौती से निपटने के लिए क्या नीतिगत उपाय किए जाने चाहिए?</div>
+                        
+                        <div class="pre-q">Prelims Q1: डेटा सेंटर उद्योग के तेजी से विस्तार के कारण उत्पन्न पर्यावरणीय चिंताओं के संदर्भ में, औसतन एक 100 MW का डेटा सेंटर प्रतिदिन लगभग कितना पानी खपत करता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) 5 लाख लीटर</div><div class="opt-item">(b) 10 लाख लीटर</div>
+                            <div class="opt-item">(c) 20 लाख लीटर</div><div class="opt-item">(d) 50 लाख लीटर</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 20 लाख लीटर</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. आपातकालीन क्रेडिट लाइन गारंटी योजना (ECLGS) 5.0 (GS-3: अर्थव्यवस्था)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> सरकार ने बाहरी आर्थिक झटकों और भू-राजनीतिक तनावों से प्रभावित व्यवसायों को बचाने के लिए <strong>ECLGS 5.0</strong> को मंजूरी दी है।</li>
+                        <li><strong>कार्यप्रणाली:</strong> यह योजना <strong>'नेशनल क्रेडिट गारंटी ट्रस्टी कंपनी' (NCGTC)</strong> द्वारा संचालित की जाती है। इसमें पात्र व्यवसायों (MSMEs, एयरलाइंस) को अतिरिक्त कार्यशील पूंजी देने के लिए बैंकों को सरकार द्वारा 100% (या 90%) क्रेडिट गारंटी प्रदान की जाती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "कोविड-19 महामारी के दौरान शुरू की गई 'ECLGS' ने भारतीय MSME क्षेत्र को डूबने से बचाया है।" योजना के क्रमिक चरणों के आलोक में इसका समालोचनात्मक मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारत सरकार की 'आपातकालीन क्रेडिट लाइन गारंटी योजना' (ECLGS 5.0) के तहत सदस्य ऋणदाता संस्थानों को किसके द्वारा क्रेडिट गारंटी प्रदान की जाती है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) भारतीय रिज़र्व बैंक (RBI)</div><div class="opt-item">(b) सिडबी (SIDBI)</div>
+                            <div class="opt-item">(c) नेशनल क्रेडिट गारंटी ट्रस्टी कंपनी (NCGTC)</div><div class="opt-item">(d) नीति आयोग</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) NCGTC</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: Value Addition (Static) ================= -->
+            <div class="section-box sec-2" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 2. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>प्राचीन भारत: मगध का उत्कर्ष और विदेशी आक्रमण</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> प्राचीन भारत में मगध साम्राज्य का विस्तार और सिकंदर का आक्रमण इतिहास का बेहद अहम हिस्सा है। शासकों के क्रम और उनकी राजधानियों से जुड़े तथ्यों पर विशेष ध्यान दें।
+                    </div>
+
+                    <div class="va-heading">1. मगध का उत्कर्ष</div>
+                    <ul class="content-list va-text">
+                        <li><strong>भौगोलिक लाभ:</strong> मगध राज्य गंगा और उसकी सहायक (सदानीरा) नदियों द्वारा निर्मित उपजाऊ मैदान में स्थित था, जिसने इसे एक मजबूत कृषि और आर्थिक आधार प्रदान किया।</li>
+                        <li><strong>हर्यक वंश (Haryanka Dynasty):</strong> संस्थापक बिम्बिसार था। इसके पुत्र <strong>अजातशत्रु</strong> ने अपने पिता की हत्या कर गद्दी प्राप्त की। अजातशत्रु ने ही पाटलिग्राम (पाटलिपुत्र) के सामरिक महत्व को समझा और वहाँ दुर्ग बनवाया। बाद में अजातशत्रु के पुत्र <strong>उदायिन (उदयभद्र)</strong> ने पाटलिपुत्र को मगध की राजधानी बनाया।</li>
+                        <li><strong>शिशुनाग वंश:</strong> इस वंश के समय मगध का विस्तार मालवा (अवन्ति) तक हो गया था।</li>
+                        <li><strong>नंद वंश:</strong> संस्थापक <strong>महापद्मनन्द</strong> था। इसे 'सर्वक्षत्रान्तक' (क्षत्रियों का नाश करने वाला) और 'परशुराम का दूसरा अवतार' (अपरोपरशुराम) कहा गया। कलिंग में नहर खोदने का पहला अभिलेखीय साक्ष्य इसी के समय का है।</li>
+                        <li><strong>वंशों का क्रम:</strong> हर्यक वंश → शिशुनाग वंश → नंद वंश → मौर्य वंश → शुंग वंश।</li>
+                    </ul>
+
+                    <div class="va-heading">2. विदेशी आक्रमण (ईरानी और यूनानी)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>ईरानी आक्रमण:</strong> भारत के कुछ भाग पर अधिकार करने वाला पहला ईरानी शासक <strong>डेरियस प्रथम (Darius I / दारा प्रथम)</strong> था। हेरोडोटस के अनुसार, भारत उसके साम्राज्य का 20वाँ प्रांत था, जहाँ से उसे 360 टैलेंट (स्वर्ण) कर के रूप में मिलता था।</li>
+                        <li><strong>यूनानी आक्रमण (सिकंदर):</strong> सिकंदर ने 326 ई.पू. में खैबर दर्रे से भारत में प्रवेश किया।
+                            <br>• <strong>झेलम (वितस्ता) का युद्ध:</strong> सिकंदर और पोरस (पुरु) के बीच हुआ।
+                            <br>• <strong>अश्वक राज्य:</strong> यहाँ की स्त्रियों ने सिकंदर के विरुद्ध युद्ध में भाग लिया था।
+                            <br>• सिकंदर भारत में लगभग <strong>19 महीने</strong> रहा। उसके साथ नियार्कस, आनेसिक्रिट्स और अरिस्टोबुलस भारत आए थे।
+                            <br>• सिकंदर के आक्रमण के समय मगध पर नंद वंश के <strong>घनानंद</strong> का शासन था।
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 3: Coaching Data ================= -->
+            <div class="section-box sec-3" id="sec-other">
+                <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 3. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Quiz ================= -->
+            <div class="section-box sec-4" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 4. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 मगध/विदेशी आक्रमण (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. भारतीय न्यायपालिका के किस ऐतिहासिक मामले में सुप्रीम कोर्ट ने अदालती कार्यवाहियों की लाइव-स्ट्रीमिंग को 'अनुच्छेद 21' के तहत न्याय तक पहुंच का हिस्सा माना था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) के.एस. पुट्टास्वामी मामला</div><div class="opt-item">(b) स्वप्निल त्रिपाठी मामला</div><div class="opt-item">(c) विशाखा बनाम राजस्थान राज्य</div><div class="opt-item">(d) नवतेज सिंह जौहर मामला</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) स्वप्निल त्रिपाठी मामला</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. हाल ही में ISRO द्वारा प्रक्षेपित 'EOS-05' के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                        <br>1. इसे PSLV रॉकेट द्वारा प्रक्षेपित किया गया।
+                        <br>2. यह जियोसिंक्रोनस कक्षा (Geosynchronous orbit) से कार्य करने वाला भारत का पहला इमेजिंग सैटेलाइट है।
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div><div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (इसे GSLV-F17 द्वारा प्रक्षेपित किया गया है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. भारत सरकार की 'आपातकालीन क्रेडिट लाइन गारंटी योजना' (ECLGS 5.0) के तहत सदस्य ऋणदाता संस्थानों को किसके द्वारा क्रेडिट गारंटी प्रदान की जाती है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भारतीय रिज़र्व बैंक (RBI)</div><div class="opt-item">(b) सिडबी (SIDBI)</div><div class="opt-item">(c) नेशनल क्रेडिट गारंटी ट्रस्टी कंपनी (NCGTC)</div><div class="opt-item">(d) नीति आयोग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) नेशनल क्रेडिट गारंटी ट्रस्टी कंपनी (NCGTC)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. डेटा सेंटर उद्योग के तेजी से विस्तार के कारण उत्पन्न पर्यावरणीय चिंताओं के संदर्भ में, औसतन एक 100 MW का डेटा सेंटर प्रतिदिन लगभग कितना पानी खपत करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 5 लाख लीटर</div><div class="opt-item">(b) 10 लाख लीटर</div><div class="opt-item">(c) 20 लाख लीटर</div><div class="opt-item">(d) 50 लाख लीटर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 20 लाख लीटर</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. हाल ही में 'श्री राम जन्मभूमि तीर्थ क्षेत्र ट्रस्ट' का पहला मुख्य कार्यकारी अधिकारी (CEO) किसे नियुक्त किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चंपत राय</div><div class="opt-item">(b) अनिल मिश्रा</div><div class="opt-item">(c) एयर वाइस मार्शल जितेंद्र मिश्रा (सेवानिवृत्त)</div><div class="opt-item">(d) नृपेंद्र मिश्रा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) एयर वाइस मार्शल जितेंद्र मिश्रा (सेवानिवृत्त)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में UNEP द्वारा सुझाई गई "ओवरशूट, पीक, एंड डिक्लाइन" (Overshoot, peak, and decline) रणनीति का मुख्य उद्देश्य क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ओजोन परत के क्षरण को रोकना</div><div class="opt-item">(b) 1.5°C ग्लोबल वार्मिंग सीमा पार होने के बाद उसे वापस 2100 तक 1.5°C के भीतर लाना</div><div class="opt-item">(c) समुद्र के जलस्तर को 2050 तक कम करना</div><div class="opt-item">(d) वैश्विक प्लास्टिक कचरे को 2030 तक खत्म करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. हाल ही में सुप्रीम कोर्ट के एक निर्णय के अनुसार, बार काउंसिल ऑफ इंडिया (BCI) को कोई भी बड़ा नीतिगत निर्णय लेने से पहले किससे अनिवार्य परामर्श करना होगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कानून मंत्रालय</div><div class="opt-item">(b) भारत के मुख्य न्यायाधीश</div><div class="opt-item">(c) अटॉर्नी जनरल और सॉलिसिटर जनरल</div><div class="opt-item">(d) विधि आयोग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अटॉर्नी जनरल और सॉलिसिटर जनरल</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. 'ईज ऑफ डूइंग बिजनेस बिल, 2026', जिसके तहत 3 साल तक उद्यमों के नियमित निरीक्षण (Routine Inspection) पर रोक लगाने का प्रस्ताव है, किस राज्य/केंद्र शासित प्रदेश के कैबिनेट ने पारित किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गुजरात</div><div class="opt-item">(b) महाराष्ट्र</div><div class="opt-item">(c) दिल्ली</div><div class="opt-item">(d) कर्नाटक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) दिल्ली</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में CBI द्वारा 'डिजिटल अरेस्ट' (Digital Arrest) घोटालों पर नकेल कसने के लिए देश भर में किस अभियान के तहत 89 ठिकानों पर छापेमारी की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऑपरेशन गरुड़</div><div class="opt-item">(b) ऑपरेशन मेघचक्र</div><div class="opt-item">(c) ऑपरेशन चक्र-VI</div><div class="opt-item">(d) ऑपरेशन प्रहार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) ऑपरेशन चक्र-VI (Operation Chakra-VI)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. 5 सितंबर 2026 को राष्ट्रपति द्रौपदी मुर्मू द्वारा देश भर के कितने शिक्षकों (उच्च शिक्षा और कौशल विकास ट्रेनर्स सहित) को 'राष्ट्रीय शिक्षक पुरस्कार 2026' प्रदान किया जाएगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 48</div><div class="opt-item">(b) 65</div><div class="opt-item">(c) 82</div><div class="opt-item">(d) 105</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 82</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - मगध का उत्कर्ष और विदेशी आक्रमण (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. मगध के किस प्रारम्भिक शासक ने राज्यारोहण के लिए अपने पिता की हत्या की एवं स्वयं इसी कारणवश अपने पुत्र द्वारा मारा गया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार</div><div class="opt-item">(b) अजातशत्रु</div><div class="opt-item">(c) उदायिन</div><div class="opt-item">(d) नागदशक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अजातशत्रु</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. अजातशत्रु के वंश का नाम क्या था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मौर्य</div><div class="opt-item">(b) हर्यक</div><div class="opt-item">(c) नन्द</div><div class="opt-item">(d) गुप्त</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) हर्यक</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. निम्नलिखित में से कौन शेष अन्य के बाद तक जीवित रहा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार</div><div class="opt-item">(b) अजातशत्रु</div><div class="opt-item">(c) देवदत्त</div><div class="opt-item">(d) गौतम बुद्ध</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) गौतम बुद्ध</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. निम्नलिखित में से किसने सर्वप्रथम पाटलिग्राम की अन्तःशक्ति को पहचाना, जो कालान्तर में मगध की राजधानी के रूप में विकसित हुआ?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार</div><div class="opt-item">(b) अजातशत्रु</div><div class="opt-item">(c) उदायिन</div><div class="opt-item">(d) कालाशोक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अजातशत्रु</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. अजातशत्रु ने पूर्वी भारत पर मगध का आधिपत्य स्थापित करने के लिए निम्नलिखित में से किस गणराज्य के साथ 16 वर्षों तक युद्ध किया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पावा और कुशीनारा के मल्ल</div><div class="opt-item">(b) मिथिला के विदेह</div><div class="opt-item">(c) वैशाली के लिच्छवि</div><div class="opt-item">(d) रामग्राम के कोलिय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) वैशाली के लिच्छवि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. पाटलिपुत्र के संस्थापक थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) उदायिन्</div><div class="opt-item">(b) अशोक</div><div class="opt-item">(c) बिम्बिसार</div><div class="opt-item">(d) महापद्‌द्मानन्द</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) उदायिन्</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. मालवा क्षेत्र पर मगध की सत्ता का विस्तार निम्न में से किसके शासन काल में हुआ था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार के</div><div class="opt-item">(b) अजातशत्रु के</div><div class="opt-item">(c) उदयभद्र के</div><div class="opt-item">(d) शिशुनाग के</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) शिशुनाग के</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. मगध का कौन सा सम्राट् 'अपरोपरशुराम' के नाम से जाना जाता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिन्दुसार</div><div class="opt-item">(b) अजातशत्रु</div><div class="opt-item">(c) कालाशोक</div><div class="opt-item">(d) महापद्मनन्द</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) महापद्मनन्द</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. अभिलिखित साक्ष्य में प्रकट होता है कि नन्द राजा के आदेश से एक नहर खोदी गई थी-</div>
+                    <div class="options-grid"><div class="opt-item">(a) अंग में</div><div class="opt-item">(b) तुग में</div><div class="opt-item">(c) कलिंग में</div><div class="opt-item">(d) मगध में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कलिंग में</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. मगध में नन्दवंश का संस्थापक कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) महापद्मनन्द</div><div class="opt-item">(b) धनानन्द</div><div class="opt-item">(c) नन्दिवर्धन</div><div class="opt-item">(d) महानन्दिन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) महापद्मनन्द</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. निम्नलिखित मगध राजवंशों को कालक्रमानुसार व्यवस्थित कीजिये-
+                        <br>1. नंदवंश 2. शुंगवंश 3. मौर्यवंश 4. हर्यक वंश
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 2, 1, 4 एवं 3</div><div class="opt-item">(b) 4, 1, 3 एवं 2</div><div class="opt-item">(c) 3, 2, 1 एवं 4</div><div class="opt-item">(d) 1, 3, 4 एवं 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 4, 1, 3 एवं 2</strong> (हर्यक → नंद → मौर्य → शुंग)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. निम्नलिखित में किस महान शासक ने प्राचीन बिहार में "हर्यक वंश" की स्थापना की?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार ने</div><div class="opt-item">(b) बृहद्रथ ने</div><div class="opt-item">(c) अजातशत्रु ने</div><div class="opt-item">(d) उपरोक्त में एक से अधिक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) बिम्बिसार ने</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. राजगृह का राजकीय चिकित्सक जीवक को जिस गणिका के पुत्र के रूप में जाना जाता है उसका नाम है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) सालवती</div><div class="opt-item">(b) रमनिया</div><div class="opt-item">(c) बसंतसेना</div><div class="opt-item">(d) आम्रपाली</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सालवती</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. निम्नलिखित में से कौन एक मगध साम्राज्य की राजधानी नहीं रहा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गिरिव्रज</div><div class="opt-item">(b) राजगृह</div><div class="opt-item">(c) पाटलिपुत्र</div><div class="opt-item">(d) कौशाम्बी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) कौशाम्बी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. पाँचवी शताब्दी ई.पू. में भारतीय प्रान्त निम्नलिखित को 360 टेलेंट स्वर्ण वार्षिक कर के रूप में देता था-</div>
+                    <div class="options-grid"><div class="opt-item">(a) ग्रीस</div><div class="opt-item">(b) फारस</div><div class="opt-item">(c) बैक्ट्रिया</div><div class="opt-item">(d) चीन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) फारस</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. पहला ईरानी शासक जिसने भारत के कुछ भाग को अपने अधीन किया था-</div>
+                    <div class="options-grid"><div class="opt-item">(a) साइरस</div><div class="opt-item">(b) केम्बिसिस</div><div class="opt-item">(c) डेरियस प्रथम</div><div class="opt-item">(d) क्षयार्स</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) डेरियस प्रथम</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. सिकंदर के हमले के समय उत्तर भारत पर निम्नलिखित राजवंशों में से किस एक का शासन था-</div>
+                    <div class="options-grid"><div class="opt-item">(a) नन्द</div><div class="opt-item">(b) मौर्य</div><div class="opt-item">(c) शुंग</div><div class="opt-item">(d) कण्व</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) नन्द</strong> (घनानंद)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. सिकंदर भारत में कितने माह रहा-</div>
+                    <div class="options-grid"><div class="opt-item">(a) 29 माह</div><div class="opt-item">(b) 39 माह</div><div class="opt-item">(c) 19 माह</div><div class="opt-item">(d) 10 माह</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 19 माह</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. अश्वक राज्य की स्त्रियों ने किसके विरुद्ध युद्ध में भाग लिया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) फारसियों</div><div class="opt-item">(b) बैक्ट्रियनों</div><div class="opt-item">(c) पार्थियनों</div><div class="opt-item">(d) यूनानियों</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) यूनानियों</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. निम्नलिखित में से कौन सिकन्दर के साथ भारत में नहीं आया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नियार्कस</div><div class="opt-item">(b) आनेसिक्रिटस</div><div class="opt-item">(c) डाइमेकस</div><div class="opt-item">(d) अरिस्टोब्युलस</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) डाइमेकस</strong> (यह बिंदुसार के दरबार में आया था)।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '05-September-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
