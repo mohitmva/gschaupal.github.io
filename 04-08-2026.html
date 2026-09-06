@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 September 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>04 सितंबर 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu & PIB</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu & PIB ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu & PIB: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत की भूतापीय ऊर्जा (Geothermal Energy) की नई छलांग (GS-3: ऊर्जा/पर्यावरण)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारत ने स्वच्छ ऊर्जा परिवर्तन (Clean Energy Transition) को गति देते हुए 2070 तक 'नेट-जीरो' उत्सर्जन का लक्ष्य रखा है। इसी दिशा में सरकार ने <strong>'भूतापीय ऊर्जा पर राष्ट्रीय नीति, 2025'</strong> को अधिसूचित किया है।</li>
+                        <li><strong>ऐतिहासिक उपलब्धि:</strong> ONGC ऊर्जा केंद्र ने जुलाई 2026 में लद्दाख की <strong>पूगा घाटी (Puga Valley)</strong> में देश के पहले दो भू-तापीय कुओं को चालू किया। 14,000 फीट की ऊंचाई पर स्थित पूगा घाटी भारत के सबसे संभावनाशील भू-तापीय स्थलों में से एक है। यहाँ भारत की पहली <strong>1 मेगावाट की प्रदर्शन-आधारित भूतापीय ऊर्जा परियोजना</strong> स्थापित की जा रही है।</li>
+                        <li><strong>संसाधन आधार:</strong> भारतीय भूवैज्ञानिक सर्वेक्षण (GSI) ने देश भर में 381 गर्म झरनों की मैपिंग की है और 10 भू-तापीय प्रांतों (Geothermal Provinces) की पहचान की है। भारत की अनुमानित भूतापीय ऊर्जा क्षमता लगभग <strong>10.6 गीगावाट (GW)</strong> है।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> भूतापीय ऊर्जा सौर और पवन ऊर्जा के विपरीत एक 'बेस-लोड' (Base-load) ऊर्जा स्रोत है जो 24x7 उपलब्ध रहती है। उत्तर लिखते समय यह अवश्य बताएं कि यह मौसम पर निर्भर नहीं है, इसलिए भारत के ऊर्जा मिश्रण में स्थिरता लाने के लिए यह अत्यंत महत्वपूर्ण है।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भूतापीय ऊर्जा भारत के नवीकरणीय ऊर्जा मिश्रण (Renewable Energy Mix) में एक 'गेम-चेंजर' साबित हो सकती है।" भारत की भूतापीय क्षमता और 'राष्ट्रीय भूतापीय ऊर्जा नीति 2025' के संदर्भ में इस कथन का परीक्षण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में ONGC द्वारा भारत के पहले दो भू-तापीय (Geothermal) कुओं को कहाँ चालू किया गया है, जो देश की पहली 1 मेगावाट भूतापीय ऊर्जा परियोजना का आधार बनेंगे?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) मणिकरण (हिमाचल प्रदेश)</div><div class="opt-item">(b) तपोवन (उत्तराखंड)</div>
+                            <div class="opt-item">(c) पूगा घाटी (लद्दाख)</div><div class="opt-item">(d) तातापानी (छत्तीसगढ़)</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) पूगा घाटी (लद्दाख)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. GSLV-F17 द्वारा EOS-05 का सफल प्रक्षेपण (GS-3: अंतरिक्ष प्रौद्योगिकी)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> ISRO ने <strong>GSLV-F17</strong> रॉकेट के माध्यम से <strong>EOS-05 (Earth Observation Satellite-05)</strong> का सफल प्रक्षेपण किया है। प्रधानमंत्री ने इसे 'देश के लिए गर्व का क्षण' बताया।</li>
+                        <li><strong>विशेषता:</strong> यह <strong>जियोसिंक्रोनस कक्षा (Geosynchronous Orbit) से भारत का पहला इमेजिंग सैटेलाइट</strong> है। सामान्यतः इमेजिंग सैटेलाइट्स (EOS) 'लो अर्थ ऑर्बिट' (LEO) में स्थापित किए जाते हैं, लेकिन इसे लगभग 36,000 किमी की ऊंचाई पर स्थापित किया गया है, जहाँ से यह भारतीय उपमहाद्वीप पर निरंतर (24x7) नज़र रख सकेगा।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "पृथ्वी अवलोकन उपग्रहों (Earth Observation Satellites) को 'लो अर्थ ऑर्बिट' (LEO) की बजाय 'जियोसिंक्रोनस ऑर्बिट' (GEO) में स्थापित करने से आपदा प्रबंधन और रियल-टाइम मॉनिटरिंग में क्या रणनीतिक लाभ प्राप्त होते हैं?" EOS-05 के संदर्भ में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में ISRO द्वारा प्रक्षेपित 'EOS-05' के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. इसे PSLV रॉकेट द्वारा प्रक्षेपित किया गया।
+                            <br>2. यह जियोसिंक्रोनस कक्षा (Geosynchronous orbit) से कार्य करने वाला भारत का पहला इमेजिंग सैटेलाइट है।
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div>
+                            <div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (कथन 1 गलत है, इसे GSLV-F17 द्वारा प्रक्षेपित किया गया है)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. भारत और बेल्जियम के बीच रक्षा सहयोग समझौता (GS-2: अंतर्राष्ट्रीय संबंध)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> बेल्जियम के प्रधानमंत्री बार्ट डी वेवर (Bart De Wever) की भारत यात्रा के दौरान दोनों देशों ने द्विपक्षीय रक्षा सहयोग को बढ़ाने के लिए तीन 'सरकारी स्तर' के रक्षा समझौतों पर हस्ताक्षर किए हैं।</li>
+                        <li><strong>प्रमुख बिंदु:</strong> भारत में बेल्जियम के रक्षा उत्पादों (जैसे रॉकेट) के निर्माण के लिए 10 निजी रक्षा समझौते भी हुए हैं। बेल्जियम ने भारत को आश्वस्त किया है कि वह <strong>पाकिस्तान</strong> के साथ कोई रक्षा सहयोग या तकनीकी सहायता प्रदान नहीं करेगा।</li>
+                        <li><strong>ऐतिहासिक संदर्भ:</strong> दोनों नेताओं ने प्रथम विश्व युद्ध के दौरान 'फ्लैंडर्स फील्ड्स' (Flanders Fields) में शहीद हुए 9,000 से अधिक भारतीय सैनिकों को श्रद्धांजलि अर्पित की।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "यूरोपीय देशों (जैसे बेल्जियम और फ्रांस) के साथ भारत की बढ़ती रक्षा और रणनीतिक साझेदारी, भारत की 'मेक इन इंडिया' और 'आत्मनिर्भर भारत' पहलों को कैसे मजबूत कर सकती है?" विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में किस यूरोपीय देश ने भारत के साथ रक्षा समझौते करते हुए आधिकारिक रूप से यह आश्वासन दिया है कि वह पाकिस्तान को कोई रक्षा तकनीक या सैन्य सहायता प्रदान नहीं करेगा?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) फ्रांस</div><div class="opt-item">(b) जर्मनी</div>
+                            <div class="opt-item">(c) बेल्जियम</div><div class="opt-item">(d) इटली</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) बेल्जियम</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. GDP डेटा और 'वैकल्पिक अनुमान' विवाद (GS-3: अर्थव्यवस्था)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> राष्ट्रीय सांख्यिकी कार्यालय (NSO) के अनुसार 2023-24 में भारत के 'विनिर्माण क्षेत्र' (Manufacturing sector) का GVA (Gross Value Added) ₹38.6 लाख करोड़ था (GDP का 14.7%)।</li>
+                        <li><strong>विवाद:</strong> अर्थशास्त्रियों (जतिंदर एस. बेदी और आर. नागराज) का दावा है कि 'वार्षिक उद्योग सर्वेक्षण' (ASI) और 'असंगठित क्षेत्र उद्यमों के वार्षिक सर्वेक्षण' (ASUSE) के डेटा का उपयोग करके निकाला गया 'वैकल्पिक अनुमान' (Alternative Estimate) मात्र ₹27.4 लाख करोड़ आता है। यह आधिकारिक आंकड़े से <strong>40.9% कम</strong> है।</li>
+                        <li>यह विसंगति इसलिए है क्योंकि NSO ने अब ASI की जगह 'कॉर्पोरेट मामलों के मंत्रालय' (MCA-21) के डेटा का उपयोग करना शुरू कर दिया है। विपक्ष (कांग्रेस) ने इस 'सांख्यिकीय बाजीगरी' को लेकर सरकार से जवाब मांगा है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत के सकल घरेलू उत्पाद (GDP) की गणना पद्धति में हालिया बदलावों ने सांख्यिकीय डेटा की विश्वसनीयता पर बहस छेड़ दी है।" विनिर्माण क्षेत्र के 'सकल मूल्य वर्धित' (GVA) के संदर्भ में इस कथन का आलोचनात्मक मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: भारत में 'विनिर्माण क्षेत्र' (Manufacturing Sector) के सकल मूल्य वर्धित (GVA) के आकलन के लिए, 'राष्ट्रीय सांख्यिकी कार्यालय' (NSO) द्वारा वर्तमान में किस प्रमुख डेटाबेस का उपयोग किया जा रहा है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल ASI (Annual Survey of Industries)</div><div class="opt-item">(b) केवल ASUSE</div>
+                            <div class="opt-item">(c) MCA-21 (Ministry of Corporate Affairs) डेटाबेस</div><div class="opt-item">(d) EPFO (कर्मचारी भविष्य निधि) डेटा</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) MCA-21 डेटाबेस</strong> (इसी बदलाव के कारण GVA अनुमानों पर विवाद उत्पन्न हुआ है)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. न्यायालयों की 'लाइव-स्ट्रीमिंग' बनाम क्लिप का दुरुपयोग (GS-2: न्यायपालिका)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 2018 के <em>स्वप्निल त्रिपाठी मामले</em> में सुप्रीम कोर्ट ने अनुच्छेद 21 के तहत 'न्याय तक पहुंच' के हिस्से के रूप में अदालती कार्यवाही की लाइव-स्ट्रीमिंग (Live-streaming) को मान्यता दी थी।</li>
+                        <li><strong>समस्या:</strong> हाल ही में अदालती बहसों (Oral remarks) की छोटी क्लिप्स काटकर सोशल मीडिया पर 'संदर्भ से बाहर' (Out of context) फैलाई जा रही हैं, जिससे न्यायपालिका की छवि खराब हो रही है।</li>
+                        <li><strong>सुप्रीम कोर्ट का आदेश:</strong> कोर्ट ने एक अंतरिम आदेश में 'मान्यता प्राप्त समाचार आउटलेट्स' को छोड़कर, अदालत के रजिस्ट्रार की पूर्व अनुमति के बिना सोशल मीडिया पर वीडियो क्लिप के उपयोग और प्रसार पर रोक लगा दी है।</li>
+                    </ul>
+                </div>
+                
+                <!-- Article 6 -->
+                <div class="news-item">
+                    <div class="news-title">6. भारत में डेटा सेंटर बूम और जलवायु संकट (GS-3: पर्यावरण / बुनियादी ढांचा)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> भारत में डेटा सेंटर की क्षमता 2020 में 520 MW से बढ़कर वर्तमान में 1.5 GW हो गई है, और 2030 तक 6.5 GW होने का अनुमान है। AI के कारण ऊर्जा की मांग तेजी से बढ़ रही है।</li>
+                        <li><strong>पर्यावरणीय प्रभाव:</strong> एक 100 MW का डेटा सेंटर प्रतिदिन लगभग 20 लाख लीटर पानी की खपत करता है (कूलिंग के लिए)। अधिकांश डेटा सेंटर राजस्थान, महाराष्ट्र और तेलंगाना जैसे पहले से ही 'जल-तनावग्रस्त' (Water-stressed) राज्यों में बन रहे हैं।</li>
+                        <li><strong>सुझाव:</strong> विशेषज्ञों का मानना है कि डेटा सेंटर्स के लिए 'राष्ट्रीय स्थिरता ढांचा' (National Sustainability Framework) बनना चाहिए, जिसमें 'नवीकरणीय ऊर्जा सोर्सिंग' और जल खपत प्रकटीकरण अनिवार्य हो।</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>महाजनपद काल (600 ई.पू. - 322 ई.पू.)</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> प्राचीन भारत के 16 महाजनपदों से जुड़े गणराज्यों, राजधानियों और समकालीन शासकों से बार-बार प्रश्न आते हैं। इसे ध्यान से पढ़ें।
+                    </div>
+
+                    <div class="va-heading">1. महाजनपदों का प्रशासन (गणराज्य बनाम राजतंत्र)</div>
+                    <ul class="content-list va-text">
+                        <li><strong>गणतंत्र (Republics):</strong> 16 महाजनपदों में से केवल दो— <strong>वज्जि</strong> और <strong>मल्ल</strong> गणतंत्र थे, जहाँ शासन एक समूह या संघ द्वारा चलाया जाता था।
+                            <br>• वज्जि संघ में 8 कुल शामिल थे, जिनमें वैशाली के लिच्छवि, मिथिला के विदेह और कुंडग्राम के ज्ञातृक प्रमुख थे। वैशाली को विश्व का 'पहला गणतंत्र' माना जाता है।
+                        </li>
+                        <li><strong>राजतंत्र (Monarchies):</strong> शेष 14 महाजनपद (जैसे मगध, कोशल, अवंति, वत्स आदि) राजतंत्रात्मक थे।</li>
+                    </ul>
+
+                    <div class="va-heading">2. महाजनपद और उनसे जुड़े प्रमुख क्षेत्र/तथ्य</div>
+                    <ul class="content-list va-text">
+                        <li><strong>काशी:</strong> राजधानी वाराणसी। यह सूती और रेशमी वस्त्रों के लिए प्रसिद्ध था।</li>
+                        <li><strong>गांधार:</strong> राजधानी तक्षशिला। यह शिक्षा, वाणिज्य और कला का प्रमुख केंद्र था (सिंधु और झेलम नदियों के बीच)।</li>
+                        <li><strong>पुष्कलावती:</strong> इसका समीकरण आधुनिक चारसद्धा (पेशावर, पाकिस्तान) से किया जाता है।</li>
+                        <li><strong>कम्बोज:</strong> यह प्राचीन काल में 'अच्छे घोड़ों' के लिए प्रसिद्ध था।</li>
+                        <li><strong>मगध:</strong> छठी शताब्दी ई.पू. का सबसे शक्तिशाली राज्य। प्रथम शक्तिशाली शासक हर्यक वंश का <strong>बिम्बिसार</strong> था। अजातशत्रु ने रक्षा के लिए पाटलिपुत्र (पाटलिग्राम) में दुर्ग बनवाया, लेकिन <strong>उदायिन</strong> ने इसे मगध की राजधानी बनाया।</li>
+                    </ul>
+
+                    <div class="va-heading">3. बौद्ध धर्म एवं महाजनपदों का संबंध</div>
+                    <ul class="content-list va-text">
+                        <li>बुद्ध और महावीर के मगध नरेश <strong>बिम्बिसार</strong> और <strong>अजातशत्रु</strong> के साथ मैत्रीपूर्ण संबंध थे। कोशल का शासक <strong>प्रसेनजित</strong> भी बुद्ध का मित्र और अनुयायी था।</li>
+                        <li>बुद्ध के काल में प्रसिद्ध वैद्य <strong>जीवक</strong> बिम्बिसार के दरबार में रहता था।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 5. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 महाजनपद काल (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. हाल ही में ONGC द्वारा भारत के पहले दो भू-तापीय (Geothermal) कुओं को कहाँ चालू किया गया है, जो देश की पहली 1 मेगावाट भूतापीय ऊर्जा परियोजना का आधार बनेंगे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मणिकरण</div><div class="opt-item">(b) तपोवन</div><div class="opt-item">(c) पूगा घाटी (लद्दाख)</div><div class="opt-item">(d) तातापानी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पूगा घाटी (लद्दाख)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. हाल ही में ISRO द्वारा प्रक्षेपित 'EOS-05' के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                        <br>1. इसे PSLV रॉकेट द्वारा प्रक्षेपित किया गया।
+                        <br>2. यह जियोसिंक्रोनस कक्षा (Geosynchronous orbit) से कार्य करने वाला भारत का पहला इमेजिंग सैटेलाइट है।
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div><div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (इसे GSLV-F17 द्वारा प्रक्षेपित किया गया है)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. भारत में 'विनिर्माण क्षेत्र' (Manufacturing Sector) के GVA के आकलन के लिए, 'राष्ट्रीय सांख्यिकी कार्यालय' (NSO) द्वारा वर्तमान में किस डेटाबेस का उपयोग किया जा रहा है, जिसे लेकर 'वैकल्पिक अनुमान' विवाद खड़ा हुआ है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ASI</div><div class="opt-item">(b) ASUSE</div><div class="opt-item">(c) MCA-21 डेटाबेस</div><div class="opt-item">(d) EPFO डेटा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) MCA-21 डेटाबेस</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. हाल ही में किस यूरोपीय देश ने भारत के साथ रक्षा समझौते करते हुए आधिकारिक रूप से यह आश्वासन दिया है कि वह पाकिस्तान को कोई रक्षा तकनीक या सैन्य सहायता प्रदान नहीं करेगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) फ्रांस</div><div class="opt-item">(b) जर्मनी</div><div class="opt-item">(c) इटली</div><div class="opt-item">(d) बेल्जियम</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) बेल्जियम</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. सर्वोच्च न्यायालय के 2018 के किस ऐतिहासिक निर्णय के तहत 'अदालती कार्यवाही की लाइव-स्ट्रीमिंग' को संविधान के अनुच्छेद 21 के तहत 'न्याय तक पहुंच' का हिस्सा माना गया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) के.एस. पुट्टास्वामी मामला</div><div class="opt-item">(b) स्वप्निल त्रिपाठी मामला</div><div class="opt-item">(c) विशाखा गाइडलाइंस</div><div class="opt-item">(d) नवतेज सिंह जौहर मामला</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) स्वप्निल त्रिपाठी मामला</strong></div></details>
+                </div>
+                <div class="practice-box">
+                    <div class="pre-q">Q6. श्री राम जन्मभूमि तीर्थ क्षेत्र ट्रस्ट का पहला मुख्य कार्यकारी अधिकारी (CEO) किसे नियुक्त किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चंपत राय</div><div class="opt-item">(b) अनिल मिश्रा</div><div class="opt-item">(c) एयर वाइस मार्शल जितेंद्र मिश्रा (सेवानिवृत्त)</div><div class="opt-item">(d) नृपेंद्र मिश्रा</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) एयर वाइस मार्शल जितेंद्र मिश्रा (सेवानिवृत्त)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. डेटा सेंटर उद्योग के तेजी से विस्तार के कारण भारत के कई राज्य 'जल-तनाव' (Water stress) का सामना कर रहे हैं। औसतन एक 100 MW का डेटा सेंटर प्रतिदिन लगभग कितना पानी खपत करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 5 लाख लीटर</div><div class="opt-item">(b) 10 लाख लीटर</div><div class="opt-item">(c) 20 लाख लीटर</div><div class="opt-item">(d) 50 लाख लीटर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 20 लाख लीटर</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. हाल ही में किस वैश्विक संस्था ने घोषणा की है कि वर्तमान 'अल नीनो' (El Nino) घटना 2027 तक जारी रह सकती है और यह अब तक का सबसे 'मजबूत' (Strongest ever) अल नीनो हो सकता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) UNEP</div><div class="opt-item">(b) WMO (विश्व मौसम विज्ञान संगठन)</div><div class="opt-item">(c) IPCC</div><div class="opt-item">(d) NASA</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) WMO (विश्व मौसम विज्ञान संगठन)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में सुप्रीम कोर्ट ने किस राज्य को 'पर्से सीन फिशिंग' (Purse seine fishing) करने वाले जहाजों के 'विशेष आर्थिक क्षेत्र' (EEZ) में पारगमन (Transit) को विनियमित करने के लिए नियम बनाने का निर्देश दिया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) केरल</div><div class="opt-item">(b) तमिलनाडु</div><div class="opt-item">(c) गुजरात</div><div class="opt-item">(d) महाराष्ट्र</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) तमिलनाडु</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. रक्षा कूटनीति के लिए भारत सरकार द्वारा हाल ही में जारी किए गए नए 'रणनीतिक ढांचे' (Strategic Framework) का क्या नाम है, जो अगले 10 वर्षों के लिए रोडमैप प्रदान करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सुरक्षा 2035</div><div class="opt-item">(b) रक्षा कवच</div><div class="opt-item">(c) रक्षा (Raksha)</div><div class="opt-item">(d) प्रहार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) रक्षा (Raksha)</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - महाजनपद काल (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. निम्नलिखित जनपदों में से छठी शताब्दी ई. पू. में कौन-सा गणराज्य था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कोशल</div><div class="opt-item">(b) अंग</div><div class="opt-item">(c) मगध</div><div class="opt-item">(d) वज्जि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) वज्जि</strong> (वज्जि और मल्ल गणतंत्र थे, शेष राजतंत्र थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. निम्नलिखित महाजनपदों में से, गण/संघ (अल्पतंत्र) को पहचानिए:</div>
+                    <div class="options-grid"><div class="opt-item">(a) मगध</div><div class="opt-item">(b) वज्जि</div><div class="opt-item">(c) अवन्ती</div><div class="opt-item">(d) कोसल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) वज्जि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. प्राचीन पुष्कलावती का समीकरण किसके साथ किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बल्ख</div><div class="opt-item">(b) चारसद्धा</div><div class="opt-item">(c) हड्डा</div><div class="opt-item">(d) सिरकप</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चारसद्धा</strong> (पेशावर, पाकिस्तान)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. प्राचीन भारत में अच्छे घोड़ों के लिए निम्नलिखित में से कौन-सा स्थान प्रसिद्ध था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कच्छ</div><div class="opt-item">(b) कलिंग</div><div class="opt-item">(c) कम्बोज</div><div class="opt-item">(d) कान्यकुब्ज</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कम्बोज</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. माहिष्मती नगर किस महाजनपद में स्थित था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अश्मक</div><div class="opt-item">(b) अवन्ति</div><div class="opt-item">(c) मत्स्य</div><div class="opt-item">(d) वत्स</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अवन्ति</strong> (दक्षिणी अवन्ति की राजधानी माहिष्मती थी)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. चण्ड-प्रद्योत किस प्राचीन गणराज्य के राजा थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) काशी</div><div class="opt-item">(b) अंग</div><div class="opt-item">(c) अवंति</div><div class="opt-item">(d) वज्जि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अवंति</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. अश्मक महाजनपद का प्रमुख नगर कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) दन्तपुर</div><div class="opt-item">(b) महिष्मती</div><div class="opt-item">(c) पोतन</div><div class="opt-item">(d) रोरुक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) पोतन</strong> (पोटिल)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. गोदावरी नदी के तट पर स्थित महाजनपद था-</div>
+                    <div class="options-grid"><div class="opt-item">(a) अवन्ति</div><div class="opt-item">(b) वत्स</div><div class="opt-item">(c) अश्मक</div><div class="opt-item">(d) कम्बोज</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अश्मक</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. छठी शताब्दी ई. पू. का मत्स्य महाजनपद स्थित था:</div>
+                    <div class="options-grid"><div class="opt-item">(a) पश्चिमी उत्तर प्रदेश में</div><div class="opt-item">(b) राजस्थान में</div><div class="opt-item">(c) बुन्देलखण्ड में</div><div class="opt-item">(d) रूहेलखण्ड में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) राजस्थान में</strong> (इसकी राजधानी विराटनगर थी)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. छठवीं शताब्दी ई. पू. शुक्तिमती राजधानी थी-</div>
+                    <div class="options-grid"><div class="opt-item">(a) पांचाल की</div><div class="opt-item">(b) कुरु की</div><div class="opt-item">(c) चेदि की</div><div class="opt-item">(d) अवन्ति की</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) चेदि की</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. प्राचीन नगर तक्षशिला निम्नलिखित में से किनके बीच स्थित था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सिंधु तथा झेलम</div><div class="opt-item">(b) झेलम तथा चेनाब</div><div class="opt-item">(c) चेनाब तथा रावी</div><div class="opt-item">(d) रावी तथा व्यास</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सिंधु तथा झेलम</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. तक्षशिला किसके लिए प्रसिद्ध था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) विद्या और अध्ययन</div><div class="opt-item">(b) वाणिज्य और व्यापार</div><div class="opt-item">(c) कला और शिल्प</div><div class="opt-item">(d) इन सभी के लिये</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) इन सभी के लिये</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. सोलह महाजनपदों के युग में मथुरा इनमें से किसकी राजधानी थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) वज्जी</div><div class="opt-item">(b) वत्स</div><div class="opt-item">(c) काशी</div><div class="opt-item">(d) शूरसेन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) शूरसेन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. चम्पा किस महाजनपद की राजधानी थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मगध</div><div class="opt-item">(b) वज्जि</div><div class="opt-item">(c) कोशल</div><div class="opt-item">(d) अंग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) अंग</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. विश्व का पहला गणतंत्र वैशाली में किसके द्वारा स्थापित किया गया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मौर्य</div><div class="opt-item">(b) नंद</div><div class="opt-item">(c) गुप्त</div><div class="opt-item">(d) लिच्छवि</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) लिच्छवि</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. प्रारम्भिक गणतंत्र में कौन सा नहीं था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शाक्य</div><div class="opt-item">(b) लिच्छवि</div><div class="opt-item">(c) यौधेय</div><div class="opt-item">(d) उपर्युक्त सभी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) यौधेय</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. प्राचीनतम भारतीय सिक्के निम्नांकित से पहले के नहीं है-</div>
+                    <div class="options-grid"><div class="opt-item">(a) सातवीं शताब्दी पूर्व</div><div class="opt-item">(b) पांचवीं शताब्दी पूर्व</div><div class="opt-item">(c) तृतीय शताब्दी पूर्व</div><div class="opt-item">(d) द्वितीय शताब्दी पूर्व</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) पांचवीं शताब्दी पूर्व</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. निम्नलिखित में से किसका छठीं और चौथीं शताब्दी ईसा पूर्व के बीच मगध के सबसे शक्तिशाली महाजनपद के रूप में उभरने में महत्वपूर्ण योगदान था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) समृद्ध स्वर्ण खदानों तक सुगम पहुँच</div><div class="opt-item">(b) अपेक्षाकृत उत्कृष्ट अश्वारोही सेना</div><div class="opt-item">(c) कृषि की उपज वाला क्षेत्र</div><div class="opt-item">(d) शासन की गणतंत्रीय व्यवस्था</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कृषि की उपज वाला क्षेत्र</strong> (नदियों के कारण उपजाऊ मैदान)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. निम्नलिखित में से किस शासक ने मगध साम्राज्य की राजधानी के रूप में पाटलिपुत्र की स्थापना की?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिम्बिसार</div><div class="opt-item">(b) बिंदुसार</div><div class="opt-item">(c) अजातशत्रु</div><div class="opt-item">(d) अशोक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अजातशत्रु</strong> (अजातशत्रु ने पाटलिग्राम में दुर्ग बनाया, बाद में उदायिन ने इसे राजधानी बनाया)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. मगध शासक बिम्बिसार का चिकित्सक कौन था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शीलभद्र</div><div class="opt-item">(b) विजयसेन</div><div class="opt-item">(c) जीवक</div><div class="opt-item">(d) मनु</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) जीवक</strong></div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+       <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '04-September-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
