@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 September 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-pib { border-left-color: #27ae60 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #27ae60; }
+        .sec-3 { border-top-color: #8e44ad; }
+        .sec-4 { border-top-color: #95a5a6; }
+        .sec-5 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>03 सितंबर 2026 | द हिंदू (The Hindu) एवं PIB का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu & PIB</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu & PIB ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu & PIB: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. भारत का सेमीकंडक्टर मिशन: 'सेमीकॉन 1.0' से 'सेमीकॉन 2.0' तक का सफर (GS-3: प्रौद्योगिकी / अर्थव्यवस्था)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 17-19 सितंबर 2026 को नई दिल्ली में <strong>'सेमीकॉन इंडिया 2026'</strong> का आयोजन हो रहा है, जिसकी थीम है: <em>"सिलिकॉन से सिस्टम्स तक: इकोसिस्टम का निर्माण"</em>। इसी बीच सरकार ने <strong>'सेमीकॉन 2.0'</strong> को अधिसूचित कर दिया है।</li>
+                        <li><strong>सेमीकॉन 1.0 (2021):</strong> ₹76,000 करोड़ के परिव्यय के साथ लॉन्च। इसमें चिप निर्माण (Fabs) और पैकेजिंग (ATMP/OSAT) के लिए एकसमान <strong>50% वित्तीय सहायता (Capital Subsidy)</strong> दी गई। परिणाम स्वरूप गुजरात और असम में टाटा, माइक्रोन आदि द्वारा प्लांट स्थापित हो रहे हैं।</li>
+                        <li><strong>सेमीकॉन 2.0 (2026):</strong> ₹1.28 लाख करोड़ के बजट के साथ इसे अधिसूचित किया गया है। मुख्य बदलाव यह है कि सिलिकॉन वेफर फैब के लिए केंद्र की कैपिटल सब्सिडी 50% से घटाकर <strong>40%</strong> कर दी गई है।</li>
+                        <li><strong>6 प्रमुख स्तंभ:</strong> डिज़ाइन, मशीनें और सामग्री, अधिक फैब, ATMP/OSAT का सुदृढ़ीकरण, R&D, और प्रतिभा विकास।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> सेमीकंडक्टर विनिर्माण एक भू-राजनीतिक (Geopolitical) हथियार बन चुका है। UPSC आपसे 'सेमीकॉन 1.0' की सफलताओं और 'सेमीकॉन 2.0' में हुए नीतिगत बदलावों (Shift in Policy) का तुलनात्मक अध्ययन पूछ सकता है।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "सेमीकॉन 1.0 ने भारत में चिप निर्माण की नींव रखी, जबकि सेमीकॉन 2.0 का लक्ष्य 'सिलिकॉन से सिस्टम्स' तक एक संपूर्ण इकोसिस्टम बनाना है।" भारत को वैश्विक सेमीकंडक्टर हब बनाने में इन दोनों नीतियों के तुलनात्मक महत्व का मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'सेमीकॉन 2.0' (Semicon 2.0) योजना के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. इसमें सिलिकॉन वेफर फैब स्थापित करने के लिए केंद्र सरकार द्वारा 50% की पूंजीगत सब्सिडी दी जा रही है।
+                            <br>2. इसके 6 स्तंभों में 'अनुसंधान और विकास' (R&D) और 'प्रतिभा विकास' को शामिल किया गया है।
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div>
+                            <div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (कथन 1 गलत है क्योंकि सब्सिडी को 50% से घटाकर 40% कर दिया गया है)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. होम्योपैथी: उद्भव, भारत में प्रवेश और राष्ट्रीय होम्योपैथी संस्थान (NIH) की स्वर्ण जयंती (GS-2 / GS-1)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> आयुष मंत्रालय के अधीन कार्यरत 'राष्ट्रीय होम्योपैथी संस्थान' (NIH), कोलकाता ने अपनी स्वर्ण जयंती (50 वर्ष) मनाई। इस मौके पर एक अत्याधुनिक 'मॉड्यूलर ऑपरेशन थिएटर' का उद्घाटन किया गया।</li>
+                        <li><strong>उद्भव (Origin):</strong> होम्योपैथी का स्रोत किसी प्राचीन भारतीय ग्रंथ में <strong>नहीं</strong> है। इसकी खोज 18वीं सदी के अंत (1796) में एक जर्मन चिकित्सक <strong>डॉ. क्रिश्चियन फ्रेडरिक सैमुअल हैनीमैन</strong> ने की थी।</li>
+                        <li><strong>मूल सिद्धांत:</strong> इसका आधार है <em>"Similia similibus curentur"</em> (Like cures like / समः समम् शमयति) अर्थात् जो पदार्थ स्वस्थ व्यक्ति में रोग के लक्षण पैदा करता है, वही पदार्थ अति-सूक्ष्म मात्रा में (Diluted form) उस रोग को ठीक कर सकता है।</li>
+                        <li><strong>भारत में प्रवेश:</strong> 19वीं सदी की शुरुआत में यूरोपीय मिशनरियों और डॉ. जॉन मार्टिन होनिगबर्गर द्वारा इसे बंगाल लाया गया। यह बंगाल में बेहद लोकप्रिय हुआ, यही कारण है कि 'राष्ट्रीय होम्योपैथी संस्थान' (NIH) कोलकाता में स्थित है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "आयुष (AYUSH) प्रणाली के अंतर्गत आने वाली सभी चिकित्सा पद्धतियां पूर्णतः भारतीय मूल की नहीं हैं, फिर भी वे भारत की बहुलवादी स्वास्थ्य देखभाल प्रणाली का अभिन्न अंग बन गई हैं।" होम्योपैथी और यूनानी चिकित्सा के ऐतिहासिक उद्भव के संदर्भ में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'होम्योपैथी' चिकित्सा पद्धति के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. इसका उद्भव प्राचीन भारतीय ग्रंथ 'अथर्ववेद' में वर्णित सूत्रों से हुआ है।
+                            <br>2. इसके मूल सिद्धांत 'Similia similibus curentur' (समः समम् शमयति) की खोज जर्मन चिकित्सक सैमुअल हैनीमैन ने की थी।
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div>
+                            <div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) केवल 2</strong> (कथन 1 गलत है, यह जर्मन मूल की है)।</div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. भारत-चीन सीमा वार्ता: 'अर्ली हार्वेस्ट' (Early Harvest) की दुविधा (GS-2: अंतर्राष्ट्रीय संबंध)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> बीजिंग में राष्ट्रीय सुरक्षा सलाहकार (NSA) अजीत डोभाल और चीन के विदेश मंत्री वांग यी के बीच विशेष प्रतिनिधियों (SRs) की 25वीं दौर की वार्ता हुई। चर्चा के केंद्र में <strong>'अर्ली हार्वेस्ट' (Early Harvest)</strong> शब्द रहा।</li>
+                        <li><strong>अर्ली हार्वेस्ट क्या है?</strong> इसका तात्पर्य उन सीमा विवादों को पहले सुलझाना है जहाँ दोनों देशों के दावे मेल खाते हैं (जैसे सिक्किम सेक्टर और मध्य सेक्टर के कुछ हिस्से)।</li>
+                        <li><strong>भारत की चिंता:</strong> यदि केवल आसान हिस्सों को सुलझा लिया गया और 'ट्राइजंक्शन' (Trijunction) को छोड़ दिया गया, तो चीन इसे अपनी शर्तों पर भुना सकता है। चीन <strong>'जिपमोची' (Gipmochi)</strong> को ट्राइजंक्शन मानता है जो भारत के 'सिलीगुड़ी कॉरिडोर' के बेहद करीब है, जबकि भारत और भूटान इसे 'बटांग ला' (Batang La) मानते हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "भारत-चीन सीमा विवाद में 'अर्ली हार्वेस्ट' (Early Harvest) रणनीति अल्पकालिक कूटनीतिक जीत तो दे सकती है, लेकिन इसके दीर्घकालिक रणनीतिक परिणाम भारत के लिए हानिकारक हो सकते हैं।" सिलीगुड़ी कॉरिडोर की सुरक्षा के संदर्भ में इस कथन का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'जिपमोची' (Gipmochi) और 'जमफेरी रिज' (Jampheri Ridge), जो हाल ही में भारत-चीन-भूटान सीमा विवाद के संदर्भ में चर्चा में रहे, भारत के किस महत्वपूर्ण सामरिक क्षेत्र के निकट स्थित हैं?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) चुम्बी घाटी</div><div class="opt-item">(b) सिलीगुड़ी कॉरिडोर</div>
+                            <div class="opt-item">(c) पैंगोंग त्सो</div><div class="opt-item">(d) डेपसांग मैदान</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) सिलीगुड़ी कॉरिडोर</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. UN की चेतावनी: 1.5°C ग्लोबल वार्मिंग सीमा का टूटना तय (GS-3: पर्यावरण)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> संयुक्त राष्ट्र पर्यावरण कार्यक्रम (UNEP) ने अपनी 'लिमिटिंग ओवरशूट' (Limiting Overshoot) रिपोर्ट में स्पष्ट किया है कि दुनिया अगले कुछ वर्षों में 1.5°C ग्लोबल वार्मिंग की सीमा को पार (Overshoot) कर जाएगी।</li>
+                        <li><strong>पाथवे (Pathway):</strong> UNEP ने <strong>"ओवरशूट, पीक, एंड डिक्लाइन" (Overshoot, peak, and decline)</strong> का रास्ता सुझाया है। इसका अर्थ है कि तापमान 1.5°C से ऊपर जाएगा, एक चरम (Peak) पर पहुंचेगा, और 2100 तक उत्सर्जन में भारी कटौती और 'कार्बन रिमूवल' तकनीकों के जरिए इसे वापस नीचे लाना होगा।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "1.5°C ग्लोबल वार्मिंग सीमा का 'ओवरशूट' (Overshoot) अब अपरिहार्य प्रतीत होता है।" इस संदर्भ में, 'ओवरशूट, पीक, एंड डिक्लाइन' पाथवे की व्यवहार्यता और इसके पारिस्थितिक परिणामों का मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में UNEP द्वारा सुझाई गई "ओवरशूट, पीक, एंड डिक्लाइन" रणनीति का मुख्य उद्देश्य क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) ओजोन परत के क्षरण को रोकना</div><div class="opt-item">(b) 1.5°C सीमा पार होने के बाद उसे वापस 2100 तक 1.5°C के भीतर लाना</div>
+                            <div class="opt-item">(c) समुद्र के जलस्तर को 2050 तक कम करना</div><div class="opt-item">(d) वैश्विक प्लास्टिक कचरे को 2030 तक खत्म करना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. निमोनिया और मेनिनजाइटिस के लिए 'यूनिवर्सल वैक्सीन' (GS-3: विज्ञान एवं प्रौद्योगिकी)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> <em>स्ट्रेप्टोकोकस निमोनिया</em> बैक्टीरिया के 100 से अधिक प्रकार होते हैं। वर्तमान में मौजूद 'न्यूमोकोकल कंजुगेट वैक्सीन' (PCV) केवल कुछ ही प्रकारों पर प्रभावी है।</li>
+                        <li><strong>नई खोज:</strong> ब्रिटिश वैज्ञानिकों ने <strong>'रिवर्स वैक्सीनोलॉजी' (Reverse vaccinology)</strong> का उपयोग करके एक 'यूनिवर्सल वैक्सीन' (ZPY-CpG-Ch) की दिशा में कदम बढ़ाया है। यह विधि बैक्टीरिया को कल्चर करने के बजाय उसके 'जीनोम' का विश्लेषण कर सीधे प्रभावी प्रोटीन की पहचान करती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "रिवर्स वैक्सीनोलॉजी (Reverse vaccinology) संक्रामक रोगों के खिलाफ आधुनिक चिकित्सा का एक ब्रह्मास्त्र है।" न्यूमोकोकल रोगों के लिए एक 'यूनिवर्सल वैक्सीन' के विकास के संदर्भ में इस तकनीक के महत्व को स्पष्ट करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'रिवर्स वैक्सीनोलॉजी' तकनीक, जो हाल ही में निमोनिया के यूनिवर्सल टीके के निर्माण में चर्चा में रही, किस पर आधारित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) बैक्टीरिया को प्रयोगशाला में कल्चर करने पर</div><div class="opt-item">(b) मृत वायरस को शरीर में प्रवेश कराने पर</div>
+                            <div class="opt-item">(c) रोगज़नक़ के जीनोम अनुक्रम का कंप्यूटर द्वारा विश्लेषण करने पर</div><div class="opt-item">(d) एंटीबॉडी को सीधे शरीर में इंजेक्ट करने पर</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c)</strong></div></details>
+                    </div>
+                </div>
+                
+                <!-- Article 6 -->
+                <div class="news-item">
+                    <div class="news-title">6. सुप्रीम कोर्ट द्वारा BCI पर निगरानी और 'प्रो टेम' अध्यक्ष (GS-2: न्यायपालिका)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> सुप्रीम कोर्ट ने आदेश दिया है कि बार काउंसिल ऑफ इंडिया (BCI) के वर्तमान अध्यक्ष मनन कुमार मिश्रा केवल <strong>"प्रो टेम" (Pro tem - अस्थायी)</strong> अध्यक्ष के रूप में कार्य करेंगे जब तक कि नए चुनाव नहीं हो जाते।</li>
+                        <li><strong>निर्णय:</strong> कोर्ट ने निर्देश दिया है कि इस बीच कोई भी बड़ा नीतिगत निर्णय लेने से पहले BCI को भारत के अटॉर्नी जनरल (AG) और सॉलिसिटर जनरल (SG) से अनिवार्य रूप से परामर्श करना होगा। यह निर्णय BCI की कार्यप्रणाली में पारदर्शिता लाने के लिए किया गया है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "सांविधिक और नियामक निकायों (Regulatory Bodies) में पारदर्शिता और जवाबदेही सुनिश्चित करने के लिए न्यायपालिका का बढ़ता हस्तक्षेप इन संस्थानों की स्वायत्तता पर सवाल खड़े करता है।" बार काउंसिल ऑफ इंडिया (BCI) के हालिया विवाद के आलोक में चर्चा करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में सुप्रीम कोर्ट के एक निर्णय के अनुसार, बार काउंसिल ऑफ इंडिया (BCI) को कोई भी बड़ा नीतिगत निर्णय लेने से पहले किससे अनिवार्य परामर्श करना होगा?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) कानून मंत्रालय</div><div class="opt-item">(b) भारत के मुख्य न्यायाधीश</div>
+                            <div class="opt-item">(c) अटॉर्नी जनरल और सॉलिसिटर जनरल</div><div class="opt-item">(d) विधि आयोग</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) अटॉर्नी जनरल और सॉलिसिटर जनरल</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 3: Value Addition (Static) ================= -->
+            <div class="section-box sec-3" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 3. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>छठी शताब्दी ई.पू.: महाजनपद काल एवं भारतीय दर्शन</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> प्राचीन भारत के 16 महाजनपदों की राजधानियाँ, उनकी नदियां और भारतीय दर्शन के प्रमुख प्रवर्तकों से UPSC लगातार प्रश्न पूछता है।
+                    </div>
+
+                    <div class="va-heading">1. महाजनपद काल का भौगोलिक विस्तार और स्रोत</div>
+                    <ul class="content-list va-text">
+                        <li><strong>स्रोत:</strong> 16 महाजनपदों की प्रामाणिक सूची बौद्ध ग्रंथ <strong>'अंगुत्तर निकाय'</strong> और जैन ग्रंथ <strong>'भगवती सूत्र'</strong> से प्राप्त होती है।</li>
+                        <li><strong>भौगोलिक विस्तार:</strong> 16 में से कुल 8 महाजनपद वर्तमान <strong>उत्तर प्रदेश</strong> में स्थित थे। कलिंग (उड़ीसा) इन 16 महाजनपदों की सूची में शामिल <strong>नहीं</strong> था।</li>
+                    </ul>
+
+                    <div class="va-heading">2. प्रमुख महाजनपद, राजधानियाँ और नदियां</div>
+                    <ul class="content-list va-text">
+                        <li><strong>अश्मक (Asmaka):</strong> यह दक्षिण भारत का एकमात्र महाजनपद था, जो <strong>गोदावरी</strong> नदी के तट पर स्थित था। इसकी राजधानी पोतन या पोटिल थी।</li>
+                        <li><strong>कोशल (Kosala):</strong> इसकी राजधानी श्रावस्ती थी, जो <strong>सरयू</strong> नदी के तट पर स्थित थी।</li>
+                        <li><strong>कम्बोज (Kamboja):</strong> यह विपाशा (व्यास) नदी पर नहीं, बल्कि <strong>ऑक्सस (Oxus)</strong> नदी पर स्थित था। राजधानी: राजपुर/हाटक।</li>
+                        <li><strong>अवन्ति (Avanti):</strong> मध्य प्रदेश में स्थित। इसकी उत्तरी राजधानी उज्जयिनी और दक्षिणी राजधानी माहिष्मती थी।</li>
+                        <li><strong>मत्स्य (Matsya):</strong> राजधानी - विराटनगर (राजस्थान)।</li>
+                        <li><strong>वत्स (Vatsa):</strong> राजधानी - कौशाम्बी (इत्र-फुलेल/व्यापार का केंद्र)।</li>
+                        <li><strong>शूरसेन (Sursena):</strong> राजधानी - मथुरा।</li>
+                        <li><strong>गांधार (Gandhara):</strong> राजधानी - तक्षशिला (पेशावर/रावलपिंडी क्षेत्र)।</li>
+                        <li><strong>समकालीन राजा:</strong> बुद्ध के समय मगध में बिम्बिसार और अजातशत्रु, अवंति में चंड प्रद्योत, वत्स में उदयन और कोशल में प्रसेनजित का शासन था।</li>
+                    </ul>
+
+                    <div class="va-heading">3. भारतीय दर्शन के प्रमुख बिंदु</div>
+                    <ul class="content-list va-text">
+                        <li><strong>चार्वाक दर्शन:</strong> "चेतन शरीर ही आत्मा है।" यह एक विशुद्ध भौतिकवादी दर्शन है जो पुनर्जन्म और परलोक को नहीं मानता।</li>
+                        <li><strong>आजीवक संप्रदाय:</strong> मक्खलि गोशाल इसके प्रमुख नेता थे। इनका केंद्रीय दर्शन <strong>'नियति' (भाग्य)</strong> है, जिसके अनुसार सब कुछ पूर्व-निर्धारित है। इन्होंने कभी जाति और वर्ग के आधार पर भेदभाव नहीं किया।</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ================= SECTION 4: Coaching Data ================= -->
+            <div class="section-box sec-4" id="sec-other">
+                <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> 4. विविध कोचिंग संस्थान से प्राप्त अन्य डाटा</h2>
+                <div class="placeholder-box">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; margin-bottom:10px; color:#f39c12;"></i>
+                    <h3 style="margin-top:0; color:#e67e22;">कोचिंग मटेरियल अभी प्रतीक्षित है</h3>
+                    <p>जैसे ही आज के विशेष नोट्स प्राप्त होंगे, उन्हें यहाँ अपडेट कर दिया जाएगा।</p>
+                </div>
+            </div>
+
+            <!-- ================= SECTION 5: Quiz ================= -->
+            <div class="section-box sec-5" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 5. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 महाजनपद काल एवं दर्शन (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. 'सेमीकॉन 2.0' (Semicon 2.0) योजना के तहत सिलिकॉन वेफर फैब स्थापित करने के लिए केंद्र सरकार द्वारा कितने प्रतिशत की पूंजीगत सब्सिडी (Capital Subsidy) का प्रावधान किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 25%</div><div class="opt-item">(b) 30%</div><div class="opt-item">(c) 40%</div><div class="opt-item">(d) 50%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 40%</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. 'सेमीकॉन इंडिया 2026' सम्मेलन की आधिकारिक थीम क्या निर्धारित की गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मेक इन इंडिया फॉर द वर्ल्ड</div><div class="opt-item">(b) सिलिकॉन से सिस्टम्स तक: इकोसिस्टम का निर्माण</div><div class="opt-item">(c) एआई और सेमीकंडक्टर का भविष्य</div><div class="opt-item">(d) आत्मनिर्भर भारत: सेमीकंडक्टर हब</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सिलिकॉन से सिस्टम्स तक: इकोसिस्टम का निर्माण</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. हाल ही में अपनी स्वर्ण जयंती (50 वर्ष) मनाने वाला 'राष्ट्रीय होम्योपैथी संस्थान' (NIH) कहाँ स्थित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नई दिल्ली</div><div class="opt-item">(b) पुणे</div><div class="opt-item">(c) कोलकाता</div><div class="opt-item">(d) चेन्नई</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कोलकाता</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. होम्योपैथी चिकित्सा पद्धति के जनक 'डॉ. सैमुअल हैनीमैन' किस देश के निवासी थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भारत</div><div class="opt-item">(b) ब्रिटेन</div><div class="opt-item">(c) जर्मनी</div><div class="opt-item">(d) अमेरिका</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) जर्मनी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. भारत-चीन सीमा विवाद के संदर्भ में चर्चा में रहने वाला 'जिपमोची' (Gipmochi) क्षेत्र भारत के किस सामरिक हिस्से के निकट स्थित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चुम्बी घाटी</div><div class="opt-item">(b) सिलीगुड़ी कॉरिडोर</div><div class="opt-item">(c) पैंगोंग त्सो</div><div class="opt-item">(d) डेपसांग मैदान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सिलीगुड़ी कॉरिडोर</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में UNEP द्वारा सुझाई गई "ओवरशूट, पीक, एंड डिक्लाइन" (Overshoot, peak, and decline) रणनीति का संबंध किससे है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 1.5°C ग्लोबल वार्मिंग सीमा को नियंत्रित करने से</div><div class="opt-item">(b) वैश्विक प्लास्टिक उत्पादन को कम करने से</div><div class="opt-item">(c) अंतरिक्ष कचरे के प्रबंधन से</div><div class="opt-item">(d) भूजल निष्कर्षण को रोकने से</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) 1.5°C ग्लोबल वार्मिंग सीमा को नियंत्रित करने से</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. हाल ही में सुप्रीम कोर्ट के एक आदेश के अनुसार, बार काउंसिल ऑफ इंडिया (BCI) को कोई भी बड़ा नीतिगत निर्णय लेने से पहले किससे अनिवार्य रूप से परामर्श करना होगा?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कानून मंत्रालय</div><div class="opt-item">(b) मुख्य न्यायाधीश की पीठ</div><div class="opt-item">(c) अटॉर्नी जनरल और सॉलिसिटर जनरल</div><div class="opt-item">(d) विधि आयोग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अटॉर्नी जनरल और सॉलिसिटर जनरल</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. 'रिवर्स वैक्सीनोलॉजी' (Reverse vaccinology) तकनीक, जिसका उपयोग हाल ही में निमोनिया के 'यूनिवर्सल टीके' के निर्माण में किया गया, किस पर आधारित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बैक्टीरिया को प्रयोगशाला में कल्चर करने पर</div><div class="opt-item">(b) मृत वायरस को शरीर में प्रवेश कराने पर</div><div class="opt-item">(c) रोगज़नक़ के जीनोम अनुक्रम का कंप्यूटर द्वारा विश्लेषण करने पर</div><div class="opt-item">(d) एंटीबॉडी को सीधे शरीर में इंजेक्ट करने पर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) रोगज़नक़ के जीनोम अनुक्रम का कंप्यूटर द्वारा विश्लेषण करने पर</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. 'ईज ऑफ डूइंग बिजनेस बिल, 2026', जिसके तहत 3 साल तक उद्यमों के नियमित निरीक्षण (Routine Inspection) पर रोक लगाने का प्रस्ताव है, किस राज्य/केंद्र शासित प्रदेश के कैबिनेट ने पारित किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गुजरात</div><div class="opt-item">(b) महाराष्ट्र</div><div class="opt-item">(c) दिल्ली</div><div class="opt-item">(d) कर्नाटक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) दिल्ली</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. पक्षियों के गीतों (Birdsong) पर हुए एक हालिया वैश्विक शोध के अनुसार, पक्षियों के जटिल गीतों का निर्माण मुख्य रूप से कितने 'बुनियादी रूपांकनों' (Basic Motifs) से होता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 4</div><div class="opt-item">(b) 8</div><div class="opt-item">(c) 12</div><div class="opt-item">(d) 16</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 8</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - महाजनपद काल एवं भारतीय दर्शन (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. भारत में लगभग छठी शताब्दी ईसा पूर्व से शहरी केंद्रों के उद्भव के बारे में निम्नलिखित कथनों पर विचार कीजिए:
+                        <br>1. उन सभी का विकास महाजनपदों की राजधानियों से दूर हुआ।
+                        <br>2. प्रमुख नगर आवागमन मार्गों पर स्थित थे।
+                        <br>3. इनमें से अनेक वाणिज्यिक, सांस्कृतिक और राजनीतिक गतिविधियों के बड़े केंद्र थे।
+                        <br>उपर्युक्त में से कितने कथन सही हैं?
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 1</div><div class="opt-item">(b) 2</div><div class="opt-item">(c) 3</div><div class="opt-item">(d) कोई नहीं</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 2</strong> (पहला कथन गलत है, राजधानियों में भी विकास हुआ था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. निम्नलिखित में से किस एक को मौर्यपूर्व काल के सोलह 'महाजनपदों' में से सूचीबद्ध नहीं किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कुरु</div><div class="opt-item">(b) वत्स</div><div class="opt-item">(c) गांधार</div><div class="opt-item">(d) कलिंग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) कलिंग</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q13. निम्नलिखित में से किस बौद्ध ग्रंथ में 16 बड़े क्षेत्रीय राजव्यवस्था (16 महाजनपद) सूचीबद्ध हैं?</div>
+                    <div class="options-grid"><div class="opt-item">(a) दीघनिकाय</div><div class="opt-item">(b) मज्झिमनिकाय</div><div class="opt-item">(c) अंगुत्तरनिकाय</div><div class="opt-item">(d) खुद्दकनिकाय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अंगुत्तरनिकाय</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. वर्तमान उत्तर प्रदेश में भारत के प्राचीनतम सोलह महाजनपद में से कुल कितने महाजनपद स्थित थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 06</div><div class="opt-item">(b) 07</div><div class="opt-item">(c) 08</div><div class="opt-item">(d) 09</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 08</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. प्राचीन भारतीय 'महाजनपदों' के बारे में निम्नलिखित कथनों में से कौन-सा सही है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सभी महाजनपद अल्पतंत्रीय थे</div><div class="opt-item">(b) सभी महाजनपद पूर्वी भारत में अवस्थित थे</div><div class="opt-item">(c) महाजनपद कोई सेना नहीं रखते थे</div><div class="opt-item">(d) बौद्ध एवं जैन ग्रंथों में सोलह महाजनपदों को सूचीबद्ध किया गया है</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) बौद्ध एवं जैन ग्रंथों में सोलह महाजनपदों को सूचीबद्ध किया गया है</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. प्राचीन भारत के निम्नलिखित महाजनपदों में से, किसकी राजधानी तक्षशिला थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) कुरु</div><div class="opt-item">(b) काशी</div><div class="opt-item">(c) गांधार</div><div class="opt-item">(d) अवंती</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) गांधार</strong></div></details>
+                </div>
+               <div class="practice-box">
+                    <div class="pre-q">Q17. निम्नलिखित में से कौन-सा सही सुमेलित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अंग - चम्पा</div><div class="opt-item">(b) कोशल - अहिच्छत्र</div><div class="opt-item">(c) वत्स - कौशाम्बी</div><div class="opt-item">(d) मत्स्य - विराटनगर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कोशल - अहिच्छत्र</strong> (कोशल की राजधानी श्रावस्ती थी, अहिच्छत्र पांचाल की राजधानी थी)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. सूची-I (महाजनपद) को सूची-II (राजधानी) से सुमेलित कीजिये:
+                        <br>A. कोशल 1. सुक्तिमती
+                        <br>B. चेदि 2. श्रावस्ती
+                        <br>C. वत्स 3. विराटनगर
+                        <br>D. मत्स्य 4. कौशाम्बी
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 3 1 4 2</div><div class="opt-item">(b) 3 4 1 2</div><div class="opt-item">(c) 2 4 1 3</div><div class="opt-item">(d) 2 1 4 3</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) 2 1 4 3</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. प्राचीन भारत (600-322 ईसा पूर्व) के संदर्भ में, निम्नलिखित युग्मों पर विचार कीजिए:
+                        <br>I. अश्मक - गोदावरी
+                        <br>II. कम्बोज - विपास
+                        <br>III. अवन्ती - महानदी
+                        <br>IV. कोसल - सरयू
+                        <br>उपर्युक्त में से कितने युग्म सही सुमेलित हैं?
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल एक</div><div class="opt-item">(b) केवल दो</div><div class="opt-item">(c) केवल तीन</div><div class="opt-item">(d) सभी चार</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) केवल दो</strong> (अश्मक और कोसल)। कम्बोज ऑक्सस नदी पर और अवन्ति नर्मदा के पास था।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. सूची-I (राज्य) को सूची-II (प्रमुख नगर) से सुमेलित कीजिए:
+                        <br>A. अस्मक 1. दन्तपुर
+                        <br>B. अवन्ति 2. माहिष्मती
+                        <br>C. कलिंग 3. पोतन
+                        <br>D. सौवीर 4. रोरुक
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 1 4 2 3</div><div class="opt-item">(b) 2 3 4 1</div><div class="opt-item">(c) 3 2 1 4</div><div class="opt-item">(d) 4 1 3 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 3 2 1 4</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. महाभारत के अनुसार उत्तरी पांचाल की राजधानी कहाँ स्थित थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) हस्तिनापुर में</div><div class="opt-item">(b) इन्द्रप्रस्थ में</div><div class="opt-item">(c) अहिच्छत्र में</div><div class="opt-item">(d) मथुरा में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) अहिच्छत्र में</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. किस आधुनिक अंचल से प्राचीन 'पांचाल' की पहचान की जा सकती है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मेरठ</div><div class="opt-item">(b) अवध</div><div class="opt-item">(c) बुन्देलखण्ड</div><div class="opt-item">(d) रुहेलखण्ड</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) रुहेलखण्ड</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. बुद्ध के समकालीन राजाओं को उनके राज्यों से सुमेलित कीजिए:
+                        <br>A. प्रद्योत 1. मगध
+                        <br>B. उदयन 2. वत्स
+                        <br>C. प्रसेनजित 3. अवन्ति
+                        <br>D. अजातशत्रु 4. कोशल
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 1 4 3 2</div><div class="opt-item">(b) 2 1 4 3</div><div class="opt-item">(c) 3 2 4 1</div><div class="opt-item">(d) 4 1 3 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 3 2 4 1</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. निम्न में कौन-सा युग्म सुमेलित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पांचाल - रुहेलखण्ड क्षेत्र</div><div class="opt-item">(b) गांधार - पेशावर, रावलपिण्डी क्षेत्र</div><div class="opt-item">(c) चेदि - बुन्देलखण्ड</div><div class="opt-item">(d) कुरु प्रदेश - हिमाचल प्रदेश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) कुरु प्रदेश - हिमाचल प्रदेश</strong> (कुरु प्रदेश दिल्ली, मेरठ और हरियाणा के आस-पास था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. निम्नलिखित युग्मों में कौन सही सुमेलित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) शाक्य - कपिलवस्तु</div><div class="opt-item">(b) कोलिय - रामग्राम</div><div class="opt-item">(c) कालाम - अलकप्प</div><div class="opt-item">(d) मल्ल - कुशीनगर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) कालाम - अलकप्प</strong> (अलकप्प के बुलि थे, कालाम केसपुत्त के थे)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. निम्नांकित चार राजाओं में से किन दो के वर्धमान महावीर और गौतम बुद्ध के साथ समान मैत्रीपूर्ण संबंध थे?
+                        <br>1. मगध का बिम्बिसार 2. कोशल का प्रसेनजित 3. अवन्ति का प्रद्योत 4. मगध का अजातशत्रु
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 1 एवं 3</div><div class="opt-item">(b) 1 एवं 4</div><div class="opt-item">(c) 2 एवं 3</div><div class="opt-item">(d) 3 एवं 4</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 1 एवं 4</strong> (बिम्बिसार और अजातशत्रु)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. ईसा पूर्व छठी शताब्दी के प्रारंभ में भारत का सर्वाधिक शक्तिशाली नगर राज्य कौन सा था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गंधार</div><div class="opt-item">(b) कम्बोज</div><div class="opt-item">(c) काशी</div><div class="opt-item">(d) मगध</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) मगध</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. 'काशी' महाजनपद निम्न में से किसके लिए प्रसिद्ध था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सूती एवं रेशमी वस्त्र</div><div class="opt-item">(b) इत्र-फुलेल</div><div class="opt-item">(c) मृण्मूर्ति कला</div><div class="opt-item">(d) विशाल मंदिर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) सूती एवं रेशमी वस्त्र</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. किसने कहा है कि 'चेतन शरीर ही आत्मा है'?</div>
+                    <div class="options-grid"><div class="opt-item">(a) नागार्जुन</div><div class="opt-item">(b) चार्वाक</div><div class="opt-item">(c) मीमांसा</div><div class="opt-item">(d) असंग</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) चार्वाक</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. अजीविका संप्रदाय के बारे में निम्नलिखित पर विचार करें:
+                        <br>A. मक्खलि गोशाल इसके सबसे महत्वपूर्ण नेता थे।
+                        <br>B. दर्शन का केन्द्रीय विचार "नियति" था जो कि भाग्य है।
+                        <br>C. जाति और वर्ग के आधार पर भेदभाव किया जाता है।
+                        <br>D. अजीविकों की बैठकों के लिए नियमित सभाएँ होती थीं।
+                        <br>सही कथन चुनें:
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) b, c एवं d सही है</div><div class="opt-item">(b) a, b एवं d सही है</div><div class="opt-item">(c) a एवं d सही है</div><div class="opt-item">(d) a, c एवं d सही है</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) a, b एवं d सही है</strong> (कथन C गलत है, क्योंकि उन्होंने भेदभाव नहीं किया)।</div></details>
+                </div>
+
+            </div>
+
+        </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '03-September-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
+                
