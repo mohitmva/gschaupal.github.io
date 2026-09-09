@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 September 2026 | GS चौपाल</title>
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HTML to PDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        body { 
+            font-family: Calibri, 'Segoe UI', sans-serif; 
+            margin: 0; 
+            background-color: #f4f6f9; 
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header { 
+            background-color: #1a252f; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid #e74c3c;
+        }
+        .back-btn { 
+            position: absolute; 
+            left: 20px; 
+            top: 30px; 
+            color: white; 
+            text-decoration: none; 
+            font-size: 1.2rem;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .back-btn:hover { color: #f1c40f; }
+        
+        .gs-logo { margin: 0; font-size: 2.8rem; font-family: 'Kalam', cursive; color: #f1c40f; text-shadow: 2px 2px 4px #000; }
+        header p { margin: 8px 0 0; color: #1abc9c; font-size: 1.2rem; font-weight: bold; }
+
+        .container { 
+            max-width: 950px; 
+            margin: 35px auto; 
+            padding: 0 20px; 
+        }
+
+        /* Quick Navigation Menu */
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+        .quick-nav a, .pdf-btn {
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #fff;
+            color: #2c3e50;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border-top: none; border-right: none; border-bottom: none;
+        }
+        .quick-nav a:hover, .pdf-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #f8f9fa;
+        }
+        .nav-hindu { border-left-color: #e67e22 !important; }
+        .nav-value { border-left-color: #8e44ad !important; }
+        .nav-other { border-left-color: #95a5a6 !important; }
+        .nav-quiz { border-left-color: #c0392b !important; }
+        .pdf-btn { border-left-color: #34495e !important; color: #34495e !important; }
+
+        .section-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid #3498db;
+            scroll-margin-top: 20px; 
+        }
+        
+        .sec-1 { border-top-color: #e67e22; }
+        .sec-2 { border-top-color: #8e44ad; }
+        .sec-3 { border-top-color: #95a5a6; }
+        .sec-4 { border-top-color: #c0392b; }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #dcdde1;
+            font-size: 1.15rem;
+        }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .news-title {
+            color: #d35400;
+            font-size: 1.55rem;
+            margin-bottom: 15px;
+            font-family: Calibri, sans-serif;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        .content-list { padding-left: 20px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #34495e; }
+        .content-list li { margin-bottom: 12px; }
+
+        /* Mentor Tip Box */
+        .mentor-tip { 
+            background-color: #e8f6f3; 
+            padding: 18px; 
+            border-left: 6px solid #1abc9c; 
+            margin-top: 20px; 
+            font-style: italic; 
+            color: #2c3e50; 
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        .mentor-tip strong { color: #16a085; font-style: normal; font-size: 1.2rem; }
+
+        /* Value Addition Box */
+        .value-addition-box {
+            background: #faf5ff;
+            border: 2px solid #8e44ad;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .value-addition-box h3 { color: #8e44ad; margin-top: 0; text-align: center; font-size: 1.6rem; border-bottom: 2px dashed #8e44ad; padding-bottom:12px; margin-bottom: 20px;}
+        .va-heading { color: #d35400; font-size: 1.3rem; margin-top: 20px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .va-text strong { color: #2c3e50; }
+
+        /* Practice Questions Box */
+        .practice-box {
+            background-color: #fcfdfd;
+            border: 1px solid #e1e8ed;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px 8px 8px 4px;
+            font-family: Calibri, sans-serif;
+            font-size: 1.1rem;
+        }
+        .mains-q { color: #2980b9; font-weight: bold; margin-bottom: 18px; border-bottom: 1px dotted #bdc3c7; padding-bottom: 12px; font-size: 1.15rem; }
+        .pre-q { color: #16a085; font-weight: bold; margin-top: 15px; margin-bottom: 12px; font-size: 1.15rem; }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .opt-item { background: #fff; padding: 10px 12px; border: 1px solid #dcdde1; border-radius: 6px; transition: 0.2s; }
+        .opt-item:hover { background: #f1f2f6; border-color: #bdc3c7; }
+
+        details { background: #fff; border: 1px solid #dcdde1; border-radius: 6px; padding: 10px 15px; margin-top: 10px; margin-bottom: 15px; cursor: pointer; }
+        summary { font-weight: bold; color: #e74c3c; outline: none; font-size: 1.1rem; }
+        .ans-text { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #2c3e50; }
+
+        .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; font-family: Calibri; }
+
+        footer { text-align: center; padding: 30px; background: #1a252f; color: white; margin-top: 30px; border-top: 5px solid #f1c40f; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 18px; }
+        .social-links a { color: white; text-decoration: none; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+
+        #scrollTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; font-size: 1.5rem; border: none; background-color: #e74c3c; color: white; cursor: pointer; padding: 15px 18px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
+        #scrollTopBtn:hover { background-color: #c0392b; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .quick-nav { flex-direction: column; gap: 10px; }
+            .quick-nav a, .pdf-btn { width: 100%; justify-content: center; }
+            .options-grid { grid-template-columns: 1fr; gap: 8px; }
+            .gs-logo { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="pdf-content-area">
+
+        <header>
+            <a href="current-affairs.html" class="back-btn no-print"><i class="fas fa-arrow-left"></i> Calendar</a>
+            <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
+            <p>06 सितंबर 2026 | द हिंदू (The Hindu) का इन-डेप्थ विश्लेषण</p>
+        </header>
+
+        <div class="container">
+
+            <!-- ================= Quick Navigation ================= -->
+            <div class="quick-nav no-print">
+                <a href="#sec-hindu" class="nav-hindu"><i class="fas fa-newspaper"></i> The Hindu News</a>
+                <a href="#sec-value" class="nav-value"><i class="fas fa-plus-circle"></i> वैल्यू एडिशन (Static)</a>
+                <a href="#sec-other" class="nav-other"><i class="fas fa-chalkboard-teacher"></i> Coaching Data</a>
+                <a href="#sec-quiz" class="nav-quiz"><i class="fas fa-question-circle"></i> महा-प्रश्नोत्तरी (30 MCQs)</a>
+                <button onclick="downloadPDF()" class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            </div>
+
+            <!-- ================= SECTION 1: The Hindu ================= -->
+            <div class="section-box sec-1" id="sec-hindu">
+                <h2 class="section-title"><i class="fas fa-newspaper"></i> 1. The Hindu: इन-डेप्थ एनालिसिस</h2>
+
+                <!-- Article 1 -->
+                <div class="news-item">
+                    <div class="news-title">1. यारलुंग जांगबो (ब्रह्मपुत्र) पर चीन का मेगा-डैम प्रोजेक्ट (GS-1 / GS-2)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> हाल ही में नेपाल-चीन सीमा पर हुए विनाशकारी भूस्खलन व बाढ़ के बावजूद चीन तिब्बत में यारलुंग जांगबो (ब्रह्मपुत्र) के निचले हिस्से पर अपना महत्वाकांक्षी मेगा-डैम बनाने की योजना पर आगे बढ़ रहा है।</li>
+                        <li><strong>परियोजना का विवरण:</strong> इसे चीन की 15वीं पंचवर्षीय योजना (नवीकरणीय ऊर्जा) में शामिल किया गया है। यह बांध तिब्बत के मेंडलिंग और न्यिंगची के पास 'ग्रेट बेंड' (Great Bend) पर बनेगा। यहाँ नदी का पानी 40 किलोमीटर लंबी सुरंग के जरिए मोड़ा जाएगा।</li>
+                        <li><strong>क्षमता:</strong> इसकी अनुमानित क्षमता 60 गीगावाट (GW) होगी, जो चीन के प्रसिद्ध 'थ्री गॉर्जेस डैम' (Three Gorges Dam) से लगभग तीन गुना बड़ी होगी।</li>
+                        <li><strong>भारत की सामरिक व पारिस्थितिक चिंताएं:</strong> यह क्षेत्र हिमालय के अत्यधिक सक्रिय भूकंपीय जोन (Seismically Active Zone) में आता है। जल-प्रवाह में अचानक कमी या बाढ़ के समय अचानक पानी छोड़ने से असम और अरुणाचल प्रदेश में गंभीर संकट आ सकता है।</li>
+                    </ul>
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप (UPSC Mains):</strong> सीमा-पार नदियों पर बांध निर्माण का मुद्दा केवल द्विपक्षीय कूटनीति का नहीं, बल्कि निचले तटवर्ती देशों (Downstream Riparian States) के लिए जल-सुरक्षा और पारिस्थितिकीय आपदा का भी विषय है।
+                    </div>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "ऊपरी तटवर्ती देश (Upper Riparian State) द्वारा साझा नदियों पर विशाल बांधों का अनियंत्रित निर्माण निचले देशों के लिए जल-सुरक्षा और पारिस्थितिक जोखिम उत्पन्न करता है।" यारलुंग जांगबो (ब्रह्मपुत्र) पर चीन की जलविद्युत परियोजनाओं के संदर्भ में भारत की चिंताओं और रणनीतिक विकल्पों का मूल्यांकन करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: यारलुंग जांगबो (ब्रह्मपुत्र) नदी पर प्रस्तावित 60 GW के विशाल बांध के संबंध में चर्चा में रहे 'ग्रेट बेंड' (Great Bend) और 'न्यिंगची' (Nyingchi) क्षेत्र किस भौगोलिक क्षेत्र में स्थित हैं?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) शिनजियांग प्रांत</div><div class="opt-item">(b) तिब्बत स्वायत्त क्षेत्र</div>
+                            <div class="opt-item">(c) युन्नान प्रांत</div><div class="opt-item">(d) सिचुआन बेसिन</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b) तिब्बत स्वायत्त क्षेत्र</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="news-item">
+                    <div class="news-title">2. संयुक्त राष्ट्र महासभा द्वारा 'इक्वल अर्थ प्रोजेक्शन' नक्शे का समर्थन (GS-1)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> 193 सदस्यीय संयुक्त राष्ट्र महासभा (UNGA) ने आधिकारिक रूप से <strong>'इक्वल अर्थ प्रोजेक्शन' (Equal Earth projection)</strong> मानचित्र को अपनाने के प्रस्ताव का भारी बहुमत से समर्थन किया है।</li>
+                        <li><strong>समस्या क्या थी?</strong> 1569 में गेरार्डस मर्केटर द्वारा विकसित पारम्परिक <strong>मर्केटर प्रोजेक्शन (Mercator projection)</strong> जहाजों के नौवहन के लिए बनाया गया था, जिसमें भूमध्य रेखा से ध्रुवों की ओर जाने पर भूमि का आकार बहुत विकृत (बड़ा) दिखता है। इसमें ग्रीनलैंड अफ्रीका के बराबर दिखता है, जबकि वास्तव में अफ्रीका ग्रीनलैंड से 14 गुना बड़ा है।</li>
+                        <li><strong>नया नक्शा:</strong> 'इक्वल अर्थ प्रोजेक्शन' महाद्वीपों के वास्तविक सापेक्ष आकार (True Relative Size) को सटीक रूप से दर्शाता है, विशेषकर अफ्रीका और ग्लोबल साउथ के देशों को उनका यथार्थ भौगोलिक स्वरूप देता है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "मानचित्र केवल भूगोल का निरूपण नहीं होते, बल्कि वे ऐतिहासिक और भू-राजनीतिक दृष्टिकोण को भी आकार देते हैं।" मर्केटर प्रोजेक्शन से 'इक्वल अर्थ प्रोजेक्शन' की ओर झुकाव किस प्रकार उत्तर-दक्षिण (North-South) शक्ति संतुलन और विकासशील देशों के आत्मसम्मान को दर्शाता है?</div>
+                        
+                        <div class="pre-q">Prelims Q1: हाल ही में संयुक्त राष्ट्र महासभा द्वारा समर्थित 'इक्वल अर्थ प्रोजेक्शन' (Equal Earth projection) मानचित्र का प्राथमिक उद्देश्य क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) महासागरीय जलधाराओं का त्रि-आयामी मानचित्रण</div><div class="opt-item">(b) महाद्वीपों के वास्तविक सापेक्ष आकार और क्षेत्रफल को सटीक रूप से प्रस्तुत करना</div>
+                            <div class="opt-item">(c) वायुमंडलीय दबाव और पवन पेटियों का सटीक निरूपण</div><div class="opt-item">(d) केवल ध्रुवीय हिम टोपियों के पिघलने की दर प्रदर्शित करना</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="news-item">
+                    <div class="news-title">3. 'वन नेशन, वन टाइम': भारतीय मानक समय (IST) का वैधानिक मानकीकरण (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> उपभोक्ता मामले मंत्रालय ने <strong>'लीगल मेट्रोलॉजी (भारतीय मानक समय) नियम, 2026'</strong> अधिसूचित किए हैं। इसके तहत IST को देश में कानूनी, प्रशासनिक और वाणिज्यिक कार्यों के लिए एकल संदर्भ बना दिया गया है।</li>
+                        <li><strong>तकनीकी आधार:</strong> IST को CSIR-राष्ट्रीय भौतिक प्रयोगशाला (CSIR-NPL) द्वारा परमाणु घड़ियों (Atomic Clocks) के माध्यम से अंतरराष्ट्रीय समन्वित सार्वभौमिक समय (UTC +5:30) के साथ 3 नैनो-सेकंड की सटीकता पर बनाए रखा जाता है।</li>
+                        <li><strong>NavIC और व्हाइट रैबिट टेक्नोलॉजी:</strong> दूरसंचार प्रदाताओं, पावर ग्रिड, रेलवे और बैंकों को अब GPS के बजाय भारत के अपने उपग्रह नेविगेशन सिस्टम <strong>NavIC</strong> और स्वदेशी समय संदर्भ से जुड़ना अनिवार्य होगा।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "क्रिटिकल राष्ट्रीय अवसंरचना (पावर ग्रिड, बैंकिंग, दूरसंचार) की साइबर सुरक्षा के लिए एक सटीक और संप्रभु समय-मानकीकरण प्रणाली अपरिहार्य है।" 'लीगल मेट्रोलॉजी (IST) नियम, 2026' के महत्व को स्पष्ट करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'लीगल मेट्रोलॉजी (भारतीय मानक समय) नियम, 2026' के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                            <br>1. भारत में IST के रखरखाव और प्रसार की प्राथमिक वैज्ञानिक जिम्मेदारी CSIR-NPL की है।
+                            <br>2. यह नियम भारत में क्रिटिकल इंफ्रास्ट्रक्चर के लिए विदेशी GPS के स्थान पर स्वदेशी NavIC प्रणाली से समय समन्वय को बढ़ावा देता है।
+                        </div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) केवल 1</div><div class="opt-item">(b) केवल 2</div>
+                            <div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1, न ही 2</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (c) 1 और 2 दोनों</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="news-item">
+                    <div class="news-title">4. ब्रिक्स (BRICS) और सीमा-पार भुगतान प्रणाली: डी-डॉलरीकरण की राह? (GS-2 / GS-3)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> नई दिल्ली में आयोजित होने वाले 18वें ब्रिक्स शिखर सम्मेलन में ब्रिक्स देशों के बीच स्थानीय मुद्राओं, सेंट्रल बैंक डिजिटल करेंसी (CBDC) और वैकल्पिक भुगतान नेटवर्क पर गंभीर चर्चा हो रही है।</li>
+                        <li><strong>वर्तमान व्यवस्था की खामियां:</strong> वर्तमान में अधिकांश अंतरराष्ट्रीय भुगतान 'कॉरेस्पोंडेंट बैंकिंग' और बेल्जियम स्थित 'SWIFT' नेटवर्क के जरिए अमेरिकी डॉलर को मध्यस्थ बनाकर होते हैं। इसमें लेनदेन शुल्क अधिक होता है और विदेशी मुद्रा विनिमय (FX margin) का दोहरा नुकसान उठाना पड़ता है।</li>
+                        <li><strong>ब्रिक्स के विकल्प:</strong> 'mBridge' जैसी बहुपक्षीय डिजिटल करेंसी प्लेटफॉर्म और 'ब्रिक्स क्लियर' (BRICS Clear) जैसी स्वतंत्र प्रणालियां।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "अंतरराष्ट्रीय व्यापार में एक ही मुद्रा और वित्तीय मैसेजिंग प्रणाली (SWIFT) पर अत्यधिक निर्भरता विकासशील देशों के लिए भू-राजनीतिक जोखिम पैदा करती है।" ब्रिक्स देशों द्वारा वैकल्पिक सीमा-पार भुगतान तंत्र के विकास के प्रयासों का विश्लेषण करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: अंतरराष्ट्रीय वित्तीय लेनदेन के संदर्भ में 'mBridge' परियोजना, जो हाल ही में चर्चा में रही, किससे संबंधित है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) समुद्री सुरक्षा सूचना साझाकरण</div><div class="opt-item">(b) बहुपक्षीय सेंट्रल बैंक डिजिटल करेंसी (CBDC) आधारित सीमा-पार भुगतान प्लैटफॉर्म</div>
+                            <div class="opt-item">(c) ब्रिक्स देशों के बीच बौद्धिक संपदा अधिकार ढांचा</div><div class="opt-item">(d) नवीकरणीय ऊर्जा ग्रिड कनेक्टिविटी</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="news-item">
+                    <div class="news-title">5. ईवीएम मतगणना में 'टोटलाइज़र' (Totaliser) की आवश्यकता और चुनौतियां (GS-2: चुनाव सुधार)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> सुप्रीम कोर्ट ने केंद्र सरकार से इलेक्ट्रॉनिक वोटिंग मशीनों (EVM) की मतगणना में 'टोटलाइज़र' मशीनों के उपयोग पर अपनी स्थिति स्पष्ट करने को कहा है।</li>
+                        <li><strong> टोटलाइज़र क्या है?</strong> यह एक तकनीकी उपकरण है जो लगभग 14 ईवीएम के कंट्रोल यूनिट्स को आपस में जोड़ देता है और बूथ-वार अलग-अलग परिणाम दिखाने के बजाय एक साथ कुल मतों का योग प्रस्तुत करता है।</li>
+                        <li><strong>पक्ष में तर्क:</strong> भारत में मतदान केंद्र भौगोलिक व सामाजिक आधार पर बंटे होते हैं। बूथ-वार आंकड़े सामने आने से राजनीतिक दल यह जान जाते हैं कि किस मुहल्ले या जाति ने उन्हें वोट नहीं दिया, जिससे चुनाव बाद उनका उत्पीड़न या विकास योजनाओं से वंचित करने की घटनाएं होती हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "मतदाता की गोपनीयता (Voter Secrecy) स्वतंत्र और निष्पक्ष चुनाव का एक अनिवार्य घटक है।" ईवीएम मतगणना में 'टोटलाइज़र' मशीनों की शुरुआत के पक्ष और विपक्ष में तर्कों का परीक्षण कीजिए।</div>
+                        
+                        <div class="pre-q">Prelims Q1: चुनाव प्रक्रिया में 'टोटलाइज़र' (Totaliser) प्रणाली के उपयोग का मुख्य उद्देश्य क्या है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) मतगणना की गति को दोगुना करना</div><div class="opt-item">(b) मतदान केंद्रों के बूथ-वार वोटिंग पैटर्न को छिपाकर मतदाता की पहचान और गोपनीयता की रक्षा करना</div>
+                            <div class="opt-item">(c) फर्जी मतदान को रोकने के लिए बायोमेट्रिक सत्यापन</div><div class="opt-item">(d) डाक मतपत्रों की ऑनलाइन इलेक्ट्रॉनिक स्कैनिंग</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+                
+                <!-- Article 6 -->
+                <div class="news-item">
+                    <div class="news-title">6. जेवलिन (Javelin) एंटी-टैंक मिसाइल और भारत-अमेरिका सह-उत्पादन (GS-3: रक्षा एवं सुरक्षा)</div>
+                    <ul class="content-list">
+                        <li><strong>गहन विश्लेषण:</strong> अमेरिका ने भारत को युद्ध-परीक्षित 'जेवलिन' एंटी-टैंक गाइडेड मिसाइल (ATGM) प्रणाली की बिक्री और भारत में टाटा एडवांस्ड सिस्टम्स (TASL) के साथ इसके सह-उत्पादन (Co-production) का मार्ग प्रशस्त किया है।</li>
+                        <li><strong>तकनीकी विशेषताएं:</strong> यह <strong>'दागो और भूल जाओ' (Fire-and-forget)</strong> मिसाइल प्रणाली है, जिसमें इन्फ्रारेड सीकर लगा होता है।</li>
+                        <li><strong>टॉप-अटैक क्षमता (Top-attack capability):</strong> यह मिसाइल सीधे टकराने के बजाय टैंक के ऊपर चढ़कर उसके सबसे कमजोर हिस्से (ऊपरी बख्तर) पर वार करती है।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "विदेशी रक्षा उपकरणों के केवल सीधे आयात के बजाय घरेलू स्तर पर 'सह-उत्पादन' (Co-production) मॉडल अपनाना भारत के रक्षा विनिर्माण क्षेत्र को किस प्रकार लाभान्वित करता है?"</div>
+                        
+                        <div class="pre-q">Prelims Q1: 'जेवलिन' (Javelin) मिसाइल प्रणाली के संदर्भ में निम्नलिखित कथनों में से कौन-सा सही है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) यह लंबी दूरी की सतह-से-हवा में मार करने वाली क्रूज़ मिसाइल है</div><div class="opt-item">(b) यह एक मैन-पोर्टेबल, 'दागो और भूल जाओ' एंटी-टैंक गाइडेड मिसाइल है जो टॉप-अटैक करने में सक्षम है</div>
+                            <div class="opt-item">(c) यह परमाणु पनडुब्बी रोधी टॉरपीडो है</div><div class="opt-item">(d) यह केवल दिन के उजाले में लेजर मार्गदर्शन से कार्य करती है</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+                
+                <!-- Article 7 -->
+                <div class="news-item">
+                    <div class="news-title">7. पारिस्थितिक प्रहरी: भारतीय धारीदार लकड़बग्घा और ड्रैगनफ्लाई (GS-3: पर्यावरण एवं जैव विविधता)</div>
+                    <ul class="content-list">
+                        <li><strong>धारीदार लकड़बग्घा (Striped Hyena):</strong> भारत में इनकी अनुमानित संख्या 1,000 से 3,000 के बीच है। इसे वन्यजीव संरक्षण अधिनियम, 1972 की <strong>अनुसूची-I</strong> के तहत सर्वोच्च कानूनी संरक्षण प्राप्त है। यह एक प्राकृतिक अपमार्जक (Scavenger) है जो वातावरण को एंथ्रेक्स और रेबीज जैसे घातक रोगजनकों से मुक्त रखता है।</li>
+                        <li><strong>ड्रैगनफ्लाई (Order Odonata):</strong> ये <strong>बायोइंडिकेटर (Bioindicator)</strong> हैं अर्थात् मीठे पानी और पर्यावरण की गुणवत्ता के उत्कृष्ट सूचक हैं। कीटनाशकों (जैसे फिप्रोनिल) के अत्यधिक प्रयोग से इनकी आबादी घटती है। इनके निम्फ मच्छरों के लार्वा को खाकर प्राकृतिक कीट नियंत्रण करते हैं।</li>
+                    </ul>
+                    <div class="practice-box">
+                        <div class="mains-q">Mains: "अपमार्जक (Scavengers) और कीटभक्षी जीव खाद्य श्रृंखला में सबसे उपेक्षित होने के बावजूद पारिस्थितिकी तंत्र के स्वास्थ्य और सार्वजनिक स्वच्छता के प्राथमिक संरक्षक हैं।" धारीदार लकड़बग्घे और ड्रैगनफ्लाई के उदाहरण से स्पष्ट करें।</div>
+                        
+                        <div class="pre-q">Prelims Q1: पर्यावरण विज्ञान के संदर्भ में 'ड्रैगनफ्लाई' (Order Odonata) को एक महत्वपूर्ण 'जैव-सूचक' (Bioindicator) क्यों माना जाता है?</div>
+                        <div class="options-grid">
+                            <div class="opt-item">(a) यह केवल अत्यधिक प्रदूषित और खारे पानी में जीवित रह सकता है</div><div class="opt-item">(b) यह मीठे पानी के आवासों और कीटनाशकों के प्रदूषण के प्रति अत्यंत संवेदनशील होता है</div>
+                            <div class="opt-item">(c) यह वायुमंडल से सीधे नाइट्रोजन का स्थिरीकरण करता है</div><div class="opt-item">(d) यह केवल उच्च पर्वतीय टुंड्रा क्षेत्रों में पाया जाता है</div>
+                        </div>
+                        <details><summary>Show Answer</summary><div class="ans-text"><strong>उत्तर: (b)</strong></div></details>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================= SECTION 2: Value Addition (Static) ================= -->
+            <div class="section-box sec-2" id="sec-value">
+                <h2 class="section-title"><i class="fas fa-plus-circle"></i> 2. वैल्यू एडिशन (Value Addition)</h2>
+                <div class="value-addition-box">
+                    <h3>प्राचीन भारत: मौर्यकालीन शासक (चन्द्रगुप्त मौर्य)</h3>
+                    <p style="text-align:center; color:#555;">(UPSC Prelims/Mains के लिए अत्यंत महत्वपूर्ण 'रिवीजन मास्टर-की')</p>
+                    
+                    <div class="mentor-tip">
+                        <strong>👨‍🏫 मेंटर की टिप:</strong> मौर्य साम्राज्य की स्थापना, सेल्यूकस निकेटर के साथ युद्ध और यूनानी लेखकों द्वारा दिए गए नामों से UPSC में अक्सर सीधे प्रश्न पूछे जाते हैं।
+                    </div>
+
+                    <div class="va-heading">1. मौर्य साम्राज्य की स्थापना</div>
+                    <ul class="content-list va-text">
+                        <li><strong>संस्थापक:</strong> चन्द्रगुप्त मौर्य ने 322 ई.पू. में चाणक्य (विष्णुगुप्त) की सहायता से मगध के नंद वंश के अंतिम शासक 'घनानंद' को पराजित कर मौर्य साम्राज्य की स्थापना की।</li>
+                        <li><strong>साम्राज्य का विस्तार:</strong> यह भारतीय उपमहाद्वीप का पहला अखिल भारतीय साम्राज्य था (वक्षु घाटी से कावेरी डेल्टा तक)। चन्द्रगुप्त मौर्य ने पहली बार मालवा, गुजरात और महाराष्ट्र पर विजय प्राप्त की थी।</li>
+                    </ul>
+
+                    <div class="va-heading">2. यूनानी नाम और पहचान</div>
+                    <ul class="content-list va-text">
+                        <li>यूनानी लेखकों (जस्टिन, स्ट्रैबो) ने चन्द्रगुप्त को <strong>'सैण्ड्रोकोट्स' (Sandrocottas)</strong> कहा है।</li>
+                        <li><strong>विलियम जोन्स (William Jones)</strong> ने सबसे पहले 'सैण्ड्रोकोट्स' की पहचान चन्द्रगुप्त मौर्य से की।</li>
+                        <li>जस्टिन ने चन्द्रगुप्त मौर्य और सिकंदर की मुलाकात का उल्लेख किया है।</li>
+                        <li>प्लूटार्क के अनुसार, चन्द्रगुप्त मौर्य ने 6 लाख की सेना से सम्पूर्ण भारत पर अधिकार कर लिया था।</li>
+                    </ul>
+
+                    <div class="va-heading">3. विदेशी संबंध और सामाजिक पृष्ठभूमि</div>
+                    <ul class="content-list va-text">
+                        <li>305 ई.पू. में चन्द्रगुप्त मौर्य ने सिकंदर के सेनापति और सीरिया के शासक <strong>सेल्यूकस निकेटर (Seleucus Nicator)</strong> को पराजित किया।</li>
+                        <li>संधि के तहत सेल्यूकस ने अपनी पुत्री का विवाह चन्द्रगुप्त से किया और हेरात, कंधार, मकरान व काबुल उसे सौंप दिए।</li>
+                        <li>प्लूटार्क के अनुसार, चन्द्रगुप्त ने सेल्यूकस को <strong>500 युद्धक हाथी</strong> उपहार (बख्शीश) में दिए थे।</li>
+                        <li>सेल्यूकस का राजदूत <strong>मेगस्थनीज (Megasthenes)</strong> चन्द्रगुप्त के दरबार में आया, जिसने 'इंडिका' (Indica) नामक पुस्तक लिखी।</li>
+                        <li>विशाखदत्त द्वारा रचित <strong>'मुद्राराक्षस'</strong> में चन्द्रगुप्त मौर्य को <strong>'वृषल'</strong> (निम्न कुल का) कहा गया है।</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ================= SECTION 4: Quiz ================= -->
+            <div class="section-box sec-4" id="sec-quiz">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> 4. महा-प्रश्नोत्तरी (30 MCQs)</h2>
+                <p style="font-family: Calibri; font-size:1.1rem; color:#c0392b;">10 करेंट अफेयर्स + 20 मौर्य काल (स्टैटिक) का महा-अभ्यास!</p>
+
+                <h3 style="color:#2c3e50; border-bottom:2px solid #ccc; padding-bottom:5px;">भाग 1: समसामयिकी (Current Affairs)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q1. हाल ही में भारत के 'सकल घरेलू उत्पाद' (GDP) के आंकड़ों (7.8% वृद्धि दर) पर विवाद खड़ा हो गया है। अर्थशास्त्रियों के अनुसार, पिछली तिमाहियों के आंकड़ों में किस प्रकार के संशोधन (Revision) के कारण यह वृद्धि दर अधिक प्रतीत हो रही है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) अपवर्ड रिवीजन</div><div class="opt-item">(b) डाउनवर्ड रिवीजन</div><div class="opt-item">(c) बेस ईयर में बदलाव</div><div class="opt-item">(d) विदेशी निवेश को शामिल करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) डाउनवर्ड रिवीजन (Downward revision)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q2. समुद्री सुरक्षा के संदर्भ में, हाल ही में अमेरिकी सेना द्वारा ओमान की खाड़ी में नष्ट किए गए ईरानी तेल टैंकर किस 'नेटवर्क' का हिस्सा माने जा रहे थे, जो प्रतिबंधों से बचकर तेल का व्यापार करता है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) व्हाइट फ्लीट</div><div class="opt-item">(b) डार्क फ्लीट (Shadow Network)</div><div class="opt-item">(c) ब्लू नेवी नेटवर्क</div><div class="opt-item">(d) पाइरेट सिंडिकेट</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) डार्क फ्लीट (Dark Fleet / Shadow Network)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q3. सुप्रीम कोर्ट में जमानत याचिका के कारण चर्चा में रहा 'एल्गार परिषद-माओवादी लिंक मामला' (2018), महाराष्ट्र के किस ऐतिहासिक युद्ध की 200वीं वर्षगांठ के आयोजन से जुड़ा है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) पानीपत का युद्ध</div><div class="opt-item">(b) कोरेगांव भीमा का युद्ध</div><div class="opt-item">(c) खड़गवासला का युद्ध</div><div class="opt-item">(d) पुरंदर का युद्ध</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) कोरेगांव भीमा का युद्ध</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q4. सर्वोच्च न्यायालय के हालिया निर्णय के अनुसार, 'अधिवक्ता अधिनियम, 1961' के तहत 'बार काउंसिल ऑफ इंडिया' (BCI) को किसके खिलाफ दंडात्मक कार्रवाई करने का अधिकार नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) देश के किसी भी पंजीकृत वकील के खिलाफ</div><div class="opt-item">(b) राज्य बार काउंसिल के सदस्यों के खिलाफ</div><div class="opt-item">(c) लॉ कॉलेजों में पढ़ रहे कानून के छात्रों (Law Students) के खिलाफ</div><div class="opt-item">(d) अदालत की अवमानना करने वाले आम नागरिकों के खिलाफ</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) लॉ कॉलेजों में पढ़ रहे कानून के छात्रों के खिलाफ</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q5. हाल ही में ISRO द्वारा प्रक्षेपित 'EOS-05' उपग्रह को इसके लॉन्च व्हीकल (GSLV-F17) द्वारा शुरुआत में किस कक्षा में स्थापित किया गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) लो अर्थ ऑर्बिट (LEO)</div><div class="opt-item">(b) सब-जियोसिंक्रोनस ट्रांसफर ऑर्बिट (Sub-GTO)</div><div class="opt-item">(c) पोलर सिंक्रोनस ऑर्बिट</div><div class="opt-item">(d) मून ट्रांसफर ट्रैजेक्टरी</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) सब-जियोसिंक्रोनस ट्रांसफर ऑर्बिट (Sub-GTO)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q6. हाल ही में किस देश की सरकार ने 'बायो-सिक्योरिटी' के तहत विदेशी कुत्तों (विशेष रूप से अमेरिकी बुली) के आयात पर प्रतिबंध लगा दिया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ऑस्ट्रेलिया</div><div class="opt-item">(b) यूनाइटेड किंगडम (UK)</div><div class="opt-item">(c) न्यूज़ीलैंड</div><div class="opt-item">(d) चीन</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) यूनाइटेड किंगडम (UK)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q7. हाल ही में भारत सरकार द्वारा घोषित 'पीएम विश्वकर्मा योजना' के तहत कारीगरों को दिए जाने वाले ऋण (Loan) पर कितने प्रतिशत की रियायती ब्याज दर लागू होगी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 3%</div><div class="opt-item">(b) 5%</div><div class="opt-item">(c) 7%</div><div class="opt-item">(d) 9%</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 5%</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q8. हाल ही में चर्चा में रहा 'प्रोजेक्ट कुशा' (Project Kusha) भारत के किस सुरक्षा तंत्र से संबंधित है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) लंबी दूरी की वायु रक्षा प्रणाली (LR-SAM)</div><div class="opt-item">(b) स्वदेशी पनडुब्बी निर्माण</div><div class="opt-item">(c) नक्सल विरोधी अभियान</div><div class="opt-item">(d) अंतरिक्ष कमान की स्थापना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) लंबी दूरी की वायु रक्षा प्रणाली (LR-SAM)</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q9. हाल ही में किस अफ्रीकी देश में आए भयंकर भूकंप (6.8 तीव्रता) के कारण हजारों लोगों की मृत्यु हो गई, जिसका केंद्र एटलस पर्वत (Atlas Mountains) क्षेत्र में था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मोरक्को</div><div class="opt-item">(b) अल्जीरिया</div><div class="opt-item">(c) लीबिया</div><div class="opt-item">(d) सूडान</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मोरक्को</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q10. G20 शिखर सम्मेलन 2024 की अध्यक्षता किस देश द्वारा की जा रही है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) भारत</div><div class="opt-item">(b) ब्राज़ील</div><div class="opt-item">(c) दक्षिण अफ्रीका</div><div class="opt-item">(d) इंडोनेशिया</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) ब्राज़ील</strong></div></details>
+                </div>
+
+                <h3 style="color:#8e44ad; border-bottom:2px dashed #ccc; padding-bottom:5px; margin-top:40px;">भाग 2: इतिहास - मौर्यकालीन शासक (चन्द्रगुप्त मौर्य) (स्टैटिक)</h3>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q11. अशोक के सन्दर्भ में निम्नलिखित कथनों पर विचार कीजिए:
+                        <br>1. अशोक ने धम्म की जो परिभाषा दी है, वह "राहुलोवादसुत्त" से ली गई है।
+                        <br>2. अपने राज्याभिषेक के 14वें वर्ष में अशोक ने धम्म-महामात्र नामक एक नवीन प्रकार के कर्मचारी की नियुक्ति की।
+                        <br>उपर्युक्त मे से कौन-सा/से कथन सही है/हैं?
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) केवल 2</div><div class="opt-item">(b) केवल 1</div><div class="opt-item">(c) 1 और 2 दोनों</div><div class="opt-item">(d) न तो 1 न ही 2</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) 1 और 2 दोनों</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q12. निम्नलिखित में से कौन चंद्रगुप्त मौर्य से सम्बंधित नहीं है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) सुसिमा</div><div class="opt-item">(b) साँची</div><div class="opt-item">(c) रुद्रदामन का जूनागढ़ शिला-लेख</div><div class="opt-item">(d) विष्णुगुप्त</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) साँची</strong> (साँची का स्तूप अशोक द्वारा बनवाया गया था)।</div></details>
+                </div>
+              <div class="practice-box">
+                    <div class="pre-q">Q13. सिंचाई में काम आने वाला 'अरघट्टा' नामक उपकरण क्या था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) एक घिरनी से खींचा जाने वाला चमड़े का बना पानी का थैला</div><div class="opt-item">(b) एक बड़ा चक्का, जिसकी अराओं के बाहरी छोरों पर मिट्टी के पात्र बँधे हों</div><div class="opt-item">(c) बैलों के द्वारा खींचा जाने वाला मिट्टी का एक अधिक बड़ा पात्र</div><div class="opt-item">(d) सीधे हाथों से ही रस्सी द्वारा खींचा जाने वाला बड़ा जल-डोल</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) एक बड़ा चक्का, जिसकी अराओं (स्पोक्स) के बाहरी छोरों पर मिट्टी के पात्र बँधे हों</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q14. मौर्य साम्राज्य के संस्थापक कौन थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिंदुसार</div><div class="opt-item">(b) बृहद्रथ</div><div class="opt-item">(c) अशोक</div><div class="opt-item">(d) चंद्रगुप्त मौर्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) चंद्रगुप्त मौर्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q15. मौर्य राज्य और वनवासियों के संबंध में, निम्नलिखित कथनों पर विचार कीजिए:
+                        <br>1. वनवासियों को नए प्रकार के राजनीतिक और आर्थिक प्रभुत्व का सामना करना पड़ा।
+                        <br>2. राज्य ने मान्यता दी कि वन उपज पर वनवासियों का एकाधिकार है।
+                        <br>3. राज्य वनों के संरक्षण के लिए चिंतित था और इस उद्देश्य से वनों को जलाए जाने पर प्रतिबंध लगा दिया गया था।
+                        <br>4. वनवासियों का सैनिक, जासूस और हत्यारों के रूप में उपयोग किया जा सकता था।
+                        <br>उपर्युक्त कथनों में से कौन-सा/से कथन सही है/हैं?
+                    </div>
+                    <div class="options-grid"><div class="opt-item">(a) 1, 2 और 3</div><div class="opt-item">(b) 1, 3 और 4</div><div class="opt-item">(c) केवल 2 और 4</div><div class="opt-item">(d) सभी 1, 2, 3 और 4</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) 1, 3 और 4</strong> (वन उपज पर राज्य का एकाधिकार था, वनवासियों का नहीं)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q16. अर्थशास्त्र में यथानिर्धारित निम्नलिखित में से कौन-सा कार्यकलाप राजा के दैनिक समय सारणी का हिस्सा नहीं था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्रतिरक्षा के संबंध में सूचना प्राप्त करना</div><div class="opt-item">(b) गुप्त रूप से नगर का भ्रमण करना</div><div class="opt-item">(c) राजस्व को नकदी में प्राप्त करना</div><div class="opt-item">(d) अपने मंत्रि-परिषद से परामर्श करना</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) राजस्व को नकदी में प्राप्त करना</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q17. निम्नलिखित में कौन सा सबसे पुराना राजवंश (Dynasty) है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) गुप्त</div><div class="opt-item">(b) मौर्य</div><div class="opt-item">(c) वर्धन</div><div class="opt-item">(d) कुषाण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) मौर्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q18. नन्द वंश के पश्चात् मगध पर किस राजवंश ने शासन किया?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मौर्य</div><div class="opt-item">(b) शुंग</div><div class="opt-item">(c) गुप्त</div><div class="opt-item">(d) कुषाण</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मौर्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q19. भारत में पहले साम्राज्य की स्थापना किस शासक के द्वारा की गई थी?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चन्द्रगुप्त मौर्य</div><div class="opt-item">(b) अशोक</div><div class="opt-item">(c) कनिष्क</div><div class="opt-item">(d) चन्द्रगुप्त द्वितीय विक्रमादित्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) चन्द्रगुप्त मौर्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q20. निम्नलिखित में से कौन एक मौर्य वंश का शासक नहीं था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बिन्दुसार</div><div class="opt-item">(b) अग्निमित्र</div><div class="opt-item">(c) कुणाल</div><div class="opt-item">(d) अशोक</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) अग्निमित्र</strong> (यह शुंग वंश का शासक था)।</div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q21. निम्नलिखित में से किस एक में चन्द्रगुप्त मौर्य द्वारा मगध का राजसिंहासन प्राप्त करने की कथा दी गई है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) बृहत्कथा</div><div class="opt-item">(b) गाथा सप्तशती</div><div class="opt-item">(c) मुद्राराक्षस</div><div class="opt-item">(d) वासवदत्ता</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) मुद्राराक्षस</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q22. निम्नलिखित में से किस पुस्तक में चन्द्रगुप्त मौर्य को "वृषल" कहा गया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) मुद्राराक्षस</div><div class="opt-item">(b) अर्थशास्त्र</div><div class="opt-item">(c) इण्डिका</div><div class="opt-item">(d) महावंश</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) मुद्राराक्षस</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q23. विशाखदत्त के प्राचीन भारतीय नाटक 'मुद्राराक्षस' की विषय वस्तु क्या है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्राचीन हिन्दू अनुश्रुति के देवताओं और राक्षसों के बीच संघर्ष</div><div class="opt-item">(b) एक आर्य राजकुमार और एक कबीले की महिला की प्रेम कथा</div><div class="opt-item">(c) दो आर्य कबीलों के बीच सत्ता के संघर्ष की कथा</div><div class="opt-item">(d) चन्द्रगुप्त मौर्य के समय में राजदरबार की दुरभिसन्धियों के बारे में</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) चन्द्रगुप्त मौर्य के समय में राजदरबार की दुरभिसन्धियों के बारे में</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q24. जैसा कि अशोक के अभिलेखों से ज्ञात होता है, 'प्रादेशिक', 'राजुक' और 'युक्त' किस स्तर पर महत्वपूर्ण अधिकारी थे?</div>
+                    <div class="options-grid"><div class="opt-item">(a) ग्राम-स्तरीय प्रशासन</div><div class="opt-item">(b) जिला-स्तरीय प्रशासन</div><div class="opt-item">(c) प्रांतीय प्रशासन</div><div class="opt-item">(d) केन्द्रीय प्रशासन स्तर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) जिला-स्तरीय प्रशासन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q25. सैण्ड्रोकोट्स से चन्द्रगुप्त मौर्य की पहचान सबसे पहले किसने की?</div>
+                    <div class="options-grid"><div class="opt-item">(a) विलियम जोन्स</div><div class="opt-item">(b) वी. ए. स्मिथ</div><div class="opt-item">(c) आर. के. मुकर्जी</div><div class="opt-item">(d) डी. आर. भण्डारकर</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) विलियम जोन्स</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q26. यूनानी लेखक जस्टिन द्वारा किसे 'सैन्ड्रोकोट्स' कहा गया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) चन्द्रगुप्त मौर्य</div><div class="opt-item">(b) चन्द्रगुप्त प्रथम</div><div class="opt-item">(c) चन्द्रगुप्त द्वितीय</div><div class="opt-item">(d) समुद्रगुप्त</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) चन्द्रगुप्त मौर्य</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q27. निम्नलिखित में से किसने यह कहा कि "चन्द्रगुप्त मौर्य ने छः लाख सैनिकों की सहायता से सम्पूर्ण भारत पर आक्रमण और अधिकार किया"?</div>
+                    <div class="options-grid"><div class="opt-item">(a) जस्टिन</div><div class="opt-item">(b) स्ट्रैबो</div><div class="opt-item">(c) प्लूटार्क</div><div class="opt-item">(d) डिमैकस</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (c) प्लूटार्क</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q28. चन्द्रगुप्त मौर्य ने सेल्यूकस निकेटर को बख्शीश (उपहार) के रूप में क्या दिया था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) 500 युद्धक हाथी</div><div class="opt-item">(b) 1000 अश्व</div><div class="opt-item">(c) 2000 बैल</div><div class="opt-item">(d) 4000 गाय</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (a) 500 युद्धक हाथी</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q29. निम्न में से किसने 'सैन्ड्रोकोट्स' (चन्द्रगुप्त मौर्य) और सिकन्दर महान की भेंट का उल्लेख किया है?</div>
+                    <div class="options-grid"><div class="opt-item">(a) प्लीनी</div><div class="opt-item">(b) जस्टिन</div><div class="opt-item">(c) स्ट्रैबो</div><div class="opt-item">(d) मेगस्थनीज</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (b) जस्टिन</strong></div></details>
+                </div>
+
+                <div class="practice-box">
+                    <div class="pre-q">Q30. मालवा, गुजरात एवं महाराष्ट्र किस शासक ने पहली बार जीता था?</div>
+                    <div class="options-grid"><div class="opt-item">(a) हर्ष</div><div class="opt-item">(b) स्कन्दगुप्त</div><div class="opt-item">(c) विक्रमादित्य</div><div class="opt-item">(d) चन्द्रगुप्त मौर्य</div></div>
+                    <details><summary>Show Answer & Explanation</summary><div class="ans-text"><strong>उत्तर: (d) चन्द्रगुप्त मौर्य</strong></div></details>
+                </div>
+
+            </div>
+                </div> <!-- End of Container -->
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="margin: 0; font-size:1.2rem;">Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
+            <div class="social-links">
+                <a href="https://instagram.com/diverse_human" target="_blank"><i class="fab fa-instagram"></i> diverse_human</a>
+                <a href="https://wa.me/919410045054" target="_blank"><i class="fab fa-whatsapp"></i> +91 9410045054</a>
+                <a href="https://t.me/diverse_human" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://x.com/diverse_human" target="_blank"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+            </div>
+        </footer>
+
+    </div> <!-- End of pdf-content-area -->
+
+    <!-- Scroll to Top Button (Hidden in PDF) -->
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top" class="no-print">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let mybutton = document.getElementById("scrollTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // PDF Generation Logic
+        function downloadPDF() {
+            const detailsElements = document.querySelectorAll('details');
+            detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
+
+            const noPrintElements = document.querySelectorAll('.no-print');
+            noPrintElements.forEach(el => el.style.display = 'none');
+
+            const element = document.getElementById('pdf-content-area');
+
+            const opt = {
+              margin:       [10, 10, 10, 10], 
+              filename:     '06-September-2026-GS-Chaupal.pdf',
+              image:        { type: 'jpeg', quality: 0.98 },
+              html2canvas:  { scale: 2, useCORS: true },
+              jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                noPrintElements.forEach(el => {
+                    if(el.classList.contains('quick-nav')) {
+                        el.style.display = 'flex';
+                    } else if (el.id === 'scrollTopBtn') {
+                        el.style.display = 'none'; 
+                    } else {
+                        el.style.display = 'block'; 
+                    }
+                });
+                detailsElements.forEach(detail => detail.removeAttribute('open'));
+            });
+        }
+    </script>
+</body>
+</html>
