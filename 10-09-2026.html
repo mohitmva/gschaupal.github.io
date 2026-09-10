@@ -29,9 +29,51 @@
         .placeholder-box { background: #fdfae6; border: 2px dashed #f1c40f; padding: 20px; text-align: center; border-radius: 10px; color: #7f8c8d; }
         footer { text-align: center; padding: 30px; background: #1a252f; color: white; border-top: 5px solid #f1c40f; }
         .social-links a { color: white; text-decoration: none; margin: 0 10px; }
+        
+        /* Floating Action Buttons CSS */
+        .floating-btn-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .action-btn {
+            background-color: #2c3e50;
+            color: #fff;
+            border: 2px solid #f1c40f;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .action-btn:hover {
+            background-color: #e74c3c;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-btn-container no-print">
+        <button class="action-btn" onclick="window.history.back()" title="पीछे जाएं (Go Back)">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="action-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="ऊपर जाएं (Back to Top)">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
     <div id="pdf-content-area">
         <header>
             <h1 class="gs-logo"><i class="fas fa-book-reader"></i> GS चौपाल</h1>
@@ -54,9 +96,9 @@
             <!-- Article 1 -->
             <div class="section-box">
                 <div class="news-title">1. भारत की अध्यक्षता में ब्रिक्स 2026: एक समावेशी वैश्विक व्यवस्था</div>
-                <p><strong>विश्लेषण:</strong> भारत 1 जनवरी 2026 से चौथी बार ब्रिक्स (BRICS) की अध्यक्षता कर रहा है[span_0](start_span)[span_0](end_span)। इस वर्ष की थीम "सुदृढ़शीलता, नवाचार, सहयोग और सतत विकास के लिए निर्माण" है[span_1](start_span)[span_1](end_span)। 2024 और 2025 में हुए विस्तार के बाद अब ब्रिक्स में 11 पूर्ण सदस्य (जैसे मिस्र, इथियोपिया, ईरान, यूएई, सऊदी अरब, इंडोनेशिया) और 10 'पार्टनर कंट्री' शामिल हो गए हैं[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)। यह विस्तारित समूह अब वैश्विक आबादी का 49.5% और वैश्विक व्यापार का 26% प्रतिनिधित्व करता है[span_4](start_span)[span_4](end_span)। भारत का एजेंडा एमएसएमई (MSME) अंतर्राष्ट्रीयकरण, ब्रिक्स स्टार्टअप इनोवेशन फंड और न्यू डेवलपमेंट बैंक (NDB) के माध्यम से विकास वित्तपोषण को बढ़ावा देना है[span_5](start_span)[span_5](end_span)। हालांकि, सदस्यों के बीच भू-राजनीतिक मतभेद और नियामक विखंडन इसके सामने बड़ी चुनौतियां हैं[span_6](start_span)[span_6](end_span)。</p>
+                <p><strong>विश्लेषण:</strong> भारत 1 जनवरी 2026 से चौथी बार ब्रिक्स (BRICS) की अध्यक्षता कर रहा है[span_0](start_span)[span_0](end_span)। इस वर्ष की थीम "सुदृढ़शीलता, नवाचार, सहयोग और सतत विकास के लिए निर्माण" है[span_1](start_span)[span_1](end_span)। 2024 और 2025 में हुए विस्तार के बाद अब ब्रिक्स में 11 पूर्ण सदस्य (मिस्र, इथियोपिया, ईरान, यूएई, सऊदी अरब, इंडोनेशिया आदि) और 10 'पार्टनर कंट्री' शामिल हो गए हैं[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)। यह विस्तारित समूह अब वैश्विक आबादी का 49.5% और वैश्विक व्यापार का 26% प्रतिनिधित्व करता है[span_4](start_span)[span_4](end_span)। भारत का एजेंडा एमएसएमई (MSME) अंतर्राष्ट्रीयकरण, ब्रिक्स स्टार्टअप इनोवेशन फंड और न्यू डेवलपमेंट बैंक (NDB) के माध्यम से विकास वित्तपोषण को बढ़ावा देना है[span_5](start_span)[span_5](end_span)। हालांकि, सदस्यों के बीच भू-राजनीतिक मतभेद और नियामक विखंडन इसके सामने बड़ी चुनौतियां हैं[span_6](start_span)[span_6](end_span)。</p>
                 
-                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> ब्रिक्स का विस्तार (BRICS+) GS-2 (अंतर्राष्ट्रीय संबंध) का सबसे ज्वलंत विषय है। 'सहमति (Consensus) निर्माण' में आने वाली बाधाओं को उत्तर में जरूर शामिल करें।</div>
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> ब्रिक्स का विस्तार (BRICS+) GS-2 (अंतर्राष्ट्रीय संबंध) का सबसे ज्वलंत विषय है। 'सहमति (Consensus) निर्माण' में आने वाली बाधाओं को मुख्य परीक्षा के उत्तर में जरूर शामिल करें।</div>
                 
                 <div class="practice-box">
                     <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "ब्रिक्स का हालिया विस्तार इसे ग्लोबल साउथ की एक शक्तिशाली आवाज़ तो बनाता है, लेकिन साथ ही इसकी आंतरिक सुसंगतता (Coherence) को भी चुनौती देता है।" भारत की 2026 की अध्यक्षता के लक्ष्यों के संदर्भ में इस कथन का परीक्षण करें। (250 शब्द)</div>
@@ -81,7 +123,7 @@
             <!-- Article 2 -->
             <div class="section-box">
                 <div class="news-title">2. लद्दाख के लिए अनुच्छेद 371(K) का प्रस्ताव</div>
-                <p><strong>विश्लेषण:</strong> गृह मंत्रालय (MHA) ने संविधान में एक नया अध्याय 'K' (अनुच्छेद 371K) जोड़ने का प्रस्ताव दिया है[span_8](start_span)[span_8](end_span)। इसका उद्देश्य लद्दाख के लिए एक प्रत्यक्ष निर्वाचित केंद्र शासित प्रदेश (UT) स्तरीय निकाय स्थापित करना है, जिसके पास भूमि, संस्कृति, भाषा, पर्यावरण और प्राकृतिक संसाधनों पर विधायी शक्तियां होंगी[span_9](start_span)[span_9](end_span)। 2019 में लद्दाख को बिना विधायिका वाला UT बनाया गया था, जिसके बाद से वहां छठी अनुसूची और राज्य के दर्जे की मांग को लेकर लगातार विरोध प्रदर्शन हो रहे हैं[span_10](start_span)[span_10](end_span)। यह नया अनुच्छेद लद्दाख की 'चांगपा' और 'ब्रोकपा' जैसी जनजातियों की संस्कृति और आजीविका को संवैधानिक सुरक्षा प्रदान करेगा[span_11](start_span)[span_11](end_span)。</p>
+                <p><strong>विश्लेषण:</strong> गृह मंत्रालय (MHA) ने संविधान में एक नया अध्याय 'K' (अनुच्छेद 371K) जोड़ने का प्रस्ताव दिया है[span_8](start_span)[span_8](end_span)। इसका उद्देश्य लद्दाख के लिए एक प्रत्यक्ष निर्वाचित केंद्र शासित प्रदेश (UT) स्तरीय निकाय स्थापित करना है, जिसके पास भूमि, संस्कृति, भाषा, पर्यावरण और प्राकृतिक संसाधनों पर विधायी शक्तियां होंगी[span_9](start_span)[span_9](end_span)। 2019 में लद्दाख को बिना विधायिका वाला UT बनाया गया था, जिसके बाद से वहां छठी अनुसूची और पूर्ण राज्य के दर्जे की मांग को लेकर लगातार विरोध प्रदर्शन हो रहे हैं[span_10](start_span)[span_10](end_span)। यह नया अनुच्छेद लद्दाख की 'चांगपा' और 'ब्रोकपा' जैसी जनजातियों की संस्कृति और आजीविका को संवैधानिक सुरक्षा प्रदान करेगा[span_11](start_span)[span_11](end_span)。</p>
                 
                 <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> भारतीय राजव्यवस्था (GS-2) में 'छठी अनुसूची' बनाम 'अनुच्छेद 371' के तहत मिलने वाले विशेष प्रावधानों का अंतर स्पष्ट रूप से समझ लें।</div>
                 
@@ -109,8 +151,8 @@
                 <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> अर्थव्यवस्था (GS-3) में जीडीपी, जीवीए, बेस ईयर और डिफ्लेटर कोर विषय हैं। 'डबल डिफ्लेशन' पर प्रीलिम्स में सीधा कांसेप्चुअल सवाल आ सकता है।</div>
                 
                 <div class="practice-box">
-                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "जीडीपी गणना में 'डबल डिफ्लेशन' (Double Deflation) पद्धति को अपनाना भारत के राष्ट्रीय आय लेखांकन को वैश्विक मानकों के अनुरूप बनाता है।" इस पद्धति के लाभों और चुनौतियों की विवेचना करें। (250 शब्द)</div>
-                    <div class="pre-q"><strong>Prelims Question:</strong> जीडीपी गणना के संदर्भ में 'डबल डिफ्लेशन' (Double Deflation) का क्या अर्थ है?</div>
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "जीडीपी गणना में 'डबल डिफ्लेशन' पद्धति को अपनाना भारत के राष्ट्रीय आय लेखांकन को वैश्विक मानकों के अनुरूप बनाता है।" इस पद्धति के लाभों और चुनौतियों की विवेचना करें। (250 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> जीडीपी गणना के संदर्भ में 'डबल डिफ्लेशन' का क्या अर्थ है?</div>
                     <div class="options-grid">
                         <div class="opt-item">(A) केवल उपभोक्ता और थोक मूल्य सूचकांकों का औसत निकालना।</div>
                         <div class="opt-item">(B) आउटपुट (उत्पादन) और इंटरमीडिएट कंजम्पशन (कच्चे माल) दोनों को अलग-अलग डिफ्लेट करना।</div>
@@ -132,7 +174,7 @@
                 <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> कृषि और संबद्ध क्षेत्र (GS-3) में 'नीली अर्थव्यवस्था' (Blue Economy) रोजगार और निर्यात का बहुत बड़ा साधन है। बायो-फ्लॉक (Bio-floc) जैसी तकनीकी टर्मिनोलॉजी याद रखें।</div>
                 
                 <div class="practice-box">
-                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "प्रधानमंत्री मत्स्य संपदा योजना (PMMSY) ने भारत में नीली क्रांति (Blue Revolution) को उत्प्रेरित किया है।" इस योजना के तहत प्रौद्योगिकी-संचालित जलीय कृषि और बुनियादी ढांचे के विकास का मूल्यांकन करें। (150 शब्द)</div>
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "प्रधानमंत्री मत्स्य संपदा योजना (PMMSY) ने भारत में नीली क्रांति को उत्प्रेरित किया है।" इस योजना के तहत प्रौद्योगिकी-संचालित जलीय कृषि और बुनियादी ढांचे के विकास का मूल्यांकन करें। (150 शब्द)</div>
                     <div class="pre-q"><strong>Prelims Question:</strong> जलीय कृषि में उपयोग होने वाली 'बायो-फ्लॉक' (Bio-floc) तकनीक के संदर्भ में निम्नलिखित कथनों पर विचार करें:<br>
                     1. यह एक जल-कुशल तकनीक है जिसमें लाभकारी सूक्ष्मजीवों का उपयोग किया जाता है।<br>
                     2. यह सूक्ष्मजीव पानी को साफ रखने के साथ-साथ मछलियों के लिए प्राकृतिक आहार भी बनाते हैं。<br>
@@ -173,17 +215,141 @@
                 </div>
             </div>
 
+            <!-- Article 6 -->
+            <div class="section-box">
+                <div class="news-title">6. पश्चिम एशिया संकट: हूती विद्रोहियों का हमला और समुद्री तनाव</div>
+                <p><strong>विश्लेषण:</strong> पश्चिम एशिया में संकट और गहराता जा रहा है। यमन के हूती (Houthi) विद्रोहियों ने सऊदी अरब के तेल प्रतिष्ठानों पर हमले किए हैं[span_30](start_span)[span_30](end_span)। ईरान-अमेरिका तनाव के कारण दुनिया का प्रमुख तेल मार्ग 'होर्मुज जलडमरूमध्य' (Strait of Hormuz) पहले से ही बाधित है, और सऊदी अरब जिस 'बाब अल-मंडेब' जलडमरूमध्य (Bab el-Mandeb) के बाईपास रूट का इस्तेमाल कर रहा था, अब हूतियों ने उस पर भी हमले शुरू कर दिए हैं[span_31](start_span)[span_31](end_span)। इससे वैश्विक तेल आपूर्ति पर भारी दबाव पड़ा है और ब्रेंट क्रूड ऑयल $100 प्रति बैरल के करीब पहुंच गया है[span_32](start_span)[span_32](end_span)। यह ऊर्जा सुरक्षा जोखिम को सीधे तौर पर वैश्विक आपूर्ति श्रृंखला और मुद्रास्फीति के संकट में बदल रहा है[span_33](start_span)[span_33](end_span)。</p>
+                
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> पश्चिम एशिया के 'चोक-पॉइंट्स' (Choke points) जैसे- 'बाब अल-मंडेब' और 'होर्मुज जलडमरूमध्य' की भौगोलिक स्थिति (Mapping) को एटलस में जरूर देख लें। </div>
+                
+                <div class="practice-box">
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "पश्चिम एशिया के दोनों समुद्री चोक-पॉइंट्स का एक साथ बाधित होना ऊर्जा सुरक्षा जोखिम को व्यापक आर्थिक संकट (Macroeconomic crisis) में बदल देता है।" भारत के लिए इसके निहितार्थों और उपलब्ध नीतिगत प्रतिक्रियाओं की जांच करें। (250 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> पश्चिम एशियाई भूगोल के संदर्भ में निम्नलिखित कथनों पर विचार करें:<br>
+                    1. 'बाब अल-मंडेब' (Bab el-Mandeb) लाल सागर को अदन की खाड़ी से जोड़ता है。<br>
+                    2. 'हबशान-फुजैरा पाइपलाइन' संयुक्त अरब अमीरात (UAE) से होर्मुज जलडमरूमध्य को दरकिनार करते हुए कच्चे तेल के निर्यात को सक्षम बनाती है。<br>
+                    उपर्युक्त में से कौन-सा/से कथन सही है/हैं?</div>
+                    <div class="options-grid">
+                        <div class="opt-item">(A) केवल 1</div>
+                        <div class="opt-item">(B) केवल 2</div>
+                        <div class="opt-item">(C) 1 और 2 दोनों</div>
+                        <div class="opt-item">(D) न तो 1, न ही 2</div>
+                    </div>
+                    <details class="no-print">
+                        <summary>उत्तर देखें</summary>
+                        <p><strong>उत्तर: (C)</strong><br>दोनों कथन सही हैं[span_34](start_span)[span_34](end_span)。</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Article 7 -->
+            <div class="section-box">
+                <div class="news-title">7. भारत की चीनी (Sugar) और अस्वास्थ्यकर आहार की समस्या</div>
+                <p><strong>विश्लेषण:</strong> भारत एक गंभीर 'पोषण संक्रमण' (Nutrition Transition) के दौर से गुजर रहा है, जहां अत्यधिक चीनी, चीनी-मीठे पेय (SSBs) और अल्ट्रा-प्रोसेस्ड खाद्य पदार्थों (UPFs) की खपत बढ़ रही है[span_35](start_span)[span_35](end_span)। वर्ल्ड ओबेसिटी एटलस 2026 के अनुसार, 5-19 आयु वर्ग के 41.3 मिलियन भारतीय बच्चे अधिक वजन या मोटापे (High BMI) के शिकार हैं, जो चयापचय (Metabolic) रोगों और हाइपरटेंशन का मुख्य कारण बन रहा है[span_36](start_span)[span_36](end_span)। FSSAI ने 'फ्रंट-ऑफ-पैक लेबलिंग' (FOPL) के तहत रेड वार्निंग-लेबल प्रणाली का प्रस्ताव दिया है, ताकि उपभोक्ता आसानी से उच्च-चीनी वाले उत्पादों की पहचान कर सकें[span_37](start_span)[span_37](end_span)। इसके अलावा, यूके (UK) के 'सॉफ्ट ड्रिंक्स इंडस्ट्री लेवी' की तर्ज़ पर भारत में भी 'ग्रेजुएटेड शुगर टैक्स' लगाने की मांग बढ़ रही है, ताकि उत्पादकों को अपने उत्पादों में चीनी कम करने (Reformulation) के लिए मजबूर किया जा सके[span_38](start_span)[span_38](end_span)。</p>
+                
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> स्वास्थ्य (GS-2) में नॉन-कम्युनिकेबल डिजीज (NCDs) और 'फ्रंट-ऑफ-पैक लेबलिंग' (FOPL) बहुत चर्चा में हैं।</div>
+                
+                <div class="practice-box">
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "भारत में अल्ट्रा-प्रोसेस्ड खाद्य पदार्थों और चीनी-युक्त पेय पदार्थों की बढ़ती खपत एक गंभीर सार्वजनिक स्वास्थ्य संकट है।" इस संदर्भ में 'फ्रंट-ऑफ-पैक लेबलिंग' (FOPL) और 'शुगर टैक्स' की उपयोगिता का मूल्यांकन करें। (250 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> FSSAI द्वारा प्रस्तावित 'फ्रंट-ऑफ-पैक लेबलिंग' (FOPL) का मुख्य उद्देश्य क्या है?</div>
+                    <div class="options-grid">
+                        <div class="opt-item">(A) उत्पादों की एक्सपायरी डेट को बड़ा करना</div>
+                        <div class="opt-item">(B) उपभोक्ताओं को अधिक चीनी/नमक वाले अस्वास्थ्यकर खाद्य पदार्थों (HFSS) के बारे में स्पष्ट चेतावनी देना</div>
+                        <div class="opt-item">(C) केवल शाकाहारी/मांसाहारी चिन्ह लगाना</div>
+                        <div class="opt-item">(D) ब्रांड एंबेसडर की तस्वीर छापना</div>
+                    </div>
+                    <details class="no-print">
+                        <summary>उत्तर देखें</summary>
+                        <p><strong>उत्तर: (B)</strong>[span_39](start_span)[span_39](end_span)</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Article 8 -->
+            <div class="section-box">
+                <div class="news-title">8. क्या OpenAI ने 'नावीयर-स्टोक्स' (Navier-Stokes) समस्या सुलझा ली है?</div>
+                <p><strong>विश्लेषण:</strong> OpenAI के एक दावे ने वैज्ञानिक जगत में विवाद खड़ा कर दिया है, जिसमें कहा गया है कि उनके एआई (AI) मॉडल ने 'नावीयर-स्टोक्स समीकरणों' की समस्या को हल कर लिया है[span_40](start_span)[span_40](end_span)। नावीयर-स्टोक्स (Navier-Stokes) समीकरण न्यूटोनियन यांत्रिकी (Newtonian Mechanics) पर आधारित वे आंशिक अवकल समीकरण (PDEs) हैं जो पानी और हवा जैसे विस्कस (viscous) तरल पदार्थों की गति का वर्णन करते हैं[span_41](start_span)[span_41](end_span)। इसकी थ्री-डायमेंशनल उपस्थिति और सुगमता की समस्या, क्ले मैथमेटिक्स इंस्टीट्यूट (2000) द्वारा घोषित सात 'मिलेनियम प्राइज प्रॉब्लम्स' में से एक है (जिसके समाधान पर 1 मिलियन डॉलर का ईनाम है)[span_42](start_span)[span_42](end_span)। यह समीकरण वायुगतिकी (aerodynamics), मौसम की भविष्यवाणी और महासागर विज्ञान में अत्यंत महत्वपूर्ण है[span_43](start_span)[span_43](end_span)。</p>
+                
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> विज्ञान और प्रौद्योगिकी (GS-3) में एआई (AI) के उन्नत उपयोग और 'मिलेनियम प्राइज प्रॉब्लम्स' के सामान्य ज्ञान पर ध्यान दें।</div>
+                
+                <div class="practice-box">
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "कृत्रिम बुद्धिमत्ता (AI) अब केवल डेटा विश्लेषण तक सीमित नहीं है, बल्कि यह जटिल गणितीय और भौतिक समस्याओं को हल करने में भी सक्षम हो रही है।" नावीयर-स्टोक्स समीकरणों के संदर्भ में इस प्रगति का परीक्षण करें। (150 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> नावीयर-स्टोक्स (Navier-Stokes) समीकरण, जो क्ले मैथमेटिक्स इंस्टीट्यूट के 'मिलेनियम प्राइज' प्रॉब्लम का हिस्सा हैं, किस क्षेत्र से संबंधित हैं?</div>
+                    <div class="options-grid">
+                        <div class="opt-item">(A) क्वांटम यांत्रिकी (Quantum Mechanics)</div>
+                        <div class="opt-item">(B) विस्कस तरल पदार्थों की गति (Fluid Dynamics)</div>
+                        <div class="opt-item">(C) ब्लैक होल थर्मोडायनामिक्स</div>
+                        <div class="opt-item">(D) क्रायोजेनिक्स (Cryogenics)</div>
+                    </div>
+                    <details class="no-print">
+                        <summary>उत्तर देखें</summary>
+                        <p><strong>उत्तर: (B)</strong>[span_44](start_span)[span_44](end_span)</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Article 9 -->
+            <div class="section-box">
+                <div class="news-title">9. सर्दियों में शहरों में कचरा जलाने (Waste Burning) से बढ़ता प्रदूषण</div>
+                <p><strong>विश्लेषण:</strong> WRI India के 11 प्रदूषित भारतीय शहरों के अध्ययन में पाया गया है कि सर्दियों (Winter) के दौरान खुले में कचरा जलाने की घटनाएँ और उनसे होने वाला उत्सर्जन, गर्मियों की तुलना में तीन गुना तक अधिक होता है[span_45](start_span)[span_45](end_span)। चौंकाने वाली बात यह है कि टियर-3 (Tier-3) शहरों में यह घटनाएँ सबसे अधिक पाई गईं, इसके बाद टियर-2 और टियर-1 शहर आते हैं[span_46](start_span)[span_46](end_span)। गरीब और मलिन बस्तियों वाले क्षेत्रों में नगरपालिका सेवाओं की कमी और सर्दियों में हीटिंग (आग तापने) की जरूरत के कारण कचरा सबसे ज्यादा जलाया जाता है[span_47](start_span)[span_47](end_span)। इसके जलने से PM2.5, कार्बन मोनोऑक्साइड और ब्लैक कार्बन के साथ-साथ प्लास्टिक जलने से बेंजीन और डाइऑक्सिन जैसे खतरनाक तत्व निकलते हैं जो स्वास्थ्य के लिए गंभीर खतरा हैं[span_48](start_span)[span_48](end_span)。</p>
+                
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> वायु प्रदूषण (GS-3) में केवल पराली जलाना ही नहीं, बल्कि 'ओपन वेस्ट बर्निंग' भी शहरी प्रदूषण का एक बहुत बड़ा, लेकिन अनदेखा कारण है।</div>
+                
+                <div class="practice-box">
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "भारतीय शहरों में खुले में कचरा जलाना केवल एक पर्यावरणीय समस्या नहीं है, बल्कि यह शहरी शासन (Urban Governance) और सामाजिक असमानता की विफलता को भी दर्शाता है।" डब्लूआरआई (WRI) के हालिया निष्कर्षों के प्रकाश में चर्चा करें। (250 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> विश्व संसाधन संस्थान (WRI India) के हालिया अध्ययन के अनुसार, भारतीय शहरों में 'खुले में कचरा जलाने' (Open Waste Burning) के संदर्भ में निम्नलिखित कथनों पर विचार करें:<br>
+                    1. कचरा जलाने की घटनाएँ गर्मियों की तुलना में सर्दियों में तीन गुना तक अधिक होती हैं。<br>
+                    2. टियर-1 (महानगरों) की तुलना में टियर-3 शहरों में कचरा जलाने की घटनाएँ अधिक दर्ज की गईं。<br>
+                    उपर्युक्त में से कौन-सा/से कथन सही है/हैं?</div>
+                    <div class="options-grid">
+                        <div class="opt-item">(A) केवल 1</div>
+                        <div class="opt-item">(B) केवल 2</div>
+                        <div class="opt-item">(C) 1 और 2 दोनों</div>
+                        <div class="opt-item">(D) न तो 1, न ही 2</div>
+                    </div>
+                    <details class="no-print">
+                        <summary>उत्तर देखें</summary>
+                        <p><strong>उत्तर: (C)</strong><br>दोनों कथन सत्य हैं[span_49](start_span)[span_49](end_span)。</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Article 10 -->
+            <div class="section-box">
+                <div class="news-title">10. क्या डार्क मैटर (Dark Matter) तारों के अंदर ब्लैक होल बना सकता है?</div>
+                <p><strong>विश्लेषण:</strong> मणिपाल अकादमी और TIFR के शोधकर्ताओं के एक हालिया सैद्धांतिक अध्ययन में दावा किया गया है कि यदि अल्ट्रा-हैवी डार्क मैटर (Ultra-heavy Dark Matter) के कण घने तारों (जैसे न्यूट्रॉन तारे या वाइट ड्वार्फ) के कोर में जमा हो जाएं, तो वे गुरुत्वाकर्षण के कारण ढह कर अत्यंत सूक्ष्म (Tiny) 'ब्लैक होल' में बदल सकते हैं[span_50](start_span)[span_50](end_span)। डार्क मैटर वह अदृश्य पदार्थ है जो ब्रह्मांड के कुल द्रव्यमान-ऊर्जा का लगभग 27% हिस्सा है और यह न तो प्रकाश उत्सर्जित करता है और न ही परावर्तित[span_51](start_span)[span_51](end_span)। सामान्यतः छोटे ब्लैक होल 'हॉकिंग रेडिएशन' (Hawking Evaporation) के कारण नष्ट हो जाते हैं, लेकिन यदि तारे के अंदर डार्क मैटर का जमाव (Accretion) वाष्पीकरण से तेज हो, तो यह सूक्ष्म ब्लैक होल बढ़ता रहेगा और अंततः अपने ही होस्ट तारे को निगल लेगा[span_52](start_span)[span_52](end_span)。</p>
+                
+                <div class="mentor-tip"><i class="fas fa-lightbulb"></i> <strong>मेंटर की टिप:</strong> अंतरिक्ष विज्ञान (GS-3) में डार्क मैटर, डार्क एनर्जी, हॉकिंग रेडिएशन और ब्लैक होल जैसे विषय यूपीएससी के हमेशा से फेवरेट रहे हैं। </div>
+                
+                <div class="practice-box">
+                    <div class="mains-q"><i class="fas fa-pen-nib"></i> <strong>Mains Question:</strong> "डार्क मैटर ब्रह्मांड के सबसे बड़े रहस्यों में से एक बना हुआ है।" डार्क मैटर की विशेषताओं को स्पष्ट करें और तारों के भीतर डार्क मैटर-प्रेरित 'सूक्ष्म ब्लैक होल' के निर्माण के हालिया वैज्ञानिक सिद्धांत पर चर्चा करें। (250 शब्द)</div>
+                    <div class="pre-q"><strong>Prelims Question:</strong> डार्क मैटर (Dark Matter) के संदर्भ में निम्नलिखित कथनों पर विचार करें:<br>
+                    1. यह ब्रह्मांड के द्रव्यमान-ऊर्जा बजट का लगभग 27% हिस्सा है।<br>
+                    2. यह न तो प्रकाश का उत्सर्जन करता है और न ही उसे परावर्तित करता है, लेकिन इसे इसके गुरुत्वाकर्षण प्रभाव से महसूस किया जा सकता है।<br>
+                    3. छोटे ब्लैक होल 'हॉकिंग रेडिएशन' (Hawking radiation) के माध्यम से ऊर्जा उत्सर्जित करते हैं और द्रव्यमान खोते हैं।<br>
+                    उपर्युक्त में से कौन-सा/से कथन सही है/हैं?</div>
+                    <div class="options-grid">
+                        <div class="opt-item">(A) केवल 1 और 2</div>
+                        <div class="opt-item">(B) केवल 2 और 3</div>
+                        <div class="opt-item">(C) केवल 1 और 3</div>
+                        <div class="opt-item">(D) 1, 2 और 3</div>
+                    </div>
+                    <details class="no-print">
+                        <summary>उत्तर देखें</summary>
+                        <p><strong>उत्तर: (D)</strong><br>तीनों कथन पूरी तरह से सही हैं[span_53](start_span)[span_53](end_span)。</p>
+                    </details>
+                </div>
+            </div>
             <!-- SECTION 2: VALUE ADDITION -->
             <h2 id="section-2" style="color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; margin-top: 50px;">सेक्शन 2: वैल्यू एडिशन (Static Master-Key)</h2>
             <div class="section-box value-addition-box">
                 <h3 style="color: #8e44ad; margin-top: 0;">मौर्यकालीन प्रशासन (MCQ PDF आधारित मास्टर-की)</h3>
                 <p>आज के इतिहास के प्रश्नों के आधार पर मौर्य प्रशासन का क्रिस्प शॉर्ट-नोट्स:</p>
                 <ul>
-                    <li><strong>अर्थशास्त्र और कौटिल्य:</strong> चाणक्य (विष्णुगुप्त/कौटिल्य) चंद्रगुप्त मौर्य के प्रधानमंत्री थे[span_30](start_span)[span_30](end_span)। उनका ग्रंथ 'अर्थशास्त्र' शासनकला, राजनीति के सिद्धांत और प्रशासनिक नीतियों पर आधारित है, जिसकी तुलना मैकियावेली के 'प्रिंस' से की जाती है[span_31](start_span)[span_31](end_span)। इसमें 15 अधिकरण हैं और 18 'तीर्थों' (वरिष्ठ पदाधिकारियों) का उल्लेख है[span_32](start_span)[span_32](end_span)।</li>
-                    <li><strong>सप्तांग सिद्धांत:</strong> कौटिल्य ने राज्य के 7 अंग बताए हैं: स्वामी (राजा), अमात्य (मंत्री), जनपद, दुर्ग, कोष, दंड (सेना), और मित्र (सातवाँ अंग)[span_33](start_span)[span_33](end_span)।</li>
-                    <li><strong>प्रशासनिक इकाइयाँ:</strong> सबसे छोटी इकाई 'ग्राम' थी[span_34](start_span)[span_34](end_span)। 100 ग्रामों का समूह 'संग्रहण', 200 का 'खार्वटिक', 400 का 'द्रोणमुख' और 800 ग्रामों का समूह 'स्थानीय' कहलाता था[span_35](start_span)[span_35](end_span)।</li>
-                    <li><strong>न्याय व्यवस्था:</strong> दो प्रकार के न्यायालय थे- 'धर्मस्थीय' (दीवानी/Civil) और 'कंटकशोधन' (फौजदारी/Criminal)[span_36](start_span)[span_36](end_span)। कंटकशोधन का प्रमुख 'प्रदेष्टा' होता था[span_37](start_span)[span_37](end_span)।</li>
-                    <li><strong>प्रमुख अधिकारी:</strong> 'लक्षणाध्यक्ष' (सिक्के ढालने का प्रभारी), 'आकाराध्यक्ष' (खानों का अधीक्षक), 'एग्रोनोमोई' (मार्ग निर्माण अधिकारी - मेगस्थनीज के अनुसार)[span_38](start_span)[span_38](end_span)।</li>
+                    <li><strong>अर्थशास्त्र और कौटिल्य:</strong> चाणक्य (विष्णुगुप्त/कौटिल्य) चंद्रगुप्त मौर्य के प्रधानमंत्री थे[span_54](start_span)[span_54](end_span)। उनका ग्रंथ 'अर्थशास्त्र' शासनकला, राजनीति के सिद्धांत और प्रशासनिक नीतियों पर आधारित है, जिसकी तुलना मैकियावेली के 'प्रिंस' से की जाती है[span_55](start_span)[span_55](end_span)। इसमें 15 अधिकरण हैं और 18 'तीर्थों' (वरिष्ठ पदाधिकारियों) का उल्लेख है[span_56](start_span)[span_56](end_span)।</li>
+                    <li><strong>सप्तांग सिद्धांत:</strong> कौटिल्य ने राज्य के 7 अंग बताए हैं: स्वामी (राजा), अमात्य (मंत्री), जनपद, दुर्ग, कोष, दंड (सेना), और मित्र (सातवाँ अंग)[span_57](start_span)[span_57](end_span)।</li>
+                    <li><strong>प्रशासनिक इकाइयाँ:</strong> सबसे छोटी इकाई 'ग्राम' थी[span_58](start_span)[span_58](end_span)। 100 ग्रामों का समूह 'संग्रहण', 200 का 'खार्वटिक', 400 का 'द्रोणमुख' और 800 ग्रामों का समूह 'स्थानीय' कहलाता था[span_59](start_span)[span_59](end_span)।</li>
+                    <li><strong>न्याय व्यवस्था:</strong> दो प्रकार के न्यायालय थे- 'धर्मस्थीय' (दीवानी/Civil) और 'कंटकशोधन' (फौजदारी/Criminal)[span_60](start_span)[span_60](end_span)। कंटकशोधन का प्रमुख 'प्रदेष्टा' होता था[span_61](start_span)[span_61](end_span)।</li>
+                    <li><strong>प्रमुख अधिकारी:</strong> 'लक्षणाध्यक्ष' (सिक्के ढालने का प्रभारी), 'आकाराध्यक्ष' (खानों का अधीक्षक), 'एग्रोनोमोई' (मार्ग निर्माण अधिकारी - मेगस्थनीज के अनुसार)[span_62](start_span)[span_62](end_span)।</li>
                 </ul>
             </div>
 
@@ -207,7 +373,7 @@
                         <div class="opt-item">(C) भारत</div>
                         <div class="opt-item">(D) ब्राजील</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_39](start_span)[span_39](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_63](start_span)[span_63](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -218,7 +384,7 @@
                         <div class="opt-item">(C) लद्दाख</div>
                         <div class="opt-item">(D) लक्षद्वीप</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_40](start_span)[span_40](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_64](start_span)[span_64](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -229,7 +395,7 @@
                         <div class="opt-item">(C) यह जीडीपी से सब्सिडी को हटा देता है।</div>
                         <div class="opt-item">(D) यह केवल कृषि क्षेत्र पर लागू होता है।</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_41](start_span)[span_41](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_65](start_span)[span_65](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -240,7 +406,7 @@
                         <div class="opt-item">(C) मछलियों की नई प्रजातियों की खोज</div>
                         <div class="opt-item">(D) तटीय सुरक्षा बलों का प्रबंधन</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_42](start_span)[span_42](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_66](start_span)[span_66](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -251,7 +417,7 @@
                         <div class="opt-item">(C) सर्दी</div>
                         <div class="opt-item">(D) बसंत</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_43](start_span)[span_43](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_67](start_span)[span_67](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -262,7 +428,7 @@
                         <div class="opt-item">(C) ब्लैक होल थर्मोडायनामिक्स</div>
                         <div class="opt-item">(D) कृत्रिम बुद्धिमत्ता</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_44](start_span)[span_44](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_68](start_span)[span_68](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -273,7 +439,7 @@
                         <div class="opt-item">(C) छोटे (Microscopic) ब्लैक होल</div>
                         <div class="opt-item">(D) न्यूट्रॉन तारे</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_45](start_span)[span_45](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (C)</strong>[span_69](start_span)[span_69](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -284,18 +450,18 @@
                         <div class="opt-item">(C) सीमा सुरक्षा</div>
                         <div class="opt-item">(D) औद्योगिक रसायन प्रबंधन</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_46](start_span)[span_46](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_70](start_span)[span_70](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
-                    <p><strong>9. 'बाब-अल-मंडेब' (Bab-el-Mandeb) जलडमरूमध्य किन दो महत्वपूर्ण जल निकायों को जोड़ता है?</strong></p>
+                    <p><strong>9. 'बाब-अल-मंडेब' (Bab-el-Mandeb) जलडमरूमध्य, जो हाल ही में हाउती हमलों के कारण चर्चा में रहा, किन दो महत्वपूर्ण जल निकायों को जोड़ता है?</strong></p>
                     <div class="options-grid">
                         <div class="opt-item">(A) लाल सागर और भूमध्य सागर</div>
                         <div class="opt-item">(B) लाल सागर और अदन की खाड़ी</div>
                         <div class="opt-item">(C) फारस की खाड़ी और ओमान की खाड़ी</div>
                         <div class="opt-item">(D) काला सागर और कैस्पियन सागर</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_47](start_span)[span_47](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_71](start_span)[span_71](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -306,8 +472,11 @@
                         <div class="opt-item">(C) केवल शाकाहारी/मांसाहारी चिन्ह लगाना</div>
                         <div class="opt-item">(D) ब्रांड एंबेसडर की तस्वीर छापना</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_48](start_span)[span_48](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (B)</strong>[span_72](start_span)[span_72](end_span)</p></details>
                 </div>
+
+                <h3 style="color: #2980b9; margin-top: 40px; border-bottom: 1px dashed #bdc3c7; padding-bottom: 10px;">स्टैटिक MCQs (MCQ PDF से हू-ब-हू)</h3>
+
                 <div class="practice-box">
                     <p><strong>11. निम्नलिखित में से कौन-सी प्रशासनिक संरचना, आरोही क्रम में सही है?</strong></p>
                     <div class="options-grid">
@@ -316,7 +485,7 @@
                         <div class="opt-item">(c) स्थानीय, द्रोणमुख, खार्वटिका, संग्रहण</div>
                         <div class="opt-item">(d) स्थानीय, द्रोणमुख, संग्रहण, खार्वटिका</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: उपर्युक्त में से कोई नहीं।</strong> (सही आरोही क्रम: संग्रहण -> खार्वटिक -> द्रोणमुख -> स्थानीय)[span_49](start_span)[span_49](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: उपर्युक्त में से कोई नहीं।</strong> (सही आरोही क्रम: संग्रहण -> खार्वटिक -> द्रोणमुख -> स्थानीय)[span_73](start_span)[span_73](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -327,7 +496,7 @@
                         <div class="opt-item">(c) सुवर्णगिरि</div>
                         <div class="opt-item">(d) कांदाहार</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_50](start_span)[span_50](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_74](start_span)[span_74](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -338,7 +507,7 @@
                         <div class="opt-item">(c) पांड्य राज्य की ताम्रपर्णी नदी</div>
                         <div class="opt-item">(d) पलक्कड़ क्षेत्र की कावेरी नदी</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_51](start_span)[span_51](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_75](start_span)[span_75](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -349,7 +518,7 @@
                         <div class="opt-item">(c) राजशेखर</div>
                         <div class="opt-item">(d) विशाखदत्त</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_52](start_span)[span_52](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_76](start_span)[span_76](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -360,9 +529,8 @@
                         <div class="opt-item">(c) चाणक्य</div>
                         <div class="opt-item">(d) विष्णुगुप्त</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c & d)</strong>[span_53](start_span)[span_53](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c & d)</strong>[span_77](start_span)[span_77](end_span)</p></details>
                 </div>
-
                 <div class="practice-box">
                     <p><strong>16. कौटिल्य प्रधानमंत्री थे -</strong></p>
                     <div class="options-grid">
@@ -371,7 +539,7 @@
                         <div class="opt-item">(c) चन्द्रगुप्त मौर्य के</div>
                         <div class="opt-item">(d) राजा जनक के</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_54](start_span)[span_54](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_78](start_span)[span_78](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -382,7 +550,7 @@
                         <div class="opt-item">(c) विदेश नीति</div>
                         <div class="opt-item">(d) धन संचय</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_55](start_span)[span_55](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_79](start_span)[span_79](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -393,7 +561,7 @@
                         <div class="opt-item">(c) धार्मिक जीवन</div>
                         <div class="opt-item">(d) सामाजिक जीवन</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_56](start_span)[span_56](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_80](start_span)[span_80](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -404,7 +572,7 @@
                         <div class="opt-item">(c) वात्स्यायन का 'कामसूत्र'</div>
                         <div class="opt-item">(d) तिरुवल्लुवर का 'तिरुक्कुरल'</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_57](start_span)[span_57](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_81](start_span)[span_81](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -415,7 +583,7 @@
                         <div class="opt-item">(c) 14</div>
                         <div class="opt-item">(d) 15</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_58](start_span)[span_58](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_82](start_span)[span_82](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -426,7 +594,7 @@
                         <div class="opt-item">(c) यह राजनीति के सिद्धान्त स्थापित करता है</div>
                         <div class="opt-item">(d) यह वित्तीय सुधारों की आवश्यकता पर बल देता है</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_59](start_span)[span_59](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_83](start_span)[span_83](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -437,7 +605,7 @@
                         <div class="opt-item">(c) रूपदर्शक</div>
                         <div class="opt-item">(d) संगृहीता</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (a)</strong>[span_60](start_span)[span_60](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (a)</strong>[span_84](start_span)[span_84](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -448,7 +616,7 @@
                         <div class="opt-item">(c) पौतवाध्यक्ष</div>
                         <div class="opt-item">(d) शुल्काध्यक्ष</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_61](start_span)[span_61](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_85](start_span)[span_85](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -459,7 +627,7 @@
                         <div class="opt-item">(c) 18</div>
                         <div class="opt-item">(d) 19</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_62](start_span)[span_62](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_86](start_span)[span_86](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -470,7 +638,7 @@
                         <div class="opt-item">(c) कृषि पद्धति</div>
                         <div class="opt-item">(d) राजस्व प्रबन्धन</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_63](start_span)[span_63](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_87](start_span)[span_87](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -481,7 +649,7 @@
                         <div class="opt-item">(c) मन्त्री, नौकरशाही, उपाश्रित व गुप्तचरी में संलग्न लोग</div>
                         <div class="opt-item">(d) अभिजात वर्ग, आचार्य वर्ग, व्यापारी वर्ग व मठवासी</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (a)</strong>[span_64](start_span)[span_64](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (a)</strong>[span_88](start_span)[span_88](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -492,7 +660,7 @@
                         <div class="opt-item">(c) मित्र</div>
                         <div class="opt-item">(d) कोश</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_65](start_span)[span_65](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (c)</strong>[span_89](start_span)[span_89](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -503,7 +671,7 @@
                         <div class="opt-item">(c) दुर्ग</div>
                         <div class="opt-item">(d) धम्म</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_66](start_span)[span_66](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_90](start_span)[span_90](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -514,7 +682,7 @@
                         <div class="opt-item">(c) 1 एवं 3</div>
                         <div class="opt-item">(d) 2 एवं 4</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_67](start_span)[span_67](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (d)</strong>[span_91](start_span)[span_91](end_span)</p></details>
                 </div>
 
                 <div class="practice-box">
@@ -525,17 +693,19 @@
                         <div class="opt-item">(c) सैन्य विभाग</div>
                         <div class="opt-item">(d) आर्थिक विभाग</div>
                     </div>
-                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_68](start_span)[span_68](end_span)</p></details>
+                    <details class="no-print"><summary>उत्तर देखें</summary><p><strong>उत्तर: (b)</strong>[span_92](start_span)[span_92](end_span)</p></details>
                 </div>
 
             </div>
             
         </div>
+        
         <footer>
             <p>Developed with ❤️ for UPSC Aspirants | <strong>GS चौपाल</strong></p>
         </footer>
     </div>
     <script>
+        // PDF Download Script
         function downloadPDF() {
             const detailsElements = document.querySelectorAll('details');
             detailsElements.forEach(detail => detail.setAttribute('open', 'true'));
@@ -547,6 +717,16 @@
                 detailsElements.forEach(detail => detail.removeAttribute('open'));
             });
         }
+        
+        // Auto-Cleaner Script for Backend Glitches
+        document.addEventListener("DOMContentLoaded", function() {
+            let htmlContent = document.body.innerHTML;
+            htmlContent = htmlContent.replace(/\[span_[^\]]*\]\(start_span\)/g, '');
+            htmlContent = htmlContent.replace(/\[span_[^\]]*\]\(end_span\)/g, '');
+            htmlContent = htmlContent.replace(/\]*\]/g, '');
+            document.body.innerHTML = htmlContent;
+        });
     </script>
 </body>
 </html>
+            
